@@ -1,0 +1,354 @@
+/* ✅ تنسيق الهيدر */
+.bottom-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #f5f5f5;
+    padding: 6px 20px;
+    color: white;
+    position: relative;
+    z-index: 1000;
+}
+
+/* ✅ عكس ترتيب اللوجو والعنوان على الكمبيوتر فقط */
+@media (min-width: 1001px) {
+    .bottom-header {
+        flex-direction: row-reverse;
+    }
+}
+
+/* ✅ عند تفعيل اللغة العربية، يتم تغيير الاتجاه بالكامل */
+html[lang="ar"] {
+    direction: rtl;
+    text-align: right;
+}
+
+/* ✅ تغيير ترتيب العناصر في الهيدر عند اختيار اللغة العربية */
+html[lang="ar"] .bottom-header {
+    flex-direction: row-reverse;
+    justify-content: space-between;
+}
+
+/* ✅ عكس ترتيب القائمة عند اختيار اللغة العربية */
+html[lang="ar"] .navmenu ul {
+    justify-content: flex-start;
+    padding-left: 50px;
+    padding-right: 0;
+}
+
+/* ✅ عكس ترتيب اللوجو والعنوان عند اختيار اللغة العربية */
+html[lang="ar"] .logo {
+    margin-right: auto;
+    margin-left: 0;
+}
+
+html[lang="ar"] .sitename {
+    margin-left: auto;
+    margin-right: 0;
+}
+
+/* ✅ تنسيق اللوجو والعنوان */
+.logo {
+    width: 100px;
+    height: auto;
+}
+
+.sitename {
+    font-size: 20px;
+}
+
+/* ✅ تنسيق القائمة */
+.navmenu {
+    position: relative;
+    z-index: 1000;
+}
+
+.navmenu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+/* ✅ التحكم في محاذاة القائمة على الكمبيوتر */
+@media (min-width: 1001px) {
+    .navmenu ul {
+        justify-content: flex-end;
+        padding-right: 50px;
+    }
+}
+
+.navmenu li {
+    padding: 1px;
+    border-bottom: 1px solid #000000;
+    margin: 0 10px;
+}
+
+.navmenu a {
+    color: black;
+    text-decoration: none;
+    font-size: 18px;
+    display: block;
+    text-align: center;
+}
+
+/* ✅ زر القائمة للهاتف فقط */
+.menu-checkbox {
+    display: none;
+}
+
+.menu-btn {
+    font-size: 24px;
+    background: none;
+    border: none;
+    color: black;
+    cursor: pointer;
+    display: none;
+    position: relative;
+    z-index: 101;
+}
+
+/* ✅ إظهار زر القائمة في الهاتف فقط */
+@media (max-width: 1000px) {
+    .menu-btn {
+        display: block;
+    }
+}
+
+/* ✅ تنسيق القائمة على الهاتف */
+@media (max-width: 1000px) {
+    .navmenu {
+        display: none;
+        position: fixed;
+        top: 0;
+        right: 0;
+        background: white;
+        width: 80%;
+        height: 100%;
+        text-align: left;
+        z-index: 1000;
+        padding: 20px;
+        box-shadow: -5px 0 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .navmenu ul {
+        flex-direction: column;
+    }
+
+    .menu-checkbox:checked ~ .menu-overlay {
+        display: block;
+    }
+
+    .menu-checkbox:checked ~ .navmenu {
+        display: block;
+    }
+}
+
+/* ✅ الطبقة التي تغطي الصفحة عند فتح القائمة في الهاتف */
+.menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.95);
+    display: none;
+    z-index: 999;
+}
+
+/* ✅ زر الإغلاق في الهاتف فقط */
+.close-btn {
+    font-size: 24px;
+    color: black;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 270px;
+    background: none;
+    border: none;
+    z-index: 1100;
+    display: none;
+}
+
+@media (max-width: 1000px) {
+    .close-btn {
+        display: block;
+    }
+}
+
+
+
+.checkbox {
+    display: inline-flex; /* منع الامتداد الكامل */
+    align-items: center; /* محاذاة التشيك بوكس مع النص */
+    cursor: pointer;
+    gap: 6px; /* تقليل المسافة بين التشيك بوكس والنص */
+    padding: 2px 4px; /* تقليل المساحة القابلة للضغط */
+    border-radius: 4px;
+    color: #0A2A5E;
+}
+
+.checkbox input {
+    display: none;
+    color: #0A2A5E;
+}
+
+.checkbox .checkmark {
+    width: 1.75rem; /* نفس الحجم السابق */
+    height: 1.75rem;
+    border-radius: 10px;
+    background-color: #ffffff2b;
+    box-shadow: rgba(0, 0, 0, 0.62) 0px 0px 5px inset, rgba(0, 0, 0, 0.21) 0px 0px 0px 24px inset,
+        #22cc3f 0px 0px 0px 0px inset, rgba(224, 224, 224, 0.45) 0px 1px 0px 0px;
+    cursor: pointer;
+    position: relative;
+    flex-shrink: 0; /* منع التشيك بوكس من التمدد */
+    
+}
+
+
+.checkbox .checkmark::after {
+    content: "";
+    width: 1.125rem;
+    height: 1.125rem;
+    border-radius: 5px;
+    background-color: #e3e3e3;
+    box-shadow: transparent 0px 0px 0px 2px, rgba(0, 0, 0, 0.3) 0px 6px 6px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: background-color 0.3s ease-in-out;
+    
+}
+
+.checkbox input:checked + .checkmark {
+    background-color: #0A2A5E;
+    box-shadow: rgba(0, 0, 0, 0.62) 0px 0px 5px inset, #0A2A5E 0px 0px 0px 2px inset, #0A2A5E 0px 0px 0px 24px inset,
+        rgba(224, 224, 224, 0.45) 0px 1px 0px 0px;
+}
+
+.checkbox input:checked + .checkmark::after {
+    background-color: #0A2A5E;
+}
+
+.checkbox .label {
+    user-select: none;
+    font-weight: 700;
+    cursor: pointer;
+    font-size: 1rem;
+    white-space: nowrap; /* منع تمدد النص */
+    display: inline-block; /* منع أخذ مساحة إضافية */
+    color: #0A2A5E;
+}
+
+/* ✅ تحسين التوافق مع الهاتف */
+@media (max-width: 768px) {
+    .checkbox {
+        gap: 4px; /* تقليل المسافة بين التشيك بوكس والنص */
+        padding: 1px 3px; /* تقليل المساحة القابلة للضغط */
+    }
+}
+
+/* From Uiverse.io by adamgiebl */ 
+.dots-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+  }
+  
+  .dot {
+    height: 20px;
+    width: 20px;
+    margin-right: 10px;
+    border-radius: 10px;
+    background-color: #b3d4fc;
+    animation: pulse 1.5s infinite ease-in-out;
+  }
+  
+  .dot:last-child {
+    margin-right: 0;
+  }
+  
+  .dot:nth-child(1) {
+    animation-delay: -0.3s;
+  }
+  
+  .dot:nth-child(2) {
+    animation-delay: -0.1s;
+  }
+  
+  .dot:nth-child(3) {
+    animation-delay: 0.1s;
+  }
+  
+  @keyframes pulse {
+    0% {
+      transform: scale(0.8);
+      background-color: #b3d4fc;
+      box-shadow: 0 0 0 0 rgba(178, 212, 252, 0.7);
+    }
+  
+    50% {
+      transform: scale(1.2);
+      background-color: #6793fb;
+      box-shadow: 0 0 0 10px rgba(178, 212, 252, 0);
+    }
+  
+    100% {
+      transform: scale(0.8);
+      background-color: #b3d4fc;
+      box-shadow: 0 0 0 0 rgba(178, 212, 252, 0.7);
+    }
+  }
+  
+ 
+
+  body {
+    font-family: Arial, sans-serif;
+    text-align: left; /* المحاذاة الافتراضية للإنجليزية */
+    transition: text-align 0.3s ease-in-out;
+}
+
+.language-switch {
+    margin: 20px;
+    text-align: center;
+}
+
+.language-switch button {
+    padding: 10px 15px;
+    margin: 5px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.language-switch button:hover {
+    background-color: #ddd;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    text-align: inherit; /* التغير تلقائيًا بناءً على `text-align` في `body` */
+}
+
+nav ul li {
+    display: inline;
+    margin: 10px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    font-weight: bold;
+    color: #007BFF;
+}
+
+footer {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #555;
+    text-align: inherit; /* يجعل التغير تلقائيًا مع `body` */
+}
