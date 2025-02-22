@@ -8,6 +8,7 @@
 
 
 
+<link rel="icon" type="image/png" href="assets/img/android-chrome-64x64.png">
 
 
 
@@ -222,7 +223,7 @@
                 <li><a href="Taxes.html" data-lang="Taxes" style="font-weight: bold;">Taxes</a></li>
                 <li><a href="BookKeeping.html" data-lang="BookKeeping" style="font-weight: bold;">BookKeeping</a></li>
                 <li><a href="audit.html" data-lang="ExternalAudit" style="font-weight: bold;">External Audit</a></li>
-              <li><a href="Company.html" data-lang="CompanyIncorporation" style="font-weight: bold;">Company Incorporation</a></li>
+              <li><a href="CompanyIncorporation.html" data-lang="CompanyIncorporation" style="font-weight: bold;">Company Incorporation</a></li>
           </ul>
         </li>
         
@@ -1783,16 +1784,17 @@ function toggleDropdown(dropdownId, checkbox) {
 
 <script>
     // جلب الزر
-    const Company = document.getElementById("Company");
+    const CompanyIncorporation = document.getElementById("CompanyIncorporation");
 
     // عندما يتم الضغط على الزر، عرض شاشة تحميل
-    Company.addEventListener("click", function(event) {
+    CompanyIncorporation.addEventListener("click", function(event) {
         event.preventDefault(); // منع الرابط من الانتقال فورًا
         // عرض شاشة التحميل قبل الانتقال للصفحة الجديدة
-        
-            window.location.href = "Company.html";  // فتح الصفحة الجديدة بعد 2 ثانية
+        document.body.innerHTML = "<h1>Loading...</h1>";  // تخصيص هذه الرسالة كما تريد
+        setTimeout(function() {
+            window.location.href = "CompanyIncorporation.html";  // فتح الصفحة الجديدة بعد 2 ثانية
         }, 2000); // تأخير لمدة 2 ثانية لظهور شاشة التحميل
-    ;
+    });
 </script>
 
  
