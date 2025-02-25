@@ -11,6 +11,11 @@
       window.history.replaceState(null, null, window.location.pathname.replace("index.html", ""));
   }
 </script>
+<script>
+  if (window.location.pathname.endsWith("#Home")) {
+      window.history.replaceState(null, null, window.location.pathname.replace("#Home", ""));
+  }
+</script>
 
 
 
@@ -204,8 +209,17 @@
         </div>
     </header>
     
-    
-
+    <script>document.addEventListener("DOMContentLoaded", function () {
+      const menuCheckbox = document.querySelector(".menu-checkbox");
+      const menuLinks = document.querySelectorAll(".navmenu a");
+  
+      menuLinks.forEach(link => {
+          link.addEventListener("click", function () {
+              menuCheckbox.checked = false; // إغلاق القائمة عند النقر على أي رابط
+          });
+      });
+  });
+  </script>
 
     
     
@@ -475,11 +489,7 @@
         
 
           
-          </div><!-- End Stats Item -->
-
-        </div>
-
-      </div>
+         
 
     </section><!-- /Stats Section -->
 
@@ -684,9 +694,7 @@
 });
 
       </script>
-  </body>
-  </html>
-  
+ 
   
 
    
@@ -703,11 +711,7 @@
           
           
         
-          </div><!-- End Contact Form -->
-
-        </div>
-
-      </div>
+        
               
            
         <!-- End Contact Form -->
@@ -854,8 +858,29 @@ setTimeout(function() {
 
 
 
-  </body>
-  </html>
+<script>
+  let lastScrollTop = 0;
+  const topHeader = document.querySelector(".top-header");
+  const bottomHeader = document.querySelector(".bottom-header");
+
+  window.addEventListener("scroll", function () {
+      let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+      if (scrollTop > lastScrollTop) {
+          // عند التمرير للأسفل، يخفي الهيدر العلوي ويجعل السفلي شفافًا
+          topHeader.style.transform = "translateY(-100%)";
+          bottomHeader.style.background = "rgba(245, 245, 245, 0.7)";
+      } else {
+          // عند التمرير للأعلى، يظهر الهيدر العلوي ويعود السفلي لطبيعته
+          topHeader.style.transform = "translateY(0)";
+          bottomHeader.style.background = "rgba(245, 245, 245, 1)";
+      }
+
+      lastScrollTop = scrollTop;
+  });
+</script>
+
+
 
   
 
