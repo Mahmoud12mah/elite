@@ -315,7 +315,15 @@ const translations = {
         contactph: "+20 1228310654",
         Companycapital: "Company capital",
         Arethereforeignpartners: "Are there foreign partners?",
-        
+
+
+
+
+
+        Therequestwassentsuccessfully: "The request was sent successfully",
+        Theapplicationisnowunderreview: "The application is now under review",
+        Wewillcontactyouassoonaspossible: "We will contact you as soon as possible",
+        Gotothehomepage: "Go to the home page",
 
 
 
@@ -582,6 +590,13 @@ const translations = {
         contactph: "1228310654 20+",
         Companycapital: "رأس مال الشركة",
         Arethereforeignpartners: "هل يوجد شركاء اجانب؟",
+
+
+
+        Therequestwassentsuccessfully: "تم ارسال الطلب بنجاح",
+        Theapplicationisnowunderreview: "الطلب قيد المراجعة الآن",
+        Wewillcontactyouassoonaspossible: "سوف نتواصل معك في اقرب وقت ممكن",
+        Gotothehomepage: "الصفحة الرئيسية",
        
         
 
