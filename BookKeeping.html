@@ -203,10 +203,7 @@
 
 
     <header class="bottom-header">
-        <a href="index.html">
-            <img src="assets/img/logo.png" class="logo" alt="Logo">
-        </a>
-        
+        <img src="assets/img/logo.png" class="logo" alt="Logo">
         <h1 class="sitename" style="font-weight: bold"></h1>
     
         <!-- زر القائمة (Checkbox مخفي) -->
@@ -665,18 +662,24 @@
     </div>
 
     <script>
- document.addEventListener("DOMContentLoaded", function () {
-    let requestButton = document.getElementById("requestPrice");
+  document.addEventListener("DOMContentLoaded", function () {
+    emailjs.init("YE7phgS6i3fiqXi09"); // ✅ تأكد من استبداله بالمفتاح الصحيح
+
+    let form = document.getElementById("requestForm");
     let responseElement = document.getElementById("responseMessage");
+    let requestButton = document.getElementById("requestPrice");
+    let phoneCodeSelect = document.getElementById("countrySelect");
+    let phoneInput = document.getElementById("phoneInput");
+    let visitsInput = document.querySelector("input[name='TherequiredNumberofvisitspermonth']");
+    let inputs = document.querySelectorAll("input, textarea, select");
 
     function validateForm() {
         let isValid = true;
         responseElement.innerHTML = "";
         responseElement.style.display = "none";
 
-        let requiredInputs = document.querySelectorAll("input[required], textarea, select");
-        requiredInputs.forEach(input => {
-            if (!input.value.trim()) {
+        inputs.forEach(input => {
+            if (input.hasAttribute("required") && !input.value.trim()) {
                 input.classList.add("input-error");
                 isValid = false;
             } else {
@@ -684,7 +687,13 @@
             }
         });
 
-        let visitsInput = document.querySelector("input[name='TherequiredNumberofvisitspermonth']");
+        if (!phoneCodeSelect || !phoneInput || !phoneInput.value.trim()) {
+            phoneInput.classList.add("input-error");
+            isValid = false;
+        } else {
+            phoneInput.classList.remove("input-error");
+        }
+
         if (visitsInput && !visitsInput.value.trim()) {
             visitsInput.classList.add("input-error");
             isValid = false;
@@ -693,23 +702,12 @@
         }
 
         let checkboxes = document.querySelectorAll("input[name='services[]']");
-        let isServiceChecked = Array.from(checkboxes).some(checkbox => checkbox.checked);
-        if (!isServiceChecked) {
+        let isChecked = Array.from(checkboxes).some(checkbox => checkbox.checked);
+        if (!isChecked) {
             checkboxes.forEach(checkbox => checkbox.closest("label").classList.add("checkbox-error"));
             isValid = false;
         } else {
             checkboxes.forEach(checkbox => checkbox.closest("label").classList.remove("checkbox-error"));
-        }
-
-        let inspectionYearsInput = document.querySelector("input[name='inspectionyears']");
-        let annualInspectionService = document.querySelector("input[name='services[]'][value='Annual Inspection Service']");
-        if (annualInspectionService && annualInspectionService.checked && inspectionYearsInput) {
-            if (!inspectionYearsInput.value.trim()) {
-                inspectionYearsInput.classList.add("input-error");
-                isValid = false;
-            } else {
-                inspectionYearsInput.classList.remove("input-error");
-            }
         }
 
         if (!isValid) {
@@ -721,86 +719,76 @@
     }
 
     function sendEmail(event) {
-        event.preventDefault();
-        if (!validateForm()) return;
+    event.preventDefault();
+    if (!validateForm()) return;
 
-        let formData = new FormData(document.getElementById("requestForm"));
-        let data = {};
-        formData.forEach((value, key) => {
-            data[key] = value;
-        });
+    let formData = new FormData(form);
+    let data = {};
 
-        let countrySelect = document.getElementById("countrySelect");
-        if (countrySelect) {
-            data["phonecode"] = countrySelect.value;
-        }
+    formData.forEach((value, key) => {
+        data[key] = value;
+    });
 
-        let visitsInput = document.querySelector("input[name='TherequiredNumberofvisitspermonth']");
-        if (visitsInput) {
-            data["TherequiredNumberofvisitspermonth"] = visitsInput.value.trim();
-        }
+    if (phoneCodeSelect && phoneInput) {
+        data["phonecode"] = phoneCodeSelect.value;
+        data["mobile"] = phoneInput.value.trim();
+    }
 
-        let selectedServices = [];
-        document.querySelectorAll("input[name='services[]']:checked").forEach(service => {
-            selectedServices.push(service.value);
-        });
-        data["services"] = selectedServices.join(", ");
+    if (visitsInput) {
+        data["TherequiredNumberofvisitspermonth"] = visitsInput.value.trim();
+    }
 
-        let currentPage = window.location.pathname.split("/").pop() || "Unknown";
-        data["source_page"] = currentPage;
+    let selectedServices = [];
+    document.querySelectorAll("input[name='services[]']:checked").forEach(service => {
+        selectedServices.push(service.value);
+    });
+    data["services"] = selectedServices.join(", ");
 
-        console.log("📤 البيانات المرسلة إلى Brevo:", data);
+    let currentPage = window.location.pathname.split("/").pop() || "Unknown";
+    data["source_page"] = currentPage;
 
-        fetch("https://api.brevo.com/v3/smtp/email", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-                "api-key": "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"
-            },
-            body: JSON.stringify({
-                sender: { email: "kandilmahmoud03@gmail.com", name: "Your Name" },
-                to: [{ email: "kandilmahmoud03@gmail.com", name: "المستلم" }],
-                subject: "🚀 طلب جديد من الموقع",
-                htmlContent: `
-                    <h2>📩 تفاصيل الطلب المفصل:</h2>
-                    <p><strong>👤 الاسم:</strong> {{params.name}}</p>
-                    <p><strong>📧 البريد الإلكتروني:</strong> {{params.email}}</p>
-                    <p><strong>📞 رمز الدولة:</strong> {{params.phonecode}}</p>
-                    <p><strong>📞 رقم الهاتف:</strong> {{params.mobile}}</p>
-                    <p><strong>🏢 الشركة:</strong> {{params.yourcompany}}</p>
-                    <p><strong>📆 سنوات الخبرة:</strong> {{params.inspectionyears}}</p>
-                    <p><strong>📆 عدد الزيارات المطلوبة شهريًا:</strong> {{params.TherequiredNumberofvisitspermonth}}</p>
-                    <p><strong>📆 رأس مال الشركة:</strong> {{params.Companycapital}}</p>
-                    <p><strong>🏷️ الوظيفة:</strong> {{params.position}}</p>
-                    <hr>
-                    <h2>📦 الخدمات المطلوبة:</h2>
-                    <p><strong>🔹 الخدمات المختارة:</strong> {{params.services}}</p>
-                    <p><strong>🌐 مصدر الصفحة:</strong> {{params.source_page}}</p>
-                `,
-                params: { ...data }
-            })
-        })
-        .then(response => response.json())
-        .then(result => {
-            console.log("✅ تم الإرسال بنجاح", result);
+    console.log("📤 البيانات المرسلة:", data);
+
+    emailjs.send("service_0p0gln7", "template_atz2wa9", data)
+        .then(function(response) {
+            console.log("✅ تم الإرسال بنجاح", response);
             responseElement.innerHTML = '<div class="alert-success">✅ تم الإرسال بنجاح!</div>';
             responseElement.style.display = "block";
-            localStorage.setItem("formSubmitted", "true");
             setTimeout(() => { window.location.href = "sent.html"; }, 2000);
-        })
-        .catch(error => {
+        }, function(error) {
             console.error("❌ فشل الإرسال", error);
-            responseElement.innerHTML = '<div class="alert-danger">❌ فشل الإرسال: ' + error.message + '</div>';
+            responseElement.innerHTML = '<div class="alert-danger">❌ فشل الإرسال: ' + error.text + '</div>';
             responseElement.style.display = "block";
+            setTimeout(() => { window.location.href = "sent.html"; }, 1000);
         });
-    }
+}
+
 
     if (requestButton) {
         requestButton.addEventListener("click", sendEmail);
+    } else {
+        console.error("❌ الزر غير موجود! تأكد من أن العنصر موجود في HTML.");
     }
+
+    inputs.forEach(input => {
+        input.addEventListener("input", function() {
+            if (input.value.trim()) {
+                input.classList.remove("input-error");
+            } else {
+                input.classList.add("input-error");
+            }
+        });
+    });
+
+    let checkboxes = document.querySelectorAll("input[name='services[]']");
+    checkboxes.forEach(checkbox => {
+        checkbox.addEventListener("change", function() {
+            if (checkbox.checked) {
+                checkboxes.forEach(box => box.closest("label").classList.remove("checkbox-error"));
+            }
+        });
+    });
 });
-
-
 
     
 </script>
