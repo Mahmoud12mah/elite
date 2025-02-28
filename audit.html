@@ -203,7 +203,9 @@
 
 
     <header class="bottom-header">
-        <img src="assets/img/logo.png" class="logo" alt="Logo">
+        <a href="index.html">
+            <img src="assets/img/logo.png" class="logo" alt="Logo">
+        </a>
         <h1 class="sitename" style="font-weight: bold"></h1>
     
         <!-- زر القائمة (Checkbox مخفي) -->
@@ -981,7 +983,7 @@ function toggleDropdown(dropdownId, checkbox) {
 
     <script>
         document.addEventListener("DOMContentLoaded", function () {
-            emailjs.init("YE7phgS6i3fiqXi09");
+            emailjs.init("KSdSGoGza3XVQIuja");
 
             let responseElement = document.getElementById("responseMessage");
             let requestButton = document.getElementById("requestPrice");
@@ -1037,12 +1039,19 @@ function toggleDropdown(dropdownId, checkbox) {
 
                 console.log("📤 البيانات المرسلة:", formData);
 
-                emailjs.send("service_0p0gln7", "template_atz2wa9", formData)
+                emailjs.send("service_of4e1e9", "template_c3dwche", formData)
                     .then(function(response) {
                         console.log("✅ تم الإرسال بنجاح", response);
                         responseElement.innerHTML = '<div class="alert-success">✅ تم الإرسال بنجاح!</div>';
                         responseElement.style.display = "block";
                         setTimeout(() => { responseElement.style.display = "none"; }, 5000);
+                        // ✅ حفظ حالة نجاح الإرسال في localStorage
+            localStorage.setItem("formSubmitted", "true");
+
+// ✅ التوجيه إلى sent.html بعد 2 ثانية
+setTimeout(function () {
+    window.location.href = "sent.html";
+}, 2000);
                     }, function(error) {
                         console.error("❌ فشل الإرسال", error);
                         responseElement.innerHTML = '<div class="alert-danger">❌ فشل الإرسال: ' + error.text + '</div>';

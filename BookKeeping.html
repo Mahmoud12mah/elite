@@ -203,7 +203,9 @@
 
 
     <header class="bottom-header">
-        <img src="assets/img/logo.png" class="logo" alt="Logo">
+        <a href="index.html">
+            <img src="assets/img/logo.png" class="logo" alt="Logo">
+        </a>
         <h1 class="sitename" style="font-weight: bold"></h1>
     
         <!-- زر القائمة (Checkbox مخفي) -->
@@ -663,7 +665,7 @@
 
     <script>
   document.addEventListener("DOMContentLoaded", function () {
-    emailjs.init("YE7phgS6i3fiqXi09"); // ✅ تأكد من استبداله بالمفتاح الصحيح
+    emailjs.init("KSdSGoGza3XVQIuja"); // ✅ تأكد من استبداله بالمفتاح الصحيح
 
     let form = document.getElementById("requestForm");
     let responseElement = document.getElementById("responseMessage");
@@ -749,12 +751,18 @@
 
     console.log("📤 البيانات المرسلة:", data);
 
-    emailjs.send("service_0p0gln7", "template_atz2wa9", data)
+    emailjs.send("service_of4e1e9", "template_c3dwche", data)
         .then(function(response) {
             console.log("✅ تم الإرسال بنجاح", response);
             responseElement.innerHTML = '<div class="alert-success">✅ تم الإرسال بنجاح!</div>';
             responseElement.style.display = "block";
-            setTimeout(() => { window.location.href = "sent.html"; }, 2000);
+           // ✅ حفظ حالة نجاح الإرسال في localStorage
+           localStorage.setItem("formSubmitted", "true");
+
+// ✅ التوجيه إلى sent.html بعد 2 ثانية
+setTimeout(function () {
+    window.location.href = "sent.html";
+}, 2000);
         }, function(error) {
             console.error("❌ فشل الإرسال", error);
             responseElement.innerHTML = '<div class="alert-danger">❌ فشل الإرسال: ' + error.text + '</div>';
