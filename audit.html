@@ -86,6 +86,7 @@
             align-items: center;
             justify-content: center;
             flex-wrap: wrap;
+            direction: ltr !important; /* يمنع انعكاس النص */
         }
 
         .language-switch {
@@ -106,11 +107,12 @@
         }
         
         .icon-text, .icon-text1, .icon-text2 {
-            font-size: 15px;
+            font-size: 16px;
             color: #ffffff;
             font-weight: bold;
             margin: 0 10px;
             top: 1px;
+            direction: ltr !important; /* يمنع انعكاس النص */
         }
 
         .bottom-header {
@@ -126,7 +128,8 @@
 
         .logo {
             max-width: 100%;
-            height: 80px;
+            height: 90px;
+            
         }
 
         .navmenu ul {
@@ -154,6 +157,7 @@
                 height: auto;
                 text-align: center;
             }
+            
 
             .bottom-header {
                 flex-direction: column;
@@ -161,7 +165,7 @@
         }
 
             .logo {
-                height: 60px;
+                height: 10px;
             }
 
             .navmenu ul {
@@ -178,18 +182,86 @@
                 right: auto;
                 margin-top: 10px;
             }
+            
         }
     </style>
 </head>
 <body>
     <header class="top-header">
-        <div  class="icon-text">EMAIL: info@elitefinancial-eg.com</div>
-        <div  class="icon-text1">MOBILE: +201228310654</div>
-        <div  class="icon-text2">Telephone: +223504766</div>
-        <div class="language-switch">
-            <button class="arabic" onclick="changeLanguage('ar')">العربية</button>
-            <button class="english" onclick="changeLanguage('en')">English</button>
-        </div>
+        <a href="mailto:info@elitefinancial-eg.com" class="icon-text">
+            <i class="fa fa-envelope"></i> info@elitefinancial-eg.com
+        </a>
+        
+        <!-- تأكد من إضافة مكتبة Font Awesome في رأس الصفحة -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+        
+        <a href="tel:+201228310654" class="icon-text1">
+            <i class="fa fa-phone"></i> +201228310654
+        </a>
+        
+        <a href="tel:+223504766" class="icon-text2">
+            <i class="fa fa-phone"></i> +223504766
+        </a>
+        
+        <!-- تأكد من إضافة مكتبة Font Awesome في رأس الصفحة -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+        
+       <div class="language-switch">
+    <button class="lang-btn arabic" onclick="changeLanguage('ar')">العربية</button>
+    <button class="lang-btn english" onclick="changeLanguage('en')">English</button>
+</div>
+
+<style>
+/* تنسيق الحاوية */
+.language-switch {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+/* تنسيق الأزرار */
+.lang-btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    border: 2px solid #007bff;
+    border-radius: 8px;
+    background-color: #fff;
+    color: #007bff;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* تأثير عند تمرير الماوس */
+.lang-btn:hover {
+    background-color: #007bff;
+    color: #fff;
+}
+
+/* تخصيص لون زر العربية */
+.lang-btn.arabic {
+    border-color: #28a745;
+    color: #28a745;
+}
+
+.lang-btn.arabic:hover {
+    background-color: #28a745;
+    color: #fff;
+}
+
+/* تخصيص لون زر الإنجليزية */
+.lang-btn.english {
+    border-color: #ff9800;
+    color: #ff9800;
+}
+
+.lang-btn.english:hover {
+    background-color: #ff9800;
+    color: #fff;
+}
+</style>
+
     </header>
     
     
@@ -275,17 +347,12 @@
             <input style="font-weight: bold" type="text" name="email" class="form-control" placeholder="Email*" data-lang="youremail" required="">
         </div>
         
-          
+    </form>
         <p>
 
         </p>
 
-        <!DOCTYPE html>
-<html lang="ar">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>إدخال رقم الهاتف مع اختيار الدولة</title>
+       
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.4.6/css/flag-icon.min.css">
     <style>
         .phone-input-container {
@@ -326,65 +393,38 @@
         }
     </script>
 
-</body>
-</html>
-
-
-        
-
-          
-
-      </div>
       
-    </form>
-  <p>
-
-  </p>
+   <p>
+    
+   </p>
+  
 
     <div id="content"  class="container d-flex flex-column align-items-center text-center"></div>
-    <h2 data-lang="Theavailablemethodofworkingwiththecompanyaccountingsystem" style="font-size: 25px; font-weight: bold;" id="welcome-text" data-aos="fade-up" data-aos-delay="100" name="tax service type">The available method of working with the company accounting system
-    </h2>
+    <h2 data-lang="Theavailablemethodofworkingwiththecompanyaccountingsystem" style="font-size: 25px; font-weight: bold;" id="welcome-text" data-aos="fade-up" data-aos-delay="100" name="tax service type">The available method of working with the company accounting system</h2>
 
     
-     
+     <p>
+
+     </p>
 
 
    
-</head>
-<body>
 
-    <h2></h2>
 
-    <!-- Checkbox للتحكم في القائمة الأولى -->
-<label class="checkbox" for="checkbox1">
-    <input type="checkbox" name="services[]" value="Remotely" id="checkbox1" onclick="toggleExclusive('checkbox1', 'checkbox2', 'dropdown1', 'dropdown2')">
-    
    
-</label>
-<p>
 
-</p>
+   
 
 <!-- Checkbox للتحكم في القائمة الثانية -->
 <label class="checkbox" for="checkbox2">
-    <input type="checkbox" name="services[]" value="On-Site" id="checkbox2" onclick="toggleExclusive('checkbox2', 'checkbox1', 'dropdown2', 'dropdown1')">
+    <input type="checkbox" name="services[]" value="On-Site" id="checkbox2" onclick="toggleDropdown('dropdown2', this)">
+
     <span class="checkmark"></span>
     <span class="label" data-lang="OnSite">On-Site</span>
 </label>
 
 <script>
-function toggleExclusive(selectedId, otherId, dropdownId, otherDropdownId) {
-    let selectedCheckbox = document.getElementById(selectedId);
-    let otherCheckbox = document.getElementById(otherId);
 
-    if (selectedCheckbox.checked) {
-        otherCheckbox.checked = false; // إلغاء تحديد الآخر
-    }
-
-    // تحديث القوائم المنسدلة
-    toggleDropdown(dropdownId, selectedCheckbox);
-    toggleDropdown(otherDropdownId, otherCheckbox);
-}
 
 function toggleDropdown(dropdownId, checkbox) {
     let dropdown = document.getElementById(dropdownId);
@@ -392,6 +432,7 @@ function toggleDropdown(dropdownId, checkbox) {
         dropdown.style.display = checkbox.checked ? "block" : "none";
     }
 }
+
 </script>
 <p>
 
@@ -571,7 +612,7 @@ function toggleDropdown(dropdownId, checkbox) {
 
     </p>
     <label class="checkbox" for="checkbox58">
-        <input type="checkbox" name="services[]" value="From 101 Million To 500 Million" id="checkbox58">
+        <input type="checkbox" name="services[]" value="More Than 100 Million" id="checkbox58">
         <span class="checkmark"></span>
         <span class="label" data-lang="MoreThan100Million">More Than 100 Million</span>
     </label>
@@ -682,18 +723,7 @@ function toggleDropdown(dropdownId, checkbox) {
         <span class="checkmark"></span>
         <span class="label" data-lang="No">No</span>
     </label>
-    <p>
-
-    </p>
     
-    
-
-        
-
-        
-        <p>
-    
-        </p>
 
 
 
@@ -722,76 +752,32 @@ function toggleDropdown(dropdownId, checkbox) {
 
 
 <script>
-    function toggleDropdown(dropdownId, checkbox) {
-        let dropdown = document.getElementById(dropdownId);
-        
-        if (dropdown) {
-            // إظهار أو إخفاء القائمة بناءً على حالة التشيك بوكس
-            dropdown.style.display = checkbox.checked ? "block" : "none";
-        }
-    }
-    
-    // تشغيل القائمة المنسدلة فقط عند تحديد التشيك بوكس الأول
-    document.getElementById('checkbox1').addEventListener('change', function() {
-        let dropdown1 = document.getElementById('dropdown1');
-        let checkboxesGroup1 = document.querySelectorAll('#checkbox8, #checkbox9, #checkbox10, #checkbox11, #checkbox12, #checkbox13');
-    
-        if (this.checked) {
-            dropdown1.style.display = 'block';
-    
-            // السماح فقط باختيار واحد من المجموعة (8-13)
-            checkboxesGroup1.forEach(checkbox => {
-                checkbox.addEventListener('change', function() {
-                    checkboxesGroup1.forEach(cb => {
-                        if (cb !== this) {
-                            cb.checked = false;
-                        }
-                    });
-                });
-            });
-    
-        } else {
-            dropdown1.style.display = 'none';
-    
-            // إلغاء تحديد جميع الخيارات من 8 إلى 13 عند إلغاء checkbox1
-            checkboxesGroup1.forEach(checkbox => {
-                checkbox.checked = false;
-            });
-        }
-    });
-    
-    // السماح فقط باختيار واحد من كل مجموعة بشكل مستقل
-    function allowOnlyOneSelection(groupSelector) {
-        let checkboxesGroup = document.querySelectorAll(groupSelector);
-    
-        checkboxesGroup.forEach(checkbox => {
-            checkbox.addEventListener('change', function() {
-                checkboxesGroup.forEach(cb => {
-                    if (cb !== this) {
-                        cb.checked = false;
-                    }
-                });
+   function allowOnlyOneSelection(groupSelector) {
+    let checkboxesGroup = document.querySelectorAll(groupSelector);
+
+    checkboxesGroup.forEach(checkbox => {
+        checkbox.addEventListener('change', function () {
+            checkboxesGroup.forEach(cb => {
+                if (cb !== this) {
+                    cb.checked = false;
+                }
             });
         });
-    }
-    
-    // تطبيق السماح باختيار واحد فقط لكل مجموعة
-    allowOnlyOneSelection('#checkbox3, #checkbox4, #checkbox5, #checkbox6');
-    allowOnlyOneSelection('#checkbox14, #checkbox15, #checkbox16, #checkbox17, #checkbox18, #checkbox19, #checkbox20, #checkbox21');
-    allowOnlyOneSelection('#checkbox22, #checkbox23');
-    allowOnlyOneSelection('#checkbox24, #checkbox25');
-    allowOnlyOneSelection('#checkbox26, #checkbox27');
-    allowOnlyOneSelection('#checkbox28, #checkbox29');
-    allowOnlyOneSelection('#checkbox30, #checkbox31');
+    });
+}
+
+// تطبيق الدالة على كل المجموعات
+document.addEventListener("DOMContentLoaded", function () {
     allowOnlyOneSelection('#checkbox42, #checkbox43, #checkbox44, #checkbox45');
-    allowOnlyOneSelection('#checkbox53, #checkbox54, #checkbox55, #checkbox56, #checkbox57, #checkbox58, #checkbox59, #checkbox60');
+    allowOnlyOneSelection('#checkbox53, #checkbox54, #checkbox55, #checkbox56, #checkbox57, #checkbox58');
     allowOnlyOneSelection('#checkbox61, #checkbox62');
     allowOnlyOneSelection('#checkbox63, #checkbox64');
     allowOnlyOneSelection('#checkbox65, #checkbox66');
     allowOnlyOneSelection('#checkbox67, #checkbox68');
     allowOnlyOneSelection('#checkbox69, #checkbox70');
     allowOnlyOneSelection('#checkbox46, #checkbox47, #checkbox48, #checkbox49, #checkbox50, #checkbox51, #checkbox52');
-    
+});
+
     </script>
 
 
@@ -1021,37 +1007,51 @@ function toggleDropdown(dropdownId, checkbox) {
             }
 
             function sendEmail(event) {
-                event.preventDefault();
-                if (!validateForm()) return;
+    event.preventDefault();
+    if (!validateForm()) return;
 
-                let formData = {};
-                inputs.forEach(input => {
-                    formData[input.name] = input.value.trim();
-                });
+    let formData = {};
+    inputs.forEach(input => {
+        formData[input.name] = input.value.trim();
+    });
 
-                let selectedServices = [];
-                checkboxes.forEach(service => {
-                    if (service.checked) selectedServices.push(service.value);
-                });
-                formData["services"] = selectedServices.join(", ");
+    // 🟢 إضافة رمز الدولة إلى البيانات المرسلة
+    let countrySelect = document.getElementById("countrySelect");
+    if (countrySelect) {
+        formData["phonecode"] = countrySelect.value;  // ✅ إضافة رمز الدولة
+    }
 
-                formData["source_page"] = window.location.pathname.split("/").pop() || "Unknown";
+    let selectedServices = [];
+    checkboxes.forEach(service => {
+        if (service.checked) selectedServices.push(service.value);
+    });
+    formData["services"] = selectedServices.join(", ");
 
-                console.log("📤 البيانات المرسلة:", formData);
+    formData["source_page"] = window.location.pathname.split("/").pop() || "Unknown";
 
-                emailjs.send("service_of4e1e9", "template_c3dwche", formData)
-                    .then(function(response) {
-                        console.log("✅ تم الإرسال بنجاح", response);
-                        responseElement.innerHTML = '<div class="alert-success">✅ تم الإرسال بنجاح!</div>';
-                        responseElement.style.display = "block";
-                        setTimeout(() => { responseElement.style.display = "none"; }, 5000);
-                        // ✅ حفظ حالة نجاح الإرسال في localStorage
+    console.log("📤 البيانات المرسلة:", formData);
+
+    emailjs.send("service_of4e1e9", "template_c3dwche", formData)
+        .then(function(response) {
+            console.log("✅ تم الإرسال بنجاح", response);
+            responseElement.innerHTML = '<div class="alert-success">✅ تم الإرسال بنجاح!</div>';
+            responseElement.style.display = "block";
+            setTimeout(() => { responseElement.style.display = "none"; }, 5000);
+
+            // ✅ حفظ حالة نجاح الإرسال في localStorage
             localStorage.setItem("formSubmitted", "true");
 
-// ✅ التوجيه إلى sent.html بعد 2 ثانية
-setTimeout(function () {
-    window.location.href = "sent.html";
-}, 2000);
+            // ✅ التوجيه إلى sent.html بعد 2 ثانية
+            setTimeout(function () {
+                window.location.href = "sent.html";
+            }, 2000);
+        }, function(error) {
+            console.error("❌ فشل الإرسال", error);
+            responseElement.innerHTML = '<div class="alert-danger">❌ فشل الإرسال: ' + error.text + '</div>';
+            responseElement.style.display = "block";
+            setTimeout(() => { responseElement.style.display = "none"; }, 5000);
+        
+
                     }, function(error) {
                         console.error("❌ فشل الإرسال", error);
                         responseElement.innerHTML = '<div class="alert-danger">❌ فشل الإرسال: ' + error.text + '</div>';

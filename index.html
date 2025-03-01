@@ -100,6 +100,7 @@
             align-items: center;
             justify-content: center;
             flex-wrap: wrap;
+            direction: ltr !important; /* يمنع انعكاس النص */
         }
 
         .language-switch {
@@ -125,6 +126,7 @@
             font-weight: bold;
             margin: 0 10px;
             top: 1px;
+            direction: ltr !important; /* يمنع انعكاس النص */
         }
 
         .bottom-header {
@@ -200,13 +202,81 @@
 </head>
 <body>
     <header class="top-header">
-        <div  class="icon-text">EMAIL: info@elitefinancial-eg.com</div>
-        <div  class="icon-text1">MOBILE: +201228310654</div>
-        <div  class="icon-text2">Telephone: +223504766</div>
-        <div class="language-switch">
-            <button class="arabic" onclick="changeLanguage('ar')">العربية</button>
-            <button class="english" onclick="changeLanguage('en')">English</button>
-        </div>
+        <a href="mailto:info@elitefinancial-eg.com" class="icon-text">
+            <i class="fa fa-envelope"></i> info@elitefinancial-eg.com
+        </a>
+        
+        <!-- تأكد من إضافة مكتبة Font Awesome في رأس الصفحة -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+        
+        <a href="tel:+201228310654" class="icon-text1">
+            <i class="fa fa-phone"></i> +201228310654
+        </a>
+        
+        <a href="tel:+223504766" class="icon-text2">
+            <i class="fa fa-phone"></i> +223504766
+        </a>
+        
+        
+        <!-- تأكد من إضافة مكتبة Font Awesome في رأس الصفحة -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+        
+       <div class="language-switch">
+    <button class="lang-btn arabic" onclick="changeLanguage('ar')">العربية</button>
+    <button class="lang-btn english" onclick="changeLanguage('en')">English</button>
+</div>
+
+<style>
+/* تنسيق الحاوية */
+.language-switch {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+/* تنسيق الأزرار */
+.lang-btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    border: 2px solid #007bff;
+    border-radius: 8px;
+    background-color: #fff;
+    color: #007bff;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* تأثير عند تمرير الماوس */
+.lang-btn:hover {
+    background-color: #007bff;
+    color: #fff;
+}
+
+/* تخصيص لون زر العربية */
+.lang-btn.arabic {
+    border-color: #28a745;
+    color: #28a745;
+}
+
+.lang-btn.arabic:hover {
+    background-color: #28a745;
+    color: #fff;
+}
+
+/* تخصيص لون زر الإنجليزية */
+.lang-btn.english {
+    border-color: #ff9800;
+    color: #ff9800;
+}
+
+.lang-btn.english:hover {
+    background-color: #ff9800;
+    color: #fff;
+}
+</style>
+
     </header>
     
     <script>document.addEventListener("DOMContentLoaded", function () {
