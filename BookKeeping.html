@@ -594,12 +594,43 @@ checkboxes.forEach(checkbox => {
             </a>
             
             <a href="https://www.google.com/maps/place/40+Abou+Dawoud+Al+Zaheri,+Al+Mintaqah+as+Sādisah,+Nasr+City,+Cairo+Governorate+4450454/@30.0515246,31.3658325,17z" 
-   target="_blank" 
-   class="address"
-   style="font-size: 14px;">
-   <i class="fa fa-map-marker-alt"></i> 
-   <strong>40 Abu Dawoud Al Zaheri Street, Nasr City, Cairo, Egypt</strong>
-</a>
+            target="_blank" 
+            class="address">
+            <i class="fa fa-map-marker-alt"></i> 
+            <strong>40 Abu Dawoud Al Zaheri Street, Nasr City, Cairo, Egypt</strong>
+         </a>
+         
+         <style>
+            .address {
+                display: inline-flex;
+                align-items: center;
+                font-size: 14px;
+                font-weight: bold;
+                color: #333;
+                text-decoration: none;
+                padding: 8px 12px;
+                border-radius: 5px;
+                transition: all 0.3s ease-in-out;
+            }
+         
+            .address i {
+                margin-right: 4px;
+                color: #d9534f;
+            }
+         
+            .address:hover {
+                background-color: #f8f9fa;
+                color: #d9534f;
+            }
+         
+            /* جعل النص أصغر في الشاشات الصغيرة */
+            @media (max-width: 900px) {
+                .address {
+                    font-size: 11px;
+                    padding: 6px 5px;
+                }
+            }
+         </style>
 
     
     

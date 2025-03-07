@@ -802,31 +802,6 @@ body {
     font-weight: bold;
 }
  
-.address-container {
-    text-align: center;
-    margin-bottom: 50px; /* تقليل المسافة أسفل الخريطة */
-}
-
-.address {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 5px;
-    text-decoration: none;
-    font-size: 16px;
-    color: #ffffff;
-    font-weight: bold;
-    direction: ltr !important;
-}
-
-.address i {
-    color: red;
-    font-size: 18px;
-}
-
-.address:hover {
-    text-decoration: underline;
-}
 
 .map-container {
     width: 90%; /* عرض الخريطة 90% من عرض الشاشة */
