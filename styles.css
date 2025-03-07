@@ -1,3 +1,124 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+header {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 10px;
+}
+
+.top-header {
+    background: #0A2A5E;
+    color: rgb(0, 0, 0);
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    direction: ltr !important; /* يمنع انعكاس النص */
+}
+
+.language-switch {
+    display: flex;
+    gap: 5px;
+    position: absolute;
+    right: 20px;
+}
+
+.language-switch button {
+    padding: 1px 1px;
+    font-size: 12px;
+    border-radius: 1px;
+    cursor: pointer;
+    background-color: #f5f5f5;
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+}
+
+.icon-text, .icon-text1, .icon-text2 {
+    font-size: 16px;
+    color: #ffffff;
+    font-weight: bold;
+    margin: 0 10px;
+    top: 1px;
+    direction: ltr !important; /* يمنع انعكاس النص */
+}
+
+.bottom-header {
+    background: #1032cc17;
+    color: rgb(102, 8, 8);
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px;
+    flex-wrap: wrap;
+}
+
+.logo {
+    max-width: 100%;
+    height: 90px;
+    
+}
+
+.navmenu ul {
+    list-style: none;
+    display: flex;
+    padding: 0;
+    margin: 0;
+    flex-wrap: wrap;
+}
+
+.navmenu ul li {
+    margin: 0 10px;
+}
+
+.navmenu ul li a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+/* استجابة للأجهزة الصغيرة */
+@media (max-width: 768px) {
+    .top-header {
+        flex-direction: column;
+        height: auto;
+        text-align: center;
+    }
+    
+
+    .bottom-header {
+        flex-direction: column;
+        text-align: center;
+}
+
+    .logo {
+        height: 10px;
+    }
+
+    .navmenu ul {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .navmenu ul li {
+        margin: 5px 0;
+    }
+
+    .language-switch {
+        position: relative;
+        right: auto;
+        margin-top: 10px;
+    }
+    
+}
 /* ✅ تنسيق الهيدر */
 .bottom-header {
     display: flex;
@@ -16,6 +137,7 @@
         flex-direction: row-reverse;
     }
 }
+
 
 /* ✅ عند تفعيل اللغة العربية، يتم تغيير الاتجاه بالكامل */
 html[lang="ar"] {
@@ -276,58 +398,64 @@ html[lang="ar"] .navmenu ul {
 }
 
 /* From Uiverse.io by adamgiebl */ 
+#preloader {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: #fff; /* لون الخلفية أثناء التحميل */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    transition: opacity 0.5s ease-out; /* يجعل الاختفاء سلسًا */
+}
+
 .dots-container {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 100%;
-    width: 100%;
-  }
-  
-  .dot {
+}
+
+.dot {
     height: 20px;
     width: 20px;
     margin-right: 10px;
-    border-radius: 10px;
-    background-color: #b3d4fc;
+    border-radius: 50%;
+   
     animation: pulse 1.5s infinite ease-in-out;
-  }
-  
-  .dot:last-child {
+}
+
+.dot:last-child {
     margin-right: 0;
-  }
-  
-  .dot:nth-child(1) {
+}
+
+.dot:nth-child(1) {
     animation-delay: -0.3s;
-  }
-  
-  .dot:nth-child(2) {
+}
+
+.dot:nth-child(2) {
     animation-delay: -0.1s;
-  }
-  
-  .dot:nth-child(3) {
+}
+
+.dot:nth-child(3) {
     animation-delay: 0.1s;
-  }
-  
-  @keyframes pulse {
+}
+
+@keyframes pulse {
     0% {
-      transform: scale(0.8);
-      background-color: #b3d4fc;
-      box-shadow: 0 0 0 0 rgba(178, 212, 252, 0.7);
+        transform: scale(0.8);
+        opacity: 1;
     }
-  
     50% {
-      transform: scale(1.2);
-      background-color: #6793fb;
-      box-shadow: 0 0 0 10px rgba(178, 212, 252, 0);
+        transform: scale(1.2);
+        opacity: 0.6;
     }
-  
     100% {
-      transform: scale(0.8);
-      background-color: #b3d4fc;
-      box-shadow: 0 0 0 0 rgba(178, 212, 252, 0.7);
+        transform: scale(0.8);
+        opacity: 1;
     }
-  }
+}
+
   
  
 
@@ -376,4 +504,483 @@ footer {
     font-size: 14px;
     color: #555;
     text-align: inherit; /* يجعل التغير تلقائيًا مع `body` */
+}
+body {
+    background: #f8f9fa;
+}
+.contact-form {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: auto;
+    margin-top: 1px;
+}
+.form-control {
+    border-radius: 8px;
+    padding-left: 40px;
+}
+.input-group-text {
+    background: transparent;
+    border: none;
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.2rem;
+    color: #6c757d;
+}
+.btn-submit {
+    background: #007bff;
+    color: white;
+    padding: 10px;
+    font-size: 18px;
+    border-radius: 8px;
+    transition: 0.3s;
+    width: 100%;
+}
+.btn-submit:hover {
+    background: #0056b3;
+}
+.alert-message {
+    display: none;
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: bold;
+}
+.alert-success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+.alert-danger {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+.alert-message { margin-top: 10px; font-weight: bold; }
+          .alert-success { color: green; }
+          .alert-danger { color: red; }
+          .address-container {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+    
+        .address {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 5px;
+            text-decoration: none;
+            font-size: 16px;
+            color: #ffffff;
+            font-weight: bold;
+            direction: ltr !important;
+        }
+    
+        .contact-container, .address-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            text-align: center;
+        }
+    
+        .icon-text, .icon-text1, .icon-text2, .address {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 16px;
+            font-weight: bold;
+            text-decoration: none;
+            color: #ffffff;
+            direction: ltr !important;
+            white-space: nowrap;
+        }
+    
+        .icon-text i, .icon-text1 i, .icon-text2 i, .address i {
+            font-size: 18px;
+        }
+    
+        .icon-text:hover, .icon-text1:hover, .icon-text2:hover, .address:hover {
+            text-decoration: underline;
+        }
+    
+        .address i {
+            color: red;
+        }
+    
+        /* تعديل التنسيق على الهاتف فقط */
+        @media (max-width: 768px) {
+            .contact-container, .address-container {
+                flex-direction: column; /* تكديس العناصر فوق بعضها */
+                gap: 10px;
+            }
+        }
+        #about {
+            margin-bottom: -100px; /* تقليل المسافة أسفل قسم "About Us" */
+          }
+          
+          #services {
+            margin-top: 1px; /* تقليل المسافة أعلى قسم "Services" */
+          }
+          
+          /* تنسيق الحاوية */
+.language-switch {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+/* تنسيق الأزرار */
+.lang-btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    border: 2px solid #007bff;
+    border-radius: 8px;
+    background-color: #fff;
+    color: #007bff;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* تأثير عند تمرير الماوس */
+.lang-btn:hover {
+    background-color: #007bff;
+    color: #fff;
+}
+
+/* تخصيص لون زر العربية */
+.lang-btn.arabic {
+    border-color: #28a745;
+    color: #28a745;
+}
+
+.lang-btn.arabic:hover {
+    background-color: #28a745;
+    color: #fff;
+}
+
+/* تخصيص لون زر الإنجليزية */
+.lang-btn.english {
+    border-color: #ff9800;
+    color: #ff9800;
+}
+
+.lang-btn.english:hover {
+    background-color: #ff9800;
+    color: #fff;
+}
+.phone-input-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.custom-dropdown {
+    position: relative;
+    width: 200px;
+}
+
+.dropdown-btn {
+    width: 100%;
+    background: white;
+    border: 1px solid #ccc;
+    padding: 8px;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    border-radius: 5px;
+    position: relative;
+    z-index: 10;
+}
+
+.dropdown-btn img {
+    width: 20px;
+    height: 14px;
+    margin-right: 10px;
+}
+
+.dropdown-list {
+    position: absolute;
+    width: 100%;
+    background: white;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    display: none;
+    max-height: 200px;
+    overflow-y: auto;
+    z-index: 100;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.dropdown-item {
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.dropdown-item:hover {
+    background: #f0f0f0;
+}
+
+.dropdown-item img {
+    width: 20px;
+    height: 14px;
+    margin-right: 10px;
+}
+
+#phoneInput {
+    flex: 1;
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+.alert-message {
+    margin-top: 10px;
+    font-weight: bold;
+    display: none; /* إخفاء الرسالة مبدئيًا */
+    text-align: center;
+}
+.alert-success { color: green; }
+.alert-danger { color: red; }
+/* From Uiverse.io by mrtqzbek11 */ 
+/* تصميم زر Request Price فقط */
+.request-price-btn {
+    width: 165px;
+    height: 62px;
+    cursor: pointer;
+    color: #fff;
+    font-weight: bold;
+    font-size: 20px;
+    border-radius: 1rem;
+    border: none;
+    position: relative;
+    background: #0A2A5E;
+    transition: 0.1s;
+  }
+  
+  .request-price-btn::after {
+    content: '';
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(circle farthest-corner at 10% 20%, rgba(255,94,247,1) 17.8%, rgba(2,245,255,1) 100.2%);
+    filter: blur(15px);
+    z-index: -1;
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+  
+  .request-price-btn:active {
+    transform: scale(0.9) rotate(3deg);
+    background: radial-gradient(circle farthest-corner at 10% 20%, rgba(255,94,247,1) 17.8%, rgba(2,245,255,1) 100.2%);
+    transition: 0.5s;
+  }
+  .input-error {
+    border: 2px solid red !important;
+    background-color: #ffdddd;
+}
+
+.checkbox-error {
+    border: 2px solid red !important;
+    background-color: #ffdddd;
+}
+
+.label-error {
+    color: red !important;
+    font-weight: bold;
+}
+ 
+.address-container {
+    text-align: center;
+    margin-bottom: 50px; /* تقليل المسافة أسفل الخريطة */
+}
+
+.address {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    text-decoration: none;
+    font-size: 16px;
+    color: #ffffff;
+    font-weight: bold;
+    direction: ltr !important;
+}
+
+.address i {
+    color: red;
+    font-size: 18px;
+}
+
+.address:hover {
+    text-decoration: underline;
+}
+
+.map-container {
+    width: 90%; /* عرض الخريطة 90% من عرض الشاشة */
+    max-width: 1000px; /* الحد الأقصى للحجم على الكمبيوتر */
+    height: 500px; /* تكبير الخريطة */
+    margin: 0 auto; /* توسيط الخريطة */
+}
+
+.map-container iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+/* استجابة للهاتف */
+@media (max-width: 768px) {
+    .map-container {
+        width: 100%; /* عرض كامل على الهاتف */
+        height: 400px; /* ارتفاع مناسب للهاتف */
+    }
+}
+
+.alert-message {
+    margin-top: 10px;
+    font-weight: bold;
+    display: none; /* إخفاء الرسالة مبدئيًا */
+    text-align: center;
+}
+.alert-success { color: green; }
+.alert-danger { color: red; }
+/* From Uiverse.io by mrtqzbek11 */ 
+/* تصميم زر Request Price فقط */
+.request-price-btn {
+    width: 165px;
+    height: 62px;
+    cursor: pointer;
+    color: #fff;
+    font-weight: bold;
+    font-size: 20px;
+    border-radius: 1rem;
+    border: none;
+    position: relative;
+    background: #0A2A5E;
+    transition: 0.1s;
+  }
+  
+  .request-price-btn::after {
+    content: '';
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(circle farthest-corner at 10% 20%, rgba(255,94,247,1) 17.8%, rgba(2,245,255,1) 100.2%);
+    filter: blur(15px);
+    z-index: -1;
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+  
+  .request-price-btn:active {
+    transform: scale(0.9) rotate(3deg);
+    background: radial-gradient(circle farthest-corner at 10% 20%, rgba(255,94,247,1) 17.8%, rgba(2,245,255,1) 100.2%);
+    transition: 0.5s;
+  }
+  .input-error {
+    border: 2px solid red !important;
+    background-color: #ffdddd;
+}
+
+.checkbox-error {
+    border: 2px solid red !important;
+    background-color: #ffdddd;
+    padding: 5px;
+    border-radius: 5px;
+    
+}
+ 
+.alert-message {
+    margin-top: 10px;
+    font-weight: bold;
+    display: none;
+    text-align: center;
+}
+.alert-success { color: green; }
+.alert-danger { color: red; }
+
+.request-price-btn {
+    width: 165px;
+    height: 62px;
+    cursor: pointer;
+    color: #fff;
+    font-weight: bold;
+    font-size: 20px;
+    border-radius: 1rem;
+    border: none;
+    position: relative;
+    background: #0A2A5E;
+    transition: 0.1s;
+}
+
+.request-price-btn::after {
+    content: '';
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(circle farthest-corner at 10% 20%, rgba(255,94,247,1) 17.8%, rgba(2,245,255,1) 100.2%);
+    filter: blur(15px);
+    z-index: -1;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.request-price-btn:active {
+    transform: scale(0.9) rotate(3deg);
+    background: radial-gradient(circle farthest-corner at 10% 20%, rgba(255,94,247,1) 17.8%, rgba(2,245,255,1) 100.2%);
+    transition: 0.5s;
+}
+
+.input-error {
+    border: 2px solid red !important;
+    background-color: #ffdddd;
+}
+
+.checkbox-error {
+    border: 2px solid red !important;
+    background-color: #ffdddd;
+    padding: 5px;
+    border-radius: 5px;
+}
+html, body {
+    height: 100%; /* يجعل الصفحة تأخذ طول الشاشة بالكامل */
+    margin: 0; /* حذف الهوامش */
+    display: flex;
+    flex-direction: column; /* يجعل العناصر تصطف عمودياً */
+}
+
+.container {
+    flex: 1; /* يجعل المحتوى يدفع الفوتر للأسفل */
+}
+
+.footer {
+    background-color: #000000; /* لون الخلفية */
+    color: white; /* لون النص */
+    text-align: center; /* توسيط النص */
+    padding: 20px; /* مسافات داخلية للفوتر */
+    width: 100%; /* عرض الفوتر بالكامل */
+}
+
+.social-links a {
+    margin: 0 10px; /* تباعد بين الأيقونات */
+    color: white;
+    font-size: 24px; /* حجم الأيقونات */
+    text-decoration: none; /* إزالة الخط تحت الروابط */
+}
+
+.social-links a:hover {
+    color: #f39c12; /* لون عند مرور الماوس */
 }

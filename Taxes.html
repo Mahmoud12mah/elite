@@ -61,133 +61,7 @@
 
 
    
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: Arial, sans-serif;
-        }
-        
-        header {
-            width: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            padding: 10px;
-        }
-        
-        .top-header {
-            background: #0A2A5E;
-            color: rgb(0, 0, 0);
-            height: 40px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-wrap: wrap;
-            direction: ltr !important; /* يمنع انعكاس النص */
-        }
-
-        .language-switch {
-            display: flex;
-            gap: 5px;
-            position: absolute;
-            right: 20px;
-        }
-
-        .language-switch button {
-            padding: 1px 1px;
-            font-size: 12px;
-            border-radius: 1px;
-            cursor: pointer;
-            background-color: #f5f5f5;
-            color: rgb(0, 0, 0);
-            font-weight: bold;
-        }
-        
-        .icon-text, .icon-text1, .icon-text2 {
-            font-size: 16px;
-            color: #ffffff;
-            font-weight: bold;
-            margin: 0 10px;
-            top: 1px;
-            direction: ltr !important; /* يمنع انعكاس النص */
-        }
-
-        .bottom-header {
-            background: #1032cc17;
-            color: rgb(102, 8, 8);
-            height: auto;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 15px;
-            flex-wrap: wrap;
-        }
-
-        .logo {
-            max-width: 100%;
-            height: 90px;
-            
-        }
-
-        .navmenu ul {
-            list-style: none;
-            display: flex;
-            padding: 0;
-            margin: 0;
-            flex-wrap: wrap;
-        }
-
-        .navmenu ul li {
-            margin: 0 10px;
-        }
-
-        .navmenu ul li a {
-            text-decoration: none;
-            color: black;
-            font-weight: bold;
-        }
-
-        /* استجابة للأجهزة الصغيرة */
-        @media (max-width: 768px) {
-            .top-header {
-                flex-direction: column;
-                height: auto;
-                text-align: center;
-            }
-            
-
-            .bottom-header {
-                flex-direction: column;
-                text-align: center;
-        }
-
-            .logo {
-                height: 10px;
-            }
-
-            .navmenu ul {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            .navmenu ul li {
-                margin: 5px 0;
-            }
-
-            .language-switch {
-                position: relative;
-                right: auto;
-                margin-top: 10px;
-            }
-            
-        }
-    </style>
-</head>
-<body>
     <header class="top-header">
         <a href="mailto:info@elitefinancial-eg.com" class="icon-text">
             <i class="fa fa-envelope"></i> info@elitefinancial-eg.com
@@ -211,67 +85,11 @@
     <button class="lang-btn arabic" onclick="changeLanguage('ar')">العربية</button>
     <button class="lang-btn english" onclick="changeLanguage('en')">English</button>
 </div>
-
-<style>
-/* تنسيق الحاوية */
-.language-switch {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    margin-top: 20px;
-}
-
-/* تنسيق الأزرار */
-.lang-btn {
-    padding: 10px 20px;
-    font-size: 16px;
-    font-weight: bold;
-    border: 2px solid #007bff;
-    border-radius: 8px;
-    background-color: #fff;
-    color: #007bff;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-/* تأثير عند تمرير الماوس */
-.lang-btn:hover {
-    background-color: #007bff;
-    color: #fff;
-}
-
-/* تخصيص لون زر العربية */
-.lang-btn.arabic {
-    border-color: #28a745;
-    color: #28a745;
-}
-
-.lang-btn.arabic:hover {
-    background-color: #28a745;
-    color: #fff;
-}
-
-/* تخصيص لون زر الإنجليزية */
-.lang-btn.english {
-    border-color: #ff9800;
-    color: #ff9800;
-}
-
-.lang-btn.english:hover {
-    background-color: #ff9800;
-    color: #fff;
-}
-</style>
-
     </header>
-    
-    
-
-
-    
-    
-    
+ 
     <link rel="stylesheet" href="styles.css">
+  <script src="translation.js"></script>
+
 
 
 
@@ -279,7 +97,6 @@
         <a href="index.html">
             <img src="assets/img/logo.png" class="logo" alt="Logo">
         </a>
-        <h1 class="sitename" style="font-weight: bold"></h1>
     
         <!-- زر القائمة (Checkbox مخفي) -->
         <input type="checkbox" id="menu-toggle" class="menu-checkbox">
@@ -303,9 +120,7 @@
                 <li><a href="audit.html" data-lang="ExternalAudit" style="font-weight: bold;">External Audit</a></li>
               <li><a href="CompanyIncorporation.html" data-lang="CompanyIncorporation" style="font-weight: bold;">Company Incorporation</a></li>
           </ul>
-        </li>
-        
-              </li>
+       
               <li><a id="Services" href="#services" data-lang="services1">Services</a></li>
                 <li><a id="Contact" href="#contact" data-lang="contact1">Contact Us</a></li>
             </ul>
@@ -316,7 +131,7 @@
 
 </p>
 
-<div id="content" dir="rtl" class="container d-flex flex-column align-items-center text-center"></div>
+<div  dir="rtl" class="container d-flex flex-column align-items-center text-center"></div>
         <h2  style="font-size: 30px; font-weight: bold; text-align: center; background-color: #0A2A5E; color: #ffffff;" data-aos="fade-up" data-aos-delay="100" data-lang="request">Request a price for Tax Services</h2>
 
 <p>
@@ -347,84 +162,102 @@
         <div class="col-md-6">
             <input style="font-weight: bold" type="text" name="email" class="form-control" placeholder="Email*" data-lang="youremail" required="">
         </div>
+</form>
         
           
         <p>
 
         </p>
 
-        <!DOCTYPE html>
-<html lang="ar">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>إدخال رقم الهاتف مع اختيار الدولة</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.4.6/css/flag-icon.min.css">
-    <style>
-        .phone-input-container {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        .country-select {
-            height: 38px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            padding: 5px;
-        }
-    </style>
-</head>
-<body>
-
-    <div class="col-md-6">
-        <div class="phone-input-container " name="phonecode">
-            <select id="countrySelect" class="country-select" onchange="updatePhoneCode()">
-                <option value="+20" data-flag="eg">🇪🇬 +20 (Egypt)</option>
-                <option value="+1" data-flag="us">🇺🇸 +1 (USA)</option>
-                <option value="+44" data-flag="gb">🇬🇧 +44 (UK)</option>
-                <option value="+33" data-flag="fr">🇫🇷 +33 (France)</option>
-                <option value="+49" data-flag="de">🇩🇪 +49 (Germany)</option>
-                <option value="+91" data-flag="in">🇮🇳 +91 (India)</option>
-                <option value="+81" data-flag="jp">🇯🇵 +81 (Japan)</option>
-            </select>
-            <input style="font-weight: bold" class="form-control" id="phoneInput" name="mobile" placeholder="Mobile*" data-lang="yourmobile" required="">
+    
+        
+        <div class="col-md-6">
+            <div class="phone-input-container">
+                <div class="custom-dropdown">
+                    <div class="dropdown-btn" id="dropdownButton">
+                        <img id="selectedFlag" src="https://flagcdn.com/w40/eg.png" alt="Egypt Flag"> 
+                        <span id="selectedCountry">+20 (Egypt)</span>
+                    </div>
+                    <div class="dropdown-list" id="dropdownList">
+                        <div class="dropdown-item" data-code="+20" data-country="Egypt" data-flag="eg">
+                            <img src="https://flagcdn.com/w40/eg.png" alt="Egypt Flag"> +20 (Egypt)
+                        </div>
+                        <div class="dropdown-item" data-code="+1" data-country="USA" data-flag="us">
+                            <img src="https://flagcdn.com/w40/us.png" alt="USA Flag"> +1 (USA)
+                        </div>
+                        <div class="dropdown-item" data-code="+44" data-country="UK" data-flag="gb">
+                            <img src="https://flagcdn.com/w40/gb.png" alt="UK Flag"> +44 (UK)
+                        </div>
+                        <div class="dropdown-item" data-code="+33" data-country="France" data-flag="fr">
+                            <img src="https://flagcdn.com/w40/fr.png" alt="France Flag"> +33 (France)
+                        </div>
+                        <div class="dropdown-item" data-code="+49" data-country="Germany" data-flag="de">
+                            <img src="https://flagcdn.com/w40/de.png" alt="Germany Flag"> +49 (Germany)
+                        </div>
+                        <div class="dropdown-item" data-code="+91" data-country="India" data-flag="in">
+                            <img src="https://flagcdn.com/w40/in.png" alt="India Flag"> +91 (India)
+                        </div>
+                        <div class="dropdown-item" data-code="+81" data-country="Japan" data-flag="jp">
+                            <img src="https://flagcdn.com/w40/jp.png" alt="Japan Flag"> +81 (Japan)
+                        </div>
+                    </div>
+                </div>
+                <input data-lang="yourmobile" type="number" class="form-control" id="phoneInput" name="mobile" placeholder="Mobile*" required>
+            </div>
         </div>
-    </div>
-
-    <script>
-        function updatePhoneCode() {
-            var select = document.getElementById("countrySelect");
-            var phoneInput = document.getElementById("phoneInput");
-            phoneInput.value = select.value;
-        }
-    </script>
-
+        
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                let dropdownButton = document.getElementById("dropdownButton");
+                let dropdownList = document.getElementById("dropdownList");
+                let phoneInput = document.getElementById("phoneInput");
+        
+                // عند الضغط على الزر، تظهر القائمة أو تختفي
+                dropdownButton.addEventListener("click", function (event) {
+                    event.stopPropagation();
+                    dropdownList.style.display = dropdownList.style.display === "block" ? "none" : "block";
+                });
+        
+                // عند اختيار دولة، يتم تحديث الرقم والرمز وإغلاق القائمة
+                dropdownList.addEventListener("click", function (event) {
+                    let selectedItem = event.target.closest(".dropdown-item");
+                    if (!selectedItem) return;
+        
+                    let code = selectedItem.getAttribute("data-code");
+                    let country = selectedItem.getAttribute("data-country");
+                    let flagCode = selectedItem.getAttribute("data-flag");
+        
+                    document.getElementById("selectedCountry").innerText = `${code} (${country})`;
+                    document.getElementById("selectedFlag").src = `https://flagcdn.com/w40/${flagCode}.png`;
+                    phoneInput.value = code; 
+        
+                    dropdownList.style.display = "none";
+                });
+        
+                // إغلاق القائمة عند النقر خارجها
+                document.addEventListener("click", function (event) {
+                    if (!event.target.closest(".custom-dropdown")) {
+                        dropdownList.style.display = "none";
+                    }
+                });
+            });
+        </script>
+        
 
 
         
 
           
 
-      </div>
-      
-    </form>
+     
   <p>
 
   </p>
 
   
-  <h2 data-lang="TaxServiceType" style="font-size: 30px; font-weight: bold;" data-aos="fade-up" data-aos-delay="100" data-lang="Tax" >Tax Service Type</h2>
+  <h2 data-lang="TaxServiceType" style="font-size: 30px; font-weight: bold;" data-aos="fade-up" data-aos-delay="100" >Tax Service Type</h2>
 
-  
-    
-     
-
-
-    
-</head>
-<body>
-
-    <h2></h2>
+    <p></p>
 
     <!-- Checkbox للتحكم في القائمة الأولى -->
 <label class="checkbox" for="checkbox1">
@@ -470,8 +303,9 @@ function toggleDropdown(dropdownId, checkbox) {
     
     <!-- القائمة الثانية -->
     <div id="dropdown2" class="dropdown1" style="display: none;">
-        <div id="content" dir="rtl" class="container d-flex flex-column align-items-center text-center"></div>
-        <h2 data-lang="RequestedServices" style="font-size: 30px; font-weight: bold;" id="welcome-text" data-aos="fade-up" data-aos-delay="100">Requested Services</h2>
+        <div id="content-unique" dir="rtl" class="container d-flex flex-column align-items-center text-center"></div>
+
+        <h2 data-lang="RequestedServices" style="font-size: 30px; font-weight: bold;"  data-aos="fade-up" data-aos-delay="100">Requested Services</h2>
         <p>
 
         </p>
@@ -516,8 +350,9 @@ function toggleDropdown(dropdownId, checkbox) {
        
         
 
-        <div id="content" dir="rtl" class="container d-flex flex-column align-items-center text-center"></div>
-        <h2 data-lang="Companylocation" style="font-size: 30px; font-weight: bold;" id="welcome-text" data-aos="fade-up" data-aos-delay="100">Company location</h2>
+        <div dir="rtl" class="container d-flex flex-column align-items-center text-center"></div>
+
+        <h2 data-lang="Companylocation" style="font-size: 30px; font-weight: bold;"  data-aos="fade-up" data-aos-delay="100">Company location</h2>
         <p>
 
         </p>
@@ -541,9 +376,10 @@ function toggleDropdown(dropdownId, checkbox) {
 
         </p>
 
-        <div id="content" dir="rtl" class="container d-flex flex-column align-items-center text-center"></div>
+        <div dir="rtl" class="container d-flex flex-column align-items-center text-center"></div>
+
    
-        <h2 data-lang="Legalentitytype" style="font-size: 30px; font-weight: bold;" id="welcome-text" data-aos="fade-up" data-aos-delay="100">Legal Entity Type</h2>
+        <h2 data-lang="Legalentitytype" style="font-size: 30px; font-weight: bold;"  data-aos="fade-up" data-aos-delay="100">Legal Entity Type</h2>
     
         <label class="checkbox" for="checkbox49">
             <input type="checkbox" name="services[]" value="Sole Proprietorship Incorporation" id="checkbox49">
@@ -596,7 +432,7 @@ function toggleDropdown(dropdownId, checkbox) {
     
     
     
-        <div id="content" dir="rtl" class="container d-flex flex-column align-items-center text-center"></div>
+        <div dir="rtl" class="container d-flex flex-column align-items-center text-center"></div>
        
         <h2 data-lang="Averageannualrevenue" style="font-size: 30px; font-weight: bold;" data-aos="fade-up" data-aos-delay="100">Average Annual Revenue (over the last three years)</h2>
     
@@ -649,9 +485,9 @@ function toggleDropdown(dropdownId, checkbox) {
             
         </p>
     
-        <div id="content" dir="rtl" class="container d-flex flex-column align-items-center text-center"></div>
+        <div dir="rtl" class="container d-flex flex-column align-items-center text-center"></div>
        
-        <h2 data-lang="Averagenumberofmonthlysalesinvoices" style="font-size: 30px; font-weight: bold;" id="welcome-text" data-aos="fade-up" data-aos-delay="100">Average number of monthly sales invoices</h2>
+        <h2 data-lang="Averagenumberofmonthlysalesinvoices" style="font-size: 30px; font-weight: bold;"  data-aos="fade-up" data-aos-delay="100">Average number of monthly sales invoices</h2>
     
         <label class="checkbox" for="checkbox61">
             <input type="checkbox" name="services[]" value="Lower Than 10" id="checkbox61">
@@ -702,9 +538,9 @@ function toggleDropdown(dropdownId, checkbox) {
             
         </p>
 
-        <div id="content" dir="rtl" class="container d-flex flex-column align-items-center text-center"></div>
+        <div dir="rtl" class="container d-flex flex-column align-items-center text-center"></div>
    
-        <h2 data-lang="Theaveragenumberofmonthlypurchaseinvoices" style="font-size: 30px; font-weight: bold;" id="welcome-text" data-aos="fade-up" data-aos-delay="100">The average number of monthly purchase invoices</h2>
+        <h2 data-lang="Theaveragenumberofmonthlypurchaseinvoices" style="font-size: 30px; font-weight: bold;"  data-aos="fade-up" data-aos-delay="100">The average number of monthly purchase invoices</h2>
     
         <label class="checkbox" for="checkbox67">
             <input type="checkbox" name="services[]" value="Lower Than 10" id="checkbox67">
@@ -755,9 +591,9 @@ function toggleDropdown(dropdownId, checkbox) {
             
         </p>
     
-        <div id="content" dir="rtl" class="container d-flex flex-column align-items-center text-center"></div>
+        <div dir="rtl" class="container d-flex flex-column align-items-center text-center"></div>
        
-        <h2 data-lang="Numberofemployees" style="font-size: 30px; font-weight: bold;" id="welcome-text" data-aos="fade-up" data-aos-delay="100">Number of employees</h2>
+        <h2 data-lang="Numberofemployees" style="font-size: 30px; font-weight: bold;"  data-aos="fade-up" data-aos-delay="100">Number of employees</h2>
     
         <label class="checkbox" for="checkbox73">
             <input type="checkbox" name="services[]" value="Lower Than 10" id="checkbox73">
@@ -808,9 +644,9 @@ function toggleDropdown(dropdownId, checkbox) {
             
         </p>
     
-        <div id="content" dir="rtl" class="container d-flex flex-column align-items-center text-center"></div>
+        <div dir="rtl" class="container d-flex flex-column align-items-center text-center"></div>
        
-        <h2 data-lang="Arethereanytaxcasesfiledagainstthecompany" style="font-size: 30px; font-weight: bold;" id="welcome-text" data-aos="fade-up" data-aos-delay="100">Are there any tax cases filed against the company?
+        <h2 data-lang="Arethereanytaxcasesfiledagainstthecompany" style="font-size: 30px; font-weight: bold;"  data-aos="fade-up" data-aos-delay="100">Are there any tax cases filed against the company?
         </h2>
     
         <label class="checkbox" for="checkbox79">
@@ -830,9 +666,9 @@ function toggleDropdown(dropdownId, checkbox) {
     
         </p>
     
-        <div id="content" dir="rtl" class="container d-flex flex-column align-items-center text-center"></div>
+        <div dir="rtl" class="container d-flex flex-column align-items-center text-center"></div>
        
-        <h2 data-lang="Doesthecompanyhavearegularaccountingsoftware" style="font-size: 30px; font-weight: bold;" id="welcome-text" data-aos="fade-up" data-aos-delay="100">Does the company have a regular accounting software?</h2>
+        <h2 data-lang="Doesthecompanyhavearegularaccountingsoftware" style="font-size: 30px; font-weight: bold;"  data-aos="fade-up" data-aos-delay="100">Does the company have a regular accounting software?</h2>
     
         <label class="checkbox" for="checkbox81">
             <input type="checkbox" name="services[]" value="Yes" id="checkbox81">
@@ -875,8 +711,8 @@ function toggleDropdown(dropdownId, checkbox) {
 
 <!-- القائمة المنسدلة (محفية افتراضيًا) -->
 <div id="dropdown1" class="dropdown1" style="display: none;">
-    <div id="content" dir="rtl" class="container d-flex flex-column align-items-center text-center"></div>
-    <h2 data-lang="RequestedServices" style="font-size: 30px; font-weight: bold;" id="welcome-text" data-aos="fade-up" data-aos-delay="100">Requested Services</h2>
+    <div dir="rtl" class="container d-flex flex-column align-items-center text-center"></div>
+    <h2 data-lang="RequestedServices" style="font-size: 30px; font-weight: bold;"  data-aos="fade-up" data-aos-delay="100">Requested Services</h2>
 
     <label class="checkbox" for="checkbox3">
         <input type="checkbox" name="services[]" value="VAT Inspection" id="checkbox3" onclick="toggleDropdown('dropdown3', this)">
@@ -919,7 +755,7 @@ function toggleDropdown(dropdownId, checkbox) {
 
     </p>
 
-    <div id="content" dir="rtl" class="container d-flex flex-column align-items-center text-center"></div>
+    <div dir="rtl" class="container d-flex flex-column align-items-center text-center"></div>
    
     <form method="POST" action="send_email.php" class="php-email-form">
         <h2 data-lang="InspectionYears" style="font-size: 30px; font-weight: bold;" data-aos="fade-up" data-aos-delay="100">
@@ -932,7 +768,7 @@ function toggleDropdown(dropdownId, checkbox) {
 
     </p>
 
-    <div id="content" dir="rtl" class="container d-flex flex-column align-items-center text-center"></div>
+    <div dir="rtl" class="container d-flex flex-column align-items-center text-center"></div>
    
     <h2 data-lang="Legalentitytype" style="font-size: 30px; font-weight: bold;" data-aos="fade-up" data-aos-delay="100">Legal entity type</h2>
 
@@ -985,9 +821,10 @@ function toggleDropdown(dropdownId, checkbox) {
 
     </p>
 
-    <div id="content" dir="rtl" class="container d-flex flex-column align-items-center text-center"></div>
+   <div dir="rtl" class="container d-flex flex-column align-items-center text-center"></div>
+
    
-    <h2 data-lang="Averageannualrevenue" style="font-size: 30px; font-weight: bold;" id="welcome-text" data-aos="fade-up" data-aos-delay="100">Average annual revenue (over the last three years)</h2>
+    <h2 data-lang="Averageannualrevenue" style="font-size: 30px; font-weight: bold;"  data-aos="fade-up" data-aos-delay="100">Average annual revenue (over the last three years)</h2>
 
     <label class="checkbox" for="checkbox14">
         <input type="checkbox" name="services[]" value="Less Than a Million Pounds" id="checkbox14">
@@ -1038,9 +875,10 @@ function toggleDropdown(dropdownId, checkbox) {
         
     </p>
 
-    <div id="content" dir="rtl" class="container d-flex flex-column align-items-center text-center"></div>
+   <div dir="rtl" class="container d-flex flex-column align-items-center text-center"></div>
+
    
-    <h2 data-lang="Averagenumberofmonthlysalesinvoices" style="font-size: 30px; font-weight: bold;" id="welcome-text" data-aos="fade-up" data-aos-delay="100">Average number of monthly sales invoices</h2>
+    <h2 data-lang="Averagenumberofmonthlysalesinvoices" style="font-size: 30px; font-weight: bold;"  data-aos="fade-up" data-aos-delay="100">Average number of monthly sales invoices</h2>
 
     <label class="checkbox" for="checkbox20">
         <input type="checkbox" name="services[]" value="Lower Then 10" id="checkbox20">
@@ -1091,9 +929,10 @@ function toggleDropdown(dropdownId, checkbox) {
         
     </p>
 
-    <div id="content" dir="rtl" class="container d-flex flex-column align-items-center text-center"></div>
+   <div dir="rtl" class="container d-flex flex-column align-items-center text-center"></div>
+
    
-    <h2 data-lang="Theaveragenumberofmonthlypurchaseinvoices" style="font-size: 30px; font-weight: bold;" id="welcome-text" data-aos="fade-up" data-aos-delay="100">The average number of monthly purchase invoices</h2>
+    <h2 data-lang="Theaveragenumberofmonthlypurchaseinvoices" style="font-size: 30px; font-weight: bold;"  data-aos="fade-up" data-aos-delay="100">The average number of monthly purchase invoices</h2>
 
     <label class="checkbox" for="checkbox26">
         <input type="checkbox" name="services[]" value="Lower Then 10" id="checkbox26">
@@ -1144,9 +983,10 @@ function toggleDropdown(dropdownId, checkbox) {
         
     </p>
 
-    <div id="content" dir="rtl" class="container d-flex flex-column align-items-center text-center"></div>
+   <div dir="rtl" class="container d-flex flex-column align-items-center text-center"></div>
+
    
-    <h2 data-lang="Numberofemployees" style="font-size: 30px; font-weight: bold;" id="welcome-text" data-aos="fade-up" data-aos-delay="100">Number of employees</h2>
+    <h2 data-lang="Numberofemployees" style="font-size: 30px; font-weight: bold;"  data-aos="fade-up" data-aos-delay="100">Number of employees</h2>
 
     <label class="checkbox" for="checkbox32">
         <input type="checkbox" name="services[]" value="Lower Then 10" id="checkbox32">
@@ -1197,9 +1037,10 @@ function toggleDropdown(dropdownId, checkbox) {
         
     </p>
 
-    <div id="content" dir="rtl" class="container d-flex flex-column align-items-center text-center"></div>
+   <div dir="rtl" class="container d-flex flex-column align-items-center text-center"></div>
+
    
-    <h2 data-lang="Arethereanytaxcasesfiledagainstthecompany" style="font-size: 30px; font-weight: bold;" id="welcome-text" data-aos="fade-up" data-aos-delay="100">Are there any tax cases filed against the company?
+    <h2 data-lang="Arethereanytaxcasesfiledagainstthecompany" style="font-size: 30px; font-weight: bold;"  data-aos="fade-up" data-aos-delay="100">Are there any tax cases filed against the company?
     </h2>
 
     <label class="checkbox" for="checkbox38">
@@ -1219,9 +1060,10 @@ function toggleDropdown(dropdownId, checkbox) {
 
     </p>
 
-    <div id="content" dir="rtl" class="container d-flex flex-column align-items-center text-center"></div>
+   <div dir="rtl" class="container d-flex flex-column align-items-center text-center"></div>
+
    
-    <h2 data-lang="Doesthecompanyhavearegularaccountingsoftware" style="font-size: 30px; font-weight: bold;" id="welcome-text" data-aos="fade-up" data-aos-delay="100">Does the company have a regular accounting software?</h2>
+    <h2 data-lang="Doesthecompanyhavearegularaccountingsoftware" style="font-size: 30px; font-weight: bold;"  data-aos="fade-up" data-aos-delay="100">Does the company have a regular accounting software?</h2>
 
     <label class="checkbox" for="checkbox40">
         <input type="checkbox" name="services[]" value="Yes" id="checkbox40">
@@ -1248,7 +1090,7 @@ function toggleDropdown(dropdownId, checkbox) {
         
 
 
-    </p>
+    
     
 
 
@@ -1327,87 +1169,12 @@ function toggleDropdown(dropdownId, checkbox) {
     </script>
 
 
+ 
 
-
-
-    
-    
-    
-    
-    
-
-
-
-
-
-
-</body>
-</html>
-    
-    
-            
-            
-            
-<!DOCTYPE html>
-<html lang="ar">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>طلب السعر - EmailJS</title>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
-    <style>
-        .alert-message {
-            margin-top: 10px;
-            font-weight: bold;
-            display: none; /* إخفاء الرسالة مبدئيًا */
-            text-align: center;
-        }
-        .alert-success { color: green; }
-        .alert-danger { color: red; }
-        
-        
-/* From Uiverse.io by mrtqzbek11 */ 
-/* تصميم زر Request Price فقط */
-.request-price-btn {
-  width: 165px;
-  height: 62px;
-  cursor: pointer;
-  color: #fff;
-  font-weight: bold;
-  font-size: 20px;
-  border-radius: 1rem;
-  border: none;
-  position: relative;
-  background: #0A2A5E;
-  transition: 0.1s;
-}
-
-.request-price-btn::after {
-  content: '';
-  width: 100%;
-  height: 100%;
-  background-image: radial-gradient(circle farthest-corner at 10% 20%, rgba(255,94,247,1) 17.8%, rgba(2,245,255,1) 100.2%);
-  filter: blur(15px);
-  z-index: -1;
-  position: absolute;
-  left: 0;
-  top: 0;
-}
-
-.request-price-btn:active {
-  transform: scale(0.9) rotate(3deg);
-  background: radial-gradient(circle farthest-corner at 10% 20%, rgba(255,94,247,1) 17.8%, rgba(2,245,255,1) 100.2%);
-  transition: 0.5s;
-}
-
-</style>
-</head>
-<body>
-
-   
-            
+  
 
             <!-- جميع الحقول والإدخالات هنا -->
 
@@ -1415,9 +1182,8 @@ function toggleDropdown(dropdownId, checkbox) {
                 <button data-lang="RequestPrice" id="requestPrice" class="request-price-btn" type="button">Request Price</button>
                 <!-- الرسالة ستظهر مباشرة أسفل الزر -->
                 <div id="responseMessage" class="alert-message"></div>
-                <input type="hidden" id="sourcePage" name="source_page" value="Company">
+                <input type="hidden" name="source_page" value="Company">
             </div>
-        </form>
     </div>
 
     <script>
@@ -1491,11 +1257,13 @@ function toggleDropdown(dropdownId, checkbox) {
             data[key] = value;
         });
 
-        // 🔹 إضافة رمز الدولة المحدد إلى البيانات المرسلة
-        let countrySelect = document.getElementById("countrySelect");
-        if (countrySelect) {
-            data["phonecode"] = countrySelect.value;
-        }
+        // ✅ جمع كود الدولة مع رقم الهاتف فقط إذا كان مدخلًا
+    let phoneNumber = phoneInput.value.trim();
+    let countryCode = document.getElementById("selectedCountry").textContent.split(" ")[0];
+    
+    if (phoneNumber) {
+        data["mobile"] = countryCode + phoneNumber;
+    }
 
         // 🔹 إضافة عدد سنوات الفحص فقط إذا كانت خدمة الفحص السنوي محددة
         let inspectionYearsInput = document.querySelector("input[name='inspectionyears']");
@@ -1561,77 +1329,43 @@ setTimeout(function () {
         });
     });
 });
-
-
-
-
-
-              
-        </script>
-        
-        <style>
-        .input-error {
-            border: 2px solid red !important;
-            background-color: #ffdddd;
-        }
-        
-        .checkbox-error {
-            border: 2px solid red !important;
-            background-color: #ffdddd;
-        }
-        
-        .label-error {
-            color: red !important;
-            font-weight: bold;
-        }
-        </style>
-        
-        
-        
-            
-            
-            
-            
+</script>
         <style>
             /* ضبط الصورة في مكان ثابت */
-            .floating-image {
-                position: absolute; 
-                top: 300px; /* المسافة من الأعلى */
-                width: 400px; /* حجم الصورة */
-                height: auto;
-                z-index: 1000; /* لضمان ظهورها فوق العناصر الأخرى */
-                transition: all 0.3s ease-in-out; /* انتقال سلس عند التغيير */
-            }
-        
-            /* عند اللغة العربية: تكون الصورة على اليمين */
-            html[lang="ar"] .floating-image {
-                left: 70px;
-                right: auto;
-            }
-        
-            /* عند اللغة الإنجليزية: تكون الصورة على اليسار */
-            html[lang="en"] .floating-image {
-                right: 70px;
-                left: auto;
-            }
-        
-            .floating-image img {
-                width: 100%;
-                border-radius: 10px; /* إضافة حواف دائرية */
-                box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3); /* ظل جميل */
-            }
-        
-            /* إخفاء الصورة على الشاشات الصغيرة (أقل من 768px) */
-            @media (max-width: 768px) {
-                .floating-image {
-                    display: none;
-                }
-            }
+ .floating-image {
+    position: absolute; 
+    top: 300px; /* المسافة من الأعلى */
+    width: 400px; /* حجم الصورة */
+    height: auto;
+    z-index: 1000; /* لضمان ظهورها فوق العناصر الأخرى */
+    transition: all 0.3s ease-in-out; /* انتقال سلس عند التغيير */
+}
+
+/* عند اللغة العربية: تكون الصورة على اليمين */
+html[lang="ar"] .floating-image {
+    left: 70px;
+    right: auto;
+}
+
+/* عند اللغة الإنجليزية: تكون الصورة على اليسار */
+html[lang="en"] .floating-image {
+    right: 70px;
+    left: auto;
+}
+
+.floating-image img {
+    width: 100%;
+    border-radius: 10px; /* إضافة حواف دائرية */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3); /* ظل جميل */
+}
+
+/* إخفاء الصورة على الشاشات الصغيرة (أقل من 768px) */
+@media (max-width: 768px) {
+    .floating-image {
+        display: none;
+    }
+}
         </style>
-        </head>
-        <body>
-        
-        
         
         <div class="floating-image">
             <img src="assets/img/pexels-fauxels-3184357.jpg" alt="Hero Image">
@@ -1700,26 +1434,41 @@ setTimeout(function () {
           <i class="bi bi-whatsapp"></i>
       </a>
       
-
       </div>
-    </div>
-    <div class="container">
-        <div >
-          <strong  >EMAIL: info@elitefinancial-eg.com</strong> 
+      <div class="container">
+        <div class="contact-container">
+            <a href="mailto:info@elitefinancial-eg.com" class="icon-text">
+                <i class="fa fa-envelope"></i> info@elitefinancial-eg.com
+            </a>
+        
+            <a href="tel:+201228310654" class="icon-text1">
+                <i class="fa fa-phone"></i> +201228310654
+            </a>
+        
+            <a href="tel:+223504766" class="icon-text2">
+                <i class="fa fa-phone"></i> +223504766
+            </a>
+            
+            <a href="https://www.google.com/maps/place/40+Abou+Dawoud+Al+Zaheri,+Al+Mintaqah+as+Sādisah,+Nasr+City,+Cairo+Governorate+4450454/@30.0515246,31.3658325,17z" 
+   target="_blank" 
+   class="address"
+   style="font-size: 14px;">
+   <i class="fa fa-map-marker-alt"></i> 
+   <strong>40 Abu Dawoud Al Zaheri Street, Nasr City, Cairo, Egypt</strong>
+</a>
+
+    
+    
+        
+           
         </div>
-        <div ></div>
-            <strong  >MOBILE: +201228310654</strong> 
-        </div>
-        <div ></div>
-        <strong  >Telephone: +223504766</strong> 
     </div>
-        <div >
-          <strong  >Address: 40 Abu Dawoud Al Zaheri Street, Nasr City, Cairo, Egypt</strong> 
-        </div>
-    </div>
-  </div>
-  
-  </div>
+    
+    
+    
+    <!-- مكتبة Font Awesome للأيقونات -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
     
     </div>
   </footer>
@@ -1728,22 +1477,18 @@ setTimeout(function () {
   <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
   <!-- Preloader -->
-   <body>
-<div id="preloader">
-  <section class="dots-container">
-    <div class="dot"></div>
-    <div class="dot"></div>
-    <div class="dot"></div>
-    <div class="dot"></div>
-    <div class="dot"></div>
-  </section>
-</div>
-   </body>
-<script src="assets/css/main.css"></script>
-<head>
-  <link rel="stylesheet" href="main.css">
-  <script src="translation.js"></script>
-</head>
+   
+  <div id="preloader">
+    <section class="dots-container">
+      <h2 class="visually-hidden">Loading Animation</h2> <!-- عنوان مخفي لتحسين إمكانية الوصول -->
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+    </section>
+  </div>
+
 
   <!-- Vendor JS Files -->
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -1757,160 +1502,121 @@ setTimeout(function () {
 
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
+
 <script>
-    // جلب الزر
+    document.addEventListener("DOMContentLoaded", function() {
     const External = document.getElementById("External");
-    
-    // عندما يتم الضغط على الزر، عرض شاشة تحميل
-    External.addEventListener("click", function(event) {
-    event.preventDefault(); // منع الرابط من الانتقال فورًا
-    // عرض شاشة التحميل قبل الانتقال للصفحة الجديدة
-    
-        window.location.href = "External Audit.html";  // فتح الصفحة الجديدة بعد 2 ثانية
-    }, 2000); // تأخير لمدة 2 ثانية لظهور شاشة التحميل
-    ;
- </script>
+    if (External) {
+        External.addEventListener("click", function(event) {
+            event.preventDefault();
+            setTimeout(function() {
+                window.location.href = "External Audit.html";
+            }, 2000);
+        });
+    }
+});
 
+document.addEventListener("DOMContentLoaded", function() {
+    const Home = document.getElementById("Home");
+    if (Home) {
+        Home.addEventListener("click", function(event) {
+            event.preventDefault();
+            setTimeout(function() {
+                window.location.href = "index.html";
+            }, 2000);
+        });
+    }
+});
 
+document.addEventListener("DOMContentLoaded", function() {
+    const about = document.getElementById("About");
+    if (about) {
+        about.addEventListener("click", function(event) {
+            event.preventDefault();
+            setTimeout(function() {
+                window.location.href = "index.html";
+            }, 2000);
+        });
+    }
+});
 
+document.addEventListener("DOMContentLoaded", function() {
+    const services = document.getElementById("Services");
+    if (services) {
+        services.addEventListener("click", function(event) {
+            event.preventDefault();
+            setTimeout(function() {
+                window.location.href = "index.html";
+            }, 2000);
+        });
+    }
+});
 
+document.addEventListener("DOMContentLoaded", function() {
+    const OurValues = document.getElementById("OurValues");
+    if (OurValues) {
+        OurValues.addEventListener("click", function(event) {
+            event.preventDefault();
+            setTimeout(function() {
+                window.location.href = "index.html";
+            }, 2000);
+        });
+    }
+});
 
+document.addEventListener("DOMContentLoaded", function() {
+    const Contact = document.getElementById("Contact");
+    if (Contact) {
+        Contact.addEventListener("click", function(event) {
+            event.preventDefault();
+            setTimeout(function() {
+                window.location.href = "index.html";
+            }, 2000);
+        });
+    }
+});
 
-
-
-
-
-
-<script>
-  // جلب الزر
-  const Home = document.getElementById("Home");
-
-  // عندما يتم الضغط على الزر، عرض شاشة تحميل
-  Home.addEventListener("click", function(event) {
-      event.preventDefault(); // منع الرابط من الانتقال فورًا
-      // عرض شاشة التحميل قبل الانتقال للصفحة الجديدة
-      
-          window.location.href = "index.html";  // فتح الصفحة الجديدة بعد 2 ثانية
-      }, 2000); // تأخير لمدة 2 ثانية لظهور شاشة التحميل
-  ;
-</script>
-
-
-<script>
-  // جلب الزر
-  const about = document.getElementById("About");
-
-  // عندما يتم الضغط على الزر، عرض شاشة تحميل
-  about.addEventListener("click", function(event) {
-      event.preventDefault(); // منع الرابط من الانتقال فورًا
-      // عرض شاشة التحميل قبل الانتقال للصفحة الجديدة
-      
-          window.location.href = "index.html";  // فتح الصفحة الجديدة بعد 2 ثانية
-      }, 2000); // تأخير لمدة 2 ثانية لظهور شاشة التحميل
-  ;
-</script>
-
-
-<script>
-  // جلب الزر
-  const services = document.getElementById("Services");
-
-  // عندما يتم الضغط على الزر، عرض شاشة تحميل
-  Services.addEventListener("click", function(event) {
-      event.preventDefault(); // منع الرابط من الانتقال فورًا
-      // عرض شاشة التحميل قبل الانتقال للصفحة الجديدة
-      
-          window.location.href = "index.html";  // فتح الصفحة الجديدة بعد 2 ثانية
-      }, 2000); // تأخير لمدة 2 ثانية لظهور شاشة التحميل
-  ;
-</script>
-
-<script>
-  // جلب الزر
-  const OurValues = document.getElementById("OurValues");
-
-  // عندما يتم الضغط على الزر، عرض شاشة تحميل
-  OurValues.addEventListener("click", function(event) {
-      event.preventDefault(); // منع الرابط من الانتقال فورًا
-      // عرض شاشة التحميل قبل الانتقال للصفحة الجديدة
-      
-          window.location.href = "index.html";  // فتح الصفحة الجديدة بعد 2 ثانية
-      }, 2000); // تأخير لمدة 2 ثانية لظهور شاشة التحميل
-  ;
-</script>
-
-<script>
-  // جلب الزر
-  const Contact = document.getElementById("Contact");
-
-  // عندما يتم الضغط على الزر، عرض شاشة تحميل
-  Contact.addEventListener("click", function(event) {
-      event.preventDefault(); // منع الرابط من الانتقال فورًا
-      // عرض شاشة التحميل قبل الانتقال للصفحة الجديدة
-      
-          window.location.href = "index.html";  // فتح الصفحة الجديدة بعد 2 ثانية
-      }, 2000); // تأخير لمدة 2 ثانية لظهور شاشة التحميل
-  ;
-</script>
-
-<script>
-    // جلب الزر
+document.addEventListener("DOMContentLoaded", function() {
     const Book = document.getElementById("Book");
-    
-    // عندما يتم الضغط على الزر، عرض شاشة تحميل
-    Book.addEventListener("click", function(event) {
-    event.preventDefault(); // منع الرابط من الانتقال فورًا
-    // عرض شاشة التحميل قبل الانتقال للصفحة الجديدة
-    
-        window.location.href = "BookKeeping.html";  // فتح الصفحة الجديدة بعد 2 ثانية
-    }, 2000); // تأخير لمدة 2 ثانية لظهور شاشة التحميل
-    ;
-    </script>
+    if (Book) {
+        Book.addEventListener("click", function(event) {
+            event.preventDefault();
+            setTimeout(function() {
+                window.location.href = "BookKeeping.html";
+            }, 2000);
+        });
+    }
+});
 
-<script>
-    // جلب الزر
+document.addEventListener("DOMContentLoaded", function() {
     const CompanyIncorporation = document.getElementById("CompanyIncorporation");
+    if (CompanyIncorporation) {
+        CompanyIncorporation.addEventListener("click", function(event) {
+            event.preventDefault();
+            setTimeout(function() {
+                window.location.href = "CompanyIncorporation.html";
+            }, 2000);
+        });
+    }
+});
 
-    // عندما يتم الضغط على الزر، عرض شاشة تحميل
-    CompanyIncorporation.addEventListener("click", function(event) {
-        event.preventDefault(); // منع الرابط من الانتقال فورًا
-        // عرض شاشة التحميل قبل الانتقال للصفحة الجديدة
-        document.body.innerHTML = "<h1>Loading...</h1>";  // تخصيص هذه الرسالة كما تريد
-        setTimeout(function() {
-            window.location.href = "CompanyIncorporation.html";  // فتح الصفحة الجديدة بعد 2 ثانية
-        }, 2000); // تأخير لمدة 2 ثانية لظهور شاشة التحميل
-    });
-</script>
-
- 
-    
-    
-    
-    <script>
-    // جلب الزر
+document.addEventListener("DOMContentLoaded", function() {
     const Taxes = document.getElementById("Taxes");
-    
-    // عندما يتم الضغط على الزر، عرض شاشة تحميل
-    Taxes.addEventListener("click", function(event) {
-    event.preventDefault(); // منع الرابط من الانتقال فورًا
-    // عرض شاشة التحميل قبل الانتقال للصفحة الجديدة
-    
-        window.location.href = "Taxes.html";  // فتح الصفحة الجديدة بعد 2 ثانية
-    }, 2000); // تأخير لمدة 2 ثانية لظهور شاشة التحميل
-    ;
-    </script>
+    if (Taxes) {
+        Taxes.addEventListener("click", function(event) {
+            event.preventDefault();
+            setTimeout(function() {
+                window.location.href = "Taxes.html";
+            }, 2000);
+        });
+    }
+});
 
-
-
-
-
-
-
-
-
-
-
+</script>
 
 
   </body>
   </html>
+
+
+ 

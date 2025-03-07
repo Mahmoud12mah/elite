@@ -32,8 +32,7 @@
 
 
   <!-- Favicons -->
-  <link href="assets/img/favicon.png" rel="icon">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+  
 
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
@@ -59,262 +58,110 @@
   ======================================================== -->
 
 
-  
- 
-
-
-   
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <header class="top-header">
+    <a href="mailto:info@elitefinancial-eg.com" class="icon-text">
+        <i class="fa fa-envelope"></i> info@elitefinancial-eg.com
+    </a>
     
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: Arial, sans-serif;
-        }
-        
-        header {
-            width: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            padding: 10px;
-        }
-        
-        .top-header {
-            background: #0A2A5E;
-            color: rgb(0, 0, 0);
-            height: 40px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-wrap: wrap;
-            direction: ltr !important; /* يمنع انعكاس النص */
-        }
-
-        .language-switch {
-            display: flex;
-            gap: 5px;
-            position: absolute;
-            right: 20px;
-        }
-
-        .language-switch button {
-            padding: 1px 1px;
-            font-size: 12px;
-            border-radius: 1px;
-            cursor: pointer;
-            background-color: #f5f5f5;
-            color: rgb(0, 0, 0);
-            font-weight: bold;
-        }
-        
-        .icon-text, .icon-text1, .icon-text2 {
-            font-size: 16px;
-            color: #ffffff;
-            font-weight: bold;
-            margin: 0 10px;
-            top: 1px;
-            direction: ltr !important; /* يمنع انعكاس النص */
-        }
-
-        .bottom-header {
-            background: #1032cc17;
-            color: rgb(102, 8, 8);
-            height: auto;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 15px;
-            flex-wrap: wrap;
-        }
-
-        .logo {
-            max-width: 100%;
-            height: 90px;
-            
-        }
-
-        .navmenu ul {
-            list-style: none;
-            display: flex;
-            padding: 0;
-            margin: 0;
-            flex-wrap: wrap;
-        }
-
-        .navmenu ul li {
-            margin: 0 10px;
-        }
-
-        .navmenu ul li a {
-            text-decoration: none;
-            color: black;
-            font-weight: bold;
-        }
-
-        /* استجابة للأجهزة الصغيرة */
-        @media (max-width: 768px) {
-            .top-header {
-                flex-direction: column;
-                height: auto;
-                text-align: center;
-            }
-            
-
-            .bottom-header {
-                flex-direction: column;
-                text-align: center;
-        }
-
-            .logo {
-                height: 10px;
-            }
-
-            .navmenu ul {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            .navmenu ul li {
-                margin: 5px 0;
-            }
-
-            .language-switch {
-                position: relative;
-                right: auto;
-                margin-top: 10px;
-            }
-            
-        }
-    </style>
-</head>
-<body>
-    <header class="top-header">
-        <a href="mailto:info@elitefinancial-eg.com" class="icon-text">
-            <i class="fa fa-envelope"></i> info@elitefinancial-eg.com
-        </a>
-        
-        <!-- تأكد من إضافة مكتبة Font Awesome في رأس الصفحة -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-        
-        <a href="tel:+201228310654" class="icon-text1">
-            <i class="fa fa-phone"></i> +201228310654
-        </a>
-        
-        <a href="tel:+223504766" class="icon-text2">
-            <i class="fa fa-phone"></i> +223504766
-        </a>
-        
-        <!-- تأكد من إضافة مكتبة Font Awesome في رأس الصفحة -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-        
-       <div class="language-switch">
-    <button class="lang-btn arabic" onclick="changeLanguage('ar')">العربية</button>
-    <button class="lang-btn english" onclick="changeLanguage('en')">English</button>
+    <!-- تأكد من إضافة مكتبة Font Awesome في رأس الصفحة -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <a href="tel:+201228310654" class="icon-text1">
+        <i class="fa fa-phone"></i> +201228310654
+    </a>
+    
+    <a href="tel:+223504766" class="icon-text2">
+        <i class="fa fa-phone"></i> +223504766
+    </a>
+    
+    <!-- تأكد من إضافة مكتبة Font Awesome في رأس الصفحة -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+   <div class="language-switch">
+<button class="lang-btn arabic" onclick="changeLanguage('ar')">العربية</button>
+<button class="lang-btn english" onclick="changeLanguage('en')">English</button>
 </div>
+</header>
+
+<link rel="stylesheet" href="styles.css">
+<script src="translation.js"></script>
+
+
+
+
+<header class="bottom-header">
+    <a href="index.html">
+        <img src="assets/img/logo.png" class="logo" alt="Logo">
+    </a>
+
+    <!-- زر القائمة (Checkbox مخفي) -->
+    <input type="checkbox" id="menu-toggle" class="menu-checkbox">
+    <label for="menu-toggle" class="menu-btn">☰</label>
+
+    <!-- القائمة -->
+    <nav class="navmenu">
+      <label for="menu-toggle" class="close-btn">✖</label> <!-- زر الإغلاق -->
+    <ul>
+        
+      <li><a id="Home" href="#Home" data-lang="home1">Home</a></li>
+      <li><a id="About" href="#about" data-lang="about1">About Us</a></li>
+      <li class="dropdown">
+        <a href="#" style="color: black; font-weight: bold;">
+            <span data-lang="Pricing1">Pricing</span>
+            <i class="bi bi-chevron-down toggle-dropdown"></i>
+        </a>
+        <ul>
+            <li><a href="Taxes.html" data-lang="Taxes" style="font-weight: bold;">Taxes</a></li>
+            <li><a href="BookKeeping.html" data-lang="BookKeeping" style="font-weight: bold;">BookKeeping</a></li>
+            <li><a href="audit.html" data-lang="ExternalAudit" style="font-weight: bold;">External Audit</a></li>
+          <li><a href="CompanyIncorporation.html" data-lang="CompanyIncorporation" style="font-weight: bold;">Company Incorporation</a></li>
+      </ul>
+   
+          <li><a id="Services" href="#services" data-lang="services1">Services</a></li>
+            <li><a id="Contact" href="#contact" data-lang="contact1">Contact Us</a></li>
+        </ul>
+    </nav>
+</header>
+
 
 <style>
-/* تنسيق الحاوية */
-.language-switch {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    margin-top: 20px;
-}
-
-/* تنسيق الأزرار */
-.lang-btn {
-    padding: 10px 20px;
-    font-size: 16px;
-    font-weight: bold;
-    border: 2px solid #007bff;
-    border-radius: 8px;
-    background-color: #fff;
-    color: #007bff;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-/* تأثير عند تمرير الماوس */
-.lang-btn:hover {
-    background-color: #007bff;
-    color: #fff;
-}
-
-/* تخصيص لون زر العربية */
-.lang-btn.arabic {
-    border-color: #28a745;
-    color: #28a745;
-}
-
-.lang-btn.arabic:hover {
-    background-color: #28a745;
-    color: #fff;
-}
-
-/* تخصيص لون زر الإنجليزية */
-.lang-btn.english {
-    border-color: #ff9800;
-    color: #ff9800;
-}
-
-.lang-btn.english:hover {
-    background-color: #ff9800;
-    color: #fff;
-}
+    /* ✅ إخفاء الصفحة بالكامل عند الدخول مباشرة */
+    body {
+        display: none;
+    }
 </style>
 
-    </header>
-    
-    
+<script>
+    // ✅ التحقق فورًا قبل تحميل أي محتوى
+    let formSubmitted = localStorage.getItem("formSubmitted");
 
+    if (!formSubmitted || formSubmitted !== "true") {
+        let previousPage = localStorage.getItem("previousPage") || document.referrer;
 
-    
-    
-    
-    <link rel="stylesheet" href="styles.css">
+        // ✅ منع الدخول في حلقة إعادة تحميل لا نهائية
+        if (!previousPage || previousPage === window.location.href) {
+            previousPage = "index.html"; // إعادة التوجيه إلى الصفحة الرئيسية إذا لم يكن هناك صفحة سابقة
+        }
 
+        // ✅ إعادة التوجيه إلى الصفحة السابقة أو الصفحة الرئيسية
+        window.location.replace(previousPage);
+    }
 
+    document.addEventListener("DOMContentLoaded", function () {
+        if (!formSubmitted || formSubmitted !== "true") {
+            return; // إذا كان المستخدم غير مسموح له، لن يصل إلى هذا الجزء
+        }
 
-    <header class="bottom-header">
-        <a href="index.html">
-            <img src="assets/img/logo.png" class="logo" alt="Logo">
-        </a>
-        
-        <h1 class="sitename" style="font-weight: bold"></h1>
-    
-        <!-- زر القائمة (Checkbox مخفي) -->
-        <input type="checkbox" id="menu-toggle" class="menu-checkbox">
-        <label for="menu-toggle" class="menu-btn">☰</label>
-    
-        <!-- القائمة -->
-        <nav class="navmenu">
-          <label for="menu-toggle" class="close-btn">✖</label> <!-- زر الإغلاق -->
-        <ul>
-            
-          <li><a id="Home" href="#" data-lang="home">Home</a></li>
-          <li><a id="About" href="#about" data-lang="about">About Us</a></li>
-          <li class="dropdown">
-            <a href="#" style="color: black; font-weight: bold;">
-                <span data-lang="Pricing">Pricing</span>
-                <i class="bi bi-chevron-down toggle-dropdown"></i>
-            </a>
-            <ul>
-                <li><a href="Taxes.html" data-lang="Taxes" style="font-weight: bold;">Taxes</a></li>
-                <li><a href="BookKeeping.html" data-lang="BookKeeping" style="font-weight: bold;">BookKeeping</a></li>
-                <li><a href="audit.html" data-lang="ExternalAudit" style="font-weight: bold;">External Audit</a></li>
-              <li><a href="CompanyIncorporation.html" data-lang="CompanyIncorporation" style="font-weight: bold;">Company Incorporation</a></li>
-          </ul>
-        </li>
-        
-              </li>
-              <li><a id="Services" href="#services" data-lang="services">Services</a></li>
-                <li><a id="Contact" href="#contact" data-lang="contact">Contact Us</a></li>
-            </ul>
-        </nav>
-    </header>
+        // ✅ السماح بعرض الصفحة بعد التحقق
+        document.body.style.display = "block";
+
+        // ✅ تنظيف التخزين بعد السماح بالوصول
+        setTimeout(() => {
+            localStorage.removeItem("formSubmitted");
+            localStorage.removeItem("previousPage");
+        }, 500);
+    });
+</script>
 
 
 
@@ -358,11 +205,7 @@
             }
         }
     </style>
-    </head>
-    <body>
-    
-    
-    
+   
     <div class="floating-image">
         <img src="assets/img/pexels-thirdman-7653971.jpg" alt="Hero Image">
     </div>
@@ -390,123 +233,11 @@
             }
         };
     </script>
-    
-
-
-
-
-
-
-
-    
-
-
-    
-    
-    
-    
-    
-    
-
-
-
-    
-    <style>
-        /* ✅ إخفاء الصفحة بالكامل عند الدخول مباشرة */
-        body {
-            display: none;
-        }
-    </style>
-    
-    <script>
-        // ✅ التحقق فورًا قبل تحميل أي محتوى
-        let formSubmitted = localStorage.getItem("formSubmitted");
-    
-        if (!formSubmitted || formSubmitted !== "true") {
-            let previousPage = localStorage.getItem("previousPage") || document.referrer;
-    
-            // ✅ منع الدخول في حلقة إعادة تحميل لا نهائية
-            if (!previousPage || previousPage === window.location.href) {
-                previousPage = "index.html"; // إعادة التوجيه إلى الصفحة الرئيسية إذا لم يكن هناك صفحة سابقة
-            }
-    
-            // ✅ إعادة التوجيه إلى الصفحة السابقة أو الصفحة الرئيسية
-            window.location.replace(previousPage);
-        }
-    
-        document.addEventListener("DOMContentLoaded", function () {
-            if (!formSubmitted || formSubmitted !== "true") {
-                return; // إذا كان المستخدم غير مسموح له، لن يصل إلى هذا الجزء
-            }
-    
-            // ✅ السماح بعرض الصفحة بعد التحقق
-            document.body.style.display = "block";
-    
-            // ✅ تنظيف التخزين بعد السماح بالوصول
-            setTimeout(() => {
-                localStorage.removeItem("formSubmitted");
-                localStorage.removeItem("previousPage");
-            }, 500);
-        });
-</script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Elite Financial Consultant</title>
+ 
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
-        <style>
-            html, body {
-                height: 100%; /* يجعل الصفحة تأخذ طول الشاشة بالكامل */
-                margin: 0; /* حذف الهوامش */
-                display: flex;
-                flex-direction: column; /* يجعل العناصر تصطف عمودياً */
-            }
-    
-            .container {
-                flex: 1; /* يجعل المحتوى يدفع الفوتر للأسفل */
-            }
-    
-            .footer {
-                background-color: #000000; /* لون الخلفية */
-                color: white; /* لون النص */
-                text-align: center; /* توسيط النص */
-                padding: 20px; /* مسافات داخلية للفوتر */
-                width: 100%; /* عرض الفوتر بالكامل */
-            }
-    
-            .social-links a {
-                margin: 0 10px; /* تباعد بين الأيقونات */
-                color: white;
-                font-size: 24px; /* حجم الأيقونات */
-                text-decoration: none; /* إزالة الخط تحت الروابط */
-            }
-    
-            .social-links a:hover {
-                color: #f39c12; /* لون عند مرور الماوس */
-            }
-        </style>
-    </head>
-    <body>
-    
+       
+  
     <div class="container">
         <!-- محتوى الصفحة -->
         <h1 data-lang="Therequestwassentsuccessfully" class="text-center mt-2">The request was sent successfully</h1>
@@ -529,141 +260,70 @@
     
     <footer id="footer" class="footer dark-background">
         <div class="container">
-            <h3 class="sitename">Elite Financial Consultant</h3>
-            <div class="social-links d-flex justify-content-center">
-                <a href="https://www.facebook.com/elitefinancialconsultanteg"><i class="bi bi-facebook"></i></a>
-                <a href="https://www.linkedin.com/company/elite-financial-consultant/"><i class="bi bi-linkedin"></i></a>
-                <a href="https://wa.me/+201228310654" target="_blank">
-                    <i class="bi bi-whatsapp"></i>
+          <h3  class="sitename">Elite Financial Consultant</h3>
+          <p></p>
+          <div class="social-links d-flex justify-content-center">
+            <a href="https://www.facebook.com/elitefinancialconsultanteg"><i class="bi bi-facebook"></i></a>
+            <a href="https://www.linkedin.com/company/elite-financial-consultant/"><i class="bi bi-linkedin"></i></a>
+            <a href="https://wa.me/+201228310654" target="_blank">
+              <i class="bi bi-whatsapp"></i>
+          </a>
+          
+          </div>
+          <div class="container">
+            <div class="contact-container">
+                <a href="mailto:info@elitefinancial-eg.com" class="icon-text">
+                    <i class="fa fa-envelope"></i> info@elitefinancial-eg.com
                 </a>
+            
+                <a href="tel:+201228310654" class="icon-text1">
+                    <i class="fa fa-phone"></i> +201228310654
+                </a>
+            
+                <a href="tel:+223504766" class="icon-text2">
+                    <i class="fa fa-phone"></i> +223504766
+                </a>
+                
+                <a href="https://www.google.com/maps/place/40+Abou+Dawoud+Al+Zaheri,+Al+Mintaqah+as+Sādisah,+Nasr+City,+Cairo+Governorate+4450454/@30.0515246,31.3658325,17z" 
+       target="_blank" 
+       class="address"
+       style="font-size: 14px;">
+       <i class="fa fa-map-marker-alt"></i> 
+       <strong>40 Abu Dawoud Al Zaheri Street, Nasr City, Cairo, Egypt</strong>
+    </a>
+    
+        
+        
+            
+               
             </div>
         </div>
-    </div>
-    <div class="container">
-      <div class="contact-container">
-          <a href="mailto:info@elitefinancial-eg.com" class="icon-text">
-              <i class="fa fa-envelope"></i> info@elitefinancial-eg.com
-          </a>
-      
-          <a href="tel:+201228310654" class="icon-text1">
-              <i class="fa fa-phone"></i> +201228310654
-          </a>
-      
-          <a href="tel:+223504766" class="icon-text2">
-              <i class="fa fa-phone"></i> +223504766
-          </a>
-      </div>
-      
-      <style>
-          .contact-container {
-              display: flex;
-              justify-content: center; /* يجعل العناصر في المنتصف */
-              align-items: center;
-              gap: 15px; /* مسافة بين العناصر */
-              flex-wrap: wrap;
-              text-align: center;
-          }
-      
-          .icon-text, .icon-text1, .icon-text2 {
-              display: flex;
-              align-items: center;
-              gap: 5px; /* مسافة بين الأيقونة والنص */
-              font-size: 16px;
-              font-weight: bold;
-              text-decoration: none;
-              color: #ffffff;
-              direction: ltr !important; /* يمنع انعكاس النص عند تغيير اللغة */
-              white-space: nowrap; /* يمنع كسر النص */
-          }
-      
-          .icon-text i, .icon-text1 i, .icon-text2 i {
-              color: rgb(255, 0, 0); /* لون الأيقونات */
-              font-size: 18px;
-          }
-      
-          .icon-text:hover, .icon-text1:hover, .icon-text2:hover {
-              text-decoration: underline; /* تأثير عند المرور */
-          }
-      </style>
-      
-      <!-- مكتبة Font Awesome للأيقونات -->
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-      
-      
-      
-      <!-- تأكد من إضافة مكتبة Font Awesome في رأس الصفحة -->
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-      <div >
-          <div class="address-container">
-              <a href="https://www.google.com/maps/place/40+Abou+Dawoud+Al+Zaheri,+Al+Mintaqah+as+Sādisah,+Nasr+City,+Cairo+Governorate+4450454/@30.0515246,31.3658325,17z" 
-                 target="_blank" 
-                 class="address">
-                  <i class="fa fa-map-marker-alt"></i> 
-                  <strong>40 Abu Dawoud Al Zaheri Street, Nasr City, Cairo, Egypt</strong>
-              </a>
-          </div>
-          
-          <style>
-              .address-container {
-                  display: flex;
-                  justify-content: center; /* يجعل العنصر في المنتصف */
-                  align-items: center;
-                  text-align: center;
-              }
-          
-              .address {
-                  display: flex;
-                  align-items: center;
-                  gap: 2px; /* مسافة بين الأيقونة والنص */
-                  text-decoration: none;
-                  font-size: 14px;
-                  color: #ffffff;
-                  font-weight: bold;
-                  direction: ltr !important; /* يمنع انعكاس النص عند تغيير اللغة */
-              }
-          
-              .address i {
-                  color: red; /* لون أيقونة الموقع */
-                  font-size: 18px;
-              }
-          
-              .address:hover {
-                  text-decoration: underline; /* تأثير عند المرور عليه */
-              }
-          </style>
-          
-          <!-- مكتبة Font Awesome للأيقونات -->
-          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-          
-  </div>
-  
-  </div>
-</footer>
-    
-    </body>
-    </html>
-    
+        
+        
+        
+        <!-- مكتبة Font Awesome للأيقونات -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+        
+        
+        </div>
+      </footer>
     
       <!-- Scroll Top -->
       <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
     
       <!-- Preloader -->
-       <body>
-    <div id="preloader">
-      <section class="dots-container">
-        <div class="dot"></div>
-        <div class="dot"></div>
-        <div class="dot"></div>
-        <div class="dot"></div>
-        <div class="dot"></div>
-      </section>
-    </div>
-       </body>
-    <script src="assets/css/main.css"></script>
-    <head>
-      <link rel="stylesheet" href="main.css">
-      <script src="translation.js"></script>
-    </head>
+       
+      <div id="preloader">
+        <section class="dots-container">
+          <h2 class="visually-hidden">Loading Animation</h2> <!-- عنوان مخفي لتحسين إمكانية الوصول -->
+          <div class="dot"></div>
+          <div class="dot"></div>
+          <div class="dot"></div>
+          <div class="dot"></div>
+          <div class="dot"></div>
+        </section>
+      </div>
+    
     
       <!-- Vendor JS Files -->
       <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -679,151 +339,115 @@
       <script src="assets/js/main.js"></script>
     
     <script>
-        // جلب الزر
+        document.addEventListener("DOMContentLoaded", function() {
         const External = document.getElementById("External");
-        
-        // عندما يتم الضغط على الزر، عرض شاشة تحميل
-        External.addEventListener("click", function(event) {
-        event.preventDefault(); // منع الرابط من الانتقال فورًا
-        // عرض شاشة التحميل قبل الانتقال للصفحة الجديدة
-        document.body.innerHTML = "<h1>Loading...</h1>";  // تخصيص هذه الرسالة كما تريد
-        setTimeout(function() {
-            window.location.href = "External Audit.html";  // فتح الصفحة الجديدة بعد 2 ثانية
-        }, 2000); // تأخير لمدة 2 ثانية لظهور شاشة التحميل
-        });
-     </script>
+        if (External) {
+            External.addEventListener("click", function(event) {
+                event.preventDefault();
+                setTimeout(function() {
+                    window.location.href = "External Audit.html";
+                }, 2000);
+            });
+        }
+    });
     
+    document.addEventListener("DOMContentLoaded", function() {
+        const Home = document.getElementById("Home");
+        if (Home) {
+            Home.addEventListener("click", function(event) {
+                event.preventDefault();
+                setTimeout(function() {
+                    window.location.href = "index.html";
+                }, 2000);
+            });
+        }
+    });
     
+    document.addEventListener("DOMContentLoaded", function() {
+        const about = document.getElementById("About");
+        if (about) {
+            about.addEventListener("click", function(event) {
+                event.preventDefault();
+                setTimeout(function() {
+                    window.location.href = "index.html";
+                }, 2000);
+            });
+        }
+    });
     
+    document.addEventListener("DOMContentLoaded", function() {
+        const services = document.getElementById("Services");
+        if (services) {
+            services.addEventListener("click", function(event) {
+                event.preventDefault();
+                setTimeout(function() {
+                    window.location.href = "index.html";
+                }, 2000);
+            });
+        }
+    });
     
+    document.addEventListener("DOMContentLoaded", function() {
+        const OurValues = document.getElementById("OurValues");
+        if (OurValues) {
+            OurValues.addEventListener("click", function(event) {
+                event.preventDefault();
+                setTimeout(function() {
+                    window.location.href = "index.html";
+                }, 2000);
+            });
+        }
+    });
     
+    document.addEventListener("DOMContentLoaded", function() {
+        const Contact = document.getElementById("Contact");
+        if (Contact) {
+            Contact.addEventListener("click", function(event) {
+                event.preventDefault();
+                setTimeout(function() {
+                    window.location.href = "index.html";
+                }, 2000);
+            });
+        }
+    });
     
-    
-    
-    
-    
-    
-    <script>
-      // جلب الزر
-      const Home = document.getElementById("Home");
-    
-      // عندما يتم الضغط على الزر، عرض شاشة تحميل
-      Home.addEventListener("click", function(event) {
-          event.preventDefault(); // منع الرابط من الانتقال فورًا
-          // عرض شاشة التحميل قبل الانتقال للصفحة الجديدة
-          
-          
-              window.location.href = "index.html";  // فتح الصفحة الجديدة بعد 2 ثانية
-          }, 2000); // تأخير لمدة 2 ثانية لظهور شاشة التحميل
-      ;
-    </script>
-    
-    
-    <script>
-      // جلب الزر
-      const about = document.getElementById("About");
-    
-      // عندما يتم الضغط على الزر، عرض شاشة تحميل
-      about.addEventListener("click", function(event) {
-          event.preventDefault(); // منع الرابط من الانتقال فورًا
-          // عرض شاشة التحميل قبل الانتقال للصفحة الجديدة
-          
-              window.location.href = "index.html";  // فتح الصفحة الجديدة بعد 2 ثانية
-          }, 2000); // تأخير لمدة 2 ثانية لظهور شاشة التحميل
-      ;
-    </script>
-    
-    
-    <script>
-      // جلب الزر
-      const services = document.getElementById("Services");
-    
-      // عندما يتم الضغط على الزر، عرض شاشة تحميل
-      Services.addEventListener("click", function(event) {
-          event.preventDefault(); // منع الرابط من الانتقال فورًا
-          // عرض شاشة التحميل قبل الانتقال للصفحة الجديدة
-          
-              window.location.href = "index.html";  // فتح الصفحة الجديدة بعد 2 ثانية
-          }, 2000); // تأخير لمدة 2 ثانية لظهور شاشة التحميل
-      ;
-    </script>
-    
-    <script>
-      // جلب الزر
-      const OurValues = document.getElementById("OurValues");
-    
-      // عندما يتم الضغط على الزر، عرض شاشة تحميل
-      OurValues.addEventListener("click", function(event) {
-          event.preventDefault(); // منع الرابط من الانتقال فورًا
-          // عرض شاشة التحميل قبل الانتقال للصفحة الجديدة
-          
-              window.location.href = "index.html";  // فتح الصفحة الجديدة بعد 2 ثانية
-          }, 2000); // تأخير لمدة 2 ثانية لظهور شاشة التحميل
-      ;
-    </script>
-    
-    <script>
-      // جلب الزر
-      const Contact = document.getElementById("Contact");
-    
-      // عندما يتم الضغط على الزر، عرض شاشة تحميل
-      Contact.addEventListener("click", function(event) {
-          event.preventDefault(); // منع الرابط من الانتقال فورًا
-          // عرض شاشة التحميل قبل الانتقال للصفحة الجديدة
-          
-              window.location.href = "index.html";  // فتح الصفحة الجديدة بعد 2 ثانية
-          }, 2000); // تأخير لمدة 2 ثانية لظهور شاشة التحميل
-      ;
-    </script>
-    
-    <script>
-        // جلب الزر
+    document.addEventListener("DOMContentLoaded", function() {
         const Book = document.getElementById("Book");
-        
-        // عندما يتم الضغط على الزر، عرض شاشة تحميل
-        Book.addEventListener("click", function(event) {
-        event.preventDefault(); // منع الرابط من الانتقال فورًا
-        // عرض شاشة التحميل قبل الانتقال للصفحة الجديدة
-        
-            window.location.href = "BookKeeping.html";  // فتح الصفحة الجديدة بعد 2 ثانية
-        }, 2000); // تأخير لمدة 2 ثانية لظهور شاشة التحميل
-        ;
-        </script>
+        if (Book) {
+            Book.addEventListener("click", function(event) {
+                event.preventDefault();
+                setTimeout(function() {
+                    window.location.href = "BookKeeping.html";
+                }, 2000);
+            });
+        }
+    });
     
-    <script>
-        // جلب الزر
+    document.addEventListener("DOMContentLoaded", function() {
         const CompanyIncorporation = document.getElementById("CompanyIncorporation");
+        if (CompanyIncorporation) {
+            CompanyIncorporation.addEventListener("click", function(event) {
+                event.preventDefault();
+                setTimeout(function() {
+                    window.location.href = "CompanyIncorporation.html";
+                }, 2000);
+            });
+        }
+    });
     
-        // عندما يتم الضغط على الزر، عرض شاشة تحميل
-        CompanyIncorporation.addEventListener("click", function(event) {
-            event.preventDefault(); // منع الرابط من الانتقال فورًا
-            // عرض شاشة التحميل قبل الانتقال للصفحة الجديدة
-            document.body.innerHTML = "<h1>Loading...</h1>";  // تخصيص هذه الرسالة كما تريد
-            setTimeout(function() {
-                window.location.href = "CompanyIncorporation.html";  // فتح الصفحة الجديدة بعد 2 ثانية
-            }, 2000); // تأخير لمدة 2 ثانية لظهور شاشة التحميل
-        });
-    </script>
-    
-     
-        
-        
-        
-        <script>
-        // جلب الزر
+    document.addEventListener("DOMContentLoaded", function() {
         const Taxes = document.getElementById("Taxes");
-        
-        // عندما يتم الضغط على الزر، عرض شاشة تحميل
-        Taxes.addEventListener("click", function(event) {
-        event.preventDefault(); // منع الرابط من الانتقال فورًا
-        // عرض شاشة التحميل قبل الانتقال للصفحة الجديدة
-        
-            window.location.href = "Taxes.html";  // فتح الصفحة الجديدة بعد 2 ثانية
-        }, 2000); // تأخير لمدة 2 ثانية لظهور شاشة التحميل
-        ;
-        </script>
+        if (Taxes) {
+            Taxes.addEventListener("click", function(event) {
+                event.preventDefault();
+                setTimeout(function() {
+                    window.location.href = "Taxes.html";
+                }, 2000);
+            });
+        }
+    });
     
-    
+    </script>
     
     
     

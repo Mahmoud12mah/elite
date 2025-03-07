@@ -41,8 +41,7 @@
   <meta name="financial consulting, tax advisory, accounting services, business consulting, audit services" content="">
 
   <!-- Favicons -->
-  <link href="assets/img/favicon.png" rel="icon">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+  
 
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
@@ -59,6 +58,11 @@
 
   <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
+  
+
+  
+  <script src="translation.js"></script>
+
 
   <!-- =======================================================
   * Template Name: KnightOne
@@ -74,133 +78,7 @@
 
 
    
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: Arial, sans-serif;
-        }
-        
-        header {
-            width: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            padding: 10px;
-        }
-        
-        .top-header {
-            background: #0A2A5E;
-            color: rgb(0, 0, 0);
-            height: 40px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-wrap: wrap;
-            direction: ltr !important; /* يمنع انعكاس النص */
-        }
-
-        .language-switch {
-            display: flex;
-            gap: 5px;
-            position: absolute;
-            right: 20px;
-        }
-
-        .language-switch button {
-            padding: 1px 1px;
-            font-size: 12px;
-            border-radius: 1px;
-            cursor: pointer;
-            background-color: #f5f5f5;
-            color: rgb(0, 0, 0);
-            font-weight: bold;
-        }
-        
-        .icon-text, .icon-text1, .icon-text2 {
-            font-size: 16px;
-            color: #ffffff;
-            font-weight: bold;
-            margin: 0 10px;
-            top: 1px;
-            direction: ltr !important; /* يمنع انعكاس النص */
-        }
-
-        .bottom-header {
-            background: #1032cc17;
-            color: rgb(102, 8, 8);
-            height: auto;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 15px;
-            flex-wrap: wrap;
-        }
-
-        .logo {
-            max-width: 100%;
-            height: 90px;
-            
-        }
-
-        .navmenu ul {
-            list-style: none;
-            display: flex;
-            padding: 0;
-            margin: 0;
-            flex-wrap: wrap;
-        }
-
-        .navmenu ul li {
-            margin: 0 10px;
-        }
-
-        .navmenu ul li a {
-            text-decoration: none;
-            color: black;
-            font-weight: bold;
-        }
-
-        /* استجابة للأجهزة الصغيرة */
-        @media (max-width: 768px) {
-            .top-header {
-                flex-direction: column;
-                height: auto;
-                text-align: center;
-            }
-            
-
-            .bottom-header {
-                flex-direction: column;
-                text-align: center;
-        }
-
-            .logo {
-                height: 10px;
-            }
-
-            .navmenu ul {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            .navmenu ul li {
-                margin: 5px 0;
-            }
-
-            .language-switch {
-                position: relative;
-                right: auto;
-                margin-top: 10px;
-            }
-            
-        }
-    </style>
-</head>
-<body>
+   
     <header class="top-header">
         <a href="mailto:info@elitefinancial-eg.com" class="icon-text">
             <i class="fa fa-envelope"></i> info@elitefinancial-eg.com
@@ -226,69 +104,19 @@
     <button class="lang-btn english" onclick="changeLanguage('en')">English</button>
 </div>
 
-<style>
-/* تنسيق الحاوية */
-.language-switch {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    margin-top: 20px;
-}
 
-/* تنسيق الأزرار */
-.lang-btn {
-    padding: 10px 20px;
-    font-size: 16px;
-    font-weight: bold;
-    border: 2px solid #007bff;
-    border-radius: 8px;
-    background-color: #fff;
-    color: #007bff;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-/* تأثير عند تمرير الماوس */
-.lang-btn:hover {
-    background-color: #007bff;
-    color: #fff;
-}
-
-/* تخصيص لون زر العربية */
-.lang-btn.arabic {
-    border-color: #28a745;
-    color: #28a745;
-}
-
-.lang-btn.arabic:hover {
-    background-color: #28a745;
-    color: #fff;
-}
-
-/* تخصيص لون زر الإنجليزية */
-.lang-btn.english {
-    border-color: #ff9800;
-    color: #ff9800;
-}
-
-.lang-btn.english:hover {
-    background-color: #ff9800;
-    color: #fff;
-}
-</style>
 
     </header>
     
-    <script>document.addEventListener("DOMContentLoaded", function () {
-      const menuCheckbox = document.querySelector(".menu-checkbox");
-      const menuLinks = document.querySelectorAll(".navmenu a");
-  
-      menuLinks.forEach(link => {
-          link.addEventListener("click", function () {
-              menuCheckbox.checked = false; // إغلاق القائمة عند النقر على أي رابط
-          });
-      });
-  });
+    <script>document.addEventListener("DOMContentLoaded", function() {
+        let btn = document.getElementById("myButton");
+        if (btn) {
+            btn.addEventListener("click", function() {
+                console.log("Button clicked!");
+            });
+        }
+    });
+    
   </script>
 
     
@@ -302,7 +130,6 @@
         <a href="index.html">
             <img src="assets/img/logo.png" class="logo" alt="Logo">
         </a>
-      <h1 class="sitename" style="font-weight: bold"></h1>
   
       <!-- زر القائمة (Checkbox مخفي) -->
       <input type="checkbox" id="menu-toggle" class="menu-checkbox">
@@ -326,9 +153,7 @@
               <li><a href="audit.html" data-lang="ExternalAudit" style="font-weight: bold;">External Audit</a></li>
               <li><a href="CompanyIncorporation.html" data-lang="CompanyIncorporation" style="font-weight: bold;">Company Incorporation</a></li>
           </ul>
-      </li>
-      
-            </li>
+     
             <li><a href="#services" data-lang="services">Services</a></li>
               <li><a href="#contact" data-lang="contact">Contact Us</a></li>
           </ul>
@@ -439,132 +264,139 @@
                 </p>
            </div>
            </div> 
-           </section>
+          
     </section><!-- /About Section -->
 
     <!-- Services Section -->
-    <section id="services" class="services section">
+<section id="services" class="services section">
 
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2 data-lang="services">Services</h2>
-        <p style="font-size: 22px;" data-lang="services2">We offer a comprehensive range of accounting and financial services tailored to businesses of all sizes. Our goal is to help our clients achieve compliance with financial and tax regulations with the highest level of accuracy. With our extensive expertise, we provide innovative solutions to enhance financial performance and improve operational efficiency. We are committed to delivering reliable consultancy to support business growth and strategic decision-making. With us, you can focus on growing your business while we handle your financial matters with professionalism and confidence.
-        </p>
-      </div><!-- End Section Title -->
-
-      <div class="container text-center"> <!-- جعل النص في الوسط -->
-
-        <div class="row gy-4">
-    
-            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
-                <div class="service-item position-relative d-flex flex-column align-items-center"> <!-- جعل العناصر في المنتصف -->
-                    <div class="icon">
-                        <i class="bi bi-activity"></i>
-                    </div>
-                    <h3 data-lang="services3">Audit & Assurance</h3>
-                    <p data-lang="services4">Guided by integrity and transparency to provide you with clear and accurate insights.</p>
-                </div>
-            </div><!-- End Service Item -->
-    
-            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
-                <div class="service-item position-relative d-flex flex-column align-items-center">
-                    <div class="icon">
-                        <i class="bi bi-broadcast"></i>
-                    </div>
-                    <h3 data-lang="services5">Company Incorporation</h3>
-                    <p data-lang="services6">We offer professional company formation services, helping you navigate legal requirements, choose the right structure, and obtain necessary licenses for a smooth and successful business launch.</p>
-                </div>
-            </div><!-- End Service Item -->
-    
-            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
-                <div class="service-item position-relative d-flex flex-column align-items-center">
-                    <div class="icon">
-                        <i class="bi bi-easel"></i>
-                    </div>
-                    <h3 data-lang="services7">Tax</h3>
-                    <p data-lang="services8">We offer specialized tax advisory services that help our clients ensure full compliance with tax regulations and develop effective tax strategies.</p>
-                </div>
-            </div><!-- End Service Item -->
-    
-            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
-                <div class="service-item position-relative d-flex flex-column align-items-center">
-                    <div class="icon">
-                        <i class="bi bi-bounding-box-circles"></i>
-                    </div>
-                    <h3 data-lang="services9">Feasibility Study</h3>
-                    <p data-lang="services10">We provide feasibility study services that help our clients assess their projects accurately to ensure success and maximize benefits.</p>
-                </div>
-            </div><!-- End Service Item -->
-    
-            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
-                <div class="service-item position-relative d-flex flex-column align-items-center">
-                    <div class="icon">
-                        <i class="bi bi-calendar4-week"></i>
-                    </div>
-                    <h3 data-lang="services11">Legal</h3>
-                    <p data-lang="services12">We assist our clients in handling complex legal matters, ensuring the protection of their rights and efficiently resolving disputes, backed by our deep expertise in the legal field.</p>
-                </div>
-            </div><!-- End Service Item -->
-    
-            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="600">
-                <div class="service-item position-relative d-flex flex-column align-items-center">
-                    <div class="icon">
-                        <i class="bi bi-chat-square-text"></i>
-                    </div>
-                    <h3 data-lang="services13">Financial advisory</h3>
-                    <p data-lang="services14">Enhancing financial stability and achieving growth for individuals and businesses based on a thorough analysis of financial data and the market.</p>
-                </div>
-            </div><!-- End Service Item -->
-    
-        </div>
-    
-    </div>
-    <!-- /Services Section -->
+    <!-- Section Title -->
+    <div class="container section-title" data-aos="fade-up">
+      <h2 data-lang="services">Services</h2>
+      <p style="font-size: 22px;" data-lang="services2">
+        We offer a comprehensive range of accounting and financial services tailored to businesses of all sizes. Our goal is to help our clients achieve compliance with financial and tax regulations with the highest level of accuracy. With our extensive expertise, we provide innovative solutions to enhance financial performance and improve operational efficiency. We are committed to delivering reliable consultancy to support business growth and strategic decision-making. With us, you can focus on growing your business while we handle your financial matters with professionalism and confidence.
+      </p>
+    </div><!-- End Section Title -->
+  
+    <div class="container text-center"> <!-- جعل النص في الوسط -->
+  
+      <div class="row gy-4">
+  
+        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+          <div class="service-item position-relative d-flex flex-column align-items-center">
+            <div class="icon">
+              <i class="bi bi-activity"></i>
+            </div>
+            <h3 data-lang="services3">Audit & Assurance</h3>
+            <p data-lang="services4">Guided by integrity and transparency to provide you with clear and accurate insights.</p>
+          </div>
+        </div><!-- End Service Item -->
+  
+        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+          <div class="service-item position-relative d-flex flex-column align-items-center">
+            <div class="icon">
+              <i class="bi bi-broadcast"></i>
+            </div>
+            <h3 data-lang="services5">Company Incorporation</h3>
+            <p data-lang="services6">We offer professional company formation services, helping you navigate legal requirements, choose the right structure, and obtain necessary licenses for a smooth and successful business launch.</p>
+          </div>
+        </div><!-- End Service Item -->
+  
+        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+          <div class="service-item position-relative d-flex flex-column align-items-center">
+            <div class="icon">
+              <i class="bi bi-easel"></i>
+            </div>
+            <h3 data-lang="services7">Tax</h3>
+            <p data-lang="services8">We offer specialized tax advisory services that help our clients ensure full compliance with tax regulations and develop effective tax strategies.</p>
+          </div>
+        </div><!-- End Service Item -->
+  
+        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
+          <div class="service-item position-relative d-flex flex-column align-items-center">
+            <div class="icon">
+              <i class="bi bi-bounding-box-circles"></i>
+            </div>
+            <h3 data-lang="services9">Feasibility Study</h3>
+            <p data-lang="services10">We provide feasibility study services that help our clients assess their projects accurately to ensure success and maximize benefits.</p>
+          </div>
+        </div><!-- End Service Item -->
+  
+        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
+          <div class="service-item position-relative d-flex flex-column align-items-center">
+            <div class="icon">
+              <i class="bi bi-calendar4-week"></i>
+            </div>
+            <h3 data-lang="services11">Legal</h3>
+            <p data-lang="services12">We assist our clients in handling complex legal matters, ensuring the protection of their rights and efficiently resolving disputes, backed by our deep expertise in the legal field.</p>
+          </div>
+        </div><!-- End Service Item -->
+  
+        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="600">
+          <div class="service-item position-relative d-flex flex-column align-items-center">
+            <div class="icon">
+              <i class="bi bi-chat-square-text"></i>
+            </div>
+            <h3 data-lang="services13">Financial advisory</h3>
+            <p data-lang="services14">Enhancing financial stability and achieving growth for individuals and businesses based on a thorough analysis of financial data and the market.</p>
+          </div>
+        </div><!-- End Service Item -->
+  
+      </div><!-- End row gy-4 -->
+  
+    </div><!-- End container -->
+  
+  </section><!-- End Services Section -->
+  
 
     
 
     
     <!-- Stats Section -->
-    <section id="stats" class="stats section dark-background">
+<section id="stats" class="stats section dark-background">
 
-      <img src="assets/img/stats-bg.jpg" alt="" data-aos="fade-in">
-
-      <div class="container position-relative" data-aos="fade-up" data-aos-delay="100">
-
-        <div class="subheading">
-          <h3 data-lang="what">What we have achieved so far</h3>
-          <p></p>
-        </div>
-
-        <div class="row gy-3 justify-content-center">
-          <div class="col-lg-3 col-md-6 d-flex justify-content-center">
-            <div class="stats-item text-center d-flex flex-column align-items-center">
-              <span data-purecounter-start="0" data-purecounter-end="182" data-purecounter-duration="1" class="purecounter"></span>
-              <p data-lang="what2">Clients</p>
-            </div>
-          </div><!-- End Stats Item -->
-        
-          <div class="col-lg-3 col-md-6 d-flex justify-content-center">
-            <div class="stats-item text-center d-flex flex-column align-items-center">
-              <span data-purecounter-start="0" data-purecounter-end="6" data-purecounter-duration="1" class="purecounter"></span>
-              <p data-lang="what3">Services</p>
-            </div>
-          </div><!-- End Stats Item -->
-        
-          <div class="col-lg-3 col-md-6 d-flex justify-content-center">
-            <div class="stats-item text-center d-flex flex-column align-items-center">
-              <span data-purecounter-start="0" data-purecounter-end="17" data-purecounter-duration="1" class="purecounter"></span>
-              <p data-lang="what4">Experience</p>
-            </div>
-          </div><!-- End Stats Item -->
-        </div>
-        
-
-          
-         
-
-    </section><!-- /Stats Section -->
-
+    <img src="assets/img/stats-bg.jpg" alt="" data-aos="fade-in">
+  
+    <div class="container position-relative" data-aos="fade-up" data-aos-delay="100">
+  
+      <!-- Section Heading -->
+      <div class="subheading">
+        <h3 data-lang="what">What we have achieved so far</h3>
+        <p></p>
+      </div>
+  
+      <div class="row gy-3 justify-content-center">
+  
+        <!-- Stats Item 1 -->
+        <div class="col-lg-3 col-md-6 d-flex justify-content-center">
+          <div class="stats-item text-center d-flex flex-column align-items-center">
+            <span data-purecounter-start="0" data-purecounter-end="182" data-purecounter-duration="1" class="purecounter"></span>
+            <p data-lang="what2">Clients</p>
+          </div>
+        </div><!-- End Stats Item -->
+  
+        <!-- Stats Item 2 -->
+        <div class="col-lg-3 col-md-6 d-flex justify-content-center">
+          <div class="stats-item text-center d-flex flex-column align-items-center">
+            <span data-purecounter-start="0" data-purecounter-end="6" data-purecounter-duration="1" class="purecounter"></span>
+            <p data-lang="what3">Services</p>
+          </div>
+        </div><!-- End Stats Item -->
+  
+        <!-- Stats Item 3 -->
+        <div class="col-lg-3 col-md-6 d-flex justify-content-center">
+          <div class="stats-item text-center d-flex flex-column align-items-center">
+            <span data-purecounter-start="0" data-purecounter-end="17" data-purecounter-duration="1" class="purecounter"></span>
+            <p data-lang="what4">Experience</p>
+          </div>
+        </div><!-- End Stats Item -->
+  
+      </div>
+  
+    </div>
+  
+  </section><!-- /Stats Section -->
+  
     
     
 
@@ -573,233 +405,148 @@
     
 
     <!-- Contact Section -->
-    <section id="contact" class="contact section light-background">
+<section id="contact" class="contact section light-background">
 
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2 data-lang="contact" >Contact Us</h2>
-        <p>             </p>
-      </div><!-- End Section Title -->
-
-      <div class="container" data-aos="fade" data-aos-delay="100">
-
-        <div class="row gy-4">
-
-          <div class="col-lg-4">
-            <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="200">
-              <i class="bi bi-geo-alt flex-shrink-0"></i>
-              <div>
-                <h3 data-lang="contact2" >Address</h3>
-                <p data-lang="contact3" >40 Abu Dawoud Al Zaheri Street, Nasr City, Cairo, Egypt</p>
-              </div>
-            </div><!-- End Info Item -->
-
-            <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="300">
-              <i class="bi bi-telephone flex-shrink-0"></i>
-              <div>
-                <h3 data-lang="contact4" >Call Us</h3>
-                <p data-lang= "contactph">+20 1228310654</p>
-                
-                
-              </div>
-              
-            </div><!-- End Info Item -->
-
-            
-
-            <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="400">
-              <i class="bi bi-envelope flex-shrink-0"></i>
-              <div>
-                <h3 data-lang="contact5" >Email Us</h3>
-                <p>info@elitefinancial-eg.com</p>
-              </div>
-            </div><!-- End Info Item -->
-
-          </div>
-
-
-
-
-
-
-
-
-
-          <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Form</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <style>
-        body {
-            background: #f8f9fa;
-        }
-        .contact-form {
-            background: #ffffff;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            max-width: 600px;
-            margin: auto;
-            margin-top: 1px;
-        }
-        .form-control {
-            border-radius: 8px;
-            padding-left: 40px;
-        }
-        .input-group-text {
-            background: transparent;
-            border: none;
-            position: absolute;
-            left: 10px;
-            top: 50%;
-            transform: translateY(-50%);
-            font-size: 1.2rem;
-            color: #6c757d;
-        }
-        .btn-submit {
-            background: #007bff;
-            color: white;
-            padding: 10px;
-            font-size: 18px;
-            border-radius: 8px;
-            transition: 0.3s;
-            width: 100%;
-        }
-        .btn-submit:hover {
-            background: #0056b3;
-        }
-        .alert-message {
-            display: none;
-            margin-top: 10px;
-            padding: 10px;
-            border-radius: 5px;
-            text-align: center;
-            font-weight: bold;
-        }
-        .alert-success {
-            background-color: #d4edda;
-            color: #155724;
-            border: 1px solid #c3e6cb;
-        }
-        .alert-danger {
-            background-color: #f8d7da;
-            color: #721c24;
-            border: 1px solid #f5c6cb;
-        }
-    </style>
-</head>
-<body>
-
+    <!-- Section Title -->
+    <div class="container section-title" data-aos="fade-up">
+      <h2 data-lang="contact">Contact Us</h2>
+      <p></p>
+    </div><!-- End Section Title -->
   
+    <div class="container" data-aos="fade" data-aos-delay="100">
   
-      <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-      <style>
-          .alert-message { margin-top: 10px; font-weight: bold; }
-          .alert-success { color: green; }
-          .alert-danger { color: red; }
-      </style>
-  </head>
-  <body>
-      <div class="contact-form">
-          <h3 data-lang="contact6" class="text-center mb-4">Contact Us</h3>
-          <form id="contactForm">
+      <div class="row gy-4">
+  
+        <div class="col-lg-4">
+  
+          <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="200">
+            <i class="bi bi-geo-alt flex-shrink-0"></i>
+            <div>
+              <h3 data-lang="contact2">Address</h3>
+              <p data-lang="contact3">40 Abu Dawoud Al Zaheri Street, Nasr City, Cairo, Egypt</p>
+            </div>
+          </div><!-- End Info Item -->
+  
+          <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="300">
+            <i class="bi bi-telephone flex-shrink-0"></i>
+            <div>
+              <h3 data-lang="contact4">Call Us</h3>
+              <p data-lang="contactph">+20 1228310654</p>
+            </div>
+          </div><!-- End Info Item -->
+  
+          <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="400">
+            <i class="bi bi-envelope flex-shrink-0"></i>
+            <div>
+              <h3 data-lang="contact5">Email Us</h3>
+              <p>info@elitefinancial-eg.com</p>
+            </div>
+          </div><!-- End Info Item -->
+  
+        </div><!-- End col-lg-4 -->
+  
+        <div class="col-lg-8">
+          <div class="contact-form">
+            <h3 data-lang="contact6" class="text-center mb-4">Contact Us</h3>
+            <form id="contactForm">
               <div class="mb-3 position-relative">
-                  <span class="input-group-text"><i class="fas fa-user"></i></span>
-                  <input type="text" name="name" class="form-control" placeholder="Your Name" data-lang="contact7" required>
+                <span class="input-group-text"><i class="fas fa-user"></i></span>
+                <input type="text" name="name" class="form-control" placeholder="Your Name*" data-lang="contact7" required>
               </div>
               <div class="mb-3 position-relative">
-                  <span class="input-group-text"><i class="fas fa-envelope"></i></span>
-                  <input type="email" name="email" class="form-control" placeholder="Your Email" data-lang="contact8" required>
+                <span class="input-group-text"><i class="fas fa-envelope"></i></span>
+                <input type="email" name="email" class="form-control" placeholder="Your Email*" data-lang="contact8" required>
               </div>
               <div class="mb-3 position-relative">
-                  <span class="input-group-text"><i class="fas fa-tag"></i></span>
-                  <input type="text" name="subject" class="form-control" placeholder="Subject" data-lang="contact9" required>
+                <span class="input-group-text"><i class="fas fa-tag"></i></span>
+                <input type="text" name="subject" class="form-control" placeholder="Subject*" data-lang="contact9" required>
               </div>
               <div class="mb-3 position-relative">
-                  <span class="input-group-text"><i class="fas fa-comment"></i></span>
-                  <textarea name="message" class="form-control" rows="4" placeholder="Your Message" data-lang="contact10" required></textarea>
+                <span class="input-group-text"><i class="fas fa-comment"></i></span>
+                <textarea name="message" class="form-control" rows="4" placeholder="Your Message*sdfgwsg" data-lang="contact10" required></textarea>
               </div>
               <button type="submit" class="btn btn-submit" data-lang="contact11">Send Message</button>
               <div id="contactResponse" class="alert-message"></div>
-          </form>
-      </div>
+            </form>
+          </div>
+        </div><!-- End col-lg-8 -->
   
+      </div><!-- End row gy-4 -->
+  
+    </div><!-- End container -->
+  
+  </section><!-- End Contact Section -->
+
+  <div class="address-container">
+    <a href="https://www.google.com/maps/place/40+Abou+Dawoud+Al+Zaheri,+Al+Mintaqah+as+Sādisah,+Nasr+City,+Cairo+Governorate+4450454/@30.0515246,31.3658325,17z" 
+       target="_blank" 
+       class="address">
+    </a>
+
+    <!-- تضمين خريطة جوجل -->
+    <div class="map-container">
+        <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3454.1815549892213!2d31.36325737680297!3d30.051524581875868!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14583e2ff468a4d7%3A0xe14b0a5c71cd88b!2s40%20Abou%20Dawoud%20Al%20Zaheri%2C%20Al%20Mintaqah%20as%20S%C4%81disah%2C%20Nasr%20City%2C%20Cairo%20Governorate%204450454!5e0!3m2!1sen!2seg!4v1709650000000"
+            allowfullscreen="" 
+            loading="lazy">
+        </iframe>
+    </div>
+</div>
+
+
+
+  
+
       
+    
   
-      <script>
-          (function() {
-              emailjs.init("KSdSGoGza3XVQIuja"); // استبدل بـ Public Key من EmailJS
-          })();
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
   
-          document.addEventListener("DOMContentLoaded", function () {
-    document.getElementById("contactForm").addEventListener("submit", function (event) {
-        event.preventDefault(); // منع إعادة تحميل الصفحة
+  <script>
+    (function() {
+        emailjs.init("KSdSGoGza3XVQIuja"); // استبدل بـ Public Key من EmailJS
+    })();
 
-        let form = this;
-        let responseElement = document.getElementById("contactResponse");
+    document.addEventListener("DOMContentLoaded", function () {
+        document.getElementById("contactForm").addEventListener("submit", function (event) {
+            event.preventDefault(); // منع إعادة تحميل الصفحة
 
-        emailjs.sendForm("service_of4e1e9", "template_tfrs20g", form)
-            .then(function (response) {
-                console.log("✅ تم الإرسال بنجاح", response);
-                responseElement.innerHTML = '<div class="alert alert-success">✅ تم ارسال طلبك بنجاح!</div>';
-                responseElement.style.display = "block"; // إظهار الرسالة
-                form.reset(); // إعادة تعيين النموذج
+            let form = this;
+            let responseElement = document.getElementById("contactResponse");
 
-                // إخفاء الرسالة بعد 5 ثوانٍ
-                setTimeout(function () {
-                    responseElement.style.display = "none";
-                }, 5000);
-                // ✅ حفظ حالة نجاح الإرسال في localStorage
-            localStorage.setItem("formSubmitted", "true");
+            // ✅ حفظ الصفحة السابقة قبل الإرسال
+            localStorage.setItem("previousPage", window.location.href);
 
-// ✅ التوجيه إلى sent.html بعد 2 ثانية
-setTimeout(function () {
-    window.location.href = "sent.html";
-}, 2000);
-            }, function (error) {
-                console.error("❌ فشل الإرسال", error);
-                responseElement.innerHTML = '<div class="alert alert-danger">❌ فشل ارسال الطلب, حاول مرة اخري: ' + error.text + '</div>';
-                responseElement.style.display = "block"; // إظهار الرسالة
-            });
+            emailjs.sendForm("service_of4eejd", "template_tfrs20g", form)
+                .then(function (response) {
+                    console.log("✅ تم الإرسال بنجاح", response);
+                    responseElement.innerHTML = '<div class="alert alert-success">✅ تم ارسال طلبك بنجاح!</div>';
+                    responseElement.style.display = "block"; // إظهار الرسالة
+                    form.reset(); // إعادة تعيين النموذج
 
-        return false; // منع أي سلوك افتراضي آخر
+                    // ✅ حفظ حالة نجاح الإرسال
+                    localStorage.setItem("formSubmitted", "true");
+
+                    // ✅ التوجيه إلى sent.html بعد 2 ثانية فقط إذا نجح الإرسال
+                    setTimeout(function () {
+                        window.location.href = "sent.html";
+                    }, 2000);
+                })
+                .catch(function (error) {
+                    console.error("❌ فشل الإرسال", error);
+                    responseElement.innerHTML = '<div class="alert alert-danger">❌ فشل ارسال الطلب، حاول مرة أخرى: ' + error.text + '</div>';
+                    responseElement.style.display = "block"; // إظهار الرسالة
+                });
+
+            return false; // منع أي سلوك افتراضي آخر
+        });
     });
-});
+</script>
 
-      </script>
  
-  
 
    
-
-
-
-
-
-          
-
-
-
-
-          
-          
-        
-        
-              
-           
-        <!-- End Contact Form -->
-
-        
-
-      
-
-    </section><!-- /Contact Section -->
 
   </main>
 
@@ -814,22 +561,41 @@ setTimeout(function () {
           <i class="bi bi-whatsapp"></i>
       </a>
       
-
       </div>
       <div class="container">
-        <div >
-          <strong  >EMAIL: info@elitefinancial-eg.com</strong> 
+        <div class="contact-container">
+            <a href="mailto:info@elitefinancial-eg.com" class="icon-text">
+                <i class="fa fa-envelope"></i> info@elitefinancial-eg.com
+            </a>
+        
+            <a href="tel:+201228310654" class="icon-text1">
+                <i class="fa fa-phone"></i> +201228310654
+            </a>
+        
+            <a href="tel:+223504766" class="icon-text2">
+                <i class="fa fa-phone"></i> +223504766
+            </a>
+            
+            <a href="https://www.google.com/maps/place/40+Abou+Dawoud+Al+Zaheri,+Al+Mintaqah+as+Sādisah,+Nasr+City,+Cairo+Governorate+4450454/@30.0515246,31.3658325,17z" 
+   target="_blank" 
+   class="address"
+   style="font-size: 14px;">
+   <i class="fa fa-map-marker-alt"></i> 
+   <strong>40 Abu Dawoud Al Zaheri Street, Nasr City, Cairo, Egypt</strong>
+</a>
+
+    
+    
+        
+           
         </div>
-        <div ></div>
-            <strong  >MOBILE: +201228310654</strong> 
-        </div>
-        <div ></div>
-        <strong  >Telephone: +223504766</strong> 
     </div>
-        <div >
-          <strong  >Address: 40 Abu Dawoud Al Zaheri Street, Nasr City, Cairo, Egypt</strong> 
-        </div>
-    </div>
+    
+    
+    
+    <!-- مكتبة Font Awesome للأيقونات -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
     
     </div>
   </footer>
@@ -838,22 +604,20 @@ setTimeout(function () {
   <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
   <!-- Preloader -->
-   <body>
-<div id="preloader">
-  <section class="dots-container">
-    <div class="dot"></div>
-    <div class="dot"></div>
-    <div class="dot"></div>
-    <div class="dot"></div>
-    <div class="dot"></div>
-  </section>
-</div>
-   </body>
-<script src="assets/css/main.css"></script>
-<head>
-  <link rel="stylesheet" href="main.css">
-  <script src="translation.js"></script>
-</head>
+   
+  <div id="preloader">
+    <section class="dots-container">
+      <h2 class="visually-hidden">Loading Animation</h2> <!-- عنوان مخفي لتحسين إمكانية الوصول -->
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+    </section>
+  </div>
+  
+   
+
 
   <!-- Vendor JS Files -->
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -875,71 +639,89 @@ setTimeout(function () {
 
   
   <script>
-    // جلب الزر
-    const CompanyIncorporation = document.getElementById("CompanyIncorporation");
-
-    // عندما يتم الضغط على الزر، عرض شاشة تحميل
-    CompanyIncorporation.addEventListener("click", function(event) {
-        event.preventDefault(); // منع الرابط من الانتقال فورًا
-        // عرض شاشة التحميل قبل الانتقال للصفحة الجديدة
-        document.body.innerHTML = "<h1>Loading...</h1>";  // تخصيص هذه الرسالة كما تريد
-        setTimeout(function() {
-            window.location.href = "CompanyIncorporation.html";  // فتح الصفحة الجديدة بعد 2 ثانية
-        }, 2000); // تأخير لمدة 2 ثانية لظهور شاشة التحميل
+    document.addEventListener("DOMContentLoaded", function() {
+        // جلب الزر
+        const CompanyIncorporation = document.getElementById("CompanyIncorporation");
+    
+        if (CompanyIncorporation) {
+            // عندما يتم الضغط على الزر، عرض شاشة تحميل
+            CompanyIncorporation.addEventListener("click", function(event) {
+                event.preventDefault(); // منع الرابط من الانتقال فورًا
+                // عرض شاشة التحميل قبل الانتقال للصفحة الجديدة
+                document.body.innerHTML = "<h1>Loading...</h1>";  // تخصيص هذه الرسالة كما تريد
+                setTimeout(function() {
+                    window.location.href = "CompanyIncorporation.html";  // فتح الصفحة الجديدة بعد 2 ثانية
+                }, 2000); // تأخير لمدة 2 ثانية لظهور شاشة التحميل
+            });
+        }
     });
-</script>
+    </script>
+    
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        // جلب الزر
+        const External = document.getElementById("External");
+    
+        if (External) {
+            // عندما يتم الضغط على الزر، عرض شاشة تحميل
+            External.addEventListener("click", function(event) {
+                event.preventDefault(); // منع الرابط من الانتقال فورًا
+                // عرض شاشة التحميل قبل الانتقال للصفحة الجديدة
+                document.body.innerHTML = "<h1>Loading...</h1>";  // تخصيص هذه الرسالة كما تريد
+                setTimeout(function() {
+                    window.location.href = "audit.html";  // فتح الصفحة الجديدة بعد 2 ثانية
+                }, 2000); // تأخير لمدة 2 ثانية لظهور شاشة التحميل
+            });
+        }
+    });
+    </script>
+    
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        // جلب الزر
+        const Book = document.getElementById("Book");
+    
+        if (Book) {
+            // عندما يتم الضغط على الزر، عرض شاشة تحميل
+            Book.addEventListener("click", function(event) {
+                event.preventDefault(); // منع الرابط من الانتقال فورًا
+                // عرض شاشة التحميل قبل الانتقال للصفحة الجديدة
+                document.body.innerHTML = "<h1>Loading...</h1>";  // تخصيص هذه الرسالة كما تريد
+                setTimeout(function() {
+                    window.location.href = "BookKeeping.html";  // فتح الصفحة الجديدة بعد 2 ثانية
+                }, 2000); // تأخير لمدة 2 ثانية لظهور شاشة التحميل
+            });
+        }
+    });
+    </script>
+    
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        // جلب الزر
+        const Taxes = document.getElementById("Taxes");
+    
+        if (Taxes) {
+            // عندما يتم الضغط على الزر، عرض شاشة تحميل
+            Taxes.addEventListener("click", function(event) {
+                event.preventDefault(); // منع الرابط من الانتقال فورًا
+                // عرض شاشة التحميل قبل الانتقال للصفحة الجديدة
+                document.body.innerHTML = "<h1>Loading...</h1>";  // تخصيص هذه الرسالة كما تريد
+                setTimeout(function() {
+                    window.location.href = "Taxes.html";  // فتح الصفحة الجديدة بعد 2 ثانية
+                }, 2000); // تأخير لمدة 2 ثانية لظهور شاشة التحميل
+            });
+        }
+    });
+    </script>
+    
 
-<script>
-// جلب الزر
-const External = document.getElementById("External");
-
-// عندما يتم الضغط على الزر، عرض شاشة تحميل
-External.addEventListener("click", function(event) {
-event.preventDefault(); // منع الرابط من الانتقال فورًا
-// عرض شاشة التحميل قبل الانتقال للصفحة الجديدة
-document.body.innerHTML = "<h1>Loading...</h1>";  // تخصيص هذه الرسالة كما تريد
-setTimeout(function() {
-    window.location.href = "audit.html";  // فتح الصفحة الجديدة بعد 2 ثانية
-}, 2000); // تأخير لمدة 2 ثانية لظهور شاشة التحميل
-});
-</script>
-
-<script>
-// جلب الزر
-const Book = document.getElementById("Book");
-
-// عندما يتم الضغط على الزر، عرض شاشة تحميل
-Book.addEventListener("click", function(event) {
-event.preventDefault(); // منع الرابط من الانتقال فورًا
-// عرض شاشة التحميل قبل الانتقال للصفحة الجديدة
-document.body.innerHTML = "<h1>Loading...</h1>";  // تخصيص هذه الرسالة كما تريد
-setTimeout(function() {
-    window.location.href = "BookKeeping.html";  // فتح الصفحة الجديدة بعد 2 ثانية
-}, 2000); // تأخير لمدة 2 ثانية لظهور شاشة التحميل
-});
-</script>
-
-<script>
-// جلب الزر
-const Taxes = document.getElementById("Taxes");
-
-// عندما يتم الضغط على الزر، عرض شاشة تحميل
-Taxes.addEventListener("click", function(event) {
-event.preventDefault(); // منع الرابط من الانتقال فورًا
-// عرض شاشة التحميل قبل الانتقال للصفحة الجديدة
-document.body.innerHTML = "<h1>Loading...</h1>";  // تخصيص هذه الرسالة كما تريد
-setTimeout(function() {
-    window.location.href = "Taxes.html";  // فتح الصفحة الجديدة بعد 2 ثانية
-}, 2000); // تأخير لمدة 2 ثانية لظهور شاشة التحميل
-});
-</script>
 
 
 
 
 
-
-
+    
+      
   
 
     

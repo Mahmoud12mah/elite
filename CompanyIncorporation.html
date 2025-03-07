@@ -29,8 +29,7 @@
 
 
   <!-- Favicons -->
-  <link href="assets/img/favicon.png" rel="icon">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+  
 
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
@@ -55,139 +54,6 @@
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
 
-
-  
- 
-
-
-   
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: Arial, sans-serif;
-        }
-        
-        header {
-            width: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            padding: 10px;
-        }
-        
-        .top-header {
-            background: #0A2A5E;
-            color: rgb(0, 0, 0);
-            height: 40px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-wrap: wrap;
-            direction: ltr !important; /* يمنع انعكاس النص */
-        }
-
-        .language-switch {
-            display: flex;
-            gap: 5px;
-            position: absolute;
-            right: 20px;
-        }
-
-        .language-switch button {
-            padding: 1px 1px;
-            font-size: 12px;
-            border-radius: 1px;
-            cursor: pointer;
-            background-color: #f5f5f5;
-            color: rgb(0, 0, 0);
-            font-weight: bold;
-        }
-        
-        .icon-text, .icon-text1, .icon-text2 {
-            font-size: 16px;
-            color: #ffffff;
-            font-weight: bold;
-            margin: 0 10px;
-            top: 1px;
-            direction: ltr !important; /* يمنع انعكاس النص */
-        }
-
-        .bottom-header {
-            background: #1032cc17;
-            color: rgb(102, 8, 8);
-            height: auto;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 15px;
-            flex-wrap: wrap;
-        }
-
-        .logo {
-            max-width: 100%;
-            height: 90px;
-            
-        }
-
-        .navmenu ul {
-            list-style: none;
-            display: flex;
-            padding: 0;
-            margin: 0;
-            flex-wrap: wrap;
-        }
-
-        .navmenu ul li {
-            margin: 0 10px;
-        }
-
-        .navmenu ul li a {
-            text-decoration: none;
-            color: black;
-            font-weight: bold;
-        }
-
-        /* استجابة للأجهزة الصغيرة */
-        @media (max-width: 768px) {
-            .top-header {
-                flex-direction: column;
-                height: auto;
-                text-align: center;
-            }
-            
-
-            .bottom-header {
-                flex-direction: column;
-                text-align: center;
-        }
-
-            .logo {
-                height: 10px;
-            }
-
-            .navmenu ul {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            .navmenu ul li {
-                margin: 5px 0;
-            }
-
-            .language-switch {
-                position: relative;
-                right: auto;
-                margin-top: 10px;
-            }
-            
-        }
-    </style>
-</head>
-<body>
     <header class="top-header">
         <a href="mailto:info@elitefinancial-eg.com" class="icon-text">
             <i class="fa fa-envelope"></i> info@elitefinancial-eg.com
@@ -212,66 +78,10 @@
     <button class="lang-btn english" onclick="changeLanguage('en')">English</button>
 </div>
 
-<style>
-/* تنسيق الحاوية */
-.language-switch {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    margin-top: 20px;
-}
-
-/* تنسيق الأزرار */
-.lang-btn {
-    padding: 10px 20px;
-    font-size: 16px;
-    font-weight: bold;
-    border: 2px solid #007bff;
-    border-radius: 8px;
-    background-color: #fff;
-    color: #007bff;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-/* تأثير عند تمرير الماوس */
-.lang-btn:hover {
-    background-color: #007bff;
-    color: #fff;
-}
-
-/* تخصيص لون زر العربية */
-.lang-btn.arabic {
-    border-color: #28a745;
-    color: #28a745;
-}
-
-.lang-btn.arabic:hover {
-    background-color: #28a745;
-    color: #fff;
-}
-
-/* تخصيص لون زر الإنجليزية */
-.lang-btn.english {
-    border-color: #ff9800;
-    color: #ff9800;
-}
-
-.lang-btn.english:hover {
-    background-color: #ff9800;
-    color: #fff;
-}
-</style>
 
     </header>
-    
-    
-
-
-    
-    
-    
     <link rel="stylesheet" href="styles.css">
+    <script src="translation.js"></script>
 
 
 
@@ -279,7 +89,6 @@
         <a href="index.html">
             <img src="assets/img/logo.png" class="logo" alt="Logo">
         </a>
-        <h1 class="sitename" style="font-weight: bold"></h1>
     
         <!-- زر القائمة (Checkbox مخفي) -->
         <input type="checkbox" id="menu-toggle" class="menu-checkbox">
@@ -290,24 +99,22 @@
           <label for="menu-toggle" class="close-btn">✖</label> <!-- زر الإغلاق -->
         <ul>
             
-          <li><a id="Home" href="#" data-lang="home">Home</a></li>
-          <li><a id="About" href="#about" data-lang="about">About Us</a></li>
+          <li><a id="Home" href="#Home" data-lang="home1">Home</a></li>
+          <li><a id="About" href="#about" data-lang="about1">About Us</a></li>
           <li class="dropdown">
             <a href="#" style="color: black; font-weight: bold;">
-                <span data-lang="Pricing">Pricing</span>
+                <span data-lang="Pricing1">Pricing</span>
                 <i class="bi bi-chevron-down toggle-dropdown"></i>
             </a>
             <ul>
                 <li><a href="Taxes.html" data-lang="Taxes" style="font-weight: bold;">Taxes</a></li>
                 <li><a href="BookKeeping.html" data-lang="BookKeeping" style="font-weight: bold;">BookKeeping</a></li>
                 <li><a href="audit.html" data-lang="ExternalAudit" style="font-weight: bold;">External Audit</a></li>
-              <li><a href="Company.html" data-lang="CompanyIncorporation" style="font-weight: bold;">Company Incorporation</a></li>
+              <li><a href="CompanyIncorporation.html" data-lang="CompanyIncorporation" style="font-weight: bold;">Company Incorporation</a></li>
           </ul>
-        </li>
-        
-              </li>
-            <li><a id="Services" href="#services" data-lang="services">Services</a></li>
-            <li><a id="" href="#and" data-lang="contact">Contact Us</a></li>
+       
+              <li><a id="Services" href="#services" data-lang="services1">Services</a></li>
+                <li><a id="Contact" href="#contact" data-lang="contact1">Contact Us</a></li>
             </ul>
         </nav>
     </header>
@@ -316,8 +123,8 @@
 
 </p>
 
-<div id="content" dir="rtl" class="container d-flex flex-column align-items-center text-center"></div>
-        <h2 data-lang="RequestapriceforCompanyIncorporation" style="font-size: 30px; font-weight: bold; text-align: center; background-color: #0A2A5E; color: #ffffff;" id="welcome-text" data-aos="fade-up" data-aos-delay="100">Request a price for Company Incorporation Services</h2>
+<div  dir="rtl" class="container d-flex flex-column align-items-center text-center"></div>
+        <h2 data-lang="RequestapriceforCompanyIncorporation" style="font-size: 30px; font-weight: bold; text-align: center; background-color: #0A2A5E; color: #ffffff;"  data-aos="fade-up" data-aos-delay="100">Request a price for Company Incorporation Services</h2>
 
 <p>
 
@@ -326,7 +133,7 @@
 <div class="col-lg-8">
     <div class="request-form">
         <form id="requestForm">
-            <input type="hidden" id="sourcePage" name="source_page">
+            <input type="hidden" name="source_page">
     
             <div class="col-md-6">
                 <input style="font-weight: bold" type="text" name="name" class="form-control" placeholder="Name*" data-lang="name" required="">
@@ -346,91 +153,92 @@
             
     
         </form>
-    </div>
+   
     
         <p>
             
 
         </p>
 
-        <!DOCTYPE html>
-<html lang="ar">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>إدخال رقم الهاتف مع اختيار الدولة</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.4.6/css/flag-icon.min.css">
-    <style>
-        .phone-input-container {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        .country-select {
-            height: 38px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            padding: 5px;
-        }
-    </style>
-</head>
-<body>
-    <div class="request-form">
-        <form id="requestForm">
-        <div class="col-md-6">
-            <div class="phone-input-container">
-                <select id="countrySelect" class="country-select" name="phonecode" onchange="updatePhoneCode()">
-                    <option value="+20" data-flag="eg">🇪🇬 +20 (Egypt)</option>
-                    <option value="+1" data-flag="us">🇺🇸 +1 (USA)</option>
-                    <option value="+44" data-flag="gb">🇬🇧 +44 (UK)</option>
-                    <option value="+33" data-flag="fr">🇫🇷 +33 (France)</option>
-                    <option value="+49" data-flag="de">🇩🇪 +49 (Germany)</option>
-                    <option value="+91" data-flag="in">🇮🇳 +91 (India)</option>
-                    <option value="+81" data-flag="jp">🇯🇵 +81 (Japan)</option>
-                </select>
-                <input data-lang="yourmobile" type="number" style="font-weight: bold" class="form-control" id="phoneInput" name="mobile" placeholder="Mobile*" required="">
+       
+    <div class="col-md-6">
+        <div class="phone-input-container">
+            <div class="custom-dropdown">
+                <div class="dropdown-btn" id="dropdownButton">
+                    <img id="selectedFlag" src="https://flagcdn.com/w40/eg.png" alt="Egypt Flag"> 
+                    <span id="selectedCountry">+20 (Egypt)</span>
+                </div>
+                <div class="dropdown-list" id="dropdownList">
+                    <div class="dropdown-item" data-code="+20" data-country="Egypt" data-flag="eg">
+                        <img src="https://flagcdn.com/w40/eg.png" alt="Egypt Flag"> +20 (Egypt)
+                    </div>
+                    <div class="dropdown-item" data-code="+1" data-country="USA" data-flag="us">
+                        <img src="https://flagcdn.com/w40/us.png" alt="USA Flag"> +1 (USA)
+                    </div>
+                    <div class="dropdown-item" data-code="+44" data-country="UK" data-flag="gb">
+                        <img src="https://flagcdn.com/w40/gb.png" alt="UK Flag"> +44 (UK)
+                    </div>
+                    <div class="dropdown-item" data-code="+33" data-country="France" data-flag="fr">
+                        <img src="https://flagcdn.com/w40/fr.png" alt="France Flag"> +33 (France)
+                    </div>
+                    <div class="dropdown-item" data-code="+49" data-country="Germany" data-flag="de">
+                        <img src="https://flagcdn.com/w40/de.png" alt="Germany Flag"> +49 (Germany)
+                    </div>
+                    <div class="dropdown-item" data-code="+91" data-country="India" data-flag="in">
+                        <img src="https://flagcdn.com/w40/in.png" alt="India Flag"> +91 (India)
+                    </div>
+                    <div class="dropdown-item" data-code="+81" data-country="Japan" data-flag="jp">
+                        <img src="https://flagcdn.com/w40/jp.png" alt="Japan Flag"> +81 (Japan)
+                    </div>
+                </div>
             </div>
+            <input data-lang="yourmobile" type="number" class="form-control" id="phoneInput" name="mobile" placeholder="Mobile*" required>
         </div>
-        
-    </form>
+    </div>
     
     <script>
-        function updatePhoneCode() {
-            var select = document.getElementById("countrySelect");
-            var phoneInput = document.getElementById("phoneInput");
-            phoneInput.value = select.value;
-        }
+        document.addEventListener("DOMContentLoaded", function () {
+            let dropdownButton = document.getElementById("dropdownButton");
+            let dropdownList = document.getElementById("dropdownList");
+            let phoneInput = document.getElementById("phoneInput");
+    
+            // عند الضغط على الزر، تظهر القائمة أو تختفي
+            dropdownButton.addEventListener("click", function (event) {
+                event.stopPropagation();
+                dropdownList.style.display = dropdownList.style.display === "block" ? "none" : "block";
+            });
+    
+            // عند اختيار دولة، يتم تحديث الرقم والرمز وإغلاق القائمة
+            dropdownList.addEventListener("click", function (event) {
+                let selectedItem = event.target.closest(".dropdown-item");
+                if (!selectedItem) return;
+    
+                let code = selectedItem.getAttribute("data-code");
+                let country = selectedItem.getAttribute("data-country");
+                let flagCode = selectedItem.getAttribute("data-flag");
+    
+                document.getElementById("selectedCountry").innerText = `${code} (${country})`;
+                document.getElementById("selectedFlag").src = `https://flagcdn.com/w40/${flagCode}.png`;
+                phoneInput.value = code; 
+    
+                dropdownList.style.display = "none";
+            });
+    
+            // إغلاق القائمة عند النقر خارجها
+            document.addEventListener("click", function (event) {
+                if (!event.target.closest(".custom-dropdown")) {
+                    dropdownList.style.display = "none";
+                }
+            });
+        });
     </script>
-
-
-</body>
-</html>
-
-
-        
-
-          
-
-      </div>
-      
-    </form>
   <p>
 
   </p>
 
+    <div  dir="rtl" class="container d-flex flex-column align-items-center text-center"></div>
    
-    
-     
-
-
-   
-
-
-    <h2></h2>
-
-    <div id="content" dir="rtl" class="container d-flex flex-column align-items-center text-center"></div>
-   
-        <h2 data-lang="CompanyType" style="font-size: 25px; font-weight: bold;" id="welcome-text" data-aos="fade-up" data-aos-delay="100">Company Type</h2>
+        <h2 data-lang="CompanyType" style="font-size: 25px; font-weight: bold;"  data-aos="fade-up" data-aos-delay="100">Company Type</h2>
     
         <label class="checkbox" for="checkbox1">
             <input type="checkbox" name="services[]" value="Sole Proprietorship Incorporation" id="checkbox1">
@@ -483,8 +291,8 @@
 
    
 
-        <div id="content" dir="rtl" class="container d-flex flex-column align-items-center text-center"></div>
-        <h2 data-lang="Arethereforeignpartners" style="font-size: 25px; font-weight: bold;" id="welcome-text" data-aos="fade-up" data-aos-delay="100">Are there foreign partners?</h2>
+        <div  dir="rtl" class="container d-flex flex-column align-items-center text-center"></div>
+        <h2 data-lang="Arethereforeignpartners" style="font-size: 25px; font-weight: bold;"  data-aos="fade-up" data-aos-delay="100">Are there foreign partners?</h2>
         <p>
 
         </p>
@@ -508,8 +316,8 @@
 
         </p>
 
-        <div id="content" dir="rtl" class="container d-flex flex-column align-items-center text-center"></div>
-        <h2 data-lang="TypeofActivity" style="font-size: 25px; font-weight: bold;" id="welcome-text" data-aos="fade-up" data-aos-delay="100">Type of Activity</h2>
+        <div  dir="rtl" class="container d-flex flex-column align-items-center text-center"></div>
+        <h2 data-lang="TypeofActivity" style="font-size: 25px; font-weight: bold;"  data-aos="fade-up" data-aos-delay="100">Type of Activity</h2>
         <p>
 
         </p>
@@ -583,65 +391,48 @@
         <p>
 
         </p>
-
-       
     
-
-
-        
-    
-        
-            <form id="Companycapital" class="request-form">
         <h2 data-lang="Companycapital" style="font-size: 30px; font-weight: bold;" data-aos="fade-up" data-aos-delay="100">
             Company capital
         </h2>
         <input type="number" name="Companycapital" oninput="validateNumber(this)">
-    </form>
-        
-        
-
-
-   
-    <style>
-        /* ضبط الصورة في مكان ثابت */
-        .floating-image {
+        <style>
+            /* ضبط الصورة في مكان ثابت */
+         .floating-image {
             position: absolute; 
-            top: 500px; /* المسافة من الأعلى */
-            width: 600px; /* حجم الصورة */
+            top: 300px; /* المسافة من الأعلى */
+            width: 400px; /* حجم الصورة */
             height: auto;
             z-index: 1000; /* لضمان ظهورها فوق العناصر الأخرى */
             transition: all 0.3s ease-in-out; /* انتقال سلس عند التغيير */
         }
-
+        
         /* عند اللغة العربية: تكون الصورة على اليمين */
         html[lang="ar"] .floating-image {
             left: 70px;
             right: auto;
         }
-
+        
         /* عند اللغة الإنجليزية: تكون الصورة على اليسار */
         html[lang="en"] .floating-image {
             right: 70px;
             left: auto;
         }
-
+        
         .floating-image img {
             width: 100%;
             border-radius: 10px; /* إضافة حواف دائرية */
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3); /* ظل جميل */
         }
-
+        
         /* إخفاء الصورة على الشاشات الصغيرة (أقل من 768px) */
         @media (max-width: 768px) {
             .floating-image {
                 display: none;
             }
         }
-    </style>
-</head>
-<body>
-
-    
+        </style>
+        
 
     <div class="floating-image">
         <img src="assets/img/blog-3.jpg" alt="Hero Image">
@@ -670,25 +461,6 @@
             }
         };
     </script>
-
-
-
-    
-    
-    
-
-    
-
-</script>
-</form>
-
-
-    </p>
-    
-
-
-</div>
-
 
 <script>
     function toggleDropdown(dropdownId, checkbox) {
@@ -751,123 +523,19 @@
   
     </script>
 
-
-
-
-
-    
-    
-    
-    
-    
-
-
-
-
-
-
-</body>
-</html>
-    
-    
-            
-            
-            
-            
-            
-            
-            
-            
-  
-
-
-  
-
-
-
-
-  
-  
-
   </div><!-- End Contact Form -->
 
-
-      
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
    
-<!-- End Contact Form -->
-
-<!-- الزر المخفي افتراضيًا -->
- 
-<!DOCTYPE html>
-<html lang="ar">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>طلب السعر - EmailJS</title>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    
-    <style>
-        .alert-message {
-            margin-top: 10px;
-            font-weight: bold;
-            display: none; /* إخفاء الرسالة مبدئيًا */
-            text-align: center;
-        }
-        .alert-success { color: green; }
-        .alert-danger { color: red; }
-        
-       
-/* From Uiverse.io by mrtqzbek11 */ 
-/* تصميم زر Request Price فقط */
-.request-price-btn {
-  width: 165px;
-  height: 62px;
-  cursor: pointer;
-  color: #fff;
-  font-weight: bold;
-  font-size: 20px;
-  border-radius: 1rem;
-  border: none;
-  position: relative;
-  background: #0A2A5E;
-  transition: 0.1s;
-}
-
-.request-price-btn::after {
-  content: '';
-  width: 100%;
-  height: 100%;
-  background-image: radial-gradient(circle farthest-corner at 10% 20%, rgba(255,94,247,1) 17.8%, rgba(2,245,255,1) 100.2%);
-  filter: blur(15px);
-  z-index: -1;
-  position: absolute;
-  left: 0;
-  top: 0;
-}
-
-.request-price-btn:active {
-  transform: scale(0.9) rotate(3deg);
-  background: radial-gradient(circle farthest-corner at 10% 20%, rgba(255,94,247,1) 17.8%, rgba(2,245,255,1) 100.2%);
-  transition: 0.5s;
-}
-
-</style>
-</head>
-<body>
-
-   
-            
-
-            <!-- جميع الحقول والإدخالات هنا -->
 
             <div class="button-container">
                 <button data-lang="RequestPrice" id="requestPrice" class="request-price-btn" type="button">Request Price</button>
                 <!-- الرسالة ستظهر مباشرة أسفل الزر -->
                 <div id="responseMessage" class="alert-message"></div>
-                <input type="hidden" id="sourcePage" name="source_page" value="Company">
+                <input type="hidden" name="source_page" value="Company">
             </div>
-        </form>
+       
     </div>
 
     <script>
@@ -942,15 +610,13 @@
         data["Companycapital"] = companyCapitalInput.value.trim();
     }
 
-    // 🔹 إضافة رقم الهاتف ورمز الدولة
-    let phoneCodeSelect = document.getElementById("countrySelect");
-    let phoneInput = document.getElementById("phoneInput");
-
-    if (phoneCodeSelect && phoneInput) {
-        data["phonecode"] = phoneCodeSelect.value; // رمز الدولة
-        data["mobile"] = phoneInput.value.trim(); // رقم الهاتف
+    // ✅ جمع كود الدولة مع رقم الهاتف فقط إذا كان مدخلًا
+    let phoneNumber = phoneInput.value.trim();
+    let countryCode = document.getElementById("selectedCountry").textContent.split(" ")[0];
+    
+    if (phoneNumber) {
+        data["mobile"] = countryCode + phoneNumber;
     }
-
     // 🔹 إضافة الخدمات المحددة
     let selectedServices = [];
     document.querySelectorAll("input[name='services[]']:checked").forEach(service => {
@@ -1064,37 +730,6 @@
     
 </script>
 
-<style>
-    
-    .input-error {
-        border: 2px solid red !important;
-        background-color: #ffdddd;
-    }
-
-    .checkbox-error {
-        border: 2px solid red !important;
-        background-color: #ffdddd;
-        padding: 5px;
-        border-radius: 5px;
-        
-    }
-    
-</style>
-
-    
-    
-    
-    
-    
-
-</body>
-</html>
-
-
-
-
-
-
 
 <footer id="footer" class="footer dark-background">
     <div class="container">
@@ -1107,26 +742,41 @@
           <i class="bi bi-whatsapp"></i>
       </a>
       
-
       </div>
-    </div>
-    <div class="container">
-        <div >
-          <strong  >EMAIL: info@elitefinancial-eg.com</strong> 
+      <div class="container">
+        <div class="contact-container">
+            <a href="mailto:info@elitefinancial-eg.com" class="icon-text">
+                <i class="fa fa-envelope"></i> info@elitefinancial-eg.com
+            </a>
+        
+            <a href="tel:+201228310654" class="icon-text1">
+                <i class="fa fa-phone"></i> +201228310654
+            </a>
+        
+            <a href="tel:+223504766" class="icon-text2">
+                <i class="fa fa-phone"></i> +223504766
+            </a>
+            
+            <a href="https://www.google.com/maps/place/40+Abou+Dawoud+Al+Zaheri,+Al+Mintaqah+as+Sādisah,+Nasr+City,+Cairo+Governorate+4450454/@30.0515246,31.3658325,17z" 
+   target="_blank" 
+   class="address"
+   style="font-size: 14px;">
+   <i class="fa fa-map-marker-alt"></i> 
+   <strong>40 Abu Dawoud Al Zaheri Street, Nasr City, Cairo, Egypt</strong>
+</a>
+
+    
+    
+        
+           
         </div>
-        <div ></div>
-            <strong  >MOBILE: +201228310654</strong> 
-        </div>
-        <div ></div>
-        <strong  >Telephone: +223504766</strong> 
     </div>
-        <div >
-          <strong  >Address: 40 Abu Dawoud Al Zaheri Street, Nasr City, Cairo, Egypt</strong> 
-        </div>
-    </div>
-  </div>
-  
-  </div>
+    
+    
+    
+    <!-- مكتبة Font Awesome للأيقونات -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
     
     </div>
   </footer>
@@ -1135,22 +785,20 @@
   <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
   <!-- Preloader -->
-   <body>
-<div id="preloader">
-  <section class="dots-container">
-    <div class="dot"></div>
-    <div class="dot"></div>
-    <div class="dot"></div>
-    <div class="dot"></div>
-    <div class="dot"></div>
-  </section>
-</div>
-   </body>
-<script src="assets/css/main.css"></script>
-<head>
-  <link rel="stylesheet" href="main.css">
-  <script src="translation.js"></script>
-</head>
+   
+  <div id="preloader">
+    <section class="dots-container">
+      <h2 class="visually-hidden">Loading Animation</h2> <!-- عنوان مخفي لتحسين إمكانية الوصول -->
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+    </section>
+  </div>
+   
+
+
 
   <!-- Vendor JS Files -->
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -1165,132 +813,115 @@
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
 
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+    const External = document.getElementById("External");
+    if (External) {
+        External.addEventListener("click", function(event) {
+            event.preventDefault();
+            setTimeout(function() {
+                window.location.href = "External Audit.html";
+            }, 2000);
+        });
+    }
+});
 
+document.addEventListener("DOMContentLoaded", function() {
+    const Home = document.getElementById("Home");
+    if (Home) {
+        Home.addEventListener("click", function(event) {
+            event.preventDefault();
+            setTimeout(function() {
+                window.location.href = "index.html";
+            }, 2000);
+        });
+    }
+});
 
+document.addEventListener("DOMContentLoaded", function() {
+    const about = document.getElementById("About");
+    if (about) {
+        about.addEventListener("click", function(event) {
+            event.preventDefault();
+            setTimeout(function() {
+                window.location.href = "index.html";
+            }, 2000);
+        });
+    }
+});
 
+document.addEventListener("DOMContentLoaded", function() {
+    const services = document.getElementById("Services");
+    if (services) {
+        services.addEventListener("click", function(event) {
+            event.preventDefault();
+            setTimeout(function() {
+                window.location.href = "index.html";
+            }, 2000);
+        });
+    }
+});
 
+document.addEventListener("DOMContentLoaded", function() {
+    const OurValues = document.getElementById("OurValues");
+    if (OurValues) {
+        OurValues.addEventListener("click", function(event) {
+            event.preventDefault();
+            setTimeout(function() {
+                window.location.href = "index.html";
+            }, 2000);
+        });
+    }
+});
 
+document.addEventListener("DOMContentLoaded", function() {
+    const Contact = document.getElementById("Contact");
+    if (Contact) {
+        Contact.addEventListener("click", function(event) {
+            event.preventDefault();
+            setTimeout(function() {
+                window.location.href = "index.html";
+            }, 2000);
+        });
+    }
+});
 
+document.addEventListener("DOMContentLoaded", function() {
+    const Book = document.getElementById("Book");
+    if (Book) {
+        Book.addEventListener("click", function(event) {
+            event.preventDefault();
+            setTimeout(function() {
+                window.location.href = "BookKeeping.html";
+            }, 2000);
+        });
+    }
+});
 
+document.addEventListener("DOMContentLoaded", function() {
+    const CompanyIncorporation = document.getElementById("CompanyIncorporation");
+    if (CompanyIncorporation) {
+        CompanyIncorporation.addEventListener("click", function(event) {
+            event.preventDefault();
+            setTimeout(function() {
+                window.location.href = "CompanyIncorporation.html";
+            }, 2000);
+        });
+    }
+});
 
+document.addEventListener("DOMContentLoaded", function() {
+    const Taxes = document.getElementById("Taxes");
+    if (Taxes) {
+        Taxes.addEventListener("click", function(event) {
+            event.preventDefault();
+            setTimeout(function() {
+                window.location.href = "Taxes.html";
+            }, 2000);
+        });
+    }
+});
 
-
-
-
-<script>
-  // جلب الزر
-  const Home = document.getElementById("Home");
-
-  // عندما يتم الضغط على الزر، عرض شاشة تحميل
-  Home.addEventListener("click", function(event) {
-      event.preventDefault(); // منع الرابط من الانتقال فورًا
-      // عرض شاشة التحميل قبل الانتقال للصفحة الجديدة
-      
-          window.location.href = "index.html";  // فتح الصفحة الجديدة بعد 2 ثانية
-      }, 2000); // تأخير لمدة 2 ثانية لظهور شاشة التحميل
-    ;
-</script>
-
-
-<script>
-  // جلب الزر
-  const about = document.getElementById("About");
-
-  // عندما يتم الضغط على الزر، عرض شاشة تحميل
-  about.addEventListener("click", function(event) {
-      event.preventDefault(); // منع الرابط من الانتقال فورًا
-      // عرض شاشة التحميل قبل الانتقال للصفحة الجديدة
-      
-          window.location.href = "index.html";  // فتح الصفحة الجديدة بعد 2 ثانية
-      }, 2000); // تأخير لمدة 2 ثانية لظهور شاشة التحميل
-      ;
-</script>
-
-
-<script>
-  // جلب الزر
-  const services = document.getElementById("Services");
-
-  // عندما يتم الضغط على الزر، عرض شاشة تحميل
-  Services.addEventListener("click", function(event) {
-      event.preventDefault(); // منع الرابط من الانتقال فورًا
-      // عرض شاشة التحميل قبل الانتقال للصفحة الجديدة
-      
-          window.location.href = "index.html";  // فتح الصفحة الجديدة بعد 2 ثانية
-      }, 2000); // تأخير لمدة 2 ثانية لظهور شاشة التحميل
-    ;
-</script>
-
-
-
-<script>
-    // جلب الزر
-    const and = document.getElementById("111");
-  
-    // عندما يتم الضغط على الزر، عرض شاشة تحميل
-    and.addEventListener("click", function(event) {
-        event.preventDefault(); // منع الرابط من الانتقال فورًا
-        // عرض شاشة التحميل قبل الانتقال للصفحة الجديدة
-       
-            window.location.href = "index.html";  // فتح الصفحة الجديدة بعد 2 ثانية
-        }, 2000); // تأخير لمدة 2 ثانية لظهور شاشة التحميل
-      ;
-  </script>
-
-<script>
-    // جلب الزر
-    const Company = document.getElementById("Company");
-
-    // عندما يتم الضغط على الزر، عرض شاشة تحميل
-    Company.addEventListener("click", function(event) {
-        event.preventDefault(); // منع الرابط من الانتقال فورًا
-        // عرض شاشة التحميل قبل الانتقال للصفحة الجديدة
-       
-            window.location.href = "Company.html";  // فتح الصفحة الجديدة بعد 2 ثانية
-        }, 2000); // تأخير لمدة 2 ثانية لظهور شاشة التحميل
-    ;
-</script>
-
-<script>
-// جلب الزر
-const External = document.getElementById("External");
-
-// عندما يتم الضغط على الزر، عرض شاشة تحميل
-External.addEventListener("click", function(event) {
-event.preventDefault(); // منع الرابط من الانتقال فورًا
-// عرض شاشة التحميل قبل الانتقال للصفحة الجديدة
-
-    window.location.href = "audit.html";  // فتح الصفحة الجديدة بعد 2 ثانية
-}, 2000); // تأخير لمدة 2 ثانية لظهور شاشة التحميل
-;
-</script>
-
-<script>
-// جلب الزر
-const Book = document.getElementById("Book");
-
-// عندما يتم الضغط على الزر، عرض شاشة تحميل
-Book.addEventListener("click", function(event) {
-event.preventDefault(); // منع الرابط من الانتقال فورًا
-// عرض شاشة التحميل قبل الانتقال للصفحة الجديدة
-
-    window.location.href = "BookKeeping.html";  // فتح الصفحة الجديدة بعد 2 ثانية
-}, 2000); // تأخير لمدة 2 ثانية لظهور شاشة التحميل
-;
-</script>
-
-<script>
-// جلب الزر
-const Taxes = document.getElementById("Taxes");
-
-// عندما يتم الضغط على الزر، عرض شاشة تحميل
-Taxes.addEventListener("click", function(event) {
-event.preventDefault(); // منع الرابط من الانتقال فورًا
-// عرض شاشة التحميل قبل الانتقال للصفحة الجديدة
-
-    window.location.href = "Taxes.html";  // فتح الصفحة الجديدة بعد 2 ثانية
-}, 2000); // تأخير لمدة 2 ثانية لظهور شاشة التحميل
-;
 </script>
 
 
