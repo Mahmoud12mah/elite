@@ -99,28 +99,49 @@
     
         <!-- القائمة -->
         <nav class="navmenu">
-          <label for="menu-toggle" class="close-btn">✖</label> <!-- زر الإغلاق -->
-        <ul>
-            
-          <li><a id="Home" href="#" data-lang="home">Home</a></li>
-          <li><a id="About" href="#about" data-lang="about">About Us</a></li>
-          <li class="dropdown">
-            <a href="#" style="color: black; font-weight: bold;">
-                <span data-lang="Pricing">Pricing</span>
-                <i class="bi bi-chevron-down toggle-dropdown"></i>
-            </a>
+            <label for="menu-toggle" class="close-btn">✖</label> <!-- زر الإغلاق -->
             <ul>
-                <li><a href="Taxes.html" data-lang="Taxes" style="font-weight: bold;">Taxes</a></li>
-                <li><a href="BookKeeping.html" data-lang="BookKeeping" style="font-weight: bold;">BookKeeping</a></li>
-                <li><a href="audit.html" data-lang="ExternalAudit" style="font-weight: bold;">External Audit</a></li>
-              <li><a href="CompanyIncorporation.html" data-lang="CompanyIncorporation" style="font-weight: bold;">Company Incorporation</a></li>
-          </ul>
-       
-              <li><a id="Services" href="#services" data-lang="services">Services</a></li>
-                <li><a id="Contact" href="#contact" data-lang="contact">Contact Us</a></li>
+                <li><a id="Home" href="#Home" data-lang="home1">Home</a></li>
+                <li><a id="About" href="#about" data-lang="about1">About Us</a></li>
+                <li class="dropdown">
+                    <a href="#" style="color: black; font-weight: bold;">
+                        <span data-lang="Pricing1">Pricing</span>
+                        <i class="bi bi-chevron-down toggle-dropdown"></i>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="Taxes.html" data-lang="Taxes" style="font-weight: bold;">Taxes</a></li>
+                        <li><a href="BookKeeping.html" data-lang="BookKeeping" style="font-weight: bold;">BookKeeping</a></li>
+                        <li><a href="audit.html" data-lang="ExternalAudit" style="font-weight: bold;">External Audit</a></li>
+                        <li><a href="CompanyIncorporation.html" data-lang="CompanyIncorporation" style="font-weight: bold;">Company Incorporation</a></li>
+                    </ul>
+                </li>
+                <li><a id="Services" href="#services" data-lang="services1">Services</a></li>
+                <li><a id="Contact" href="#contact" data-lang="contact1">Contact Us</a></li>
             </ul>
         </nav>
     </header>
+    
+    <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        let menuToggle = document.getElementById("menu-toggle");
+        let navMenu = document.querySelector(".navmenu");
+        let menuLinks = document.querySelectorAll(".navmenu a");
+    
+        // ✅ إغلاق القائمة عند النقر خارجها
+        document.addEventListener("click", function (event) {
+            if (!navMenu.contains(event.target) && !menuToggle.contains(event.target)) {
+                menuToggle.checked = false;
+            }
+        });
+    
+        // ✅ إغلاق القائمة عند النقر على أي رابط داخلها
+        menuLinks.forEach(link => {
+            link.addEventListener("click", function () {
+                menuToggle.checked = false;
+            });
+        });
+    });
+    </script>
 
 <p>
 
@@ -564,6 +585,29 @@ checkboxes.forEach(checkbox => {
 });
  }); 
 </script>
+<style>
+    .alert-message {
+        margin-top: 10px;
+        font-weight: bold;
+        display: none;
+        text-align: center;
+        width: 98vw; /* ✅ جعل الخلفية تمتد بعرض الصفحة بالكامل */
+        padding: 15px; /* ✅ إضافة تباعد داخلي */
+        top: 0; /* ✅ جعله يظهر في أعلى الصفحة */
+        left: 0; /* ✅ ضمان امتداد العنصر من أقصى اليسار */
+        z-index: 1000; /* ✅ التأكد من ظهوره فوق جميع العناصر */
+    }
+    
+    .alert-success { 
+        background-color: green; /* ✅ تحديد لون الخلفية */
+        color: white; /* ✅ جعل النص أبيض */
+    }
+    
+    .alert-danger { 
+        background-color: red; /* ✅ تحديد لون الخلفية */
+        color: white; /* ✅ جعل النص أبيض */
+    }
+    </style>
 
 
 
@@ -685,7 +729,7 @@ checkboxes.forEach(checkbox => {
             event.preventDefault();
             setTimeout(function() {
                 window.location.href = "External Audit.html";
-            }, 2000);
+            }, 500);
         });
     }
 });
@@ -697,7 +741,7 @@ document.addEventListener("DOMContentLoaded", function() {
             event.preventDefault();
             setTimeout(function() {
                 window.location.href = "index.html";
-            }, 2000);
+            }, 500);
         });
     }
 });
@@ -709,7 +753,7 @@ document.addEventListener("DOMContentLoaded", function() {
             event.preventDefault();
             setTimeout(function() {
                 window.location.href = "index.html";
-            }, 2000);
+            }, 500);
         });
     }
 });
@@ -721,7 +765,7 @@ document.addEventListener("DOMContentLoaded", function() {
             event.preventDefault();
             setTimeout(function() {
                 window.location.href = "index.html";
-            }, 2000);
+            }, 500);
         });
     }
 });
@@ -733,7 +777,7 @@ document.addEventListener("DOMContentLoaded", function() {
             event.preventDefault();
             setTimeout(function() {
                 window.location.href = "index.html";
-            }, 2000);
+            }, 500);
         });
     }
 });
@@ -745,7 +789,7 @@ document.addEventListener("DOMContentLoaded", function() {
             event.preventDefault();
             setTimeout(function() {
                 window.location.href = "index.html";
-            }, 2000);
+            }, 500);
         });
     }
 });
@@ -757,7 +801,7 @@ document.addEventListener("DOMContentLoaded", function() {
             event.preventDefault();
             setTimeout(function() {
                 window.location.href = "BookKeeping.html";
-            }, 2000);
+            }, 500);
         });
     }
 });
@@ -769,7 +813,7 @@ document.addEventListener("DOMContentLoaded", function() {
             event.preventDefault();
             setTimeout(function() {
                 window.location.href = "CompanyIncorporation.html";
-            }, 2000);
+            }, 500);
         });
     }
 });
@@ -781,7 +825,7 @@ document.addEventListener("DOMContentLoaded", function() {
             event.preventDefault();
             setTimeout(function() {
                 window.location.href = "Taxes.html";
-            }, 2000);
+            }, 500);
         });
     }
 });
