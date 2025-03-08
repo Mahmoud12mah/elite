@@ -597,12 +597,13 @@
            
             <a href="https://www.google.com/maps/place/40+Abou+Dawoud+Al+Zaheri,+Al+Mintaqah+as+Sādisah,+Nasr+City,+Cairo+Governorate+4450454/@30.0515246,31.3658325,17z" 
             target="_blank" 
-            class="address">
+            class="address" 
+            onclick="return checkInternetConnection(event);">
             <i class="fa fa-map-marker-alt"></i> 
             <strong>40 Abu Dawoud Al Zaheri Street, Nasr City, Cairo, Egypt</strong>
-         </a>
-         
-         <style>
+        </a>
+        
+        <style>
             .address {
                 display: inline-flex;
                 align-items: center;
@@ -613,27 +614,49 @@
                 padding: 8px 12px;
                 border-radius: 5px;
                 transition: all 0.3s ease-in-out;
+                background-color: #f8f9fa;
             }
-         
+        
             .address i {
                 margin-right: 4px;
                 color: #d9534f;
             }
-         
-            .address:hover {
-                background-color: #f8f9fa;
-                color: #d9534f;
-            }
-         
-            /* جعل النص أصغر في الشاشات الصغيرة */
+        
+            
+        
+            /* تحسين التصميم على الشاشات الصغيرة */
             @media (max-width: 900px) {
                 .address {
-                  font-size: 9px;
+                    font-size: 3vw; /* حجم يتكيف مع الشاشة */
                     padding: 6px 5px;
                 }
             }
-         </style>
-    
+        </style>
+        
+        <script>
+            function checkInternetConnection(event) {
+                if (!navigator.onLine) {
+                    alert("⚠ لا يوجد اتصال بالإنترنت. تأكد من الاتصال ثم حاول مرة أخرى.");
+                    event.preventDefault(); // منع فتح الرابط إذا لم يكن هناك إنترنت
+                    return false;
+                }
+                return true;
+            }
+        
+            document.addEventListener("DOMContentLoaded", function () {
+                let addressLink = document.querySelector(".address");
+                addressLink.addEventListener("click", function (event) {
+                    if (!navigator.onLine) {
+                        event.preventDefault(); // منع فتح الرابط
+                        alert("⚠ لا يوجد إنترنت. سيتم توجيهك إلى خريطة بديلة.");
+        
+                        // فتح رابط OpenStreetMap كخيار احتياطي
+                        window.open("https://www.openstreetmap.org/?mlat=30.0515&mlon=31.3658#map=17/30.0515/31.3658", "_blank");
+                    }
+                });
+            });
+        </script>
+        
     
         
            
