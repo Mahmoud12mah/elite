@@ -732,7 +732,7 @@ html[lang="en"] .floating-image {
                 }
 
                 if (!isValid) {
-                    responseElement.innerHTML = '<div class="alert-danger"> جميع الحقول مطلوبة!</div>';
+                    responseElement.innerHTML = '<div data-lang="Allfieldsrequired" class="alert-danger">جميع الحقول مطلوبة! ❌</div>';
                     responseElement.style.display = "block";
                 }
 
@@ -769,7 +769,7 @@ html[lang="en"] .floating-image {
     emailjs.send("service_of4e1e9", "template_c3dwche", formData)
         .then(function(response) {
             console.log("✅ تم الإرسال بنجاح", response);
-            responseElement.innerHTML = '<div class="alert-success">✅ تم الإرسال بنجاح!</div>';
+            responseElement.innerHTML = '<div data-lang="Sentsuccessfully!" class="alert-success">تم إرسال الطلب بنجاح! ✅</div>';
             responseElement.style.display = "block";
             setTimeout(() => { responseElement.style.display = "none"; }, 5000);
 
@@ -782,7 +782,7 @@ html[lang="en"] .floating-image {
             }, 2000);
         }, function(error) {
             console.error("❌ فشل الإرسال", error);
-            responseElement.innerHTML = '<div class="alert-danger">❌ فشل الإرسال: ' + error.text + '</div>';
+            responseElement.innerHTML = '<div data-lang="Failedtosendrequest" class="alert-danger">فشل إرسال الطلب، حاول مرة اخري! ❌: ' + error.text + '</div>';
             responseElement.style.display = "block";
             setTimeout(() => { responseElement.style.display = "none"; }, 5000);
         });

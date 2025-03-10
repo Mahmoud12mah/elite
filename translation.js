@@ -15,7 +15,7 @@ const translations = {
         mobile: "MOBILE: +201228310654",
         telephone: "Telephone: +223504766",
         welcome: "Welcome",
-        welcome2: "Elevating your business with precise accounting solutions and trusted financial consulting",
+        welcome2: "Elevating Your Business with Accurate Accounting & Tax Solutions and Reliable Financial Consulting",
         welcome3: "Your ideal partner for success and sustainable growth",
         about: "About us",
         about2: "At <strong>Elite Financial Consultant</strong>, we are committed to delivering high-quality accounting and financial services to support the success of your business. With years of experience in accounting, auditing, and financial consulting, we provide innovative solutions tailored to meet your needs and help you achieve your financial goals with efficiency and transparency.",
@@ -43,7 +43,8 @@ const translations = {
         what5: "Workers",
         contact: "Contact Us",
         contact2: "Address",
-        contact3: "40 Abu Dawoud Al Zaheri Street, Nasr City, Cairo, Egypt",
+        contact3: "<strong>Head office:</strong> 40 Abu Dawoud Al Zaheri Street, Nasr City, Cairo, Egypt",
+        contact14: "<strong>Branch:</strong> 633 Horyia St, Jankly's, Elzareein Building, Alexandria, Egypt",
         contact4: "Call Us",
         contact5: "Email",
         contact6: "Contact Us",
@@ -327,6 +328,13 @@ const translations = {
 
 
 
+        Sentsuccessfully: "Sent successfully! ✅",
+        Failedtosendrequest: "Failed to send request! ❌",
+        Allfieldsrequired: "All fields required! ❌",
+
+
+
+
 
 
 
@@ -348,7 +356,7 @@ const translations = {
         mobile: "+201228310654 :موبايل",
         telephone: "+223504766 :هاتف ارضي",
         welcome: "مرحبًا",
-        welcome2: "الارتقاء بأعمالك من خلال حلول محاسبية دقيقة واستشارات مالية موثوقة",
+        welcome2: "الارتقاء بأعمالك من خلال حلول محاسبية وضريبية دقيقة واستشارات مالية موثوقة",
         welcome3: "شريكك المثالي للنجاح والنمو المستدام",
         about: "نبذة عنا",
         about2: " نحن في <strong>إيليت للأستشارات المالية</strong> نلتزم بتقديم خدمات محاسبية ومالية عالية الجودة لدعم نجاح أعمالكم. بخبرة تمتد لسنوات في مجالات المحاسبة، المراجعة، والاستشارات المالية، نعمل على تزويد عملائنا بحلول مبتكرة تلبي احتياجاتهم وتساعدهم على تحقيق أهدافهم المالية بكفاءة وشفافية.",
@@ -375,7 +383,8 @@ const translations = {
         what4: "عدد سنوات الخبرة",
         contact: "تواصل معنا",
         contact2: "العنوان",
-        contact3: "40 شارع ابو داوود الظاهري - مدينة نصر - القاهرة - مصر",
+        contact3: "<strong>المركز الرئيسي:</strong> ٤٠ شارع ابو داوود الظاهري - مدينة نصر - القاهرة - مصر",
+        contact14:  "<strong>الفرع: </strong> ٦٣٣ طريق الحرية ابراج الزراعيين - جناكليس - الاسكندريه - مصر",
         contact4: "التليفون",
         contact5: "البريد الإلكتروني",
         contact6: "تواصل معنا",
@@ -602,7 +611,9 @@ const translations = {
 
 
 
-
+        Sentsuccessfully: "تم إرسال الطلب بنجاح! ✅",
+        Failedtosendrequest: "فشل إرسال الطلب، حاول مرة اخري! ❌",
+        Allfieldsrequired: "جميع الحقول مطلوبة! ❌",
 
 
 
