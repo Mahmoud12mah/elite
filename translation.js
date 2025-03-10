@@ -620,20 +620,20 @@ const translations = {
     }
 };
 
-// دالة تغيير اللغة
+// ✅ دالة تغيير اللغة
 function changeLanguage(lang) {
     // تغيير لغة الصفحة والاتجاه
     document.documentElement.lang = lang;
     document.documentElement.dir = (lang === "ar") ? "rtl" : "ltr";
 
-    // تحديث النصوص بناءً على `data-lang`
+    // تحديث النصوص داخل الصفحة باستخدام `data-lang`
     document.querySelectorAll("[data-lang]").forEach(el => {
         const key = el.getAttribute("data-lang");
-        if (translations[lang][key]) {
-            if (el.placeholder !== undefined) {
-                el.placeholder = translations[lang][key]; // تحديث نص الإدخال
+        if (translations[lang] && translations[lang][key]) {
+            if (el.tagName === "INPUT" || el.tagName === "TEXTAREA") {
+                el.placeholder = translations[lang][key]; // ✅ تحديث `placeholder` فقط دون تغيير `value`
             } else {
-                el.innerHTML = translations[lang][key]; // تحديث النصوص العادية
+                el.innerHTML = translations[lang][key]; // ✅ تحديث باقي النصوص
             }
         }
     });
@@ -641,12 +641,29 @@ function changeLanguage(lang) {
     // تغيير المحاذاة بناءً على اللغة
     document.body.style.textAlign = (lang === "ar") ? "right" : "left";
 
-    // حفظ اللغة في LocalStorage حتى لا تفقد بعد تحديث الصفحة
-    localStorage.setItem("selectedLanguage", lang);
+    // ✅ حفظ اللغة المختارة في `sessionStorage` فقط خلال الجلسة
+    sessionStorage.setItem("selectedLanguage", lang);
 }
 
-// عند تحميل الصفحة، استرجاع اللغة المحفوظة
-document.addEventListener("DOMContentLoaded", () => {
-    const savedLang = localStorage.getItem("selectedLanguage") || "en";
-    changeLanguage(savedLang);
+// ✅ ضبط اللغة عند تحميل الصفحة
+document.addEventListener("DOMContentLoaded", function () {
+    let savedLang = sessionStorage.getItem("selectedLanguage");
+
+    // ✅ اجعل اللغة العربية افتراضية دائمًا عند كل زيارة جديدة
+    if (!savedLang) {
+        savedLang = "ar"; 
+        sessionStorage.setItem("selectedLanguage", savedLang);
+    }
+
+    changeLanguage(savedLang); // تطبيق اللغة المحفوظة أو العربية كافتراضية
+
+    // ✅ زر تغيير اللغة إلى العربية
+    document.getElementById("switch-to-ar").addEventListener("click", function () {
+        changeLanguage("ar");
+    });
+
+    // ✅ زر تغيير اللغة إلى الإنجليزية
+    document.getElementById("switch-to-en").addEventListener("click", function () {
+        changeLanguage("en");
+    });
 });

@@ -417,6 +417,9 @@
             Company capital
         </h2>
         <input type="number" name="Companycapital" oninput="validateNumber(this)">
+        <p>
+
+        </p>
         <style>
             /* ضبط الصورة في مكان ثابت */
          .floating-image {
@@ -885,7 +888,7 @@
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
 
-  <script>
+ <script>
     document.addEventListener("DOMContentLoaded", function() {
     const External = document.getElementById("External");
     if (External) {
@@ -910,50 +913,54 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 });
 
-document.addEventListener("DOMContentLoaded", function() {
-    const about = document.getElementById("About");
-    if (about) {
-        about.addEventListener("click", function(event) {
-            event.preventDefault();
-            setTimeout(function() {
-                window.location.href = "index.html";
-            }, 500);
+document.addEventListener("DOMContentLoaded", function () {
+    const aboutLink = document.getElementById("About");
+    
+    if (aboutLink) {
+        aboutLink.addEventListener("click", function (event) {
+            event.preventDefault(); // منع السلوك الافتراضي
+            
+            // حفظ المعلومة بأن المستخدم يريد الانتقال إلى "about"
+            sessionStorage.setItem("scrollToSection", "about");
+
+            // توجيه المستخدم إلى الصفحة الرئيسية
+            window.location.href = "index.html";
         });
     }
 });
 
-document.addEventListener("DOMContentLoaded", function() {
-    const services = document.getElementById("Services");
-    if (services) {
-        services.addEventListener("click", function(event) {
-            event.preventDefault();
-            setTimeout(function() {
-                window.location.href = "index.html";
-            }, 500);
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    const servicesLink = document.getElementById("Services");
+    
+    if (servicesLink) {
+        servicesLink.addEventListener("click", function (event) {
+            event.preventDefault(); // منع السلوك الافتراضي
+            
+            // حفظ المعلومة بأن المستخدم يريد الانتقال إلى "about"
+            sessionStorage.setItem("scrollToSection", "services");
+
+            // توجيه المستخدم إلى الصفحة الرئيسية
+            window.location.href = "index.html";
         });
     }
 });
 
-document.addEventListener("DOMContentLoaded", function() {
-    const OurValues = document.getElementById("OurValues");
-    if (OurValues) {
-        OurValues.addEventListener("click", function(event) {
-            event.preventDefault();
-            setTimeout(function() {
-                window.location.href = "index.html";
-            }, 500);
-        });
-    }
-});
 
-document.addEventListener("DOMContentLoaded", function() {
-    const Contact = document.getElementById("Contact");
-    if (Contact) {
-        Contact.addEventListener("click", function(event) {
-            event.preventDefault();
-            setTimeout(function() {
-                window.location.href = "index.html";
-            }, 500);
+
+document.addEventListener("DOMContentLoaded", function () {
+    const contactLink = document.getElementById("Contact");
+    
+    if (contactLink) {
+        contactLink.addEventListener("click", function (event) {
+            event.preventDefault(); // منع السلوك الافتراضي
+            
+            // حفظ المعلومة بأن المستخدم يريد الانتقال إلى "about"
+            sessionStorage.setItem("scrollToSection", "contact");
+
+            // توجيه المستخدم إلى الصفحة الرئيسية
+            window.location.href = "index.html";
         });
     }
 });
@@ -995,7 +1002,6 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 </script>
-
 
 
 

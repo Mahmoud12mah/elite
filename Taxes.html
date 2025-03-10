@@ -107,7 +107,7 @@
         <label for="menu-toggle" class="close-btn">✖</label> <!-- زر الإغلاق -->
         <ul>
             <li><a id="Home" href="#Home" data-lang="home1">Home</a></li>
-            <li><a id="About" href="#about" data-lang="about1">About Us</a></li>
+            <li><a id="About" href="index.html#about" data-lang="about1">About Us</a></li>
             <li class="dropdown">
                 <a href="#" style="color: black; font-weight: bold;">
                     <span data-lang="Pricing1">Pricing</span>
@@ -120,8 +120,8 @@
                     <li><a href="CompanyIncorporation.html" data-lang="CompanyIncorporation" style="font-weight: bold;">Company Incorporation</a></li>
                 </ul>
             </li>
-            <li><a id="Services" href="#services" data-lang="services1">Services</a></li>
-            <li><a id="Contact" href="#contact" data-lang="contact1">Contact Us</a></li>
+            <li><a id="Services" href="index.html#services" data-lang="services1">Services</a></li>
+            <li><a id="Contact" href="index.html#contact" data-lang="contact1">Contact Us</a></li>
         </ul>
     </nav>
 </header>
@@ -1602,50 +1602,54 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 });
 
-document.addEventListener("DOMContentLoaded", function() {
-    const about = document.getElementById("About");
-    if (about) {
-        about.addEventListener("click", function(event) {
-            event.preventDefault();
-            setTimeout(function() {
-                window.location.href = "index.html";
-            }, 500);
+document.addEventListener("DOMContentLoaded", function () {
+    const aboutLink = document.getElementById("About");
+    
+    if (aboutLink) {
+        aboutLink.addEventListener("click", function (event) {
+            event.preventDefault(); // منع السلوك الافتراضي
+            
+            // حفظ المعلومة بأن المستخدم يريد الانتقال إلى "about"
+            sessionStorage.setItem("scrollToSection", "about");
+
+            // توجيه المستخدم إلى الصفحة الرئيسية
+            window.location.href = "index.html";
         });
     }
 });
 
-document.addEventListener("DOMContentLoaded", function() {
-    const services = document.getElementById("Services");
-    if (services) {
-        services.addEventListener("click", function(event) {
-            event.preventDefault();
-            setTimeout(function() {
-                window.location.href = "index.html";
-            }, 500);
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    const servicesLink = document.getElementById("Services");
+    
+    if (servicesLink) {
+        servicesLink.addEventListener("click", function (event) {
+            event.preventDefault(); // منع السلوك الافتراضي
+            
+            // حفظ المعلومة بأن المستخدم يريد الانتقال إلى "about"
+            sessionStorage.setItem("scrollToSection", "services");
+
+            // توجيه المستخدم إلى الصفحة الرئيسية
+            window.location.href = "index.html";
         });
     }
 });
 
-document.addEventListener("DOMContentLoaded", function() {
-    const OurValues = document.getElementById("OurValues");
-    if (OurValues) {
-        OurValues.addEventListener("click", function(event) {
-            event.preventDefault();
-            setTimeout(function() {
-                window.location.href = "index.html";
-            }, 500);
-        });
-    }
-});
 
-document.addEventListener("DOMContentLoaded", function() {
-    const Contact = document.getElementById("Contact");
-    if (Contact) {
-        Contact.addEventListener("click", function(event) {
-            event.preventDefault();
-            setTimeout(function() {
-                window.location.href = "index.html";
-            }, 500);
+
+document.addEventListener("DOMContentLoaded", function () {
+    const contactLink = document.getElementById("Contact");
+    
+    if (contactLink) {
+        contactLink.addEventListener("click", function (event) {
+            event.preventDefault(); // منع السلوك الافتراضي
+            
+            // حفظ المعلومة بأن المستخدم يريد الانتقال إلى "about"
+            sessionStorage.setItem("scrollToSection", "contact");
+
+            // توجيه المستخدم إلى الصفحة الرئيسية
+            window.location.href = "index.html";
         });
     }
 });

@@ -248,19 +248,12 @@
     <!-- Hero Section -->
     <section id="Home" class="hero section dark-background">
 
-      <img src="assets/img/hero-bg.jpg" alt="" data-aos="fade-in">
+      <img src="assets/img/christina-wocintechchat-com-faEfWCdOKIg-unsplash.jpg" alt="" data-aos="fade-in">
 
       <div id="content" dir="rtl" class="container d-flex flex-column align-items-center text-center">
-        <h2 data-aos="fade-up" data-aos-delay="100" data-lang="welcome">Welcome</h2>
-
-
-
-
-
-
-
+        <h1 data-aos="fade-down" style="margin-top: -150px;" data-aos-delay="100" data-lang="welcome">Welcome</h2>
         
-        <p data-lang="welcome2" data-aos="fade-up" data-aos-delay="200">Elevating your business with precise accounting solutions and trusted financial consulting</p>
+        <p data-lang="welcome2" style="margin-top: -10px;" data-aos="fade-up" data-aos-delay="200">Elevating your business with precise accounting solutions and trusted financial consulting</p>
         <p data-lang="welcome3" style="margin-top: -20px;" data-aos="fade-up" data-aos-delay="200">Your ideal partner for success and sustainable growth</p>
         <div data-aos="fade-up" data-aos-delay="300">
           
@@ -309,14 +302,99 @@
     </section><!-- /About Section -->
 
     <!-- Services Section -->
-<section id="services" class="services section">
+    <section id="services" class="services section">
+      <div class="container section-title" data-aos="fade-up">
+          <h2 data-lang="services">Services</h2>
+          <div class="content-wrapper">
+              <div class="text-content">
+                  <p style="font-size: 24px;" data-lang="services2">
+                      We offer a comprehensive range of accounting and financial services tailored to businesses of all sizes. Our goal is to help our clients achieve compliance with financial and tax regulations with the highest level of accuracy. With our extensive expertise, we provide innovative solutions to enhance financial performance and improve operational efficiency. We are committed to delivering reliable consultancy to support business growth and strategic decision-making. With us, you can focus on growing your business while we handle your financial matters with professionalism and confidence.
+                  </p>
+              </div>
+              <div class="image-content">
+                  <img src="assets/img/WhatsApp Image 2025-03-10 at 13.08.01_9c173957.jpg" alt="Hero Image">
+              </div>
+        
+             <style>/* الوضع الافتراضي: الصورة بجانب النص في الشاشات الكبيرة */
+              .content-wrapper {
+                  display: flex;
+                  align-items: center;
+                  justify-content: space-between;
+                  flex-wrap: wrap;
+                  gap: 10px;
+                  transition: all 0.3s ease-in-out;
+              }
+              
+              /* تقليل المسافة عند اللغة العربية فقط على أجهزة الكمبيوتر */
+              @media (min-width: 769px) {
+                  html[lang="ar"] h2 {
+                      margin-bottom: 10px; /* تقليل المسافة أسفل العنوان */
+                  }
+              
+                  html[lang="ar"] .content-wrapper {
+                      margin-top: -45px; /* تقليل المسافة أعلى المحتوى */
+                  }
+              }
+              
+              /* إعدادات النص */
+              .text-content {
+                  flex: 1;
+                  min-width: 250px;
+                  font-size: 16px;
+                  max-width: 800px;
+              }
+              
+              /* زيادة المسافة بين الصورة والمحتوى السفلي على جميع الأجهزة */
+.image-content {
+    flex: 1;
+    max-width: 410px;
+    margin-bottom: 30px; /* تعديل جديد */
+}
 
-    <!-- Section Title -->
-    <div class="container section-title" data-aos="fade-up">
-      <h2 data-lang="services">Services</h2>
-      <p style="font-size: 22px;" data-lang="services2">
-        We offer a comprehensive range of accounting and financial services tailored to businesses of all sizes. Our goal is to help our clients achieve compliance with financial and tax regulations with the highest level of accuracy. With our extensive expertise, we provide innovative solutions to enhance financial performance and improve operational efficiency. We are committed to delivering reliable consultancy to support business growth and strategic decision-making. With us, you can focus on growing your business while we handle your financial matters with professionalism and confidence.
-      </p>
+.image-content img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+}
+
+
+              
+              /* تحسين العرض على الشاشات الصغيرة */
+              @media (max-width: 768px) {
+                  .content-wrapper {
+                      flex-direction: column; /* ترتيب عمودي */
+                      align-items: center;
+                  }
+              
+                  .image-content {
+                      max-width: 100%;
+                      margin: 0 auto;
+                      order: 2; /* جعل الصورة أسفل النص */
+                  }
+              }
+              </style>
+              
+                
+                <script>
+                function toggleLanguage() {
+                    let currentLang = document.documentElement.lang;
+                    let newLang = (currentLang === "ar") ? "en" : "ar";
+                    document.documentElement.lang = newLang;
+                    localStorage.setItem("siteLang", newLang);
+                }
+                
+                window.onload = function() {
+                    let savedLang = localStorage.getItem("siteLang");
+                    if (savedLang) {
+                        document.documentElement.lang = savedLang;
+                    }
+                };
+                </script>
+                
+            
+  
+      
     </div><!-- End Section Title -->
   
     <div class="container text-center"> <!-- جعل النص في الوسط -->
@@ -330,6 +408,7 @@
             </div>
             <h3 data-lang="services3">Audit & Assurance</h3>
             <p data-lang="services4">Guided by integrity and transparency to provide you with clear and accurate insights.</p>
+          
           </div>
         </div><!-- End Service Item -->
   
@@ -381,6 +460,18 @@
             <h3 data-lang="services13">Financial advisory</h3>
             <p data-lang="services14">Enhancing financial stability and achieving growth for individuals and businesses based on a thorough analysis of financial data and the market.</p>
           </div>
+          <style>
+            /* تقليل المسافة أسفل قسم الخدمات */
+#services {
+    margin-bottom: -100px; /* تقليل المسافة */
+}
+
+/* تقليل المسافة أعلى القسم التالي */
+#next-section {
+    margin-top: -100px; /* تقليل المسافة */
+}
+
+          </style>
         </div><!-- End Service Item -->
   
       </div><!-- End row gy-4 -->
@@ -527,12 +618,64 @@
     <!-- تضمين خريطة جوجل -->
     <div class="map-container">
         <iframe 
+            id="mapFrame"
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3454.1815549892213!2d31.36325737680297!3d30.051524581875868!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14583e2ff468a4d7%3A0xe14b0a5c71cd88b!2s40%20Abou%20Dawoud%20Al%20Zaheri%2C%20Al%20Mintaqah%20as%20S%C4%81disah%2C%20Nasr%20City%2C%20Cairo%20Governorate%204450454!5e0!3m2!1sen!2seg!4v1709650000000"
             allowfullscreen="" 
             loading="lazy">
         </iframe>
     </div>
 </div>
+
+<script>
+    let mapReloaded = false;
+
+    function reloadMap() {
+        let mapFrame = document.getElementById('mapFrame');
+        if (mapFrame) {
+            mapFrame.src = mapFrame.src; // إعادة تحميل الخريطة
+            mapReloaded = true;
+            setTimeout(() => mapReloaded = false, 3000); // منع التحميل المتكرر السريع
+        }
+    }
+
+    // تحديث الخريطة تلقائيًا كل 30 ثانية
+    setInterval(reloadMap, 30000); // يتم التحديث كل 30 ثانية تلقائيًا
+
+    // إعادة تحميل الخريطة عند فشل التحميل
+    document.getElementById('mapFrame').addEventListener("error", function() {
+        setTimeout(reloadMap, 2000);
+    });
+
+    // مراقبة السكرول السريع أو التفاعل مع الصفحة
+    let observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) { // ظهر العنصر في الشاشة
+                reloadMap();
+            }
+        });
+    }, { threshold: 0.5 });
+
+    observer.observe(document.getElementById('mapFrame'));
+
+    // إعادة تحميل الخريطة عند تنشيط الصفحة (مثلاً عند العودة إليها بعد فتح تبويب آخر)
+    document.addEventListener("visibilitychange", function() {
+        if (document.visibilityState === "visible") {
+            reloadMap();
+        }
+    });
+
+    // إعادة تحميل الخريطة عند تغيير اللغة
+    document.addEventListener("DOMContentLoaded", function() {
+        var languageSwitcher = document.getElementById("languageSwitcher");
+        if (languageSwitcher) {
+            languageSwitcher.addEventListener("change", function() {
+                reloadMap();
+            });
+        }
+    });
+</script>
+
+
 
 
 
@@ -817,7 +960,24 @@
 
 
 
-    
+    <script>document.addEventListener("DOMContentLoaded", function () {
+      // التحقق مما إذا كان هناك طلب للتمرير إلى قسم معين
+      const scrollToSection = sessionStorage.getItem("scrollToSection");
+  
+      if (scrollToSection) {
+          const targetElement = document.getElementById(scrollToSection);
+  
+          if (targetElement) {
+              setTimeout(() => {
+                  targetElement.scrollIntoView({ behavior: "smooth" });
+              }, 500); // تأخير بسيط لضمان تحميل الصفحة بالكامل
+          }
+  
+          // حذف المعلومة بعد استخدامها لمنع التمرير المتكرر
+          sessionStorage.removeItem("scrollToSection");
+      }
+  });
+  </script>
       
   
 
