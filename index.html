@@ -4,34 +4,18 @@
   <head>
     <meta charset="utf-8">
   
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
-<script>
-  if (window.location.pathname.endsWith("index.html")) {
-      window.history.replaceState(null, null, window.location.pathname.replace("index.html", ""));
-  }
-</script>
-<script>
-  if (window.location.pathname.endsWith("#Home")) {
-      window.history.replaceState(null, null, window.location.pathname.replace("#Home", ""));
-  }
-</script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 
 
 
-<link rel="icon" type="image/png" href="/assets/img/android-chrome-192x192.png">
+
+
+
 <link rel="icon" type="image/png" href="https://mahmoud12mah.github.io/elite/assets/img/android-chrome-192x192.png">
 
-<script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "اسم موقعك",
-    "url": "https://elitefinancial-eg.com/",
-    "logo": "https://mahmoud12mah.github.io/elite/assets/img/android-chrome-192x192.png"
-  }
-  </script>
+ 
+  
   <meta property="og:image" content="https://mahmoud12mah.github.io/elite/assets/img/android-chrome-192x192.png">
 <meta property="og:image:type" content="image/png">
 <meta property="og:image:width" content="500">
@@ -66,23 +50,8 @@
   <script src="script.js" defer></script>
 
   
-  <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "LocalBusiness",
-      "name": "Elite Financial Consultant",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "40 Abu Dawoud Al Zaheri Street",
-        "addressLocality": "Nasr City",
-        "addressRegion": "Cairo",
-        "postalCode": "4450454",
-        "addressCountry": "EG"
-      },
-      "telephone": "+201228310654",
-      "openingHours": "Mo-Fr 09:00-18:00"
-    }
-    </script>
+  
+   
     
   
   <!-- Favicons -->
@@ -154,16 +123,7 @@
 
     </header>
     
-    <script>document.addEventListener("DOMContentLoaded", function() {
-        let btn = document.getElementById("myButton");
-        if (btn) {
-            btn.addEventListener("click", function() {
-                console.log("Button clicked!");
-            });
-        }
-    });
-    
-  </script>
+   
 
     
     
@@ -206,27 +166,6 @@
       </nav>
   </header>
   
-  <script>
-  document.addEventListener("DOMContentLoaded", function () {
-      let menuToggle = document.getElementById("menu-toggle");
-      let navMenu = document.querySelector(".navmenu");
-      let menuLinks = document.querySelectorAll(".navmenu a");
-  
-      // ✅ إغلاق القائمة عند النقر خارجها
-      document.addEventListener("click", function (event) {
-          if (!navMenu.contains(event.target) && !menuToggle.contains(event.target)) {
-              menuToggle.checked = false;
-          }
-      });
-  
-      // ✅ إغلاق القائمة عند النقر على أي رابط داخلها
-      menuLinks.forEach(link => {
-          link.addEventListener("click", function () {
-              menuToggle.checked = false;
-          });
-      });
-  });
-  </script>
   
   
 
@@ -242,7 +181,7 @@
         <h1 data-aos="fade-down" style="margin-top: -150px;" data-aos-delay="100" data-lang="welcome">Welcome</h2>
         
         <p data-lang="welcome2" style="margin-top: -10px;" data-aos="fade-up" data-aos-delay="200">Elevating Your Business with Accurate Accounting & Tax Solutions and Reliable Financial Consulting</p>
-        <p data-lang="welcome3" style="margin-top: -20px;" data-aos="fade-up" data-aos-delay="200">Your ideal Partner For Success And Sustainable Growth</p>
+        <p data-lang="welcome3" style="margin-top: -20px;" data-aos="fade-up" data-aos-delay="200">Your Ideal Partner For Success And Sustainable Growth</p>
         <div data-aos="fade-up" data-aos-delay="300">
           
 
@@ -364,21 +303,7 @@
               </style>
               
                 
-                <script>
-                function toggleLanguage() {
-                    let currentLang = document.documentElement.lang;
-                    let newLang = (currentLang === "ar") ? "en" : "ar";
-                    document.documentElement.lang = newLang;
-                    localStorage.setItem("siteLang", newLang);
-                }
-                
-                window.onload = function() {
-                    let savedLang = localStorage.getItem("siteLang");
-                    if (savedLang) {
-                        document.documentElement.lang = savedLang;
-                    }
-                };
-                </script>
+              
                 
             
   
@@ -615,54 +540,7 @@
     </div>
 </div>
 
-<script>
-    let mapReloaded = false;
 
-    function reloadMap() {
-        let mapFrame = document.getElementById('mapFrame');
-        if (mapFrame) {
-            mapFrame.src = mapFrame.src; // إعادة تحميل الخريطة
-            mapReloaded = true;
-            setTimeout(() => mapReloaded = false, 3000); // منع التحميل المتكرر السريع
-        }
-    }
-
-    // تحديث الخريطة تلقائيًا كل 30 ثانية
-    setInterval(reloadMap, 30000); // يتم التحديث كل 30 ثانية تلقائيًا
-
-    // إعادة تحميل الخريطة عند فشل التحميل
-    document.getElementById('mapFrame').addEventListener("error", function() {
-        setTimeout(reloadMap, 2000);
-    });
-
-    // مراقبة السكرول السريع أو التفاعل مع الصفحة
-    let observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) { // ظهر العنصر في الشاشة
-                reloadMap();
-            }
-        });
-    }, { threshold: 0.5 });
-
-    observer.observe(document.getElementById('mapFrame'));
-
-    // إعادة تحميل الخريطة عند تنشيط الصفحة (مثلاً عند العودة إليها بعد فتح تبويب آخر)
-    document.addEventListener("visibilitychange", function() {
-        if (document.visibilityState === "visible") {
-            reloadMap();
-        }
-    });
-
-    // إعادة تحميل الخريطة عند تغيير اللغة
-    document.addEventListener("DOMContentLoaded", function() {
-        var languageSwitcher = document.getElementById("languageSwitcher");
-        if (languageSwitcher) {
-            languageSwitcher.addEventListener("change", function() {
-                reloadMap();
-            });
-        }
-    });
-</script>
 
 
 
@@ -691,7 +569,7 @@
             // ✅ حفظ الصفحة السابقة قبل الإرسال
             localStorage.setItem("previousPage", window.location.href);
 
-            emailjs.sendForm("service_of4eejd", "template_tfrs20g", form)
+            emailjs.sendForm("service_of4e1e9", "template_tfrs20g", form)
                 .then(function (response) {
                     console.log("✅ تم الإرسال بنجاح", response);
                     responseElement.innerHTML = '<div class="alert alert-success">✅ تم ارسال طلبك بنجاح!</div>';
@@ -788,29 +666,7 @@
             }
         </style>
         
-        <script>
-            function checkInternetConnection(event) {
-                if (!navigator.onLine) {
-                    alert("⚠ لا يوجد اتصال بالإنترنت. تأكد من الاتصال ثم حاول مرة أخرى.");
-                    event.preventDefault(); // منع فتح الرابط إذا لم يكن هناك إنترنت
-                    return false;
-                }
-                return true;
-            }
-        
-            document.addEventListener("DOMContentLoaded", function () {
-                let addressLink = document.querySelector(".address");
-                addressLink.addEventListener("click", function (event) {
-                    if (!navigator.onLine) {
-                        event.preventDefault(); // منع فتح الرابط
-                        alert("⚠ لا يوجد إنترنت. سيتم توجيهك إلى خريطة بديلة.");
-        
-                        // فتح رابط OpenStreetMap كخيار احتياطي
-                        window.open("https://www.openstreetmap.org/?mlat=30.0515&mlon=31.3658#map=17/30.0515/31.3658", "_blank");
-                    }
-                });
-            });
-        </script>
+      
         
     
         
@@ -867,113 +723,15 @@
 
 
   
-  <script>
-    document.addEventListener("DOMContentLoaded", function() {
-        // جلب الزر
-        const CompanyIncorporation = document.getElementById("CompanyIncorporation");
-    
-        if (CompanyIncorporation) {
-            // عندما يتم الضغط على الزر، عرض شاشة تحميل
-            CompanyIncorporation.addEventListener("click", function(event) {
-                event.preventDefault(); // منع الرابط من الانتقال فورًا
-                // عرض شاشة التحميل قبل الانتقال للصفحة الجديدة
-                document.body.innerHTML = "<h1>Loading...</h1>";  // تخصيص هذه الرسالة كما تريد
-                setTimeout(function() {
-                    window.location.href = "CompanyIncorporation.html";  // فتح الصفحة الجديدة بعد 2 ثانية
-                }, 500); // تأخير لمدة 2 ثانية لظهور شاشة التحميل
-            });
-        }
-    });
-    </script>
-    
-    <script>
-    document.addEventListener("DOMContentLoaded", function() {
-        // جلب الزر
-        const External = document.getElementById("External");
-    
-        if (External) {
-            // عندما يتم الضغط على الزر، عرض شاشة تحميل
-            External.addEventListener("click", function(event) {
-                event.preventDefault(); // منع الرابط من الانتقال فورًا
-                // عرض شاشة التحميل قبل الانتقال للصفحة الجديدة
-                document.body.innerHTML = "<h1>Loading...</h1>";  // تخصيص هذه الرسالة كما تريد
-                setTimeout(function() {
-                    window.location.href = "audit.html";  // فتح الصفحة الجديدة بعد 2 ثانية
-                }, 500); // تأخير لمدة 2 ثانية لظهور شاشة التحميل
-            });
-        }
-    });
-    </script>
-    
-    <script>
-    document.addEventListener("DOMContentLoaded", function() {
-        // جلب الزر
-        const Book = document.getElementById("Book");
-    
-        if (Book) {
-            // عندما يتم الضغط على الزر، عرض شاشة تحميل
-            Book.addEventListener("click", function(event) {
-                event.preventDefault(); // منع الرابط من الانتقال فورًا
-                // عرض شاشة التحميل قبل الانتقال للصفحة الجديدة
-                document.body.innerHTML = "<h1>Loading...</h1>";  // تخصيص هذه الرسالة كما تريد
-                setTimeout(function() {
-                    window.location.href = "BookKeeping.html";  // فتح الصفحة الجديدة بعد 2 ثانية
-                }, 500); // تأخير لمدة 2 ثانية لظهور شاشة التحميل
-            });
-        }
-    });
-    </script>
-    
-    <script>
-    document.addEventListener("DOMContentLoaded", function() {
-        // جلب الزر
-        const Taxes = document.getElementById("Taxes");
-    
-        if (Taxes) {
-            // عندما يتم الضغط على الزر، عرض شاشة تحميل
-            Taxes.addEventListener("click", function(event) {
-                event.preventDefault(); // منع الرابط من الانتقال فورًا
-                // عرض شاشة التحميل قبل الانتقال للصفحة الجديدة
-                document.body.innerHTML = "<h1>Loading...</h1>";  // تخصيص هذه الرسالة كما تريد
-                setTimeout(function() {
-                    window.location.href = "Taxes.html";  // فتح الصفحة الجديدة بعد 2 ثانية
-                }, 500); // تأخير لمدة 2 ثانية لظهور شاشة التحميل
-            });
-        }
-    });
-    </script>
-    
-
-
-
-
-
-
-    <script>document.addEventListener("DOMContentLoaded", function () {
-      // التحقق مما إذا كان هناك طلب للتمرير إلى قسم معين
-      const scrollToSection = sessionStorage.getItem("scrollToSection");
-  
-      if (scrollToSection) {
-          const targetElement = document.getElementById(scrollToSection);
-  
-          if (targetElement) {
-              setTimeout(() => {
-                  targetElement.scrollIntoView({ behavior: "smooth" });
-              }, 500); // تأخير بسيط لضمان تحميل الصفحة بالكامل
-          }
-  
-          // حذف المعلومة بعد استخدامها لمنع التمرير المتكرر
-          sessionStorage.removeItem("scrollToSection");
-      }
-  });
-  </script>
+ 
       
   
 
     
     
   
-  
+      <script src="script.js"></script>
+
       
   
   </body>

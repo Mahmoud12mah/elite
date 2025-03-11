@@ -16,7 +16,7 @@ const translations = {
         telephone: "Telephone: +223504766",
         welcome: "Welcome",
         welcome2: "Elevating Your Business with Accurate Accounting & Tax Solutions and Reliable Financial Consulting",
-        welcome3: "Your ideal partner for success and sustainable growth",
+        welcome3: "Your Ideal Partner For Success And Sustainable Growth",
         about: "About us",
         about2: "At <strong>Elite Financial Consultant</strong>, we are committed to delivering high-quality accounting and financial services to support the success of your business. With years of experience in accounting, auditing, and financial consulting, we provide innovative solutions tailored to meet your needs and help you achieve your financial goals with efficiency and transparency.",
         about3: "We offer a comprehensive range of services, including financial statement preparation, auditing and assurance, tax consulting, and financial planning, ensuring full compliance with the latest accounting standards and local regulations.",
