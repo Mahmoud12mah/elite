@@ -23,15 +23,7 @@
 <link rel="icon" type="image/png" href="/assets/img/android-chrome-192x192.png">
 <link rel="icon" type="image/png" href="https://mahmoud12mah.github.io/elite/assets/img/android-chrome-192x192.png">
 
-<script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "اسم موقعك",
-    "url": "https://elitefinancial-eg.com/",
-    "logo": "https://mahmoud12mah.github.io/elite/assets/img/android-chrome-192x192.png"
-  }
-  </script>
+
   <meta property="og:image" content="https://mahmoud12mah.github.io/elite/assets/img/android-chrome-192x192.png">
 <meta property="og:image:type" content="image/png">
 <meta property="og:image:width" content="500">
@@ -39,6 +31,114 @@
 
   
   
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "name": "Elite Financial Consultant",
+        "url": "https://elitefinancial-eg.com/",
+        "logo": "https://mahmoud12mah.github.io/elite/assets/img/android-chrome-192x192.png",
+        "sameAs": [
+          "https://www.facebook.com/elitefinancialconsultanteg",
+          "https://www.linkedin.com/company/elite-financial-consultant/",
+          "https://wa.me/201228310654"
+        ],
+        "contactPoint": [
+          {
+            "@type": "ContactPoint",
+            "telephone": "+201228310654",
+            "contactType": "customer service",
+            "areaServed": "EG",
+            "availableLanguage": ["Arabic", "English"]
+          }
+        ],
+        "foundingDate": "2010",
+        "founder": {
+          "@type": "Person",
+          "name": "Elite Financial Consultant"
+        }
+      },
+      {
+        "@type": "LocalBusiness",
+        "name": "Elite Financial Consultant",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "40 Abu Dawoud Al Zaheri Street",
+          "addressLocality": "Nasr City",
+          "addressRegion": "Cairo",
+          "postalCode": "4450454",
+          "addressCountry": "EG"
+        },
+        "telephone": "+201228310654",
+        "openingHours": [
+          "sun-thr 09:00-18:00"
+        ],
+        "makesOffer": [
+          {
+            "@type": "Service",
+            "name": "Business Consulting",
+            "description": "Helping businesses with financial strategies and growth plans.",
+            "provider": {
+              "@type": "LocalBusiness",
+              "name": "Elite Financial Consultant",
+              "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "40 Abu Dawoud Al Zaheri Street",
+                "addressLocality": "Nasr City",
+                "addressRegion": "Cairo",
+                "postalCode": "4450454",
+                "addressCountry": "EG"
+              }
+            }
+          },
+          {
+            "@type": "Service",
+            "name": "Tax Planning",
+            "description": "Helping individuals and businesses with tax optimization.",
+            "provider": {
+              "@type": "LocalBusiness",
+              "name": "Elite Financial Consultant",
+              "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "40 Abu Dawoud Al Zaheri Street",
+                "addressLocality": "Nasr City",
+                "addressRegion": "Cairo",
+                "postalCode": "4450454",
+                "addressCountry": "EG"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   
 
 
@@ -66,27 +166,38 @@
   <script src="script.js" defer></script>
 
   
-  <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "LocalBusiness",
-      "name": "Elite Financial Consultant",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "40 Abu Dawoud Al Zaheri Street",
-        "addressLocality": "Nasr City",
-        "addressRegion": "Cairo",
-        "postalCode": "4450454",
-        "addressCountry": "EG"
-      },
-      "telephone": "+201228310654",
-      "openingHours": "Mo-Fr 09:00-18:00"
-    }
-    </script>
+ 
+
+
+
+
+    <script>
+      if (window.location.pathname.endsWith("index.html")) {
+          window.history.replaceState(null, null, window.location.pathname.replace("index.html", ""));
+      }
     
+    
+    
+      // وظيفة لفحص وإزالة الـ hash عند تغييره
+      function removeHash() {
+          if (window.location.hash) {
+              history.replaceState(null, null, window.location.pathname);
+          }
+      }
+    
+      // إزالة الـ hash عند تحميل الصفحة
+      removeHash();
+    
+      // الاستماع لأي تغيير في الـ hash وإزالته فورًا
+      window.addEventListener("hashchange", removeHash);
+      </script>
+  
+   
+    
+  
   <!-- Favicons -->
-  <link href="assets/img/favicon.png" rel="icon">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+   
+  
 
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
@@ -99,9 +210,16 @@
   <link href="assets/vendor/aos/aos.css" rel="stylesheet">
   <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  
 
   <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
+  
+
+  
+  <script src="translation.js"></script>
+
+
 
   <!-- =======================================================
   * Template Name: KnightOne
@@ -117,7 +235,7 @@
 
 
    
-    
+   
     <header class="top-header">
         <a href="mailto:info@elitefinancial-eg.com" class="icon-text">
             <i class="fa fa-envelope"></i> info@elitefinancial-eg.com
@@ -134,6 +252,7 @@
             <i class="fa fa-phone"></i> +223504766
         </a>
         
+        
         <!-- تأكد من إضافة مكتبة Font Awesome في رأس الصفحة -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
         
@@ -141,18 +260,25 @@
     <button class="lang-btn arabic" onclick="changeLanguage('ar')">العربية</button>
     <button class="lang-btn english" onclick="changeLanguage('en')">English</button>
 </div>
+
+
+
     </header>
- 
+    
+   
+
+    
+    
+    
     <link rel="stylesheet" href="styles.css">
-  <script src="translation.js"></script>
 
 
 
-
-  <header class="bottom-header">
-    <a href="index.html">
-        <img src="assets/img/logo.png" class="logo" alt="Logo">
-    </a>
+    <header class="bottom-header">
+      <a href="index.html">
+        <img src="assets/img/logo.png" alt="elite-financial-consultant Logo"
+        class="logo" alt="Logo">
+      </a>
 
     <!-- زر القائمة (Checkbox مخفي) -->
     <input type="checkbox" id="menu-toggle" class="menu-checkbox">
