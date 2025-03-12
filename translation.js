@@ -669,12 +669,18 @@ document.addEventListener("DOMContentLoaded", function () {
     changeLanguage(savedLang); // تطبيق اللغة المحفوظة أو العربية كافتراضية
 
     // ✅ زر تغيير اللغة إلى العربية
-    document.getElementById("switch-to-ar").addEventListener("click", function () {
-        changeLanguage("ar");
-    });
+    const switchToAr = document.getElementById("switch-to-ar");
+    if (switchToAr) {
+        switchToAr.addEventListener("click", function () {
+            changeLanguage("ar");
+        });
+    }
 
     // ✅ زر تغيير اللغة إلى الإنجليزية
-    document.getElementById("switch-to-en").addEventListener("click", function () {
-        changeLanguage("en");
-    });
+    const switchToEn = document.getElementById("switch-to-en");
+    if (switchToEn) {
+        switchToEn.addEventListener("click", function () {
+            changeLanguage("en");
+        });
+    }
 });
