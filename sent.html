@@ -208,7 +208,8 @@
   
 
   <!-- Main CSS File -->
-  <link href="assets/css/main.css" rel="stylesheet">
+  <link rel="preload" href="assets/css/main.min.css" as="style" onload="this.rel='stylesheet'">
+  <link rel="preload" href="styles.min.css" as="style" onload="this.rel='stylesheet'">
   
 
   
@@ -265,13 +266,12 @@
     
     
     
-    <link rel="stylesheet" href="styles.css">
 
 
 
     <header class="bottom-header">
       <a href="index.html">
-        <img src="assets/img/logo.png" alt="elite-financial-consultant Logo"
+        <img src="assets/img/logo.png" alt="elite-financial-consultant Logo" loading="lazy"
         class="logo" alt="Logo">
       </a>
 
@@ -408,7 +408,7 @@ document.addEventListener("DOMContentLoaded", function () {
     </style>
    
     <div class="floating-image">
-        <img src="assets/img/pexels-thirdman-7653971.jpg" alt="Hero Image">
+        <img src="assets/img/pexels-thirdman-7653971.jpg" alt="Hero Image" loading="lazy">
     </div>
     
     <script>
