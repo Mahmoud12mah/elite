@@ -1874,6 +1874,19 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 });
 
+
+document.addEventListener("DOMContentLoaded", function() {
+    let logoURL = "https://elitefinancial-eg.com/assets/img/logo.png"; // رابط اللوجو
+
+    document.querySelectorAll("img").forEach(img => {
+        if (!img.src || img.src.trim() === "") {
+            img.src = logoURL;
+            img.alt = "Elite Financial Consultant Logo";
+        }
+    });
+});
+
+
 </script>
 
 
