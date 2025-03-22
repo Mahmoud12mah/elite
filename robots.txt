@@ -1,3 +1,9 @@
 User-agent: *
 Allow: /
 Sitemap: https://elitefinancial-eg.com/sitemap.xml
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /private/
+
+Sitemap: https://elitefinancial-eg.com/sitemap.xml

@@ -7,11 +7,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <script>
-  document.addEventListener("DOMContentLoaded", function () {
-      if (window.location.pathname.endsWith("index.html") || window.location.hash) {
-          history.replaceState(null, null, window.location.pathname.replace("index.html", "").replace(/#.*$/, ""));
-      }
-  });
+    if (window.location.pathname.endsWith("CompanyIncorporation.html")) {
+        window.history.replaceState(null, null, window.location.pathname.replace(".html", ""));
+    }
+  </script>
+  <script>
+    if (window.location.pathname.endsWith("#Home")) {
+        window.history.replaceState(null, null, window.location.pathname.replace("#Home", ""));
+    }
 </script>
 
 
