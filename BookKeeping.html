@@ -374,8 +374,25 @@
         <p></p>
 
         <div class="col-md-6">
-            <input style="font-weight: bold" type="email" name="email" class="form-control" placeholder="Email*" data-lang="youremail" required="">
-        </div> 
+            <input style="font-weight: bold" type="email" id="emailInput" name="email" class="form-control" placeholder="Email*" data-lang="youremail" required="">
+            <small id="emailError" class="text-danger"></small>
+
+        </div>
+        <script>
+            document.getElementById("emailInput").addEventListener("input", function () {
+                let email = this.value;
+                let emailError = document.getElementById("emailError");
+                
+                // التحقق من صحة البريد الإلكتروني باستخدام regex
+                let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                
+                if (!emailPattern.test(email)) {
+                    emailError.textContent = "الرجاء إدخال بريد إلكتروني صالح";
+                } else {
+                    emailError.textContent = "";
+                }
+            });
+        </script>
     </form>
                     
         <p>
