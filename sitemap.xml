@@ -1,38 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-    <url>
-        <loc>https://elitefinancial-eg.com/</loc>
-        <changefreq>daily</changefreq>
-        <priority>1.0</priority>
-    </url>
-    <url>
-        <loc>https://elitefinancial-eg.com/services</loc>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://elitefinancial-eg.com/contact</loc>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    <url>
-        <loc>https://elitefinancial-eg.com/Taxes</loc>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    <url>
-        <loc>https://elitefinancial-eg.com/BookKeeping</loc>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    <url>
-        <loc>https://elitefinancial-eg.com/audit</loc>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    <url>
-        <loc>https://elitefinancial-eg.com/CompanyIncorporation</loc>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+
+<url>
+  <loc>https://elitefinancial-eg.com/index.html</loc>
+  <lastmod>2025-03-22T19:40:57+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://elitefinancial-eg.com/Taxes.html</loc>
+  <lastmod>2025-03-22T19:40:57+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://elitefinancial-eg.com/BookKeeping.html</loc>
+  <lastmod>2025-03-22T19:40:57+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://elitefinancial-eg.com/audit.html</loc>
+  <lastmod>2025-03-22T19:40:57+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://elitefinancial-eg.com/CompanyIncorporation.html</loc>
+  <lastmod>2025-03-22T19:40:57+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+
+
 </urlset>
