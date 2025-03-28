@@ -382,14 +382,17 @@
             document.getElementById("emailInput").addEventListener("input", function () {
                 let email = this.value;
                 let emailError = document.getElementById("emailError");
-                
+                let requestPriceButton = document.getElementById("requestPrice"); // الإشارة إلى الزر الصحيح
+        
                 // التحقق من صحة البريد الإلكتروني باستخدام regex
                 let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
                 
                 if (!emailPattern.test(email)) {
                     emailError.textContent = "الرجاء إدخال بريد إلكتروني صالح";
+                    requestPriceButton.disabled = true; // تعطيل زر "Request Price"
                 } else {
                     emailError.textContent = "";
+                    requestPriceButton.disabled = false; // تمكين الزر
                 }
             });
         </script>
