@@ -367,6 +367,11 @@ document.addEventListener("DOMContentLoaded", function () {
             <input style="font-weight: bold" type="text" name="position" class="form-control" placeholder="Position*" data-lang="position" required="">
         </div>
         <p></p>
+        <div class="col-md-6">
+            <input style="font-weight: bold" type="email" id="emailInput" name="email" class="form-control" placeholder="Email*" data-lang="youremail" required="">
+            <small id="emailError" class="text-danger"></small>
+
+        </div>
 
         <script>
             document.getElementById("emailInput").addEventListener("input", function () {
