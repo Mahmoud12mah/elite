@@ -15,7 +15,7 @@
     if (window.location.pathname.endsWith("#Home")) {
         window.history.replaceState(null, null, window.location.pathname.replace("#Home", ""));
     }
-</script>
+  </script>
 
 
 <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
@@ -780,197 +780,149 @@
     </div>
 
     <script>
-    (function() {
-        emailjs.init("KSdSGoGza3XVQIuja"); // استبدل بـ Public Key من EmailJS
-    })();
+   document.addEventListener("DOMContentLoaded", function () {
+    emailjs.init("KSdSGoGza3XVQIuja");
 
-    function validateForm(form) {
+    let responseElement = document.getElementById("responseMessage");
+    let requestButton = document.getElementById("requestPrice");
+    let inputs = document.querySelectorAll("input[required], textarea, select, input[name='Companycapital']");
+    let checkboxes = document.querySelectorAll("input[name='services[]']");
+    let phoneInput = document.querySelector("input[name='mobile']");
+    let companyCapitalInput = document.querySelector("input[name='Companycapital']");
+
+    function validateForm() {
         let isValid = true;
-        let responseElement = document.getElementById("responseMessage");
-        let inputs = document.querySelectorAll("input, textarea, select"); 
-    
-        responseElement.innerHTML = ""; 
+        responseElement.innerHTML = "";
         responseElement.style.display = "none";
 
         inputs.forEach(input => {
-            if (input.hasAttribute("required") && !input.value.trim()) {
+            let errorMessage = input.nextElementSibling;
+            if (!input.value.trim()) {
                 input.classList.add("input-error");
+                if (!errorMessage || !errorMessage.classList.contains("error-message")) {
+                    errorMessage = document.createElement("div");
+                    errorMessage.classList.add("error-message");
+                    errorMessage.textContent = "هذا الحقل مطلوب*";
+                    input.parentNode.insertBefore(errorMessage, input.nextSibling);
+                }
                 isValid = false;
-            } else {
-                input.classList.remove("input-error");
             }
         });
 
-        // ✅ التحقق من اختيار أحد الـ Checkboxes في مجموعة الخدمات
-        let serviceCheckboxes = document.querySelectorAll("input[name='services[]']");
-        let isServiceChecked = Array.from(serviceCheckboxes).some(checkbox => checkbox.checked);
-
-        if (!isServiceChecked) {
-            serviceCheckboxes.forEach(checkbox => {
-                checkbox.closest("label").classList.add("checkbox-error");
-            });
+        let isChecked = Array.from(checkboxes).some(checkbox => checkbox.checked);
+        if (!isChecked) {
+            checkboxes.forEach(checkbox => checkbox.closest("label").classList.add("checkbox-error"));
             isValid = false;
         } else {
-            serviceCheckboxes.forEach(checkbox => {
-                checkbox.closest("label").classList.remove("checkbox-error");
-            });
-        }
-
-        // ✅ التحقق من إدخال قيمة في Company Capital
-        let companyCapitalInput = document.querySelector("input[name='Companycapital']");
-        if (companyCapitalInput && !companyCapitalInput.value.trim()) {
-            companyCapitalInput.classList.add("input-error");
-            isValid = false;
-        } else {
-            companyCapitalInput.classList.remove("input-error");
+            checkboxes.forEach(checkbox => checkbox.closest("label").classList.remove("checkbox-error"));
         }
 
         if (!isValid) {
-            responseElement.innerHTML = '<div data-lang="Allfieldsrequired" class="alert-danger">جميع الحقول مطلوبة! ❌</div>';
+            responseElement.innerHTML = '<div class="alert-danger">جميع الحقول مطلوبة! ❌</div>';
             responseElement.style.display = "block";
         }
-
         return isValid;
     }
 
-    function sendEmail(event, form, templateID, responseElement) {
-    event.preventDefault();
-    if (!validateForm(form)) return;
+    function sendEmail(event) {
+        event.preventDefault();
+        if (!validateForm()) return;
 
-    // 🔹 جلب كل المدخلات من النموذج وتحويلها إلى كائن
-    let formData = new FormData(form);
-    let data = {};
+        let formData = {};
+        inputs.forEach(input => {
+            formData[input.name] = input.value.trim();
+        });
 
-    formData.forEach((value, key) => {
-        data[key] = value;
+        let selectedCountryElement = document.getElementById("selectedCountry");
+        if (selectedCountryElement) {
+            let countryCode = selectedCountryElement.innerText.split(" ")[0].replace(/\D/g, '');
+            formData["phonecode"] = countryCode ? parseInt(countryCode, 10) : "";
+        }
+
+        if (phoneInput) {
+            let phoneNumber = phoneInput.value.trim().replace(/\D/g, '');
+            formData["mobile"] = phoneNumber;
+            formData["full_phone"] = `+${formData["phonecode"]} ${phoneNumber}`;
+        }
+
+        let selectedServices = [];
+        checkboxes.forEach(service => {
+            if (service.checked) selectedServices.push(service.value);
+        });
+        formData["services"] = selectedServices.join(", ");
+
+        formData["source_page"] = window.location.pathname.split("/").pop() || "Unknown";
+
+        console.log("\ud83d\udce4 البيانات المرسلة:", formData);
+        localStorage.setItem("formData", JSON.stringify(formData));
+
+        emailjs.send("service_of4e1e9", "template_c3dwche", formData)
+            .then(function(response) {
+                console.log("✅ تم الإرسال بنجاح", response);
+                responseElement.innerHTML = '<div class="alert-success">تم إرسال الطلب بنجاح! ✅</div>';
+                responseElement.style.display = "block";
+                setTimeout(() => { responseElement.style.display = "none"; }, 5000);
+                localStorage.setItem("formSubmitted", "true");
+                setTimeout(() => { window.location.href = "sent.html"; }, 2000);
+            }, function(error) {
+                console.error("❌ فشل الإرسال", error);
+                responseElement.innerHTML = '<div class="alert-danger">فشل إرسال الطلب، حاول مرة اخرى! ❌: ' + error.text + '</div>';
+                responseElement.style.display = "block";
+                setTimeout(() => { responseElement.style.display = "none"; }, 5000);
+            });
+    }
+
+    if (requestButton) {
+        requestButton.addEventListener("click", sendEmail);
+    }
+
+    inputs.forEach(input => {
+        input.addEventListener("input", function() {
+            let errorMessage = input.nextElementSibling;
+            if (input.value.trim()) {
+                input.classList.remove("input-error");
+                if (errorMessage && errorMessage.classList.contains("error-message")) {
+                    errorMessage.remove();
+                }
+            } else {
+                input.classList.add("input-error");
+                if (!errorMessage || !errorMessage.classList.contains("error-message")) {
+                    errorMessage = document.createElement("div");
+                    errorMessage.classList.add("error-message");
+                    errorMessage.textContent = "هذا الحقل مطلوب*";
+                    input.parentNode.insertBefore(errorMessage, input.nextSibling);
+                }
+            }
+        });
     });
 
-    // 🔹 إضافة رأس المال إلى البيانات
-    let companyCapitalInput = document.querySelector("input[name='Companycapital']");
+    checkboxes.forEach(checkbox => {
+        checkbox.addEventListener("change", function() {
+            if (checkbox.checked) {
+                checkboxes.forEach(box => box.closest("label").classList.remove("checkbox-error"));
+            }
+        });
+    });
+
     if (companyCapitalInput) {
-        data["Companycapital"] = companyCapitalInput.value.trim();
+        companyCapitalInput.addEventListener("input", function() {
+            companyCapitalInput.value = companyCapitalInput.value.replace(/[^0-9]/g, '');
+        });
     }
-
-    // ✅ جمع كود الدولة مع رقم الهاتف فقط إذا كان مدخلًا
-    let phoneNumber = phoneInput.value.trim();
-    let countryCode = document.getElementById("selectedCountry").textContent.split(" ")[0];
-    
-    if (phoneNumber) {
-        data["mobile"] = countryCode + phoneNumber;
-    }
-    // 🔹 إضافة الخدمات المحددة
-    let selectedServices = [];
-    document.querySelectorAll("input[name='services[]']:checked").forEach(service => {
-        selectedServices.push(service.value);
-    });
-    data["services"] = selectedServices.join(", "); // تحويل المصفوفة إلى نص مفصول بفاصلة
-
-    // ✅ إضافة مصدر الصفحة بنفس الاسم الموجود في EmailJS "{{source_page}}"
-    let currentPage = window.location.pathname.split("/").pop() || "Unknown";  
-    data["source_page"] = currentPage; // ✅ تغيير الاسم ليتطابق مع EmailJS
-
-    console.log("📤 البيانات المرسلة:", data); // ✅ لفحص القيم قبل الإرسال
-
-    // 🔹 إرسال البيانات إلى EmailJS
-    emailjs.send("service_of4e1e9", templateID, data)
-        .then(function(response) {
-            console.log("✅ تم الإرسال بنجاح", response);
-            responseElement.innerHTML = '<div data-lang="Sentsuccessfully!" class="alert-success">تم إرسال الطلب بنجاح! ✅</div>';
-            responseElement.style.display = "block";
-
-            setTimeout(() => { responseElement.style.display = "none"; }, 5000);
-            // ✅ حفظ حالة نجاح الإرسال في localStorage
-            localStorage.setItem("formSubmitted", "true");
-
-            // ✅ التوجيه إلى sent.html بعد 2 ثانية
-            setTimeout(function () {
-                window.location.href = "sent.html";
-            }, 2000);
-        }, function(error) {
-            console.error("❌ فشل الإرسال", error);
-            responseElement.innerHTML = '<div data-lang="Failedtosendrequest" class="alert-danger">فشل إرسال الطلب، حاول مرة اخري! ❌: ' + error.text + '</div>';
-            responseElement.style.display = "block";
-            setTimeout(() => { responseElement.style.display = "none"; }, 5000);
-        });
-}
-
-
-
-
-
-    
-
-    document.addEventListener("DOMContentLoaded", function () {
-        let form = document.getElementById("requestForm");
-        let responseElement = document.getElementById("responseMessage");
-        let requestButton = document.getElementById("requestPrice");
-
-        requestButton.addEventListener("click", function(event) {
-            sendEmail(event, form, "template_c3dwche", responseElement);
-        });
-
-        // ✅ جعل الحقول تتحقق من حالتها أثناء الإدخال
-        document.querySelectorAll("input, textarea, select").forEach(input => {
-            input.addEventListener("input", function() {
-                if (input.value.trim()) {
-                    input.classList.remove("input-error");
-                } else {
-                    input.classList.add("input-error"); // يعود اللون الأحمر إذا حُذفت القيمة
-                }
-            });
-        });
-
-        // ✅ إزالة لون الأحمر عند اختيار أحد الخيارات في التشيك بوكس
-        let serviceCheckboxes = document.querySelectorAll("input[name='services[]']");
-        serviceCheckboxes.forEach(checkbox => {
-            checkbox.addEventListener("change", function() {
-                if (checkbox.checked) {
-                    serviceCheckboxes.forEach(box => box.closest("label").classList.remove("checkbox-error"));
-                }
-            });
-        });
-
-        // ✅ منع إدخال الأحرف في خانة Company Capital
-        let companyCapitalInput = document.querySelector("input[name='Companycapital']");
-        if (companyCapitalInput) {
-            companyCapitalInput.addEventListener("input", function() {
-                companyCapitalInput.value = companyCapitalInput.value.replace(/[^0-9]/g, '');
-            });
-            document.addEventListener("DOMContentLoaded", function () {
-    let currentPage = window.location.pathname.split("/").pop() || "Unknown"; 
-    document.getElementById("sourcePage").value = currentPage;
-    document.addEventListener("DOMContentLoaded", function () {
-    function updateButtonPosition() {
-        let htmlElement = document.documentElement;
-        let buttonContainer = document.querySelector(".button-container");
-
-        if (htmlElement.lang === "ar") {
-            buttonContainer.style.justifyContent = "flex-end"; // الزر في اليمين عند العربية
-        } else {
-            buttonContainer.style.justifyContent = "flex-start"; // الزر في اليسار عند الإنجليزية
-        }
-    }
-
-    updateButtonPosition(); // تشغيله عند تحميل الصفحة
-
-    // إضافة مستمع لتغيير اللغة (يُفترض أن لديك زر يغيّر `lang`)
-    document.querySelectorAll(".language-toggle").forEach(btn => {
-        btn.addEventListener("click", function () {
-            let newLang = this.getAttribute("data-lang"); // جلب اللغة الجديدة
-            document.documentElement.lang = newLang; // تغيير `lang` في <html>
-            updateButtonPosition(); // تحديث موضع الزر
-        });
-    });
 });
 
-});
-
-        }
-    });
-    
     
 </script>
 <style>
+      .input-error {
+    border: 2px solid red;
+}
+
+.error-message {
+    color: red;
+    font-size: 14px;
+    margin-top: 5px;
+}
     .alert-message {
         margin-top: 10px;
         font-weight: bold;

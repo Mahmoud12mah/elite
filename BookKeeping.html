@@ -7,15 +7,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <script>
-  if (window.location.pathname.endsWith("BookKeeping.html")) {
-      window.history.replaceState(null, null, window.location.pathname.replace(".html", ""));
-  }
-</script>
-<script>
-  if (window.location.pathname.endsWith("#Home")) {
-      window.history.replaceState(null, null, window.location.pathname.replace("#Home", ""));
-  }
-</script>
+    if (window.location.pathname.endsWith("BookKeeping.html")) {
+        window.history.replaceState(null, null, window.location.pathname.replace(".html", ""));
+    }
+  </script>
+  <script>
+    if (window.location.pathname.endsWith("#Home")) {
+        window.history.replaceState(null, null, window.location.pathname.replace("#Home", ""));
+    }
+  </script>
 
 
 
@@ -668,14 +668,14 @@ html[lang="en"] .floating-image {
 
     <script>
  document.addEventListener("DOMContentLoaded", function () {
-    emailjs.init("KSdSGoGza3XVQIuja"); // ✅ تأكد من استبداله بالمفتاح الصحيح
+    emailjs.init("KSdSGoGza3XVQIuja");
 
     let form = document.getElementById("requestForm");
     let responseElement = document.getElementById("responseMessage");
     let requestButton = document.getElementById("requestPrice");
-    let phoneInput = document.getElementById("phoneInput");
+    let phoneInput = document.querySelector("input[name='mobile']");
     let visitsInput = document.querySelector("input[name='TherequiredNumberofvisitspermonth']");
-    let inputs = document.querySelectorAll("input, textarea, select");
+    let inputs = document.querySelectorAll("input[required], textarea, select");
 
     function validateForm() {
         let isValid = true;
@@ -683,27 +683,36 @@ html[lang="en"] .floating-image {
         responseElement.style.display = "none";
 
         inputs.forEach(input => {
-            if (input.hasAttribute("required") && !input.value.trim()) {
+            let errorMessage = input.nextElementSibling;
+            if (!input.value.trim()) {
                 input.classList.add("input-error");
+                if (!errorMessage || !errorMessage.classList.contains("error-message")) {
+                    errorMessage = document.createElement("div");
+                    errorMessage.classList.add("error-message");
+                    errorMessage.textContent = "هذا الحقل مطلوب*";
+                    input.parentNode.insertBefore(errorMessage, input.nextSibling);
+                }
                 isValid = false;
-            } else {
-                input.classList.remove("input-error");
             }
         });
 
-        // ✅ جعل الهاتف مطلوبًا وإزالة العلامة الحمراء عند إدخال قيمة
-        if (!phoneInput.value.trim()) {
-            phoneInput.classList.add("input-error");
-            isValid = false;
-        } else {
-            phoneInput.classList.remove("input-error");
-        }
-
-        if (visitsInput && !visitsInput.value.trim()) {
+        // التحقق من عدد الزيارات المطلوبة شهريًا
+        if (!visitsInput.value.trim()) {
             visitsInput.classList.add("input-error");
+            let errorMessage = visitsInput.nextElementSibling;
+            if (!errorMessage || !errorMessage.classList.contains("error-message")) {
+                errorMessage = document.createElement("div");
+                errorMessage.classList.add("error-message");
+                errorMessage.textContent = "هذا الحقل مطلوب*";
+                visitsInput.parentNode.insertBefore(errorMessage, visitsInput.nextSibling);
+            }
             isValid = false;
         } else {
             visitsInput.classList.remove("input-error");
+            let errorMessage = visitsInput.nextElementSibling;
+            if (errorMessage && errorMessage.classList.contains("error-message")) {
+                errorMessage.remove();
+            }
         }
 
         let checkboxes = document.querySelectorAll("input[name='services[]']");
@@ -716,7 +725,7 @@ html[lang="en"] .floating-image {
         }
 
         if (!isValid) {
-            responseElement.innerHTML = '<div data-lang="Allfieldsrequired" class="alert-danger">جميع الحقول مطلوبة! ❌</div>';
+            responseElement.innerHTML = '<div class="alert-danger">جميع الحقول مطلوبة! ❌</div>';
             responseElement.style.display = "block";
         }
 
@@ -724,85 +733,123 @@ html[lang="en"] .floating-image {
     }
 
     function sendEmail(event) {
-    event.preventDefault();
-    if (!validateForm()) return;
+        event.preventDefault();
+        if (!validateForm()) return;
 
-    let formData = new FormData(form);
-    let data = {};
+        let formData = new FormData(form);
+        let data = {};
+        formData.forEach((value, key) => { data[key] = value; });
 
-    formData.forEach((value, key) => {
-        data[key] = value;
-    });
+        let countryCodeElement = document.getElementById("selectedCountry");
+        let countryCode = countryCodeElement ? countryCodeElement.textContent.trim().split(" ")[0].replace(/\D/g, '') : "";
+        let phoneNumber = phoneInput ? phoneInput.value.trim().replace(/\D/g, '') : "";
 
-    // ✅ جمع كود الدولة مع رقم الهاتف فقط إذا كان مدخلًا
-    let phoneNumber = phoneInput.value.trim();
-    let countryCode = document.getElementById("selectedCountry").textContent.split(" ")[0];
-    
-    if (phoneNumber) {
-        data["mobile"] = countryCode + phoneNumber;
-    }
+        if (countryCode) {
+            data["phonecode"] = parseInt(countryCode, 10);
+        }
+        if (phoneNumber) {
+            data["mobile"] = phoneNumber;
+            data["full_phone"] = `+${countryCode} ${phoneNumber}`;
+        }
 
-    if (visitsInput) {
-        data["TherequiredNumberofvisitspermonth"] = visitsInput.value.trim();
-    }
+        if (visitsInput) {
+            data["TherequiredNumberofvisitspermonth"] = visitsInput.value.trim();
+        }
 
-    let selectedServices = [];
-    document.querySelectorAll("input[name='services[]']:checked").forEach(service => {
-        selectedServices.push(service.value);
-    });
-    data["services"] = selectedServices.join(", ");
-
-    let currentPage = window.location.pathname.split("/").pop() || "Unknown";
-    data["source_page"] = currentPage;
-
-    console.log("📤 البيانات المرسلة:", data);
-
-    emailjs.send("service_of4e1e9", "template_c3dwche", data)
-        .then(function(response) {
-            console.log("✅ تم الإرسال بنجاح", response);
-            responseElement.innerHTML = '<div data-lang="Sentsuccessfully!" class="alert-success">تم إرسال الطلب بنجاح! ✅</div>';
-            responseElement.style.display = "block";
-            localStorage.setItem("formSubmitted", "true");
-
-            setTimeout(function () {
-                window.location.href = "sent.html";
-            }, 2000);
-        }, function(error) {
-            console.error("❌ فشل الإرسال", error);
-            responseElement.innerHTML = '<div data-lang="Failedtosendrequest" class="alert-danger">فشل إرسال الطلب، حاول مرة اخري! ❌: ' + error.text + '</div>';
-            responseElement.style.display = "block";
-            setTimeout(() => { window.location.href = "sent.html"; }, 1000);
+        let selectedServices = [];
+        document.querySelectorAll("input[name='services[]']:checked").forEach(service => {
+            selectedServices.push(service.value);
         });
-}
+        data["services"] = selectedServices.join(", ");
 
-if (requestButton) {
-    requestButton.addEventListener("click", sendEmail);
-} else {
-    console.error("❌ الزر غير موجود! تأكد من أن العنصر موجود في HTML.");
-}
+        data["source_page"] = window.location.pathname.split("/").pop() || "Unknown";
+        
+        console.log("📤 البيانات المرسلة:", data);
+        localStorage.setItem("formData", JSON.stringify(data));
 
-inputs.forEach(input => {
-    input.addEventListener("input", function() {
-        if (input.value.trim()) {
-            input.classList.remove("input-error");
+        emailjs.send("service_of4e1e9", "template_c3dwche", data)
+            .then(function(response) {
+                console.log("✅ تم الإرسال بنجاح", response);
+                responseElement.innerHTML = '<div class="alert-success">تم إرسال الطلب بنجاح! ✅</div>';
+                responseElement.style.display = "block";
+                setTimeout(() => { responseElement.style.display = "none"; }, 5000);
+                localStorage.setItem("formSubmitted", "true");
+                setTimeout(() => { window.location.href = "sent.html"; }, 2000);
+            }, function(error) {
+                console.error("❌ فشل الإرسال", error);
+                responseElement.innerHTML = '<div class="alert-danger">فشل إرسال الطلب، حاول مرة اخرى! ❌: ' + error.text + '</div>';
+                responseElement.style.display = "block";
+                setTimeout(() => { responseElement.style.display = "none"; }, 5000);
+            });
+    }
+
+    if (requestButton) {
+        requestButton.addEventListener("click", sendEmail);
+    }
+
+    inputs.forEach(input => {
+        input.addEventListener("input", function() {
+            let errorMessage = input.nextElementSibling;
+            if (input.value.trim()) {
+                input.classList.remove("input-error");
+                if (errorMessage && errorMessage.classList.contains("error-message")) {
+                    errorMessage.remove();
+                }
+            } else {
+                if (!errorMessage || !errorMessage.classList.contains("error-message")) {
+                    errorMessage = document.createElement("div");
+                    errorMessage.classList.add("error-message");
+                    errorMessage.textContent = "هذا الحقل مطلوب*";
+                    input.parentNode.insertBefore(errorMessage, input.nextSibling);
+                }
+                input.classList.add("input-error");
+            }
+        });
+    });
+
+    let checkboxes = document.querySelectorAll("input[name='services[]']");
+    checkboxes.forEach(checkbox => {
+        checkbox.addEventListener("change", function() {
+            if (checkbox.checked) {
+                checkboxes.forEach(box => box.closest("label").classList.remove("checkbox-error"));
+            }
+        });
+    });
+
+    // إزالة أو عرض رسالة الخطأ عند إدخال عدد الزيارات أو حذفه
+    visitsInput.addEventListener("input", function() {
+        let errorMessage = visitsInput.nextElementSibling;
+        if (visitsInput.value.trim()) {
+            visitsInput.classList.remove("input-error");
+            if (errorMessage && errorMessage.classList.contains("error-message")) {
+                errorMessage.remove();
+            }
         } else {
-            input.classList.add("input-error");
+            if (!errorMessage || !errorMessage.classList.contains("error-message")) {
+                errorMessage = document.createElement("div");
+                errorMessage.classList.add("error-message");
+                errorMessage.textContent = "هذا الحقل مطلوب*";
+                visitsInput.parentNode.insertBefore(errorMessage, visitsInput.nextSibling);
+            }
+            visitsInput.classList.add("input-error");
         }
     });
 });
 
-let checkboxes = document.querySelectorAll("input[name='services[]']");
-checkboxes.forEach(checkbox => {
-    checkbox.addEventListener("change", function() {
-        if (checkbox.checked) {
-            checkboxes.forEach(box => box.closest("label").classList.remove("checkbox-error"));
-        }
-    
-    });
-});
- }); 
+
+
+
 </script>
 <style>
+     .input-error {
+    border: 2px solid red;
+}
+
+.error-message {
+    color: red;
+    font-size: 14px;
+    margin-top: 5px;
+}
     .alert-message {
         margin-top: 10px;
         font-weight: bold;
