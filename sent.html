@@ -348,36 +348,78 @@ document.addEventListener("DOMContentLoaded", function () {
 </style>
 
 <script>
-    // ✅ التحقق فورًا قبل تحميل أي محتوى
-    let formSubmitted = localStorage.getItem("formSubmitted");
+    /**
+     * ✅ التحقق مما إذا كان الزائر هو Googlebot
+     * @returns {boolean} - يعيد true إذا كان الزائر هو Googlebot
+     */
+    function isGoogleBot() {
+        return /Googlebot|AdsBot-Google/i.test(navigator.userAgent);
+    }
 
-    if (!formSubmitted || formSubmitted !== "true") {
-        let previousPage = localStorage.getItem("previousPage") || document.referrer;
+    /**
+     * ✅ استرجاع قيمة المخزن المحلي
+     * @param {string} key - اسم المفتاح في LocalStorage
+     * @returns {string|null} - القيمة المخزنة أو null إذا لم تكن موجودة
+     */
+    function getLocalStorage(key) {
+        return localStorage.getItem(key);
+    }
 
-        // ✅ منع الدخول في حلقة إعادة تحميل لا نهائية
+    /**
+     * ✅ التحقق من صلاحية الدخول
+     * @returns {boolean} - يعيد true إذا كان الدخول مسموحًا، وإلا false
+     */
+    function isAccessAllowed() {
+        return getLocalStorage("formSubmitted") === "true";
+    }
+
+    /**
+     * ✅ إعادة التوجيه إلى الصفحة الرئيسية أو الصفحة السابقة
+     */
+    function redirectToPreviousPage() {
+        let previousPage = getLocalStorage("previousPage") || document.referrer;
+
         if (!previousPage || previousPage === window.location.href) {
-            previousPage = "index.html"; // إعادة التوجيه إلى الصفحة الرئيسية إذا لم يكن هناك صفحة سابقة
+            previousPage = "index.html"; // إعادة التوجيه إلى الصفحة الرئيسية
         }
 
-        // ✅ إعادة التوجيه إلى الصفحة السابقة أو الصفحة الرئيسية
         window.location.replace(previousPage);
     }
 
-    document.addEventListener("DOMContentLoaded", function () {
-        if (!formSubmitted || formSubmitted !== "true") {
-            return; // إذا كان المستخدم غير مسموح له، لن يصل إلى هذا الجزء
+    /**
+     * ✅ تنفيذ التحقق الأولي قبل تحميل الصفحة
+     */
+    function initPageProtection() {
+        if (isGoogleBot()) {
+            return; // السماح لجوجل بالتحقق دون إعادة التوجيه
         }
 
-        // ✅ السماح بعرض الصفحة بعد التحقق
-        document.body.style.display = "block";
+        if (!isAccessAllowed()) {
+            redirectToPreviousPage(); // منع الوصول وإعادة التوجيه
+        }
+    }
 
-        // ✅ تنظيف التخزين بعد السماح بالوصول
-        setTimeout(() => {
-            localStorage.removeItem("formSubmitted");
-            localStorage.removeItem("previousPage");
-        }, 500);
-    });
+    /**
+     * ✅ عرض الصفحة بعد التحقق
+     */
+    function showPageContent() {
+        if (isAccessAllowed()) {
+            document.body.style.display = "block";
+            
+            // ✅ تنظيف التخزين بعد السماح بالوصول
+            setTimeout(() => {
+                localStorage.removeItem("formSubmitted");
+                localStorage.removeItem("previousPage");
+            }, 500);
+        }
+    }
+
+    // ✅ تنفيذ التحقق فورًا قبل تحميل أي شيء
+    initPageProtection();
+
+    document.addEventListener("DOMContentLoaded", showPageContent);
 </script>
+
 
 
 
