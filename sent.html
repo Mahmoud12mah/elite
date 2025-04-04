@@ -19,11 +19,11 @@
   
 
 
-  <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-  <link rel="shortcut icon" href="/favicon.ico" />
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-  <link rel="manifest" href="/site.webmanifest" />
+  <link rel="icon" type="image/png" href="assets/img/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg" />
+  <link rel="shortcut icon" href="assets/img/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/img/apple-touch-icon.png" />
+  <link rel="manifest" href="assets/img/site.webmanifest" />
   
   
   <link rel="icon" href="assets/img/logo.png" type="image/png">
@@ -357,68 +357,36 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     /**
-     * ✅ استرجاع قيمة المخزن المحلي
-     * @param {string} key - اسم المفتاح في LocalStorage
-     * @returns {string|null} - القيمة المخزنة أو null إذا لم تكن موجودة
-     */
-    function getLocalStorage(key) {
-        return localStorage.getItem(key);
-    }
-
-    /**
-     * ✅ التحقق من صلاحية الدخول
+     * ✅ التحقق مما إذا كان المستخدم لديه صلاحية الوصول
      * @returns {boolean} - يعيد true إذا كان الدخول مسموحًا، وإلا false
      */
     function isAccessAllowed() {
-        return getLocalStorage("formSubmitted") === "true";
+        return localStorage.getItem("formSubmitted") === "true";
     }
 
     /**
-     * ✅ إعادة التوجيه إلى الصفحة الرئيسية أو الصفحة السابقة
+     * ✅ منع تحميل الصفحة وإعادة التوجيه فورًا
      */
-    function redirectToPreviousPage() {
-        let previousPage = getLocalStorage("previousPage") || document.referrer;
-
-        if (!previousPage || previousPage === window.location.href) {
-            previousPage = "index.html"; // إعادة التوجيه إلى الصفحة الرئيسية
-        }
-
-        window.location.replace(previousPage);
+    function preventPageLoad() {
+        document.documentElement.innerHTML = ""; // حذف محتوى الصفحة بالكامل
+        window.location.replace("index.html"); // إعادة التوجيه إلى الصفحة الرئيسية
     }
 
     /**
-     * ✅ تنفيذ التحقق الأولي قبل تحميل الصفحة
+     * ✅ تنفيذ الحماية قبل تحميل أي شيء
      */
-    function initPageProtection() {
+    (function initPageProtection() {
         if (isGoogleBot()) {
-            return; // السماح لجوجل بالتحقق دون إعادة التوجيه
+            return; // السماح لـ Googlebot بالوصول دون إعادة توجيه
         }
 
         if (!isAccessAllowed()) {
-            redirectToPreviousPage(); // منع الوصول وإعادة التوجيه
+            preventPageLoad();
         }
-    }
-
-    /**
-     * ✅ عرض الصفحة بعد التحقق
-     */
-    function showPageContent() {
-        if (isAccessAllowed()) {
-            document.body.style.display = "block";
-            
-            // ✅ تنظيف التخزين بعد السماح بالوصول
-            setTimeout(() => {
-                localStorage.removeItem("formSubmitted");
-                localStorage.removeItem("previousPage");
-            }, 500);
-        }
-    }
-
-    // ✅ تنفيذ التحقق فورًا قبل تحميل أي شيء
-    initPageProtection();
-
-    document.addEventListener("DOMContentLoaded", showPageContent);
+    })();
 </script>
+
+
 
 
 
