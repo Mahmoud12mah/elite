@@ -348,44 +348,36 @@ document.addEventListener("DOMContentLoaded", function () {
 </style>
 
 <script>
-    /**
-     * ✅ التحقق مما إذا كان الزائر هو Googlebot
-     * @returns {boolean} - يعيد true إذا كان الزائر هو Googlebot
-     */
-    function isGoogleBot() {
-        return /Googlebot|AdsBot-Google/i.test(navigator.userAgent);
-    }
+    // ✅ التحقق فورًا قبل تحميل أي محتوى
+    let formSubmitted = localStorage.getItem("formSubmitted");
 
-    /**
-     * ✅ التحقق مما إذا كان المستخدم لديه صلاحية الوصول
-     * @returns {boolean} - يعيد true إذا كان الدخول مسموحًا، وإلا false
-     */
-    function isAccessAllowed() {
-        return localStorage.getItem("formSubmitted") === "true";
-    }
+    if (!formSubmitted || formSubmitted !== "true") {
+        let previousPage = localStorage.getItem("previousPage") || document.referrer;
 
-    /**
-     * ✅ منع تحميل الصفحة وإعادة التوجيه فورًا
-     */
-    function preventPageLoad() {
-        document.documentElement.innerHTML = ""; // حذف محتوى الصفحة بالكامل
-        window.location.replace("index.html"); // إعادة التوجيه إلى الصفحة الرئيسية
-    }
-
-    /**
-     * ✅ تنفيذ الحماية قبل تحميل أي شيء
-     */
-    (function initPageProtection() {
-        if (isGoogleBot()) {
-            return; // السماح لـ Googlebot بالوصول دون إعادة توجيه
+        // ✅ منع الدخول في حلقة إعادة تحميل لا نهائية
+        if (!previousPage || previousPage === window.location.href) {
+            previousPage = "index.html"; // إعادة التوجيه إلى الصفحة الرئيسية إذا لم يكن هناك صفحة سابقة
         }
 
-        if (!isAccessAllowed()) {
-            preventPageLoad();
+        // ✅ إعادة التوجيه إلى الصفحة السابقة أو الصفحة الرئيسية
+        window.location.replace(previousPage);
+    }
+
+    document.addEventListener("DOMContentLoaded", function () {
+        if (!formSubmitted || formSubmitted !== "true") {
+            return; // إذا كان المستخدم غير مسموح له، لن يصل إلى هذا الجزء
         }
-    })();
+
+        // ✅ السماح بعرض الصفحة بعد التحقق
+        document.body.style.display = "block";
+
+        // ✅ تنظيف التخزين بعد السماح بالوصول
+        setTimeout(() => {
+            localStorage.removeItem("formSubmitted");
+            localStorage.removeItem("previousPage");
+        }, 500);
+    });
 </script>
-
 
 
 
