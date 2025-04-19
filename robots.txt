@@ -4,5 +4,4 @@ Disallow: /admin/
 Disallow: /private/
 
 Sitemap: https://elitefinancial-eg.com/sitemap.xml
-Allow: /Taxes
 
