@@ -519,8 +519,19 @@
  
   ======================================================== -->
 
+  <!-- استيراد خط Cairo -->
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
 
-  
+<style>
+  /* تطبيق الخط على جميع العناصر مع استثناء الأيقونات */
+  *:not(i):not([class^="fa"]):not([class*=" fa-"]) {
+    font-family: 'Cairo', sans-serif !important;
+    box-sizing: border-box;
+  }
+
+ 
+</style>
+
  
 
   <body class="index-page">
@@ -693,11 +704,11 @@
               /* تقليل المسافة عند اللغة العربية فقط على أجهزة الكمبيوتر */
               @media (min-width: 769px) {
                   html[lang="ar"] h2 {
-                      margin-bottom: 10px; /* تقليل المسافة أسفل العنوان */
+                      margin-bottom: 10px;/* تقليل المسافة أسفل العنوان */
                   }
               
                   html[lang="ar"] .content-wrapper {
-                      margin-top: -45px; /* تقليل المسافة أعلى المحتوى */
+                      margin-top: -25px; /* تقليل المسافة أعلى المحتوى */
                   }
               }
               
