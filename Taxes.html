@@ -544,6 +544,13 @@ function toggleDropdown(dropdownId, checkbox) {
             <span class="checkmark"></span>
             <span class="label" data-lang="QuarterlyPayroll">Quarterly Payroll</span>
         </label>
+        <style>
+            /* تصغير حجم خط النص المترجم فقط عند اللغة العربية */
+            html[lang="ar"] [data-lang="QuarterlyPayroll"] {
+                font-size: 15px; /* حجم أصغر، يمكنك تعديله مثلا 13px أو 12px حسب رغبتك */
+            }
+            </style>
+            
         <p class="my-4"></p> <!-- لو كنت تستخدم Tailwind CSS -->
     
         <label class="checkbox" for="checkbox44">
