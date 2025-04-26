@@ -669,10 +669,18 @@
   </div>
 </footer>
 <style>
+  /* الكود الأساسي */
   html[lang="ar"] #social-icons {
     direction: ltr;
-    transform: translateX(265px); /* تحريك لليمين بمقدار 50 بكسل */
-    transition: transform 0.3s ease; /* حركة سلسة */
+    transform: translateX(265px);
+    transition: transform 0.3s ease;
+  }
+
+  /* كود خاص للموبايل */
+  @media (max-width: 768px) {
+    html[lang="ar"] #social-icons {
+      transform: translateX(300px) !important; /* نستخدم !important للإجبار */
+    }
   }
 </style>
 

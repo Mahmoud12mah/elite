@@ -1202,7 +1202,7 @@
 
    
 
-  </main>
+  
 <footer>
  
     <meta charset="utf-8">
@@ -1231,6 +1231,11 @@
       body > footer {
         margin-top: auto;
       }
+       /* ✅ السطر الجديد لتغيير لون اللينكات والأيقونات إلى الأسود */
+    footer a, footer svg {
+      color: #000 !important;
+      fill: #000 !important;
+    }
     </style>
     
     
@@ -1325,10 +1330,18 @@
 </footer>
 
 <style>
+  /* الكود الأساسي */
   html[lang="ar"] #social-icons {
     direction: ltr;
-    transform: translateX(265px); /* تحريك لليمين بمقدار 50 بكسل */
-    transition: transform 0.3s ease; /* حركة سلسة */
+    transform: translateX(265px);
+    transition: transform 0.3s ease;
+  }
+
+  /* كود خاص للموبايل */
+  @media (max-width: 768px) {
+    html[lang="ar"] #social-icons {
+      transform: translateX(300px) !important; /* نستخدم !important للإجبار */
+    }
   }
 </style>
 
