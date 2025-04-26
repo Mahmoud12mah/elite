@@ -694,7 +694,13 @@
     </p>
   </div>
 </footer>
-
+<style>
+  html[lang="ar"] #social-icons {
+    direction: ltr;
+    transform: translateX(265px); /* تحريك لليمين بمقدار 50 بكسل */
+    transition: transform 0.3s ease; /* حركة سلسة */
+  }
+</style>
 
   <!-- Scroll Top -->
   <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>

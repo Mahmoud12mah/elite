@@ -194,7 +194,7 @@
 
 }
 
-.close-btn {
+.chatbot-close-btn {
     position: absolute;
   
     right: 330px !important;
@@ -210,7 +210,7 @@
     border-radius: 50%;
 }
 
-.close-btn:hover {
+.chatbot-close-btn:hover {
     color: #ff4d4d;
     background: rgba(255, 255, 255, 0.2);
 }
@@ -265,7 +265,7 @@
  
       <button class="chatbot-button" onclick="toggleChat()">💬</button>
       <div class="chat-container" id="chatContainer">
-          <div class="chat-header">كيف يمكنني مساعدتك؟ <button class="close-btn" onclick="toggleChat()">✖</button></div>
+          <div class="chat-header">كيف يمكنني مساعدتك؟ <button class="chatbot-close-btn" onclick="toggleChat()">✖</button></div>
           <div class="chat-body" id="chatBody">
               <div class="question" onclick="sendQuestion(this)">ما هي الخدمات التي نقدمها</div>
               <div class="question" onclick="sendQuestion(this)">عناوين المركز الرئيسي والفروع</div>
@@ -1323,6 +1323,14 @@
     </p>
   </div>
 </footer>
+
+<style>
+  html[lang="ar"] #social-icons {
+    direction: ltr;
+    transform: translateX(265px); /* تحريك لليمين بمقدار 50 بكسل */
+    transition: transform 0.3s ease; /* حركة سلسة */
+  }
+</style>
 
 
   <!-- Scroll Top -->
