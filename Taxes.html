@@ -7,6 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
+
 <script>
     if (window.location.pathname.endsWith("Taxes.html")) {
         window.history.replaceState(null, null, window.location.pathname.replace(".html", ""));
@@ -17,7 +18,6 @@
         window.history.replaceState(null, null, window.location.pathname.replace("#Home", ""));
     }
   </script>
-  
   
   
   
@@ -344,16 +344,11 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 </script>
 
-<p>
-
-</p>
 
 <div  dir="rtl" class="container d-flex flex-column align-items-center text-center"></div>
         <h2  style="font-size: 30px; font-weight: bold; text-align: center; background-color: #0A2A5E; color: #ffffff;" data-aos="fade-up" data-aos-delay="100" data-lang="request">Request a price for Tax Services</h2>
 
-<p>
-
-</p>
+        <p class="my-4"></p> <!-- لو كنت تستخدم Tailwind CSS -->
 
 <div class="col-lg-8">
     <div class="request-form">
@@ -364,17 +359,17 @@ document.addEventListener("DOMContentLoaded", function () {
             <div class="col-md-6">
                 <input style="font-weight: bold" type="text" name="name" class="form-control" placeholder="Name*" data-lang="name" required="">
             </div>
-            <p></p>
+            <p class="my-4"></p> <!-- لو كنت تستخدم Tailwind CSS -->
 
         <div class="col-md-6">
           <input style="font-weight: bold" type="text" name="yourcompany" class="form-control" placeholder="Your Company*" data-lang="company" required="">
         </div>
-        <p>
-        </p>
+        <p class="my-4"></p> <!-- لو كنت تستخدم Tailwind CSS -->
         <div class="col-md-6">
             <input style="font-weight: bold" type="text" name="position" class="form-control" placeholder="Position*" data-lang="position" required="">
         </div>
-        <p></p>
+        <p class="my-4"></p> <!-- لو كنت تستخدم Tailwind CSS -->
+
         <div class="col-md-6">
             <input style="font-weight: bold" type="email" id="emailInput" name="email" class="form-control" placeholder="Email*" data-lang="youremail" required="">
             <small id="emailError" class="text-danger"></small>
@@ -402,9 +397,7 @@ document.addEventListener("DOMContentLoaded", function () {
 </form>
         
           
-        <p>
-
-        </p>
+        <p class="my-4"></p> <!-- لو كنت تستخدم Tailwind CSS -->
 
     
         
@@ -487,14 +480,12 @@ document.addEventListener("DOMContentLoaded", function () {
           
 
      
-  <p>
-
-  </p>
+        <p class="my-4"></p> <!-- لو كنت تستخدم Tailwind CSS -->
 
   
   <h2 data-lang="TaxServiceType" style="font-size: 30px; font-weight: bold;" data-aos="fade-up" data-aos-delay="100" >Tax Service Type</h2>
 
-    <p></p>
+  <p class="my-4"></p> <!-- لو كنت تستخدم Tailwind CSS -->
 
     <!-- Checkbox للتحكم في القائمة الأولى -->
 <label class="checkbox" for="checkbox1">
@@ -502,9 +493,7 @@ document.addEventListener("DOMContentLoaded", function () {
     <span class="checkmark"></span>
     <span class="label" data-lang="AnnualInspectionService">Annual Inspection Service</span>
 </label>
-<p>
-
-</p>
+<p class="my-4"></p> <!-- لو كنت تستخدم Tailwind CSS -->
 
 <!-- Checkbox للتحكم في القائمة الثانية -->
 <label class="checkbox" for="checkbox2">
@@ -534,36 +523,28 @@ function toggleDropdown(dropdownId, checkbox) {
     }
 }
 </script>
-<p>
-
-</p>
+<p class="my-4"></p> <!-- لو كنت تستخدم Tailwind CSS -->
     
     <!-- القائمة الثانية -->
     <div id="dropdown2" class="dropdown1" style="display: none;">
         <div id="content-unique" dir="rtl" class="container d-flex flex-column align-items-center text-center"></div>
 
         <h2 data-lang="RequestedServices" style="font-size: 30px; font-weight: bold;"  data-aos="fade-up" data-aos-delay="100">Requested Services</h2>
-        <p>
-
-        </p>
+        <p class="my-4"></p> <!-- لو كنت تستخدم Tailwind CSS -->
     
         <label class="checkbox" for="checkbox42">
             <input type="checkbox" name="services[]" value="Monthly VAT" id="checkbox42">
             <span class="checkmark"></span>
             <span class="label" data-lang="MonthlyVAT">Monthly VAT</span>
         </label>
-        <p>
-
-        </p>
+        <p class="my-4"></p> <!-- لو كنت تستخدم Tailwind CSS -->
     
         <label class="checkbox" for="checkbox43">
             <input type="checkbox" name="services[]" value="Quarterly Payroll" id="checkbox43">
             <span class="checkmark"></span>
             <span class="label" data-lang="QuarterlyPayroll">Quarterly Payroll</span>
         </label>
-        <p>
-
-        </p>
+        <p class="my-4"></p> <!-- لو كنت تستخدم Tailwind CSS -->
     
         <label class="checkbox" for="checkbox44">
             <input type="checkbox" name="services[]" value="Quarterly Withholding" id="checkbox44">
@@ -571,18 +552,14 @@ function toggleDropdown(dropdownId, checkbox) {
             <span class="label" data-lang="QuarterlyWithholding">Quarterly Withholding</span>
         </label>
 
-        <p>
-
-        </p>
+        <p class="my-4"></p> <!-- لو كنت تستخدم Tailwind CSS -->
     
         <label class="checkbox" for="checkbox45">
             <input type="checkbox" name="services[]" value="Annually Income Tax" id="checkbox45">
             <span class="checkmark"></span>
             <span class="label" data-lang="AnnuallyIncomeTax">Annually Income Tax</span>
         </label>
-        <p>
-
-        </p>
+        <p class="my-4"></p> <!-- لو كنت تستخدم Tailwind CSS -->
 
        
         
@@ -590,9 +567,7 @@ function toggleDropdown(dropdownId, checkbox) {
         <div dir="rtl" class="container d-flex flex-column align-items-center text-center"></div>
 
         <h2 data-lang="Companylocation" style="font-size: 30px; font-weight: bold;"  data-aos="fade-up" data-aos-delay="100">Company location</h2>
-        <p>
-
-        </p>
+        <p class="my-4"></p> <!-- لو كنت تستخدم Tailwind CSS -->
 
         <label class="checkbox" for="checkbox47">
             <input type="checkbox" name="services[]" value="Inside Cairo" id="checkbox47">
@@ -600,329 +575,257 @@ function toggleDropdown(dropdownId, checkbox) {
             <span class="label" data-lang="InsideCairo">Inside Cairo</span>
         </label>
 
-        <p>
-
-        </p>
+        <p class="my-4"></p> <!-- لو كنت تستخدم Tailwind CSS -->
     
         <label class="checkbox" for="checkbox48">
             <input type="checkbox" name="services[]" value="Outside Cairo" id="checkbox48">
             <span class="checkmark"></span>
             <span class="label" data-lang="OutsideCairo">Outside Cairo</span>
         </label>
-        <p>
-
-        </p>
+        <p class="my-4"></p> <!-- لو كنت تستخدم Tailwind CSS -->
 
         <div dir="rtl" class="container d-flex flex-column align-items-center text-center"></div>
 
    
         <h2 data-lang="Legalentitytype" style="font-size: 30px; font-weight: bold;"  data-aos="fade-up" data-aos-delay="100">Legal Entity Type</h2>
-    
+        <p class="my-4"></p> <!-- لو كنت تستخدم Tailwind CSS -->
         <label class="checkbox" for="checkbox49">
             <input type="checkbox" name="services[]" value="Sole Proprietorship Incorporation" id="checkbox49">
             <span class="checkmark"></span>
             <span class="label" data-lang="SoleProprietorshipIncorporation">Sole Proprietorship Incorporation</span>
         </label>
-        <p>
-    
-        </p>
+        <p class="my-4"></p> <!-- لو كنت تستخدم Tailwind CSS -->
         <label class="checkbox" for="checkbox50">
             <input type="checkbox" name="services[]" value="Limited Partnership" id="checkbox50">
             <span class="checkmark"></span>
             <span class="label" data-lang="LimitedPartnership">Limited Partnership</span>
         </label>
-        <p>
-    
-        </p>
+        <p class="my-4"></p> <!-- لو كنت تستخدم Tailwind CSS -->
         <label class="checkbox" for="checkbox51">
             <input type="checkbox" name="services[]" value="Genaral Partnership" id="checkbox51">
             <span class="checkmark"></span>
             <span class="label" data-lang="GenaralPartnership">Genaral Partnership</span>
         </label>
-        <p>
-    
-        </p>
+        <p class="my-4"></p> <!-- لو كنت تستخدم Tailwind CSS -->
         <label class="checkbox" for="checkbox52">
             <input type="checkbox" name="services[]" value="Limited Liability Company (LLC)" id="checkbox52">
             <span class="checkmark"></span>
             <span class="label" data-lang="LimitedLiabilityCompany">Limited Liability Company (LLC)</span>
         </label>
-        <p>
-    
-        </p>
+        <p class="my-4"></p> <!-- لو كنت تستخدم Tailwind CSS -->
         <label class="checkbox" for="checkbox53">
             <input type="checkbox" name="services[]" value="Joint Stock Company (S.A.E)" id="checkbox53">
             <span class="checkmark"></span>
             <span class="label" data-lang="JointStockCompany">Joint Stock Company (S.A.E)</span>
         </label>
-        <p>
-    
-        </p>
+        <p class="my-4"></p> <!-- لو كنت تستخدم Tailwind CSS -->
         <label class="checkbox" for="checkbox54">
             <input type="checkbox" name="services[]" value="Single Member Company" id="checkbox54">
             <span class="checkmark"></span>
             <span class="label" data-lang="SingleMemberCompany">Single Member Company</span>
         </label>
-        <p>
-    
-        </p>
+        <p class="my-4"></p> <!-- لو كنت تستخدم Tailwind CSS -->
     
     
     
         <div dir="rtl" class="container d-flex flex-column align-items-center text-center"></div>
        
         <h2 data-lang="Averageannualrevenue" style="font-size: 30px; font-weight: bold;" data-aos="fade-up" data-aos-delay="100">Average Annual Revenue (over the last three years)</h2>
-    
+        <p class="my-4"></p> <!-- لو كنت تستخدم Tailwind CSS -->
         <label class="checkbox" for="checkbox55">
             <input type="checkbox" name="services[]" value="Less Than a Million Pounds" id="checkbox55">
             <span class="checkmark"></span>
             <span class="label" data-lang="LessThanaMillionPounds">Less Than a Million Pounds</span>
         </label>
-        <p>
-    
-        </p>
+        <p class="my-4"></p> <!-- لو كنت تستخدم Tailwind CSS -->
         <label class="checkbox" for="checkbox56">
             <input type="checkbox" name="services[]" value="From 1 Million To 5 Million" id="checkbox56">
             <span class="checkmark"></span>
             <span class="label" data-lang="From1MillionTo5Million">From 1 Million To 5 Million</span>
         </label>
-        <p>
-    
-        </p>
+        <p class="my-4"></p> <!-- لو كنت تستخدم Tailwind CSS -->
         <label class="checkbox" for="checkbox57">
             <input type="checkbox" name="services[]" value="From 5 Million to 20 Million" id="checkbox57">
             <span class="checkmark"></span>
             <span class="label" data-lang="From5millionto20million">From 5 million to 20 million</span>
         </label>
-        <p>
-    
-        </p>
+        <p class="my-4"></p> <!-- لو كنت تستخدم Tailwind CSS -->
         <label class="checkbox" for="checkbox58">
             <input type="checkbox" name="services[]" value="From 21 Million To 50 Million" id="checkbox58">
             <span class="checkmark"></span>
             <span class="label" data-lang="From21MillionTo50Million">From 21 Million To 50 Million</span>
         </label>
-        <p>
-    
-        </p>
+        <p class="my-4"></p> <!-- لو كنت تستخدم Tailwind CSS -->
         <label class="checkbox" for="checkbox59">
             <input type="checkbox" name="services[]" value="From 51 Million To 100 Million" id="checkbox59">
             <span class="checkmark"></span>
             <span class="label" data-lang="From51MillionTo100Million">From 51 Million To 100 Million</span>
         </label>
-        <p>
-    
-        </p>
+        <p class="my-4"></p> <!-- لو كنت تستخدم Tailwind CSS -->
         <label class="checkbox" for="checkbox60">
             <input type="checkbox" name="services[]" value="More Than 100 Million" id="checkbox60">
             <span class="checkmark"></span>
             <span class="label" data-lang="MoreThan100Million">More Than 100 Million</span>
         </label>
-        <p>
-            
-        </p>
+        <p class="my-4"></p> <!-- لو كنت تستخدم Tailwind CSS -->
     
         <div dir="rtl" class="container d-flex flex-column align-items-center text-center"></div>
        
         <h2 data-lang="Averagenumberofmonthlysalesinvoices" style="font-size: 30px; font-weight: bold;"  data-aos="fade-up" data-aos-delay="100">Average number of monthly sales invoices</h2>
-    
+        <p class="my-4"></p> <!-- لو كنت تستخدم Tailwind CSS -->
         <label class="checkbox" for="checkbox61">
             <input type="checkbox" name="services[]" value="Lower Than 10" id="checkbox61">
             <span class="checkmark"></span>
             <span class="label" data-lang="LowerThan10">Lower Than 10</span>
         </label>
-        <p>
-    
-        </p>
+        <p class="my-4"></p> <!-- لو كنت تستخدم Tailwind CSS -->
         <label class="checkbox" for="checkbox62">
             <input type="checkbox" name="services[]" value="Between 10 and 19" id="checkbox62">
             <span class="checkmark"></span>
             <span class="label" data-lang="Between10and19">Between 10 and 19</span>
         </label>
-        <p>
-    
-        </p>
+        <p class="my-4"></p> <!-- لو كنت تستخدم Tailwind CSS -->
         <label class="checkbox" for="checkbox63">
             <input type="checkbox" name="services[]" value="Between 20 and 29" id="checkbox63">
             <span class="checkmark"></span>
             <span class="label" data-lang="Between20and29">Between 20 and 29</span>
         </label>
-        <p>
-    
-        </p>
+        <p class="my-4"></p> <!-- لو كنت تستخدم Tailwind CSS -->
         <label class="checkbox" for="checkbox64">
             <input type="checkbox" name="services[]" value="Between 30 and 39" id="checkbox64">
             <span class="checkmark"></span>
             <span class="label" data-lang="Between30and39">Between 30 and 39</span>
         </label>
-        <p>
-    
-        </p>
+        <p class="my-4"></p> <!-- لو كنت تستخدم Tailwind CSS -->
         <label class="checkbox" for="checkbox65">
             <input type="checkbox" name="services[]" value="Between 40 and 49" id="checkbox65">
             <span class="checkmark"></span>
             <span class="label" data-lang="Between40and49">Between 40 and 49</span>
         </label>
-        <p>
-    
-        </p>
+        <p class="my-4"></p> <!-- لو كنت تستخدم Tailwind CSS -->
         <label class="checkbox" for="checkbox66">
             <input type="checkbox" name="services[]" value="More Than 50" id="checkbox66">
             <span class="checkmark"></span>
             <span class="label" data-lang="MoreThan50">More Than 50</span>
         </label>
-        <p>
-            
-        </p>
+        <p class="my-4"></p> <!-- لو كنت تستخدم Tailwind CSS -->
 
         <div dir="rtl" class="container d-flex flex-column align-items-center text-center"></div>
    
         <h2 data-lang="Theaveragenumberofmonthlypurchaseinvoices" style="font-size: 30px; font-weight: bold;"  data-aos="fade-up" data-aos-delay="100">The average number of monthly purchase invoices</h2>
-    
+        <p class="my-4"></p> <!-- لو كنت تستخدم Tailwind CSS -->
         <label class="checkbox" for="checkbox67">
             <input type="checkbox" name="services[]" value="Lower Than 10" id="checkbox67">
             <span class="checkmark"></span>
             <span class="label" data-lang="LowerThan10">Lower Than 10</span>
         </label>
-        <p>
-    
-        </p>
+        <p class="my-4"></p> <!-- لو كنت تستخدم Tailwind CSS -->
         <label class="checkbox" for="checkbox68">
             <input type="checkbox" name="services[]" value="Between 10 and 19" id="checkbox68">
             <span class="checkmark"></span>
             <span class="label" data-lang="Between10and19">Between 10 and 19</span>
         </label>
-        <p>
-    
-        </p>
+        <p class="my-4"></p> <!-- لو كنت تستخدم Tailwind CSS -->
         <label class="checkbox" for="checkbox69">
             <input type="checkbox" name="services[]" value="Between 20 and 29" id="checkbox69">
             <span class="checkmark"></span>
             <span class="label" data-lang="Between20and29">Between 20 and 29</span>
         </label>
-        <p>
-    
-        </p>
+        <p class="my-4"></p> <!-- لو كنت تستخدم Tailwind CSS -->
         <label class="checkbox" for="checkbox70">
             <input type="checkbox" name="services[]" value="Between 30 and 39" id="checkbox70">
             <span class="checkmark"></span>
             <span class="label" data-lang="Between30and39">Between 30 and 39</span>
         </label>
-        <p>
-    
-        </p>
+        <p class="my-4"></p> <!-- لو كنت تستخدم Tailwind CSS -->
         <label class="checkbox" for="checkbox71">
             <input type="checkbox" name="services[]" value="Between 40 and 49" id="checkbox71">
             <span class="checkmark"></span>
             <span class="label" data-lang="Between40and49">Between 40 and 49</span>
         </label>
-        <p>
-    
-        </p>
+        <p class="my-4"></p> <!-- لو كنت تستخدم Tailwind CSS -->
         <label class="checkbox" for="checkbox72">
             <input type="checkbox" name="services[]" value="More Than 50" id="checkbox72">
             <span class="checkmark"></span>
             <span class="label" data-lang="MoreThan50">More Than 50</span>
         </label>
-        <p>
-            
-        </p>
+        <p class="my-4"></p> <!-- لو كنت تستخدم Tailwind CSS -->
     
         <div dir="rtl" class="container d-flex flex-column align-items-center text-center"></div>
        
         <h2 data-lang="Numberofemployees" style="font-size: 30px; font-weight: bold;"  data-aos="fade-up" data-aos-delay="100">Number of employees</h2>
-    
+        <p class="my-4"></p> <!-- لو كنت تستخدم Tailwind CSS -->
         <label class="checkbox" for="checkbox73">
             <input type="checkbox" name="services[]" value="Lower Than 10" id="checkbox73">
             <span class="checkmark"></span>
             <span class="label" data-lang="LowerThan10">Lower Than 10</span>
         </label>
-        <p>
-    
-        </p>
+        <p class="my-4"></p> <!-- لو كنت تستخدم Tailwind CSS -->
         <label class="checkbox" for="checkbox74">
             <input type="checkbox" name="services[]" value="Between 10 and 19" id="checkbox74">
             <span class="checkmark"></span>
             <span class="label" data-lang="Between10and19">Between 10 and 19</span>
         </label>
-        <p>
-    
-        </p>
+        <p class="my-4"></p> <!-- لو كنت تستخدم Tailwind CSS -->
         <label class="checkbox" for="checkbox75">
             <input type="checkbox" name="services[]" value="Between 20 and 29" id="checkbox75">
             <span class="checkmark"></span>
             <span class="label" data-lang="Between20and29">Between 20 and 29</span>
         </label>
-        <p>
-    
-        </p>
+        <p class="my-4"></p> <!-- لو كنت تستخدم Tailwind CSS -->
         <label class="checkbox" for="checkbox76">
             <input type="checkbox" name="services[]" value="Between 30 and 39" id="checkbox76">
             <span class="checkmark"></span>
             <span class="label" data-lang="Between30and39">Between 30 and 39</span>
         </label>
-        <p>
-    
-        </p>
+        <p class="my-4"></p> <!-- لو كنت تستخدم Tailwind CSS -->
         <label class="checkbox" for="checkbox77">
             <input type="checkbox" name="services[]" value="Between 40 and 49" id="checkbox77">
             <span class="checkmark"></span>
             <span class="label" data-lang="Between40and49">Between 40 and 49</span>
         </label>
-        <p>
-    
-        </p>
+        <p class="my-4"></p> <!-- لو كنت تستخدم Tailwind CSS -->
         <label class="checkbox" for="checkbox78">
             <input type="checkbox" name="services[]" value="More Than 50" id="checkbox78">
             <span class="checkmark"></span>
             <span class="label" data-lang="MoreThan50">More Than 50</span>
         </label>
-        <p>
-            
-        </p>
+        <p class="my-4"></p> <!-- لو كنت تستخدم Tailwind CSS -->
     
         <div dir="rtl" class="container d-flex flex-column align-items-center text-center"></div>
        
         <h2 data-lang="Arethereanytaxcasesfiledagainstthecompany" style="font-size: 30px; font-weight: bold;"  data-aos="fade-up" data-aos-delay="100">Are there any tax cases filed against the company?
         </h2>
-    
+        <p class="my-4"></p> <!-- لو كنت تستخدم Tailwind CSS -->
         <label class="checkbox" for="checkbox79">
             <input type="checkbox" name="services[]" value="Yes" id="checkbox79">
             <span class="checkmark"></span>
             <span class="label" data-lang="Yes">Yes</span>
         </label>
-        <p>
-    
-        </p>
+        <p class="my-4"></p> <!-- لو كنت تستخدم Tailwind CSS -->
         <label class="checkbox" for="checkbox80">
             <input type="checkbox" name="services[]" value="No" id="checkbox80">
             <span class="checkmark"></span>
             <span class="label" data-lang="No">No</span>
         </label>
-        <p>
-    
-        </p>
+        <p class="my-4"></p> <!-- لو كنت تستخدم Tailwind CSS -->
     
         <div dir="rtl" class="container d-flex flex-column align-items-center text-center"></div>
        
         <h2 data-lang="Doesthecompanyhavearegularaccountingsoftware" style="font-size: 30px; font-weight: bold;"  data-aos="fade-up" data-aos-delay="100">Does the company have a regular accounting software?</h2>
-    
+        <p class="my-4"></p> <!-- لو كنت تستخدم Tailwind CSS -->
         <label class="checkbox" for="checkbox81">
             <input type="checkbox" name="services[]" value="Yes" id="checkbox81">
             <span class="checkmark"></span>
             <span class="label" data-lang="Yes">Yes</span>
         </label>
-        <p>
-    
-        </p>
+        <p class="my-4"></p> <!-- لو كنت تستخدم Tailwind CSS -->
         <label class="checkbox" for="checkbox82">
             <input type="checkbox" name="services[]" value="No" id="checkbox82">
             <span class="checkmark"></span>
             <span class="label" data-lang="No">No</span>
         </label>
-        <p>
-    
-        </p>
+        <p class="my-4"></p> <!-- لو كنت تستخدم Tailwind CSS -->
         
     
 
@@ -940,9 +843,7 @@ function toggleDropdown(dropdownId, checkbox) {
     
     
         
-        <p>
-    
-        </p>
+        <p class="my-4"></p> <!-- لو كنت تستخدم Tailwind CSS -->
 
     
 
@@ -950,47 +851,37 @@ function toggleDropdown(dropdownId, checkbox) {
 <div id="dropdown1" class="dropdown1" style="display: none;">
     <div dir="rtl" class="container d-flex flex-column align-items-center text-center"></div>
     <h2 data-lang="RequestedServices" style="font-size: 30px; font-weight: bold;"  data-aos="fade-up" data-aos-delay="100">Requested Services</h2>
-
+    <p class="my-4"></p> <!-- لو كنت تستخدم Tailwind CSS -->
     <label class="checkbox" for="checkbox3">
         <input type="checkbox" name="services[]" value="VAT Inspection" id="checkbox3" onclick="toggleDropdown('dropdown3', this)">
         <span class="checkmark"></span>
         <span class="label" data-lang="VATInspection">VAT Inspection</span>
     </label>
-    <p>
-
-    </p>
+    <p class="my-4"></p> <!-- لو كنت تستخدم Tailwind CSS -->
     <label class="checkbox" for="checkbox4">
         <input type="checkbox" name="services[]" value="Stamp Tax Inspection" id="checkbox4" onclick="toggleDropdown('dropdown4', this)">
         <span class="checkmark"></span>
         <span class="label" data-lang="StampTaxInspection">Stamp Tax Inspection</span>
     </label>
-    <p>
-
-    </p>
+    <p class="my-4"></p> <!-- لو كنت تستخدم Tailwind CSS -->
     <label class="checkbox" for="checkbox5">
         <input type="checkbox" name="services[]" value="Payroll Tax Inspection" id="checkbox5" onclick="toggleDropdown('dropdown5', this)">
         <span class="checkmark"></span>
         <span class="label" data-lang="PayrollTaxInspection">Payroll Tax Inspection</span>
     </label>
-    <p>
-
-    </p>
+    <p class="my-4"></p> <!-- لو كنت تستخدم Tailwind CSS -->
     <label class="checkbox" for="checkbox6">
         <input type="checkbox" name="services[]" value="Withholding Tax Inspection" id="checkbox6" onclick="toggleDropdown('dropdown6', this)">
         <span class="checkmark"></span>
         <span class="label" data-lang="WithholdingTaxInspection">Withholding Tax Inspection</span>
     </label>
-    <p>
-
-    </p>
+    <p class="my-4"></p> <!-- لو كنت تستخدم Tailwind CSS -->
     <label class="checkbox" for="checkbox7">
         <input type="checkbox" name="services[]" value="Income Tax Inspection" id="checkbox7" onclick="toggleDropdown('dropdown7', this)">
         <span class="checkmark"></span>
         <span class="label" data-lang="IncomeTaxInspection">Income Tax Inspection</span>
     </label>
-    <p>
-
-    </p>
+    <p class="my-4"></p> <!-- لو كنت تستخدم Tailwind CSS -->
 
     <div dir="rtl" class="container d-flex flex-column align-items-center text-center"></div>
    
@@ -998,325 +889,264 @@ function toggleDropdown(dropdownId, checkbox) {
         <h2 data-lang="InspectionYears" style="font-size: 30px; font-weight: bold;" data-aos="fade-up" data-aos-delay="100">
             Inspection Years
         </h2>
+        <p class="my-4"></p> <!-- لو كنت تستخدم Tailwind CSS -->
+
         <input type="number" name="inspectionyears" oninput="validateNumber(this)">
     </form>
     
-<p>
-
-    </p>
+<p class="my-4"></p> <!-- لو كنت تستخدم Tailwind CSS -->
 
     <div dir="rtl" class="container d-flex flex-column align-items-center text-center"></div>
    
     <h2 data-lang="Legalentitytype" style="font-size: 30px; font-weight: bold;" data-aos="fade-up" data-aos-delay="100">Legal entity type</h2>
-
+    <p class="my-4"></p> <!-- لو كنت تستخدم Tailwind CSS -->
     <label class="checkbox" for="checkbox8">
         <input type="checkbox" name="services[]" value="Sole Proprietorship Incorporation" id="checkbox8" onclick="toggleDropdown('dropdown8', this)">
         <span class="checkmark"></span>
         <span class="label" data-lang="SoleProprietorshipIncorporation">Sole Proprietorship Incorporation</span>
     </label>
-    <p>
-
-    </p>
+    <p class="my-4"></p> <!-- لو كنت تستخدم Tailwind CSS -->
     <label class="checkbox" for="checkbox9">
         <input type="checkbox" name="services[]" value="Limited Partnership" id="checkbox9" onclick="toggleDropdown('dropdown9', this)">
         <span class="checkmark"></span>
         <span class="label" data-lang="LimitedPartnership">Limited Partnership</span>
     </label>
-    <p>
-
-    </p>
+    <p class="my-4"></p> <!-- لو كنت تستخدم Tailwind CSS -->
     <label class="checkbox" for="checkbox10">
         <input type="checkbox" name="services[]" value="Genaral Partnership" id="checkbox10" onclick="toggleDropdown('dropdown10', this)">
         <span class="checkmark"></span>
         <span class="label" data-lang="GenaralPartnership">Genaral Partnership</span>
     </label>
-    <p>
-
-    </p>
+    <p class="my-4"></p> <!-- لو كنت تستخدم Tailwind CSS -->
     <label class="checkbox" for="checkbox11">
         <input type="checkbox" name="services[]" value="Limited Liability Company (LLC)" id="checkbox11" onclick="toggleDropdown('dropdown11', this)">
         <span class="checkmark"></span>
         <span class="label" data-lang="LimitedLiabilityCompany">Limited Liability Company (LLC)</span>
     </label>
-    <p>
-
-    </p>
+    <p class="my-4"></p> <!-- لو كنت تستخدم Tailwind CSS -->
     <label class="checkbox" for="checkbox12">
         <input type="checkbox" name="services[]" value="Joint Stock Company (S.A.E)" id="checkbox12" onclick="toggleDropdown('dropdown12', this)">
         <span class="checkmark"></span>
         <span class="label" data-lang="JointStockCompany">Joint Stock Company (S.A.E)</span>
     </label>
-    <p>
-
-    </p>
+    <p class="my-4"></p> <!-- لو كنت تستخدم Tailwind CSS -->
     <label class="checkbox" for="checkbox13">
         <input type="checkbox" name="services[]" value="Single Member Company" id="checkbox13" onclick="toggleDropdown('dropdown13', this)">
         <span class="checkmark"></span>
         <span class="label" data-lang="SingleMemberCompany">Single Member Company</span>
     </label>
-    <p>
-
-    </p>
+    <p class="my-4"></p> <!-- لو كنت تستخدم Tailwind CSS -->
 
    <div dir="rtl" class="container d-flex flex-column align-items-center text-center"></div>
 
    
     <h2 data-lang="Averageannualrevenue" style="font-size: 30px; font-weight: bold;"  data-aos="fade-up" data-aos-delay="100">Average annual revenue (over the last three years)</h2>
-
+    <p class="my-4"></p> <!-- لو كنت تستخدم Tailwind CSS -->
     <label class="checkbox" for="checkbox14">
         <input type="checkbox" name="services[]" value="Less Than a Million Pounds" id="checkbox14">
         <span class="checkmark"></span>
         <span class="label" data-lang="LessThanaMillionPounds">Less Than a Million Pounds</span>
     </label>
-    <p>
-
-    </p>
+    <p class="my-4"></p> <!-- لو كنت تستخدم Tailwind CSS -->
     <label class="checkbox" for="checkbox15">
         <input type="checkbox" name="services[]" value="From 1 Million To 5 Million" id="checkbox15">
         <span class="checkmark"></span>
         <span class="label" data-lang="From1MillionTo5Million">From 1 Million To 5 Million</span>
     </label>
-    <p>
-
-    </p>
+    <p class="my-4"></p> <!-- لو كنت تستخدم Tailwind CSS -->
     <label class="checkbox" for="checkbox16">
         <input type="checkbox" name="services[]" value="From 5 million to 20 million" id="checkbox16">
         <span class="checkmark"></span>
         <span class="label" data-lang="From5millionto20million">From 5 million to 20 million</span>
     </label>
-    <p>
-
-    </p>
+    <p class="my-4"></p> <!-- لو كنت تستخدم Tailwind CSS -->
     <label class="checkbox" for="checkbox17">
         <input type="checkbox" name="services[]" value="From 21 Million To 50 Million" id="checkbox17">
         <span class="checkmark"></span>
         <span class="label" data-lang="From21MillionTo50Million">From 21 Million To 50 Million</span>
     </label>
-    <p>
-
-    </p>
+    <p class="my-4"></p> <!-- لو كنت تستخدم Tailwind CSS -->
     <label class="checkbox" for="checkbox18">
         <input type="checkbox" name="services[]" value="From 51 Million To 100 Million" id="checkbox18">
         <span class="checkmark"></span>
         <span class="label" data-lang="From51MillionTo100Million">From 51 Million To 100 Million</span>
     </label>
-    <p>
-
-    </p>
+    <p class="my-4"></p> <!-- لو كنت تستخدم Tailwind CSS -->
     <label class="checkbox" for="checkbox19">
         <input type="checkbox" name="services[]" value="More Than 100 Million" id="checkbox19">
         <span class="checkmark"></span>
         <span class="label" data-lang="MoreThan100Million">More Than 100 Million</span>
     </label>
-    <p>
-        
-    </p>
+    <p class="my-4"></p> <!-- لو كنت تستخدم Tailwind CSS -->
 
    <div dir="rtl" class="container d-flex flex-column align-items-center text-center"></div>
 
    
     <h2 data-lang="Averagenumberofmonthlysalesinvoices" style="font-size: 30px; font-weight: bold;"  data-aos="fade-up" data-aos-delay="100">Average number of monthly sales invoices</h2>
-
+    <p class="my-4"></p> <!-- لو كنت تستخدم Tailwind CSS -->
     <label class="checkbox" for="checkbox20">
         <input type="checkbox" name="services[]" value="Lower Than 10" id="checkbox20">
         <span class="checkmark"></span>
         <span class="label" data-lang="LowerThan10">Lower Than 10</span>
     </label>
-    <p>
-
-    </p>
+    <p class="my-4"></p> <!-- لو كنت تستخدم Tailwind CSS -->
     <label class="checkbox" for="checkbox21">
         <input type="checkbox" name="services[]" value="Between 10 and 19" id="checkbox21">
         <span class="checkmark"></span>
         <span class="label" data-lang="Between10and19">Between 10 and 19</span>
     </label>
-    <p>
-
-    </p>
+    <p class="my-4"></p> <!-- لو كنت تستخدم Tailwind CSS -->
     <label class="checkbox" for="checkbox22">
         <input type="checkbox" name="services[]" value="Between 20 and 29" id="checkbox22">
         <span class="checkmark"></span>
         <span class="label" data-lang="Between20and29">Between 20 and 29</span>
     </label>
-    <p>
-
-    </p>
+    <p class="my-4"></p> <!-- لو كنت تستخدم Tailwind CSS -->
     <label class="checkbox" for="checkbox23">
         <input type="checkbox" name="services[]" value="Between 30 and 39" id="checkbox23">
         <span class="checkmark"></span>
         <span class="label" data-lang="Between30and39">Between 30 and 39</span>
     </label>
-    <p>
-
-    </p>
+    <p class="my-4"></p> <!-- لو كنت تستخدم Tailwind CSS -->
     <label class="checkbox" for="checkbox24">
         <input type="checkbox" name="services[]" value="Between 40 and 49" id="checkbox24">
         <span class="checkmark"></span>
         <span class="label" data-lang="Between40and49">Between 40 and 49</span>
     </label>
-    <p>
-
-    </p>
+    <p class="my-4"></p> <!-- لو كنت تستخدم Tailwind CSS -->
     <label class="checkbox" for="checkbox25">
         <input type="checkbox" name="services[]" value="More Than 50" id="checkbox25">
         <span class="checkmark"></span>
         <span class="label" data-lang="MoreThan50">More Than 50</span>
     </label>
-    <p>
-        
-    </p>
+   <p class="my-4"></p> <!-- لو كنت تستخدم Tailwind CSS -->
 
    <div dir="rtl" class="container d-flex flex-column align-items-center text-center"></div>
 
    
     <h2 data-lang="Theaveragenumberofmonthlypurchaseinvoices" style="font-size: 30px; font-weight: bold;"  data-aos="fade-up" data-aos-delay="100">The average number of monthly purchase invoices</h2>
+    <p class="my-4"></p> <!-- لو كنت تستخدم Tailwind CSS -->
 
     <label class="checkbox" for="checkbox26">
         <input type="checkbox" name="services[]" value="Lower Than 10" id="checkbox26">
         <span class="checkmark"></span>
         <span class="label" data-lang="LowerThan10">Lower Than 10</span>
     </label>
-    <p>
-
-    </p>
+    <p class="my-4"></p> <!-- لو كنت تستخدم Tailwind CSS -->
     <label class="checkbox" for="checkbox27">
         <input type="checkbox" name="services[]" value="Between 10 and 19" id="checkbox27">
         <span class="checkmark"></span>
         <span class="label" data-lang="Between10and19">Between 10 and 19</span>
     </label>
-    <p>
-
-    </p>
+    <p class="my-4"></p> <!-- لو كنت تستخدم Tailwind CSS -->
     <label class="checkbox" for="checkbox28">
         <input type="checkbox" name="services[]" value="Between 20 and 29" id="checkbox28">
         <span class="checkmark"></span>
         <span class="label" data-lang="Between20and29">Between 20 and 29</span>
     </label>
-    <p>
-
-    </p>
+    <p class="my-4"></p> <!-- لو كنت تستخدم Tailwind CSS -->
     <label class="checkbox" for="checkbox29">
         <input type="checkbox" name="services[]" value="Between 30 and 39" id="checkbox29">
         <span class="checkmark"></span>
         <span class="label" data-lang="Between30and39">Between 30 and 39</span>
     </label>
-    <p>
-
-    </p>
+    <p class="my-4"></p> <!-- لو كنت تستخدم Tailwind CSS -->
     <label class="checkbox" for="checkbox30">
         <input type="checkbox" name="services[]" value="Between 40 and 49" id="checkbox30">
         <span class="checkmark"></span>
         <span class="label" data-lang="Between40and49">Between 40 and 49</span>
     </label>
-    <p>
-
-    </p>
+    <p class="my-4"></p> <!-- لو كنت تستخدم Tailwind CSS -->
     <label class="checkbox" for="checkbox31">
         <input type="checkbox" name="services[]" value="More Than 50" id="checkbox31">
         <span class="checkmark"></span>
         <span class="label" data-lang="MoreThan50">More Than 50</span>
     </label>
-    <p>
-        
-    </p>
+   <p class="my-4"></p> <!-- لو كنت تستخدم Tailwind CSS -->
 
    <div dir="rtl" class="container d-flex flex-column align-items-center text-center"></div>
 
    
     <h2 data-lang="Numberofemployees" style="font-size: 30px; font-weight: bold;"  data-aos="fade-up" data-aos-delay="100">Number of employees</h2>
+    <p class="my-4"></p> <!-- لو كنت تستخدم Tailwind CSS -->
 
     <label class="checkbox" for="checkbox32">
         <input type="checkbox" name="services[]" value="Lower Than 10" id="checkbox32">
         <span class="checkmark"></span>
         <span class="label" data-lang="LowerThan10">Lower Than 10</span>
     </label>
-    <p>
-
-    </p>
+    <p class="my-4"></p> <!-- لو كنت تستخدم Tailwind CSS -->
     <label class="checkbox" for="checkbox33">
         <input type="checkbox" name="services[]" value="Between 10 and 19" id="checkbox33">
         <span class="checkmark"></span>
         <span class="label" data-lang="Between10and19">Between 10 and 19</span>
     </label>
-    <p>
-
-    </p>
+    <p class="my-4"></p> <!-- لو كنت تستخدم Tailwind CSS -->
     <label class="checkbox" for="checkbox34">
         <input type="checkbox" name="services[]" value="Between 20 and 29" id="checkbox34">
         <span class="checkmark"></span>
         <span class="label" data-lang="Between20and29">Between 20 and 29</span>
     </label>
-    <p>
-
-    </p>
+    <p class="my-4"></p> <!-- لو كنت تستخدم Tailwind CSS -->
     <label class="checkbox" for="checkbox35">
         <input type="checkbox" name="services[]" value="Between 30 and 39" id="checkbox35">
         <span class="checkmark"></span>
         <span class="label" data-lang="Between30and39">Between 30 and 39</span>
     </label>
-    <p>
-
-    </p>
+    <p class="my-4"></p> <!-- لو كنت تستخدم Tailwind CSS -->
     <label class="checkbox" for="checkbox36">
         <input type="checkbox" name="services[]" value="Between 40 and 49" id="checkbox36">
         <span class="checkmark"></span>
         <span class="label" data-lang="Between40and49">Between 40 and 49</span>
     </label>
-    <p>
-
-    </p>
+    <p class="my-4"></p> <!-- لو كنت تستخدم Tailwind CSS -->
     <label class="checkbox" for="checkbox37">
         <input type="checkbox" name="services[]" value="More Than 50" id="checkbox37">
         <span class="checkmark"></span>
         <span class="label" data-lang="MoreThan50">More Than 50</span>
     </label>
-    <p>
-        
-    </p>
+   <p class="my-4"></p> <!-- لو كنت تستخدم Tailwind CSS -->
 
    <div dir="rtl" class="container d-flex flex-column align-items-center text-center"></div>
 
    
     <h2 data-lang="Arethereanytaxcasesfiledagainstthecompany" style="font-size: 30px; font-weight: bold;"  data-aos="fade-up" data-aos-delay="100">Are there any tax cases filed against the company?
     </h2>
+    <p class="my-4"></p> <!-- لو كنت تستخدم Tailwind CSS -->
 
     <label class="checkbox" for="checkbox38">
         <input type="checkbox" name="services[]" value="Yes" id="checkbox38">
         <span class="checkmark"></span>
         <span class="label" data-lang="Yes">Yes</span>
     </label>
-    <p>
-
-    </p>
+    <p class="my-4"></p> <!-- لو كنت تستخدم Tailwind CSS -->
     <label class="checkbox" for="checkbox39">
         <input type="checkbox" name="services[]" value="No" id="checkbox39">
         <span class="checkmark"></span>
         <span class="label" data-lang="No">No</span>
     </label>
-    <p>
-
-    </p>
+    <p class="my-4"></p> <!-- لو كنت تستخدم Tailwind CSS -->
 
    <div dir="rtl" class="container d-flex flex-column align-items-center text-center"></div>
 
    
     <h2 data-lang="Doesthecompanyhavearegularaccountingsoftware" style="font-size: 30px; font-weight: bold;"  data-aos="fade-up" data-aos-delay="100">Does the company have a regular accounting software?</h2>
+    <p class="my-4"></p> <!-- لو كنت تستخدم Tailwind CSS -->
 
     <label class="checkbox" for="checkbox40">
         <input type="checkbox" name="services[]" value="Yes" id="checkbox40">
         <span class="checkmark"></span>
         <span class="label" data-lang="Yes">Yes</span>
     </label>
-    <p>
-
-    </p>
+    <p class="my-4"></p> <!-- لو كنت تستخدم Tailwind CSS -->
     <label class="checkbox" for="checkbox41">
         <input type="checkbox" name="services[]" value="No" id="checkbox41">
         <span class="checkmark"></span>
         <span class="label" data-lang="No">No</span>
     </label>
     <p>
-        <p></p>
+        <p class="my-4"></p> <!-- لو كنت تستخدم Tailwind CSS -->
+
 
 
 
@@ -1707,112 +1537,130 @@ html[lang="en"] .floating-image {
                 }
             };
         </script>
-
-
-  
-
-
-
-
-
-  
-  
-
   </div><!-- End Contact Form -->
 
 
-      
-   
-<!-- End Contact Form -->
-
-
-
-
-
-<!-- الزر المخفي افتراضيًا -->
+<footer>
  
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <style>
+      body {
+        overflow: auto !important;
+        height: auto !important;
+        display: block !important;
+      }
+    
+      footer {
+        flex-shrink: 0;
+        width: 100%;
+      }
+    
+      html, body {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
+    
+      body > footer {
+        margin-top: auto;
+      }
+    </style>
+    
+    
+</head>
 
-
-
-
-
-<footer id="footer" class="footer dark-background">
-    <div class="container">
-      <h3  class="sitename">Elite Financial Consultant</h3>
-      <p></p>
-      <div class="social-links d-flex justify-content-center">
-        <a href="https://www.facebook.com/elitefinancialconsultanteg"><i class="bi bi-facebook"></i></a>
-        <a href="https://www.linkedin.com/company/elite-financial-consultant/"><i class="bi bi-linkedin"></i></a>
-        <a href="https://wa.me/+201228310654" target="_blank">
-          <i class="bi bi-whatsapp"></i>
-      </a>
+<body  class="h-screen overflow-hidden flex items-center justify-center" style="background: #edf2f7;">
+    <footer class="bg-gradient-to-r from-gray-100 via-[#bce1ff] to-gray-100">
       
-      </div>
-      <div class="container">
-        <div class="contact-container">
-            <a href="mailto:info@elitefinancial-eg.com" class="icon-text">
-                <i class="fa fa-envelope"></i> info@elitefinancial-eg.com
-            </a>
+  <div class="max-w-screen-xl px-4 py-16 mx-auto sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 gap-8 lg:grid-cols-3">
+      <div>
+        <img src="assets/img/logo.webp" class="mr-15 h-20 sm:h-25" alt="logo" />
+        <p data-lang="welcome3" class="max-w-xs mt-4 text-sm text-gray-600">
+          Your Ideal Partner For Success And Sustainable Growth
+        </p>
+        <div id="social-icons" class="flex mt-8 space-x-6 text-gray-600">
+          <!-- Facebook -->
+          <a class="hover:opacity-75" href="https://www.facebook.com/elitefinancialconsultanteg" target="_blank" rel="noreferrer">
+            <span class="sr-only">Facebook</span>
+            <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd" />
+            </svg>
+          </a>
         
-            <a href="tel:+201228310654" class="icon-text1">
-                <i class="fa fa-phone"></i> +201228310654
-            </a>
+          <!-- WhatsApp -->
+          <a class="hover:opacity-75" href="https://wa.me/+201228310654" target="_blank" rel="noreferrer">
+            <span class="sr-only">WhatsApp</span>
+            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M20.52 3.48A11.76 11.76 0 0012.004 0C5.376 0 .001 5.376.001 12.004c0 2.116.553 4.181 1.598 6.008L0 24l6.176-1.623A11.91 11.91 0 0012.004 24c6.627 0 12.004-5.376 12.004-11.996 0-3.203-1.246-6.213-3.488-8.524zM12.004 22.2c-1.793 0-3.558-.48-5.104-1.384l-.365-.216-3.666.96.98-3.568-.238-.377a10.112 10.112 0 01-1.558-5.61c0-5.585 4.55-10.136 10.137-10.136 2.71 0 5.257 1.054 7.172 2.972a10.111 10.111 0 012.964 7.168c0 5.588-4.551 10.137-10.138 10.137zm5.66-7.487c-.3-.15-1.772-.872-2.048-.97-.276-.098-.477-.15-.678.15s-.778.97-.954 1.17c-.175.2-.35.225-.65.075-.3-.15-1.268-.466-2.417-1.486-.893-.796-1.496-1.778-1.67-2.078-.175-.3-.018-.462.132-.612.136-.136.3-.35.45-.525.15-.175.2-.3.3-.5.1-.2.05-.375-.025-.525-.075-.15-.677-1.632-.928-2.235-.244-.586-.492-.506-.678-.516l-.578-.01c-.2 0-.525.075-.8.375-.275.3-1.048 1.022-1.048 2.49 0 1.468 1.073 2.89 1.223 3.09.15.2 2.108 3.213 5.107 4.502.714.307 1.27.49 1.705.63.717.229 1.37.197 1.885.12.575-.085 1.772-.724 2.023-1.423.25-.7.25-1.3.175-1.423-.075-.125-.275-.2-.575-.35z"/>
+            </svg>
+          </a>
         
-            <a href="tel:+223504766" class="icon-text2">
-                <i class="fa fa-phone"></i> +223504766
-            </a>
-            
-            <a href="https://www.google.com/maps/place/40+Abou+Dawoud+Al+Zaheri,+Al+Mintaqah+as+Sādisah,+Nasr+City,+Cairo+Governorate+4450454/@30.0515246,31.3658325,17z" 
-            target="_blank" 
-            class="address">
-            <i class="fa fa-map-marker-alt"></i> 
-            <strong>40 Abu Dawoud Al Zaheri Street, Nasr City, Cairo, Egypt</strong>
-         </a>
-         
-         <style>
-            .address {
-                display: inline-flex;
-                align-items: center;
-                font-size: 14px;
-                font-weight: bold;
-                color: #333;
-                text-decoration: none;
-                padding: 8px 12px;
-                border-radius: 5px;
-                transition: all 0.3s ease-in-out;
-                background-color: #f8f9fa;
-            }
-         
-            .address i {
-                margin-right: 4px;
-                color: #d9534f;
-            }
-         
-          
-         
-            /* جعل النص أصغر في الشاشات الصغيرة */
-            @media (max-width: 900px) {
-                .address {
-                    font-size: 9px;
-                    padding: 6px 5px;
-                }
-            }
-         </style>
-
-    
-    
+          <!-- LinkedIn -->
+          <a class="hover:opacity-75" href="https://www.linkedin.com/company/elite-financial-consultant/" target="_blank" rel="noreferrer">
+            <span class="sr-only">LinkedIn</span>
+            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path fill-rule="evenodd" d="M20.447 20.452h-3.555v-5.569c0-1.328-.025-3.037-1.85-3.037-1.85 0-2.132 1.446-2.132 2.94v5.666H9.354V9h3.413v1.561h.049c.476-.899 1.637-1.848 3.368-1.848 3.6 0 4.264 2.368 4.264 5.448v6.291zM5.337 7.433a2.065 2.065 0 11-.002-4.131 2.065 2.065 0 01.002 4.131zm1.779 13.019H3.558V9h3.558v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.228.792 24 1.771 24h20.451C23.207 24 24 23.228 24 22.271V1.729C24 .774 23.207 0 22.225 0z" clip-rule="evenodd"/>
+            </svg>
         
-           
+          </a>
         </div>
+      </div>
+      <div class="grid grid-cols-1 gap-8 lg:col-span-2 sm:grid-cols-2 lg:grid-cols-4">
+        <div>
+          <p data-lang="company1" class="font-medium">
+            Company
+          </p>
+          <nav class="flex flex-col mt-4 space-y-2 text-sm text-gray-500">
+            <a class="hover:opacity-75" href="#Home" data-lang="home1" > Home </a>
+            <a class="hover:opacity-75" href="#about" data-lang="about1" > About Us </a>
+            <a class="hover:opacity-75" href="#contact" data-lang="contact1" > Contact Us </a>
+          </nav>
+        </div>
+        <div>
+          <p data-lang="services" class="font-medium">
+            Services
+          </p>
+          <nav class="flex flex-col mt-4 space-y-2 text-sm text-gray-500">
+            <a data-lang="services3" class="hover:opacity-75" href="#services"> Audit & Assurance </a>
+            <a data-lang="services5" class="hover:opacity-75" href="#services"> Company Incorporation  </a>
+            <a data-lang="services7" class="hover:opacity-75" href="#services"> Tax </a>
+            <a data-lang="services9" class="hover:opacity-75" href="#services"> Feasibility Study  </a>
+            <a data-lang="services11" class="hover:opacity-75" href="#services"> Legal </a>
+            <a data-lang="services13" class="hover:opacity-75" href="#services"> Financial Advisory  </a>
+          </nav>
+        </div>
+        <div>
+          <p data-lang="Pricing1" class="font-medium">
+            Pricing
+          </p>
+          <nav class="flex flex-col mt-4 space-y-2 text-sm text-gray-500">
+            <a class="hover:opacity-75" href="Taxes.html" data-lang="Taxes" > Taxes </a>
+            <a class="hover:opacity-75" href="BookKeeping.html" data-lang="BookKeeping" > BookKeeping </a>
+            <a class="hover:opacity-75" href="audit.html" data-lang="ExternalAudit" > External Audit </a>
+            <a class="hover:opacity-75" href="CompanyIncorporation.html" data-lang="CompanyIncorporation" > Company Incorporation </a>
+          </nav>
+        </div>
+        <div>
+          <p data-lang="legal" class="font-medium">
+            Legal
+          </p>
+          <nav class="flex flex-col mt-4 space-y-2 text-sm text-gray-500">
+            <a data-lang="PrivacyPolicy" class="hover:opacity-75" href> Privacy Policy </a>
+            <a data-lang="TermsConditions" class="hover:opacity-75" href> Terms &amp; Conditions </a>
+          </nav>
+        </div>
+      </div>
     </div>
-    
-    
-    
-    
-    
-    
-    </div>
-  </footer>
+    <p data-lang="EliteFinancialConsultant" class="text-xs text-gray-800 text-center mt-9 mb-0">
+      © 2025 Elite Financial Consultant. All rights reserved.
+    </p>
+  </div>
+</footer>
 
   <!-- Scroll Top -->
   <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>

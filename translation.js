@@ -331,6 +331,11 @@ const translations = {
         Sentsuccessfully: "Sent successfully! ✅",
         Failedtosendrequest: "Failed to send request! ❌",
         Allfieldsrequired: "All fields required! ❌",
+        company1: "Company", 
+        PrivacyPolicy: "Privacy Policy",
+        legal: "Legal",
+        EliteFinancialConsultant: " © 2025 Elite Financial Consultant. All rights reserved. ",
+
 
 
 
@@ -614,7 +619,12 @@ const translations = {
         Sentsuccessfully: "تم إرسال الطلب بنجاح! ✅",
         Failedtosendrequest: "فشل إرسال الطلب، حاول مرة اخري! ❌",
         Allfieldsrequired: "جميع الحقول مطلوبة! ❌",
+        company1: "الشركة",
+        legal: "القانون",
+        PrivacyPolicy: "سياسة الخصوصية",
+        EliteFinancialConsultant: " إيليت للإستشارات المالية. جميع الحقوق محفوظة. © 2025 ",
 
+    
 
 
 
@@ -633,6 +643,11 @@ const translations = {
 
 // ✅ دالة تغيير اللغة
 function changeLanguage(lang) {
+    // التحقق إذا كانت الصفحة هي News1، News2، News3، أو News4
+    if (window.location.pathname.includes("News1") || window.location.pathname.includes("News2") || window.location.pathname.includes("News3") || window.location.pathname.includes("News4")) {
+        lang = "ar"; // اجعل اللغة العربية فقط لهذه الصفحات
+    }
+
     // تغيير لغة الصفحة والاتجاه
     document.documentElement.lang = lang;
     document.documentElement.dir = (lang === "ar") ? "rtl" : "ltr";
@@ -660,13 +675,24 @@ function changeLanguage(lang) {
 document.addEventListener("DOMContentLoaded", function () {
     let savedLang = sessionStorage.getItem("selectedLanguage");
 
-    // ✅ اجعل اللغة العربية افتراضية دائمًا عند كل زيارة جديدة
+    // ✅ إذا كانت اللغة غير محفوظة، استخدم اللغة الافتراضية (العربية)
     if (!savedLang) {
-        savedLang = "ar"; 
+        savedLang = "ar";  // اجعل اللغة العربية افتراضيًا إذا لم تكن محفوظة
         sessionStorage.setItem("selectedLanguage", savedLang);
     }
 
-    changeLanguage(savedLang); // تطبيق اللغة المحفوظة أو العربية كافتراضية
+    // ✅ إذا كانت الصفحة هي إحدى صفحات News1 إلى News4، اجعل اللغة العربية
+    if (window.location.pathname.includes("News1") || window.location.pathname.includes("News2") || window.location.pathname.includes("News3") || window.location.pathname.includes("News4")) {
+        // إذا كانت اللغة قد تم فرضها للعربية من صفحة أخرى، لا نغيرها
+        let forcedLang = sessionStorage.getItem("forcedLanguage");
+        if (!forcedLang) {
+            sessionStorage.setItem("forcedLanguage", "ar"); // فرض اللغة العربية
+        }
+        changeLanguage("ar"); // فرض اللغة العربية لهذه الصفحات
+    } else {
+        // تطبيق اللغة المحفوظة أو اللغة الافتراضية
+        changeLanguage(savedLang);
+    }
 
     // ✅ زر تغيير اللغة إلى العربية
     const switchToAr = document.getElementById("switch-to-ar");
