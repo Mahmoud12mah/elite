@@ -1480,46 +1480,47 @@ function toggleDropdown(dropdownId, checkbox) {
     }
     </style>
     
-        <style>
-            /* ضبط الصورة في مكان ثابت */
- .floating-image {
-    position: absolute; 
-    top: 300px; /* المسافة من الأعلى */
-    width: 400px; /* حجم الصورة */
-    height: auto;
-    z-index: 1000; /* لضمان ظهورها فوق العناصر الأخرى */
-    transition: all 0.3s ease-in-out; /* انتقال سلس عند التغيير */
-}
-
-/* عند اللغة العربية: تكون الصورة على اليمين */
-html[lang="ar"] .floating-image {
-    left: 70px;
-    right: auto;
-}
-
-/* عند اللغة الإنجليزية: تكون الصورة على اليسار */
-html[lang="en"] .floating-image {
-    right: 70px;
-    left: auto;
-}
-
-.floating-image img {
-    width: 100%;
-    border-radius: 10px; /* إضافة حواف دائرية */
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3); /* ظل جميل */
-}
-
-/* إخفاء الصورة على الشاشات الصغيرة (أقل من 768px) */
-@media (max-width: 768px) {
-    .floating-image {
-        display: none;
-    }
-}
-        </style>
-        
-        <div class="floating-image">
-            <img src="assets/img/pexels-fauxels-3184357.jpg" alt="Hero Image" loading="lazy">
-        </div>
+    <style>
+        /* ضبط الصورة في مكان ثابت */
+        .floating-image {
+            position: absolute; 
+            top: 300px; /* المسافة من الأعلى */
+            width: 400px; /* حجم الصورة */
+            height: auto;
+            z-index: 1000; /* لضمان ظهورها فوق العناصر الأخرى */
+            transition: all 0.3s ease-in-out; /* انتقال سلس عند التغيير */
+        }
+    
+        /* عند اللغة العربية: تكون الصورة على اليمين */
+        html[lang="ar"] .floating-image {
+            left: 70px;
+            right: auto;
+        }
+    
+        /* عند اللغة الإنجليزية: تكون الصورة على اليسار */
+        html[lang="en"] .floating-image {
+            right: 70px;
+            left: auto;
+        }
+    
+        .floating-image img {
+            width: 100%;
+            border-radius: 10px; /* إضافة حواف دائرية */
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3); /* ظل جميل */
+        }
+    
+        /* إخفاء الصورة على الشاشات أقل من 1366px */
+        @media (max-width: 1000px) {
+            .floating-image {
+                display: none;
+            }
+        }
+    </style>
+    
+    <div class="floating-image">
+        <img src="assets/img/pexels-fauxels-3184357.jpg" alt="Hero Image" loading="lazy">
+    </div>
+    
         
         <script>
             function toggleLanguage() {
