@@ -398,103 +398,107 @@ document.addEventListener("DOMContentLoaded", function () {
    <title>موقعي</title>
  
    <style>
-     /* الحاوية الرئيسية */
-     .page-container {
-       display: flex;
-       max-width: 1200px;
-       margin: 100 auto;
-       padding: 70px 20px;
-     }
- 
-     /* الصندوق الجانبي */
-     .sidebar {
-       width: 260px;
-       position: sticky;
-       top: 100px;
-       align-self: start;
-       background: linear-gradient(135deg, #f0f4f8, #ffffff);
-       border: 1px solid #ddd;
-       border-radius: 12px;
-       padding: 25px 20px;
-       height: fit-content;
-       box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-       transition: all 0.3s ease;
-     }
- 
-     /* روابط داخل الصندوق */
-     .sidebar ul {
-       list-style: none;
-       padding: 0;
-       margin: 0;
-     }
- 
-     .sidebar ul li {
-       margin-bottom: 18px;
-     }
- 
-     .sidebar ul li a {
-       text-decoration: none;
-       color: #333;
-       font-weight: bold;
-       font-size: 16px;
-       display: block;
-       padding: 8px 12px;
-       border-radius: 8px;
-       transition: background 0.3s, color 0.3s;
-     }
- 
-     .sidebar ul li a:hover {
-       background: #007bff;
-       color: #fff;
-     }
- 
-     /* المحتوى */
-     .content {
-       flex: 1;
-       font-size: 25px;
-     }
- 
-   
- 
-     /* دعم اتجاه اللغة */
-     html[dir="rtl"] .page-container {
-       flex-direction: row;
-     }
- 
-     html[dir="rtl"] .sidebar {
-       margin-left: 40px;
-       margin-right: 0;
-       right: 0;
-       left: auto;
-     }
- 
-     html[dir="ltr"] .page-container {
-       flex-direction: row;
-     }
- 
-     html[dir="ltr"] .sidebar {
-       margin-right: 40px;
-       margin-left: 0;
-       left: 0;
-       right: auto;
-     }
- 
-     /* استجابة الجوال */
-     @media (max-width: 768px) {
-       .page-container {
-         flex-direction: column !important;
-       }
- 
-       .sidebar {
-         width: 100%;
-         position: static;
-         margin: 0 0 20px 0 !important;
-       }
- 
-       .content {
-         margin: 0;
-       }
-     }
+    /* الحاوية الرئيسية */
+.page-container {
+  display: flex;
+  max-width: 1200px;
+  margin: 100 auto;
+  padding: 70px 20px;
+}
+
+/* الصندوق الجانبي */
+.sidebar {
+  width: 260px;
+  position: sticky;
+  top: 100px;
+  align-self: start;
+  background: linear-gradient(135deg, #f0f4f8, #ffffff);
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 25px 20px;
+  height: fit-content;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+/* روابط داخل الصندوق */
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar ul li {
+  margin-bottom: 9px;
+  border-bottom: 1px solid #ddd; /* إضافة خط فاصلة بين العناصر */
+}
+
+.sidebar ul li:last-child {
+  border-bottom: none; /* إزالة الخط الفاصل عن آخر عنصر */
+}
+
+.sidebar ul li a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  font-size: 16px;
+  display: block;
+  padding: 8px 12px;
+  border-radius: 8px;
+  transition: background 0.3s, color 0.3s;
+}
+
+.sidebar ul li a:hover {
+  background: #007bff;
+  color: #fff;
+}
+
+/* المحتوى */
+.content {
+  flex: 1;
+  font-size: 25px;
+}
+
+/* دعم اتجاه اللغة */
+html[dir="rtl"] .page-container {
+  flex-direction: row;
+}
+
+html[dir="rtl"] .sidebar {
+  margin-left: 40px;
+  margin-right: 0;
+  right: 0;
+  left: auto;
+}
+
+html[dir="ltr"] .page-container {
+  flex-direction: row;
+}
+
+html[dir="ltr"] .sidebar {
+  margin-right: 40px;
+  margin-left: 0;
+  left: 0;
+  right: auto;
+}
+
+/* استجابة الجوال */
+@media (max-width: 768px) {
+  .page-container {
+    flex-direction: column !important;
+  }
+
+  .sidebar {
+    width: 100%;
+    position: static;
+    margin: 0 0 20px 0 !important;
+  }
+
+  .content {
+    margin: 0;
+  }
+}
+
    </style>
  </head>
  
