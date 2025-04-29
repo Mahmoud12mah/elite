@@ -358,7 +358,7 @@
 
 
 <div class="col-lg-8">
-    <div class="request-form">
+    <div class="request-form desktop-move">
         <form id="requestForm">
             <input type="hidden" name="source_page">
       
@@ -401,6 +401,28 @@
             });
         </script>
     </form>
+    <style>
+        /* بشكل عام، بدون تغيير على الجوال */
+        .desktop-move {
+            margin: 0 auto !important; /* مركزي */
+        }
+    
+        /* على الشاشات الكبيرة فقط (الكمبيوتر) */
+        @media (min-width: 992px) {
+            /* عندما تكون اللغة من اليمين لليسار (العربية) */
+            :dir(rtl) .desktop-move {
+                margin-left: 0px !important;  /* تحريك لليسار */
+                margin-right: 60px !important;
+            }
+    
+            /* عندما تكون اللغة من اليسار لليمين (الإنجليزية) */
+            :dir(ltr) .desktop-move {
+                margin-left: 60px !important;  /* تحريك لليمين */
+                margin-right: 0px !important;
+            }
+        }
+    </style>
+    
                     
         <p class="my-4"></p> <!-- لو كنت تستخدم Tailwind CSS -->
 
@@ -479,7 +501,8 @@
     </script>
     
 
-
+   
+    
     
     <p class="my-4"></p> <!-- لو كنت تستخدم Tailwind CSS -->
 
@@ -651,7 +674,7 @@ html[lang="en"] .floating-image {
   </div><!-- End Contact Form -->
             <!-- جميع الحقول والإدخالات هنا -->
 
-            <div class="button-container">
+            <div class="button-container desktop-move">
                 <button data-lang="RequestPrice" id="requestPrice" class="request-price-btn" type="button">Request Price</button>
                 <!-- الرسالة ستظهر مباشرة أسفل الزر -->
                 <div id="responseMessage" class="alert-message"></div>
