@@ -315,27 +315,7 @@
       </nav>
   </header>
     
-    <script>
-    document.addEventListener("DOMContentLoaded", function () {
-        let menuToggle = document.getElementById("menu-toggle");
-        let navMenu = document.querySelector(".navmenu");
-        let menuLinks = document.querySelectorAll(".navmenu a");
-    
-        // ✅ إغلاق القائمة عند النقر خارجها
-        document.addEventListener("click", function (event) {
-            if (!navMenu.contains(event.target) && !menuToggle.contains(event.target)) {
-                menuToggle.checked = false;
-            }
-        });
-    
-        // ✅ إغلاق القائمة عند النقر على أي رابط داخلها
-        menuLinks.forEach(link => {
-            link.addEventListener("click", function () {
-                menuToggle.checked = false;
-            });
-        });
-    });
-    </script>
+   
 
 
     <div dir="rtl" class="container d-flex flex-column align-items-center text-center"></div>
@@ -816,7 +796,7 @@ html[lang="en"] .floating-image {
 }
 
 /* إخفاء الصورة على الشاشات الصغيرة (أقل من 768px) */
-@media (max-width: 1000px) {
+@media (max-width: 1200px) {
     .floating-image {
         display: none;
     }
