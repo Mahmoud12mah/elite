@@ -235,7 +235,37 @@
     }
   </style>
 
+  <script>
+    // ✅ التحقق فورًا قبل تحميل أي محتوى
+    let formSubmitted = localStorage.getItem("formSubmitted");
 
+    if (!formSubmitted || formSubmitted !== "true") {
+      let previousPage = localStorage.getItem("previousPage") || document.referrer;
+
+      // ✅ منع الدخول في حلقة إعادة تحميل لا نهائية
+      if (!previousPage || previousPage === window.location.href) {
+        previousPage = "index.html"; // إعادة التوجيه إلى الصفحة الرئيسية إذا لم يكن هناك صفحة سابقة
+      }
+
+      // ✅ إعادة التوجيه إلى الصفحة السابقة أو الصفحة الرئيسية
+      window.location.replace(previousPage);
+    }
+
+    document.addEventListener("DOMContentLoaded", function () {
+      if (!formSubmitted || formSubmitted !== "true") {
+        return; // إذا كان المستخدم غير مسموح له، لن يصل إلى هذا الجزء
+      }
+
+      // ✅ السماح بعرض الصفحة بعد التحقق
+      document.body.style.display = "block";
+
+      // ✅ تنظيف التخزين بعد السماح بالوصول
+      setTimeout(() => {
+        localStorage.removeItem("formSubmitted");
+        localStorage.removeItem("previousPage");
+      }, 500);
+    });
+  </script>
 
   <!-- =======================================================
   
