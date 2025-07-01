@@ -646,28 +646,41 @@ html[dir="ltr"] .sidebar {
       </div>
       <div class="grid grid-cols-1 gap-8 lg:col-span-2 sm:grid-cols-2 lg:grid-cols-4">
         <div>
-          <p data-lang="company1" class="font-medium">
-            Company
-          </p>
-          <nav class="flex flex-col mt-4 space-y-2 text-sm text-gray-500">
-            <a class="hover:opacity-75" href="#Home" data-lang="home1" > Home </a>
-            <a class="hover:opacity-75" href="#about" data-lang="about1" > About Us </a>
-            <a class="hover:opacity-75" href="#contact" data-lang="contact1" > Contact Us </a>
-          </nav>
-        </div>
-        <div>
-          <p data-lang="services" class="font-medium">
-            Services
-          </p>
-          <nav class="flex flex-col mt-4 space-y-2 text-sm text-gray-500">
-            <a data-lang="services3" class="hover:opacity-75" href="#services"> Audit & Assurance </a>
-            <a data-lang="services5" class="hover:opacity-75" href="#services"> Company Incorporation  </a>
-            <a data-lang="services7" class="hover:opacity-75" href="#services"> Tax </a>
-            <a data-lang="services9" class="hover:opacity-75" href="#services"> Feasibility Study  </a>
-            <a data-lang="services11" class="hover:opacity-75" href="#services"> Legal </a>
-            <a data-lang="services13" class="hover:opacity-75" href="#services"> Financial Advisory  </a>
-          </nav>
-        </div>
+                                <p data-lang="company1" class="font-medium">
+                                    Company
+                                </p>
+                                <nav class="flex flex-col mt-4 space-y-2 text-sm text-gray-500">
+                                    <a class="hover:opacity-75" href="index.html" data-lang="home1"> Home </a>
+                                    <a class="hover:opacity-75" id="About56" href="index.html" data-lang="about1"> About
+                                        Us </a>
+                                    <a class="hover:opacity-75" id="Contact57" href="index.html" data-lang="contact1">
+                                        Contact Us </a>
+                                </nav>
+                            </div>
+                            <div>
+                                <p data-lang="services" class="font-medium">
+                                    Services
+                                </p>
+                                <nav class="flex flex-col mt-4 space-y-2 text-sm text-gray-500">
+                                    <a id="Services50" href="index.html" data-lang="services3" class="hover:opacity-75">
+                                        Audit & Assurance
+                                    </a>
+
+                                    <a data-lang="services5" class="hover:opacity-75" id="Services51" href="index.html">
+                                        Company
+                                        Incorporation </a>
+                                    <a data-lang="services7" class="hover:opacity-75" id="Services52" href="index.html">
+                                        Tax </a>
+                                    <a data-lang="services9" class="hover:opacity-75" id="Services53" href="index.html">
+                                        Feasibility
+                                        Study </a>
+                                    <a data-lang="services11" class="hover:opacity-75" id="Services54"
+                                        href="index.html"> Legal </a>
+                                    <a data-lang="services13" class="hover:opacity-75" id="Services55"
+                                        href="index.html"> Financial
+                                        Advisory </a>
+                                </nav>
+                            </div>
         <div>
           <p data-lang="Pricing1" class="font-medium">
             Pricing
@@ -743,133 +756,260 @@ html[dir="ltr"] .sidebar {
   <script src="assets/js/main.js?v=1.0"></script>
 
 <script>
-    document.addEventListener("DOMContentLoaded", function() {
-    const External = document.getElementById("External");
-    if (External) {
-        External.addEventListener("click", function(event) {
-            event.preventDefault();
-            setTimeout(function() {
-                window.location.href = "External Audit.html";
-            }, 500);
-        });
-    }
-});
+                document.addEventListener("DOMContentLoaded", function () {
+                    const External = document.getElementById("External");
+                    if (External) {
+                        External.addEventListener("click", function (event) {
+                            event.preventDefault();
+                            setTimeout(function () {
+                                window.location.href = "External Audit.html";
+                            }, 500);
+                        });
+                    }
+                });
 
-document.addEventListener("DOMContentLoaded", function() {
-    const Home = document.getElementById("Home");
-    if (Home) {
-        Home.addEventListener("click", function(event) {
-            event.preventDefault();
-            setTimeout(function() {
-                window.location.href = "index.html";
-            }, 500);
-        });
-    }
-});
+                document.addEventListener("DOMContentLoaded", function () {
+                    const Home = document.getElementById("Home");
+                    if (Home) {
+                        Home.addEventListener("click", function (event) {
+                            event.preventDefault();
+                            setTimeout(function () {
+                                window.location.href = "index.html";
+                            }, 500);
+                        });
+                    }
+                });
 
-document.addEventListener("DOMContentLoaded", function () {
-    const aboutLink = document.getElementById("About");
-    
-    if (aboutLink) {
-        aboutLink.addEventListener("click", function (event) {
-            event.preventDefault(); // منع السلوك الافتراضي
-            
-            // حفظ المعلومة بأن المستخدم يريد الانتقال إلى "about"
-            sessionStorage.setItem("scrollToSection", "about");
+                document.addEventListener("DOMContentLoaded", function () {
+                    const aboutLink = document.getElementById("About");
 
-            // توجيه المستخدم إلى الصفحة الرئيسية
-            window.location.href = "index.html";
-        });
-    }
-});
+                    if (aboutLink) {
+                        aboutLink.addEventListener("click", function (event) {
+                            event.preventDefault(); // منع السلوك الافتراضي
 
+                            // حفظ المعلومة بأن المستخدم يريد الانتقال إلى "about"
+                            sessionStorage.setItem("scrollToSection", "about");
 
+                            // توجيه المستخدم إلى الصفحة الرئيسية
+                            window.location.href = "index.html";
+                        });
+                    }
+                });
 
-document.addEventListener("DOMContentLoaded", function () {
-    const servicesLink = document.getElementById("Services");
-    
-    if (servicesLink) {
-        servicesLink.addEventListener("click", function (event) {
-            event.preventDefault(); // منع السلوك الافتراضي
-            
-            // حفظ المعلومة بأن المستخدم يريد الانتقال إلى "about"
-            sessionStorage.setItem("scrollToSection", "services");
+                document.addEventListener("DOMContentLoaded", function () {
+                    const aboutLink = document.getElementById("About56");
 
-            // توجيه المستخدم إلى الصفحة الرئيسية
-            window.location.href = "index.html";
-        });
-    }
-});
+                    if (aboutLink) {
+                        aboutLink.addEventListener("click", function (event) {
+                            event.preventDefault(); // منع السلوك الافتراضي
+
+                            // حفظ المعلومة بأن المستخدم يريد الانتقال إلى "about"
+                            sessionStorage.setItem("scrollToSection", "about");
+
+                            // توجيه المستخدم إلى الصفحة الرئيسية
+                            window.location.href = "index.html";
+                        });
+                    }
+                });
 
 
 
-document.addEventListener("DOMContentLoaded", function () {
-    const contactLink = document.getElementById("Contact");
-    
-    if (contactLink) {
-        contactLink.addEventListener("click", function (event) {
-            event.preventDefault(); // منع السلوك الافتراضي
-            
-            // حفظ المعلومة بأن المستخدم يريد الانتقال إلى "about"
-            sessionStorage.setItem("scrollToSection", "contact");
+                document.addEventListener("DOMContentLoaded", function () {
+                    const servicesLink = document.getElementById("Services");
 
-            // توجيه المستخدم إلى الصفحة الرئيسية
-            window.location.href = "index.html";
-        });
-    }
-});
+                    if (servicesLink) {
+                        servicesLink.addEventListener("click", function (event) {
+                            event.preventDefault(); // منع السلوك الافتراضي
 
-document.addEventListener("DOMContentLoaded", function() {
-    const Book = document.getElementById("Book");
-    if (Book) {
-        Book.addEventListener("click", function(event) {
-            event.preventDefault();
-            setTimeout(function() {
-                window.location.href = "BookKeeping.html";
-            }, 500);
-        });
-    }
-});
+                            // حفظ المعلومة بأن المستخدم يريد الانتقال إلى "about"
+                            sessionStorage.setItem("scrollToSection", "services");
 
-document.addEventListener("DOMContentLoaded", function() {
-    const CompanyIncorporation = document.getElementById("CompanyIncorporation");
-    if (CompanyIncorporation) {
-        CompanyIncorporation.addEventListener("click", function(event) {
-            event.preventDefault();
-            setTimeout(function() {
-                window.location.href = "CompanyIncorporation.html";
-            }, 500);
-        });
-    }
-});
+                            // توجيه المستخدم إلى الصفحة الرئيسية
+                            window.location.href = "index.html";
+                        });
+                    }
+                });
 
-document.addEventListener("DOMContentLoaded", function() {
-    const Taxes = document.getElementById("Taxes");
-    if (Taxes) {
-        Taxes.addEventListener("click", function(event) {
-            event.preventDefault();
-            setTimeout(function() {
-                window.location.href = "Taxes.html";
-            }, 500);
-        });
-    }
-});
+                document.addEventListener("DOMContentLoaded", function () {
+                    const servicesLink = document.getElementById("Services50");
+
+                    if (servicesLink) {
+                        servicesLink.addEventListener("click", function (event) {
+                            event.preventDefault(); // منع السلوك الافتراضي
+
+                            // حفظ المعلومة بأن المستخدم يريد الانتقال إلى "about"
+                            sessionStorage.setItem("scrollToSection", "services");
+
+                            // توجيه المستخدم إلى الصفحة الرئيسية
+                            window.location.href = "index.html";
+                        });
+                    }
+                });
+
+                document.addEventListener("DOMContentLoaded", function () {
+                    const servicesLink = document.getElementById("Services51");
+
+                    if (servicesLink) {
+                        servicesLink.addEventListener("click", function (event) {
+                            event.preventDefault(); // منع السلوك الافتراضي
+
+                            // حفظ المعلومة بأن المستخدم يريد الانتقال إلى "about"
+                            sessionStorage.setItem("scrollToSection", "services");
+
+                            // توجيه المستخدم إلى الصفحة الرئيسية
+                            window.location.href = "index.html";
+                        });
+                    }
+                });
+
+                document.addEventListener("DOMContentLoaded", function () {
+                    const servicesLink = document.getElementById("Services52");
+
+                    if (servicesLink) {
+                        servicesLink.addEventListener("click", function (event) {
+                            event.preventDefault(); // منع السلوك الافتراضي
+
+                            // حفظ المعلومة بأن المستخدم يريد الانتقال إلى "about"
+                            sessionStorage.setItem("scrollToSection", "services");
+
+                            // توجيه المستخدم إلى الصفحة الرئيسية
+                            window.location.href = "index.html";
+                        });
+                    }
+                });
+
+                document.addEventListener("DOMContentLoaded", function () {
+                    const servicesLink = document.getElementById("Services53");
+
+                    if (servicesLink) {
+                        servicesLink.addEventListener("click", function (event) {
+                            event.preventDefault(); // منع السلوك الافتراضي
+
+                            // حفظ المعلومة بأن المستخدم يريد الانتقال إلى "about"
+                            sessionStorage.setItem("scrollToSection", "services");
+
+                            // توجيه المستخدم إلى الصفحة الرئيسية
+                            window.location.href = "index.html";
+                        });
+                    }
+                });
+
+                document.addEventListener("DOMContentLoaded", function () {
+                    const servicesLink = document.getElementById("Services54");
+
+                    if (servicesLink) {
+                        servicesLink.addEventListener("click", function (event) {
+                            event.preventDefault(); // منع السلوك الافتراضي
+
+                            // حفظ المعلومة بأن المستخدم يريد الانتقال إلى "about"
+                            sessionStorage.setItem("scrollToSection", "services");
+
+                            // توجيه المستخدم إلى الصفحة الرئيسية
+                            window.location.href = "index.html";
+                        });
+                    }
+                });
+
+                document.addEventListener("DOMContentLoaded", function () {
+                    const servicesLink = document.getElementById("Services55");
+
+                    if (servicesLink) {
+                        servicesLink.addEventListener("click", function (event) {
+                            event.preventDefault(); // منع السلوك الافتراضي
+
+                            // حفظ المعلومة بأن المستخدم يريد الانتقال إلى "about"
+                            sessionStorage.setItem("scrollToSection", "services");
+
+                            // توجيه المستخدم إلى الصفحة الرئيسية
+                            window.location.href = "index.html";
+                        });
+                    }
+                });
 
 
-document.addEventListener("DOMContentLoaded", function() {
-    let logoURL = "https://elitefinancial-eg.com/assets/img/logo.png"; // رابط اللوجو
-
-    document.querySelectorAll("img").forEach(img => {
-        if (!img.src || img.src.trim() === "") {
-            img.src = logoURL;
-            img.alt = "Elite Financial Consultant Logo";
-        }
-    });
-});
 
 
-</script>
+                document.addEventListener("DOMContentLoaded", function () {
+                    const contactLink = document.getElementById("Contact");
 
+                    if (contactLink) {
+                        contactLink.addEventListener("click", function (event) {
+                            event.preventDefault(); // منع السلوك الافتراضي
+
+                            // حفظ المعلومة بأن المستخدم يريد الانتقال إلى "about"
+                            sessionStorage.setItem("scrollToSection", "contact");
+
+                            // توجيه المستخدم إلى الصفحة الرئيسية
+                            window.location.href = "index.html";
+                        });
+                    }
+                });
+
+                document.addEventListener("DOMContentLoaded", function () {
+                    const contactLink = document.getElementById("Contact57");
+
+                    if (contactLink) {
+                        contactLink.addEventListener("click", function (event) {
+                            event.preventDefault(); // منع السلوك الافتراضي
+
+                            // حفظ المعلومة بأن المستخدم يريد الانتقال إلى "about"
+                            sessionStorage.setItem("scrollToSection", "contact");
+
+                            // توجيه المستخدم إلى الصفحة الرئيسية
+                            window.location.href = "index.html";
+                        });
+                    }
+                });
+
+                document.addEventListener("DOMContentLoaded", function () {
+                    const Book = document.getElementById("Book");
+                    if (Book) {
+                        Book.addEventListener("click", function (event) {
+                            event.preventDefault();
+                            setTimeout(function () {
+                                window.location.href = "BookKeeping.html";
+                            }, 500);
+                        });
+                    }
+                });
+
+                document.addEventListener("DOMContentLoaded", function () {
+                    const CompanyIncorporation = document.getElementById("CompanyIncorporation");
+                    if (CompanyIncorporation) {
+                        CompanyIncorporation.addEventListener("click", function (event) {
+                            event.preventDefault();
+                            setTimeout(function () {
+                                window.location.href = "CompanyIncorporation.html";
+                            }, 500);
+                        });
+                    }
+                });
+
+                document.addEventListener("DOMContentLoaded", function () {
+                    const Taxes = document.getElementById("Taxes");
+                    if (Taxes) {
+                        Taxes.addEventListener("click", function (event) {
+                            event.preventDefault();
+                            setTimeout(function () {
+                                window.location.href = "Taxes.html";
+                            }, 500);
+                        });
+                    }
+                });
+
+
+                document.addEventListener("DOMContentLoaded", function () {
+                    let logoURL = "https://elitefinancial-eg.com/assets/img/logo.png"; // رابط اللوجو
+
+                    document.querySelectorAll("img").forEach(img => {
+                        if (!img.src || img.src.trim() === "") {
+                            img.src = logoURL;
+                            img.alt = "Elite Financial Consultant Logo";
+                        }
+                    });
+                });
+
+            </script>
 </head>
 
   </body>
