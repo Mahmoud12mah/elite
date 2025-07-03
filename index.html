@@ -812,7 +812,7 @@
     </a>
 
     <a href="tel:+223504766" class="icon-text2">
-            <i class="fa fa-phone"></i> 00223504766
+      <i class="fa fa-phone"></i> +223504766
     </a>
 
 
@@ -1143,6 +1143,10 @@
         { text: "جميع المأموريات تلتزم بتطبيق التسهيلات وفقًا للقوانين الصادرة", link: "News2.html" },
         { text: "التسهيلات الضريبية فرصة لن تتكرر ومواعيد التقديم للاستفادة أوشكت على الانتهاء", link: "News3.html" },
         { text: "لقاء مصلحة الضرائب المصرية مع المحاسبين والمراجعين في إطار التسهيلات الضريبية", link: "News4.html" },
+        { text: "فرق دعم فني ميداني لتسهيل الخدمات الضريبية للممولين وغير الممولين", link: "News5.html" },
+        { text: "آخر موعد لتقديم طلبات إنهاء المنازعات الضريبية ٣٠يونيو", link: "News6.html" },
+        { text: "مصلحة الضرائب تكرم عددًا من الأندية الرياضية", link: "News7.html" },
+        { text: "صدور قرار رقم (225) لسنة 2025 الخاص (بالمرحلة الفرعية الأولى من المرحلة الرئيسية الثامنة) لمنظومة الإيصال الإلكترونى.", link: "News8.html" },
       ];
 
       const wrapper = document.getElementById("newsWrapper");
@@ -1315,6 +1319,18 @@
 
 
 
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const section = sessionStorage.getItem("scrollToSection");
+        if (section) {
+          const target = document.getElementById(section);
+          if (target) {
+            target.scrollIntoView({ behavior: "smooth" });
+          }
+          sessionStorage.removeItem("scrollToSection");
+        }
+      });
+    </script>
 
 
 
