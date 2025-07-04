@@ -197,7 +197,7 @@ const translations = {
         Theavailablemethodofaccessingcompanyaccountingsystem: "The available method of accessing company accounting system",
         Remotely: "Remotely",
         OnSite: "On-Site",
-        
+
         FullTime: "Full Time",
         PartTime: "Part Time",
         RequestPrice: "Request Price",
@@ -331,7 +331,7 @@ const translations = {
         Sentsuccessfully: "Sent successfully! ✅",
         Failedtosendrequest: "Failed to send request! ❌",
         Allfieldsrequired: "All fields required! ❌",
-        company1: "Company", 
+        company1: "Company",
         PrivacyPolicy: "Privacy Policy",
         legal: "Legal",
         EliteFinancialConsultant: " © 2025 Elite Financial Consultant. All rights reserved. ",
@@ -431,7 +431,7 @@ const translations = {
         contact: "تواصل معنا",
         contact2: "العنوان",
         contact3: "<strong>المركز الرئيسي:</strong> ٤٠ شارع ابو داوود الظاهري - مدينة نصر - القاهرة - مصر",
-        contact14:  "<strong>الفرع: </strong> ٦٣٣ طريق الحرية ابراج الزراعيين - جناكليس - الاسكندريه - مصر",
+        contact14: "<strong>الفرع: </strong> ٦٣٣ طريق الحرية ابراج الزراعيين - جناكليس - الاسكندريه - مصر",
         contact4: "التليفون",
         contact5: "البريد الإلكتروني",
         contact6: "تواصل معنا",
@@ -653,8 +653,8 @@ const translations = {
         Theapplicationisnowunderreview: "الطلب قيد المراجعة الآن",
         Wewillcontactyouassoonaspossible: "سوف نتواصل معك في اقرب وقت ممكن",
         Gotothehomepage: "الصفحة الرئيسية",
-       
-        
+
+
 
 
 
@@ -666,7 +666,7 @@ const translations = {
         PrivacyPolicy: "سياسة الخصوصية",
         EliteFinancialConsultant: " إيليت للإستشارات المالية. جميع الحقوق محفوظة. © 2025 ",
 
-    
+
 
         policy1: "سياسة الخصوصية",
         policy2: "المقدمة",
@@ -720,9 +720,9 @@ const translations = {
 
 
 
-        
 
-        
+
+
 
     }
 };
@@ -768,7 +768,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     // ✅ إذا كانت الصفحة هي إحدى صفحات News1 إلى News4، اجعل اللغة العربية
-    if (window.location.pathname.includes("News1") || window.location.pathname.includes("News2") || window.location.pathname.includes("News3") || window.location.pathname.includes("News4")) {
+    if (window.location.pathname.includes("News1") || window.location.pathname.includes("News2") || window.location.pathname.includes("News3") || window.location.pathname.includes("News4") || window.location.pathname.includes("News5") || window.location.pathname.includes("News6") || window.location.pathname.includes("News7") || window.location.pathname.includes("News8")) {
         // إذا كانت اللغة قد تم فرضها للعربية من صفحة أخرى، لا نغيرها
         let forcedLang = sessionStorage.getItem("forcedLanguage");
         if (!forcedLang) {
