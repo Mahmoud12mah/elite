@@ -341,144 +341,75 @@
     });
   </script>
 
-  <h1 id="custom-heading">
-    التسهيلات الضريبية فرصة لن تتكرر ومواعيد التقديم للاستفادة أوشكت على الانتهاء
-  </h1>
-
-  <h1 id="second-heading">
-    التسهيلات الضريبية
-  </h1>
-
-  <style>
-    /* العنوان الأول */
-    #custom-heading {
-      position: absolute;
-      top: 170px;
-      left: 48px;
-      font-weight: bold;
-      font-size: 22px;
-      padding: 10px;
-      z-index: 9999;
-    }
-
-    /* العنوان الثاني */
-    #second-heading {
-      position: absolute;
-      top: 220px;
-      /* أسفل العنوان الأول */
-      left: 655px;
-      font-weight: bold;
-      font-size: 22px;
-      padding: 10px;
-      z-index: 9999;
-    }
-
-    /* الموبايل */
-    @media (max-width: 768px) {
-      #custom-heading {
-        top: 260px;
-        left: 50%;
-        transform: translateX(-50%);
-        font-size: 20px;
-        text-align: center;
-        width: 90%;
-      }
-
-      #second-heading {
-        top: 340px;
-        /* أسفل العنوان الأول على الموبايل */
-        left: 50%;
-        transform: translateX(-50%);
-        font-size: 18px;
-        text-align: center;
-        width: 90%;
-      }
-    }
-  </style>
 
 
+  <div class="content-container">
+    <div class="text-section">
+      <h1>التسهيلات الضريبية فرصة لن تتكرر ومواعيد التقديم للاستفادة أوشكت على الانتهاء</h1>
+      <h1>التسهيلات الضريبية</h1>
+    </div>
 
-
-
-
-
-
-  <div class="floating-image">
-    <img src="assets/img/WhatsApp Image 2025-04-01 at 17.42.07_77094769.jpg" alt="Hero Image" loading="lazy">
+    <div class="image-section">
+      <img src="assets/img/WhatsApp Image 2025-04-01 at 17.42.07_77094769.jpg" alt="Hero Image" loading="lazy">
+    </div>
   </div>
 
   <style>
-    /* ضبط الصورة في مكان ثابت */
-    .floating-image {
-      position: absolute;
-      top: 220px;
-      /* المسافة من الأعلى */
-      width: 430px;
-      /* حجم الصورة */
-      height: 10px;
-      z-index: 1000;
-      /* لضمان ظهورها فوق العناصر الأخرى */
-      transition: all 0.3s ease-in-out;
-      /* انتقال سلس عند التغيير */
-      margin: 0 auto;
-      /* لتوسيط الصورة */
+    .content-container {
+      display: flex;
+      flex-direction: row-reverse;
+      /* لعكس الاتجاه: الصورة يمين، النص يسار */
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      padding: 10px;
+      gap: 100px;
     }
 
-    /* عند اللغة العربية: تكون الصورة على اليمين */
-    html[lang="ar"] .floating-image {
-      left: 50%;
-      /* تعديل لتكون الصورة في المنتصف */
-      transform: translateX(-50%);
-      /* لتوسيط الصورة */
+    /* قسم النصوص */
+    .text-section {
+      max-width: 1000px;
+      text-align: right;
+      direction: rtl;
     }
 
-    /* عند اللغة الإنجليزية: تكون الصورة على اليسار */
-    html[lang="en"] .floating-image {
-      left: 50%;
-      /* تعديل لتكون الصورة في المنتصف */
-      transform: translateX(-50%);
-      /* لتوسيط الصورة */
+    .text-section h1 {
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 10px;
     }
 
-    .floating-image img {
-      width: 100%;
+    /* قسم الصورة */
+    .image-section img {
+      max-width: 100%;
+      height: auto;
       border-radius: 10px;
-      /* إضافة حواف دائرية */
       box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
-      /* ظل جميل */
+      width: 400px;
     }
 
-    /* تخصيص للأجهزة الصغيرة (الهاتف المحمول) */
+    /* تنسيق للموبايل */
     @media (max-width: 768px) {
-      .floating-image {
-        display: block;
-        /* عرض الصورة على الهاتف */
-        margin-top: 160px;
-        /* المسافة بين النص والصورة */
-        width: 390px;
-        /* حجم الصورة */
+      .content-container {
+        flex-direction: column;
+        text-align: center;
       }
-    }
 
-    /* تخصيص للأجهزة الكبيرة (الكمبيوتر) */
-    @media (min-width: 769px) {
-      .floating-image {
-        position: absolute;
-        /* يضمن أن left و right يعملان */
-        display: block;
-        /* تأكد من أنها مرئية */
-        margin-top: -40px;
-        /* تعديل المسافة العلوية */
-        width: 450px;
-        /* حجم الصورة */
-        right: -630px;
-        /* تحريك الصورة أكثر لليمين */
-        transform: none;
-        /* إزالة التأثيرات الأخرى التي قد تمنع التحريك */
+      .text-section {
+        text-align: center;
+        direction: rtl;
+      }
+
+      .text-section h1 {
+        font-size: 20px;
+      }
+
+      .image-section img {
+        width: 95%;
+        margin-top: -80px;
       }
     }
   </style>
-
 
 
   <section id="about" class="about section">
@@ -491,13 +422,13 @@
       <style>
         /* المسافة على الكمبيوتر */
         .responsive-space {
-          margin: 250px 0;
+          margin: -5px 0;
         }
 
         /* المسافة على الموبايل */
         @media (max-width: 768px) {
           .responsive-space {
-            margin: 300px 0;
+            margin: -5px 0;
             /* غيّر الرقم كما يناسبك للموبايل */
           }
         }
