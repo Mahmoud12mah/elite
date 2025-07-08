@@ -1079,58 +1079,114 @@
 
 
     <!-- Stats Section -->
-    <section id="stats" class="stats section dark-background">
-
-      <img src="assets/img/stats-bg.jpg" alt="elite-financial-consultant What we have achieved so far"
-        data-aos="fade-in" loading="lazy">
-
+    <section id="stats" class="stats section site-background text-white py-5">
       <div class="container position-relative" data-aos="fade-up" data-aos-delay="100">
-
         <!-- Section Heading -->
-        <div class="subheading">
+        <div class="subheading text-center mb-5">
           <h3 data-lang="what">What we have achieved so far</h3>
-          <p></p>
         </div>
 
-        <div class="row gy-3 justify-content-center">
+        <div class="row gy-4 justify-content-center">
 
           <!-- Stats Item 1 -->
           <div class="col-lg-3 col-md-6 d-flex justify-content-center">
-            <div class="stats-item text-center d-flex flex-column align-items-center">
+            <div class="stats-item text-center p-5 glass-effect">
               <span data-purecounter-start="0" data-purecounter-end="182" data-purecounter-duration="1"
-                class="purecounter"></span>
-              <p data-lang="what2">Clients</p>
+                class="purecounter stat-number">182</span>
+              <p class="stat-label mt-3 mb-0" data-lang="what2">Clients</p>
             </div>
-          </div><!-- End Stats Item -->
+          </div>
 
           <!-- Stats Item 2 -->
           <div class="col-lg-3 col-md-6 d-flex justify-content-center">
-            <div class="stats-item text-center d-flex flex-column align-items-center">
+            <div class="stats-item text-center p-5 glass-effect">
               <span data-purecounter-start="0" data-purecounter-end="6" data-purecounter-duration="1"
-                class="purecounter"></span>
-              <p data-lang="what3">Services</p>
+                class="purecounter stat-number">6</span>
+              <p class="stat-label mt-3 mb-0" data-lang="what3">Services</p>
             </div>
-          </div><!-- End Stats Item -->
+          </div>
 
           <!-- Stats Item 3 -->
           <div class="col-lg-3 col-md-6 d-flex justify-content-center">
-            <div class="stats-item text-center d-flex flex-column align-items-center">
+            <div class="stats-item text-center p-5 glass-effect">
               <span data-purecounter-start="0" data-purecounter-end="17" data-purecounter-duration="1"
-                class="purecounter"></span>
-              <p data-lang="what4">Experience</p>
+                class="purecounter stat-number">17</span>
+              <p class="stat-label mt-3 mb-0" data-lang="what4">Experience</p>
             </div>
-          </div><!-- End Stats Item -->
+          </div>
 
         </div>
-
       </div>
-
-    </section><!-- /Stats Section -->
-
+    </section>
 
 
+    <style>
+      .site-background {
+        background: linear-gradient(135deg, #0b162d, #1a2742);
+        color: white;
+      }
 
-    <title>شريط أخبار متحرك</title>
+      .glass-effect {
+        background: rgba(255, 255, 255, 0.04);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 2rem;
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+        backdrop-filter: blur(8px);
+        transition: transform 0.4s ease, box-shadow 0.4s ease;
+      }
+
+      .glass-effect:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 20px 35px rgba(0, 0, 0, 0.4);
+      }
+
+      .stat-number {
+        font-size: 3.8rem;
+        font-weight: 900;
+        background: linear-gradient(90deg, #00d1b2, #1ec8e7);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        color: transparent;
+        /* fallback */
+        display: inline-block;
+        line-height: 1;
+        text-shadow: none;
+      }
+
+      .stat-label {
+        font-size: 1.4rem;
+        font-weight: 800;
+        color: #cbd5e1;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+
+      @media (max-width: 768px) {
+        .stat-number {
+          font-size: 2.2rem;
+        }
+
+        .stat-label {
+          font-size: 1rem;
+        }
+
+        .glass-effect {
+          padding: 1rem;
+        }
+
+        .stats-item {
+          width: 100%;
+          /* إجبار البوكس أن يكون بعرض 100% */
+          max-width: 320px;
+          /* تحديد أقصى عرض */
+          margin: 0 auto;
+          /* توسيطه */
+        }
+      }
+    </style>
+
+
 
     <div class="news-title">آخر المستجدات</div>
     <div class="news-container">
