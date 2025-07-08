@@ -377,7 +377,7 @@ const translations = {
         policy37: "We may use cookies to improve your browsing experience on our website. You can disable cookies through your browser settings, but this may affect some site functionality.",
         policy38: "How can you contact us?",
         policy39: "If you have any questions or requests related to your personal data, you can contact us via:",
-        policy40: "Elite Financial Consulting Office",
+        policy40: "Elite Financial Consultant Office",
         policy41: "Address: 40 Abu Dawoud El Zahery Street - Nasr City - Cairo - Egypt",
         policy43: "Email: info@elitefinancial-eg.com",
         policy44: "Telephone: +20 1228310654",
