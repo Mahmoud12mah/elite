@@ -1,7 +1,40 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: Arial, sans-serif
+  font-family: Arial, sans-serif;
+}
+
+/* تثبيت الهيدرات */
+.top-header,
+.bottom-header {
+  position: fixed;
+  left: 0;
+  width: 100%;
+  transition: background-color 0.3s ease, opacity 0.3s ease;
+  z-index: 9999;
+}
+
+/* ترتيبهم فوق بعض */
+.top-header {
+  top: 0;
+}
+
+.bottom-header {
+  top: 45px;
+  /* حسب ارتفاع top-header الفعلي */
+}
+
+/* شفافية عند التمرير */
+body.scrolled .top-header,
+body.scrolled .bottom-header {
+  opacity: 0.7;
+  backdrop-filter: blur(6px);
+}
+
+/* الوضع العادي */
+body:not(.scrolled) .top-header,
+body:not(.scrolled) .bottom-header {
+  opacity: 1;
 }
 
 header {
@@ -10,26 +43,32 @@ header {
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
-  padding: 10px
+  padding: 10px;
 }
 
 .top-header {
   background: #0a2a5e;
   color: #000;
-  height: 40px;
+  /* height: 40px; */
+  /* ✖️ احذف هذا السطر */
   display: flex;
   align-items: center;
   justify-content: start;
   flex-wrap: wrap;
-  direction: ltr !important
+  direction: ltr !important;
+  margin-bottom: 0;
+  /* ✅ أضف هذا */
 }
 
 .language-switch {
   display: flex;
   gap: 5px;
   position: absolute;
-  right: 20px
+  right: 20px;
+  margin-bottom: 0;
+  /* ✅ أضف هذا */
 }
+
 
 .language-switch button {
   padding: 1px 1px;
@@ -38,239 +77,85 @@ header {
   cursor: pointer;
   background-color: #f5f5f5;
   color: #000;
-  font-weight: 700
+  font-weight: 700;
 }
 
 .icon-text,
 .icon-text1,
 .icon-text2 {
-  font-size: 16px;
+  font-size: 20px;
   color: #fff;
-  font-weight: 700;
+  font-weight: 800;
   margin: 0 10px;
   top: 1px;
-  direction: ltr !important
+  direction: ltr !important;
 }
 
 .bottom-header {
-  background: #1032cc17;
+  background: #f5f5f5;
   color: #660808;
-  height: auto;
+  padding: 8px 20px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 15px;
-  flex-wrap: wrap
+  flex-wrap: wrap;
+  z-index: 5000;
+  gap: 100px;
 }
 
 .logo {
-  max-width: 100%;
-  height: 90px
+  width: 100px;
+  height: auto;
+}
+
+.sitename {
+  font-size: 20px;
+}
+
+.navmenu {
+  position: relative;
+  z-index: 1000;
 }
 
 .navmenu ul {
   list-style: none;
-  display: flex;
   padding: 0;
   margin: 0;
-  flex-wrap: wrap
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  z-index: 1000;
+
 }
 
 .navmenu ul li {
-  margin: 0 10px
+  margin: 0 10px;
+  padding: 9px;
+  border-bottom: 1px solid #000;
 }
 
 .navmenu ul li a {
   text-decoration: none;
   color: #000;
-  font-weight: 700
-}
-
-@media (max-width:1199px) {
-  .top-header {
-    flex-direction: column;
-    height: auto;
-    text-align: center
-  }
-
-  .bottom-header {
-    flex-direction: column;
-    text-align: center
-  }
-
-  .logo {
-    height: 10px
-  }
-
-  .navmenu ul {
-    flex-direction: column;
-    text-align: center
-  }
-
-  .navmenu ul li {
-    margin: 5px 0
-  }
-
-  .language-switch {
-    position: relative;
-    right: auto;
-    margin-top: 10px
-  }
-}
-
-.bottom-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: #f5f5f5;
-  padding: 6px 20px;
-  color: #fff;
-  position: relative;
-  z-index: 5000
-}
-
-@media (min-width:1200px) {
-  .bottom-header {
-    flex-direction: row-reverse
-  }
-}
-
-html[lang=ar] {
-  direction: rtl;
-  text-align: right
-}
-
-html[lang=ar] .bottom-header {
-  flex-direction: row-reverse;
-  justify-content: space-between
-}
-
-@media (max-width:1199px) {
-  .bottom-header {
-    flex-direction: column;
-    align-items: center;
-    text-align: center
-  }
-
-  html[lang=ar] .bottom-header {
-    flex-direction: column;
-    align-items: center;
-    text-align: center
-  }
-
-  .logo,
-  .sitename {
-    margin: 0 auto
-  }
-}
-
-html[lang=ar] .navmenu ul {
-  justify-content: flex-start;
-  padding-left: 50px;
-  padding-right: 0
-}
-
-@media (min-width:1200px) {
-  html[lang=ar] .logo {
-    margin-right: auto;
-    margin-left: 0
-  }
-
-  html[lang=ar] .sitename {
-    margin-left: auto;
-    margin-right: 0
-  }
-}
-
-.logo {
-  width: 100px;
-  height: auto
-}
-
-.sitename {
-  font-size: 20px
-}
-
-.navmenu {
-  position: relative;
-  z-index: 1000
-}
-
-.navmenu ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex
-}
-
-@media (min-width:1200px) {
-  .navmenu ul {
-    justify-content: flex-end;
-    padding-right: 50px
-  }
-}
-
-.navmenu li {
-  padding: 1px;
-  border-bottom: 1px solid #000;
-  margin: 0 10px
-}
-
-.navmenu a {
-  color: #000;
-  text-decoration: none;
-  font-size: 18px;
-  text-align: center
+  font-weight: 650;
+  font-size: 20px;
+  text-align: center;
 }
 
 .menu-checkbox {
-  display: none
+  display: none;
 }
 
 .menu-btn {
   font-size: 24px;
-  background: 0 0;
+  background: none;
   border: none;
   color: #000;
   cursor: pointer;
   display: none;
   position: relative;
   z-index: 101;
-  text-align: center
-}
-
-@media (max-width:1199px) {
-  .menu-btn {
-    display: block
-  }
-}
-
-@media (max-width:1199px) {
-  .navmenu {
-    display: none;
-    position: fixed;
-    top: 0;
-    right: 0;
-    background: #fff;
-    width: 80%;
-    height: 100%;
-    text-align: left;
-    z-index: 1000;
-    padding: 20px;
-    box-shadow: -5px 0 10px rgba(0, 0, 0, .2)
-  }
-
-  .navmenu ul {
-    flex-direction: column
-  }
-
-  .menu-checkbox:checked~.menu-overlay {
-    display: block
-  }
-
-  .menu-checkbox:checked~.navmenu {
-    display: block
-  }
+  text-align: center;
 }
 
 .menu-overlay {
@@ -281,7 +166,7 @@ html[lang=ar] .navmenu ul {
   height: 100%;
   background: rgba(0, 0, 0, .95);
   display: none;
-  z-index: 999
+  z-index: 999;
 }
 
 .close-btn {
@@ -291,17 +176,248 @@ html[lang=ar] .navmenu ul {
   position: absolute;
   top: 10px;
   right: 270px;
-  background: 0 0;
+  background: none;
   border: none;
   z-index: 1100;
-  display: none
+  display: none;
 }
 
-@media (max-width:1199px) {
-  .close-btn {
-    display: block
+/* اللغة العربية */
+html[lang="ar"] {
+  direction: rtl;
+  text-align: right;
+}
+
+html[lang="ar"] .bottom-header {
+  flex-direction: row-reverse;
+  justify-content: space-between;
+}
+
+html[lang="ar"] .navmenu ul {
+  justify-content: flex-start;
+  padding-right: 0;
+}
+
+.contact-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+
+@media (min-width: 1200px) {
+  .bottom-header {
+    flex-direction: row-reverse;
+  }
+
+  .navmenu ul {
+    justify-content: flex-end;
+    padding-right: 50px;
+  }
+
+  html[lang="ar"] .logo {
+    margin-right: auto;
+    margin-left: 0;
+  }
+
+  html[lang="ar"] .sitename {
+    margin-left: auto;
+    margin-right: 0;
   }
 }
+
+@media (max-width: 1199px) {
+
+  .top-header,
+  .bottom-header {
+    align-items: center;
+    text-align: center;
+    height: auto;
+    padding: 1px 10px;
+  }
+
+  /* تثبيت الهيدرات */
+  .top-header,
+  .bottom-header {
+    position: fixed;
+    left: 0;
+    width: 100%;
+    transition: background-color 0.3s ease, opacity 0.3s ease;
+    z-index: 9999;
+  }
+
+  /* ترتيبهم فوق بعض */
+  .top-header {
+    top: 0;
+  }
+
+  .bottom-header {
+    top: 135px;
+    /* حسب ارتفاع top-header الفعلي */
+  }
+
+  /* شفافية عند التمرير */
+  body.scrolled .top-header,
+  body.scrolled .bottom-header {
+    opacity: 0.7;
+    backdrop-filter: blur(6px);
+  }
+
+  /* الوضع العادي */
+  body:not(.scrolled) .top-header,
+  body:not(.scrolled) .bottom-header {
+    opacity: 1;
+  }
+
+  .top-header {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0 3px;
+    gap: 2px;
+    height: auto !important;
+    /* يلغي التقييد السابق ويحل المشكلة */
+    margin-bottom: -10 !important;
+  }
+
+  .bottom-header {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .top-header .contact-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0px;
+    margin-bottom: -15px;
+  }
+
+
+  .icon-text,
+  .icon-text1,
+  .icon-text2 {
+    font-size: 10px;
+    /* ✅ أو جرب 9px أو 8px حسب رغبتك */
+    margin: 3px 4px;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    flex-shrink: 1;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+
+
+  .language-switch {
+    position: relative;
+    right: auto;
+    gap: 3px;
+    display: flex;
+    justify-content: center;
+    margin-bottom: -3px;
+    /* ✅ تقليل المسافة فقط دون إلغائها بالكامل */
+  }
+
+
+
+  .language-switch button {
+    font-size: 13px;
+    padding: 1px 3px;
+  }
+
+  .logo {
+    width: 70px;
+    height: auto;
+    margin: 5px;
+  }
+
+  .sitename {
+    font-size: 16px;
+  }
+
+  .navmenu ul li a {
+    font-size: 14px;
+  }
+
+  .menu-btn {
+    display: block;
+    font-size: 20px;
+    margin: 5px 0;
+  }
+
+  .close-btn {
+    display: block;
+    font-size: 20px;
+    right: 20px;
+  }
+
+  .navmenu {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    background: #fff;
+    width: 85%;
+    height: 100%;
+    text-align: left;
+    z-index: 100000000;
+    padding: 15px;
+    box-shadow: -5px 0 10px rgba(0, 0, 0, .2);
+
+  }
+
+  .navmenu ul {
+    flex-direction: column;
+    text-align: center;
+    gap: 1px;
+    z-index: 10000000;
+
+
+  }
+
+  .navmenu ul li {
+    margin: 3px 0;
+    padding: 0px;
+    z-index: 10000000;
+
+  }
+
+  .menu-checkbox:checked~.menu-overlay {
+    display: block;
+  }
+
+  .menu-checkbox:checked~.navmenu {
+    display: block;
+  }
+
+  .menu-checkbox:checked~.navmenu {
+    display: flex !important;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100vh;
+    background: #fff;
+    padding: 60px 20px;
+    overflow-y: auto;
+    z-index: 100000001;
+  }
+
+  .menu-checkbox:checked~.bottom-header {
+    display: none;
+  }
+
+
+
+}
+
 
 .checkbox {
   display: inline-flex;

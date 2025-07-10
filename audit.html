@@ -245,33 +245,30 @@
 
 
 
+    <!-- تأكد من إضافة مكتبة Font Awesome في رأس الصفحة -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+
     <header class="top-header">
-        <a href="mailto:info@elitefinancial-eg.com" class="icon-text">
-            <i class="fa fa-envelope"></i> info@elitefinancial-eg.com
-        </a>
-
-        <!-- تأكد من إضافة مكتبة Font Awesome في رأس الصفحة -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-
-        <a href="tel:+201228310654" class="icon-text1">
-            <i class="fa fa-phone"></i> +201228310654
-        </a>
-
-        <a href="tel:+223504766" class="icon-text2">
-            <i class="fa fa-phone"></i> 00223504766
-        </a>
-
-
-
+        <div class="contact-wrapper">
+            <a href="mailto:info@elitefinancial-eg.com" class="icon-text">
+                <i class="fas fa-envelope"></i> info@elitefinancial-eg.com
+            </a>
+            <a href="tel:+201228310654" class="icon-text1">
+                <i class="fas fa-phone"></i> +201228310654
+            </a>
+            <a href="tel:+223504766" class="icon-text2">
+                <i class="fas fa-phone"></i> 00223504766
+            </a>
+        </div>
 
         <div class="language-switch">
             <button class="lang-btn arabic" onclick="changeLanguage('ar')">العربية</button>
             <button class="lang-btn english" onclick="changeLanguage('en')">English</button>
         </div>
-
-
-
     </header>
+
+
 
 
 
@@ -311,10 +308,11 @@
                         <li><a href="Taxes.html" data-lang="Taxes" style="font-weight: bold;">Taxes</a></li>
                         <li><a href="BookKeeping.html" data-lang="BookKeeping"
                                 style="font-weight: bold;">BookKeeping</a></li>
-                        <li><a href="audit.html" data-lang="ExternalAudit" style="font-weight: bold;">External Audit</a>
-                        </li>
+                        <li><a href="audit.html" data-lang="ExternalAudit" style="font-weight: bold;">External
+                                Audit</a></li>
                         <li><a href="CompanyIncorporation.html" data-lang="CompanyIncorporation"
-                                style="font-weight: bold;">Company Incorporation</a></li>
+                                style="font-weight: bold;">Company
+                                Incorporation</a></li>
                     </ul>
                 </li>
                 <li><a id="Services" href="#services" data-lang="services1">Services</a></li>
@@ -324,10 +322,32 @@
     </header>
 
 
+    <script>
+        window.addEventListener('scroll', function () {
+            if (window.scrollY > 10) {
+                document.body.classList.add('scrolled');
+            } else {
+                document.body.classList.remove('scrolled');
+            }
+        });
+    </script>
 
+    <style>
+        @media (min-width: 1200px) {
+            .mobile {
+                margin-top: 180px;
+            }
+        }
+
+        @media (max-width: 1199px) {
+            .mobile {
+                margin-top: 260px;
+            }
+        }
+    </style>
 
     <div dir="rtl" class="container d-flex flex-column align-items-center text-center"></div>
-    <h2 data-lang="RequestapriceforExternalAudit"
+    <h2 class="mobile" data-lang="RequestapriceforExternalAudit"
         style="font-size: 30px; font-weight: bold; text-align: center; background-color: #0A2A5E; color: #ffffff;"
         data-aos="fade-up" data-aos-delay="100">Request a price for External Audit Services</h2>
 

@@ -252,33 +252,30 @@
 
 
 
+    <!-- تأكد من إضافة مكتبة Font Awesome في رأس الصفحة -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+
     <header class="top-header">
-        <a href="mailto:info@elitefinancial-eg.com" class="icon-text">
-            <i class="fa fa-envelope"></i> info@elitefinancial-eg.com
-        </a>
-
-        <!-- تأكد من إضافة مكتبة Font Awesome في رأس الصفحة -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-
-        <a href="tel:+201228310654" class="icon-text1">
-            <i class="fa fa-phone"></i> +201228310654
-        </a>
-
-        <a href="tel:+223504766" class="icon-text2">
-            <i class="fa fa-phone"></i> 00223504766
-        </a>
-
-
-
+        <div class="contact-wrapper">
+            <a href="mailto:info@elitefinancial-eg.com" class="icon-text">
+                <i class="fas fa-envelope"></i> info@elitefinancial-eg.com
+            </a>
+            <a href="tel:+201228310654" class="icon-text1">
+                <i class="fas fa-phone"></i> +201228310654
+            </a>
+            <a href="tel:+223504766" class="icon-text2">
+                <i class="fas fa-phone"></i> 00223504766
+            </a>
+        </div>
 
         <div class="language-switch">
             <button class="lang-btn arabic" onclick="changeLanguage('ar')">العربية</button>
             <button class="lang-btn english" onclick="changeLanguage('en')">English</button>
         </div>
-
-
-
     </header>
+
+
 
 
 
@@ -318,10 +315,11 @@
                         <li><a href="Taxes.html" data-lang="Taxes" style="font-weight: bold;">Taxes</a></li>
                         <li><a href="BookKeeping.html" data-lang="BookKeeping"
                                 style="font-weight: bold;">BookKeeping</a></li>
-                        <li><a href="audit.html" data-lang="ExternalAudit" style="font-weight: bold;">External Audit</a>
-                        </li>
+                        <li><a href="audit.html" data-lang="ExternalAudit" style="font-weight: bold;">External
+                                Audit</a></li>
                         <li><a href="CompanyIncorporation.html" data-lang="CompanyIncorporation"
-                                style="font-weight: bold;">Company Incorporation</a></li>
+                                style="font-weight: bold;">Company
+                                Incorporation</a></li>
                     </ul>
                 </li>
                 <li><a id="Services" href="#services" data-lang="services1">Services</a></li>
@@ -329,6 +327,17 @@
             </ul>
         </nav>
     </header>
+
+
+    <script>
+        window.addEventListener('scroll', function () {
+            if (window.scrollY > 10) {
+                document.body.classList.add('scrolled');
+            } else {
+                document.body.classList.remove('scrolled');
+            }
+        });
+    </script>
 
     <script>
         document.addEventListener("DOMContentLoaded", function () {
@@ -351,10 +360,23 @@
             });
         });
     </script>
+    <style>
+        @media (min-width: 1200px) {
+            .mobile {
+                margin-top: 180px;
+            }
+        }
 
+        @media (max-width: 1199px) {
+            .mobile {
+                margin-top: 260px;
+            }
+        }
+    </style>
 
     <div dir="rtl" class="container d-flex flex-column align-items-center text-center"></div>
-    <h2 style="font-size: 30px; font-weight: bold; text-align: center; background-color: #0A2A5E; color: #ffffff;"
+    <h2 class="mobile"
+        style="font-size: 30px ; font-weight: bold; text-align: center; background-color: #0A2A5E; color: #ffffff;"
         data-aos="fade-up" data-aos-delay="100" data-lang="request">Request a price for Tax Services</h2>
 
     <p class="my-4"></p> <!-- لو كنت تستخدم Tailwind CSS -->
@@ -772,7 +794,8 @@
                 <div dir="rtl" class="container d-flex flex-column align-items-center text-center"></div>
 
                 <h2 data-lang="Theaveragenumberofmonthlypurchaseinvoices" style="font-size: 30px; font-weight: bold;"
-                    data-aos="fade-up" data-aos-delay="100">The average number of monthly purchase invoices</h2>
+                    data-aos="fade-up" data-aos-delay="100">The average
+                    number of monthly purchase invoices</h2>
                 <p class="my-4"></p> <!-- لو كنت تستخدم Tailwind CSS -->
                 <label class="checkbox" for="checkbox67">
                     <input type="checkbox" name="services[]" value="Lower Than 10" id="checkbox67">
@@ -856,7 +879,8 @@
                 <div dir="rtl" class="container d-flex flex-column align-items-center text-center"></div>
 
                 <h2 data-lang="Arethereanytaxcasesfiledagainstthecompany" style="font-size: 30px; font-weight: bold;"
-                    data-aos="fade-up" data-aos-delay="100">Are there any tax cases filed against the company?
+                    data-aos="fade-up" data-aos-delay="100">Are there
+                    any tax cases filed against the company?
                 </h2>
                 <p class="my-4"></p> <!-- لو كنت تستخدم Tailwind CSS -->
                 <label class="checkbox" for="checkbox79">
@@ -875,7 +899,8 @@
                 <div dir="rtl" class="container d-flex flex-column align-items-center text-center"></div>
 
                 <h2 data-lang="Doesthecompanyhavearegularaccountingsoftware" style="font-size: 30px; font-weight: bold;"
-                    data-aos="fade-up" data-aos-delay="100">Does the company have a regular accounting software?</h2>
+                    data-aos="fade-up" data-aos-delay="100">Does the
+                    company have a regular accounting software?</h2>
                 <p class="my-4"></p> <!-- لو كنت تستخدم Tailwind CSS -->
                 <label class="checkbox" for="checkbox81">
                     <input type="checkbox" name="services[]" value="Yes" id="checkbox81">
@@ -1105,7 +1130,8 @@
 
 
                 <h2 data-lang="Theaveragenumberofmonthlypurchaseinvoices" style="font-size: 30px; font-weight: bold;"
-                    data-aos="fade-up" data-aos-delay="100">The average number of monthly purchase invoices</h2>
+                    data-aos="fade-up" data-aos-delay="100">The average
+                    number of monthly purchase invoices</h2>
                 <p class="my-4"></p> <!-- لو كنت تستخدم Tailwind CSS -->
 
                 <label class="checkbox" for="checkbox26">
@@ -1193,7 +1219,8 @@
 
 
                 <h2 data-lang="Arethereanytaxcasesfiledagainstthecompany" style="font-size: 30px; font-weight: bold;"
-                    data-aos="fade-up" data-aos-delay="100">Are there any tax cases filed against the company?
+                    data-aos="fade-up" data-aos-delay="100">Are there
+                    any tax cases filed against the company?
                 </h2>
                 <p class="my-4"></p> <!-- لو كنت تستخدم Tailwind CSS -->
 
@@ -1214,7 +1241,8 @@
 
 
                 <h2 data-lang="Doesthecompanyhavearegularaccountingsoftware" style="font-size: 30px; font-weight: bold;"
-                    data-aos="fade-up" data-aos-delay="100">Does the company have a regular accounting software?</h2>
+                    data-aos="fade-up" data-aos-delay="100">Does the
+                    company have a regular accounting software?</h2>
                 <p class="my-4"></p> <!-- لو كنت تستخدم Tailwind CSS -->
 
                 <label class="checkbox" for="checkbox40">
@@ -1728,7 +1756,8 @@
                                 </p>
                                 <nav class="flex flex-col mt-4 space-y-2 text-sm text-gray-500">
                                     <a class="hover:opacity-75" href="index.html" data-lang="home1"> Home </a>
-                                    <a class="hover:opacity-75" id="About56" href="index.html" data-lang="about1"> About
+                                    <a class="hover:opacity-75" id="About56" href="index.html" data-lang="about1">
+                                        About
                                         Us </a>
                                     <a class="hover:opacity-75" id="Contact57" href="index.html" data-lang="contact1">
                                         Contact Us </a>
@@ -1766,7 +1795,8 @@
                                     <a class="hover:opacity-75" href="Taxes.html" data-lang="Taxes"> Taxes </a>
                                     <a class="hover:opacity-75" href="BookKeeping.html" data-lang="BookKeeping">
                                         BookKeeping </a>
-                                    <a class="hover:opacity-75" href="audit.html" data-lang="ExternalAudit"> External
+                                    <a class="hover:opacity-75" href="audit.html" data-lang="ExternalAudit">
+                                        External
                                         Audit </a>
                                     <a class="hover:opacity-75" href="CompanyIncorporation.html"
                                         data-lang="CompanyIncorporation"> Company Incorporation </a>
@@ -1777,7 +1807,8 @@
                                     Legal
                                 </p>
                                 <nav class="flex flex-col mt-4 space-y-2 text-sm text-gray-500">
-                                    <a data-lang="PrivacyPolicy" class="hover:opacity-75" href="policy.html"> Privacy
+                                    <a data-lang="PrivacyPolicy" class="hover:opacity-75" href="policy.html">
+                                        Privacy
                                         Policy </a>
                                 </nav>
                             </div>
