@@ -594,44 +594,197 @@ body {
 }
 
 .contact-form {
-  background: #fff;
-  padding: 30px;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+  background: #ffffff;
+  padding: 40px 30px;
+  border-radius: 15px;
+  border-color: #007bff;
+  box-shadow: 0 0 8px rgba(0, 123, 255, 0.15);
   max-width: 600px;
   margin: auto;
-  margin-top: 1px
+  margin-top: -60px;
+  transition: all 0.3s ease;
+  direction: ltr;
+  /* سيتم تغييره حسب اللغة */
 }
 
+.contact-form:dir(rtl) {
+  direction: rtl;
+}
+
+.form-control:hover {
+  border-color: #007bff;
+  box-shadow: 0 0 8px rgba(0, 123, 255, 0.15);
+}
+
+
+.form-control:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 8px rgba(0, 123, 255, 0.25);
+}
+
+
 .form-control {
-  border-radius: 8px;
-  padding-left: 40px
+  border-radius: 10px;
+  padding: 12px 16px;
+  padding-inline-start: 50px;
+  /* يتغير حسب الاتجاه */
+  border: 1px solid #ced4da;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  font-size: 16px;
+}
+
+.form-control:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 8px rgba(0, 123, 255, 0.25);
+}
+
+.input-group {
+  position: relative;
+  margin-bottom: 20px;
 }
 
 .input-group-text {
-  background: 0 0;
+  background: transparent;
   border: none;
   position: absolute;
-  left: 10px;
   top: 50%;
   transform: translateY(-50%);
   font-size: 1.2rem;
-  color: #6c757d
+  color: #007bff;
+  pointer-events: none;
+}
+
+.contact-form:dir(ltr) .input-group-text {
+  left: 12px;
+  right: auto;
+}
+
+.contact-form:dir(rtl) .input-group-text {
+  right: 12px;
+  left: auto;
 }
 
 .btn-submit {
-  background: #007bff;
-  color: #fff;
-  padding: 10px;
+  background: linear-gradient(135deg, #007bff, #0056b3);
+  color: #ffffff;
+  padding: 12px;
   font-size: 18px;
-  border-radius: 8px;
-  transition: .3s;
-  width: 100%
+  border-radius: 10px;
+  border: none;
+  transition: background 0.3s ease, transform 0.2s ease;
+  width: 100%;
+  cursor: pointer;
 }
 
 .btn-submit:hover {
-  background: #0056b3
+  background: linear-gradient(135deg, #0056b3, #003f8a);
+  transform: translateY(-2px);
 }
+
+.phone-input-container {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex-direction: row;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+/* زر الدولة المختارة */
+.custom-dropdown {
+  position: relative;
+  min-width: 160px;
+  background: #f8f9fa;
+  border: 1px solid #ced4da;
+  border-radius: 10px;
+  padding: 10px 12px;
+  cursor: pointer;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  align-items: center;
+}
+
+.custom-dropdown:hover {
+  border-color: #007bff;
+  box-shadow: 0 0 8px rgba(0, 123, 255, 0.15);
+}
+
+/* العلم والنص */
+#selectedFlag {
+  width: 24px;
+  height: auto;
+  margin-inline-end: 8px;
+}
+
+#selectedCountry {
+  font-size: 14px;
+  color: #333;
+}
+
+/* القائمة المنسدلة */
+.dropdown-list {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 1000;
+  background: #ffffff;
+  border: 1px solid #ced4da;
+  border-radius: 10px;
+  max-height: 200px;
+  overflow-y: auto;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  display: none;
+  width: 100%;
+}
+
+.dropdown-item {
+  padding: 10px 12px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  transition: background 0.2s ease;
+}
+
+.dropdown-item:hover {
+  background-color: #f0f0f0;
+}
+
+.dropdown-item img {
+  width: 20px;
+  margin-inline-end: 8px;
+}
+
+#phoneInput.form-control {
+  flex: 1;
+  padding: 12px 16px;
+  padding-inline-start: 50px;
+  /* نفس المسافة التي تستخدمها لباقي الحقول */
+  border-radius: 10px;
+  border: 1px solid #ced4da;
+  font-size: 16px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+#phoneInput.form-control:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 8px rgba(0, 123, 255, 0.25);
+  outline: none;
+}
+
+#phoneInput.form-control:hover {
+  border-color: #007bff;
+  box-shadow: 0 0 8px rgba(0, 123, 255, 0.15);
+}
+
+@media (max-width: 1199px) {
+  .contact-form {
+    margin-top: 20px;
+    /* مثال: تحريكه لأسفل على الهاتف */
+    padding: 30px 20px;
+  }
+}
+
+
 
 .alert-message {
   display: none;
@@ -924,24 +1077,35 @@ body {
 }
 
 .map-container {
+  background-color: #ffffff;
+  /* خلفية بيضاء */
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   width: 90%;
   max-width: 1000px;
   height: 500px;
-  margin: 0 auto
+  margin: 40px auto;
+  /* إضافة مسافة من الأعلى والأسفل */
+  z-index: 2;
+  position: relative;
 }
 
 .map-container iframe {
   width: 100%;
   height: 100%;
-  border: 0
+  border: 0;
+  border-radius: 10px;
 }
 
-@media (max-width:1199px) {
+@media (max-width: 1199px) {
   .map-container {
-    width: 100%;
-    height: 400px
+    width: 95%;
+    height: 400px;
+    padding: 15px;
   }
 }
+
 
 .alert-message {
   margin-top: 10px;
