@@ -8,19 +8,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-  <script>
-    if (window.location.pathname.endsWith("BookKeeping.html")) {
-      window.history.replaceState(null, null, window.location.pathname.replace(".html", ""));
-    }
-  </script>
-  <script>
-    if (window.location.pathname.endsWith("#Home")) {
-      window.history.replaceState(null, null, window.location.pathname.replace("#Home", ""));
-    }
-  </script>
-
-
-
   <link rel="icon" type="image/png" href="assets/img/favicon-96x96.png" sizes="96x96" />
   <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg" />
   <link rel="shortcut icon" href="assets/img/favicon.ico" />
@@ -137,72 +124,6 @@
   </script>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-16896593172"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
-
-    gtag('config', 'AW-16896593172');
-  </script>
-
-
-
-
-
-
-
-
-
-
-
-  <script>
-    if (window.location.pathname.endsWith("index.html")) {
-      window.history.replaceState(null, null, window.location.pathname.replace("index.html", ""));
-    }
-
-
-
-    // وظيفة لفحص وإزالة الـ hash عند تغييره
-    function removeHash() {
-      if (window.location.hash) {
-        history.replaceState(null, null, window.location.pathname);
-      }
-    }
-
-    // إزالة الـ hash عند تحميل الصفحة
-    removeHash();
-
-    // الاستماع لأي تغيير في الـ hash وإزالته فورًا
-    window.addEventListener("hashchange", removeHash);
-  </script>
-
-
-
-
-  <!-- Favicons -->
-
-
-
   <!-- تحسين تحميل الخطوط -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
@@ -221,8 +142,6 @@
   <!-- Main CSS File -->
   <link rel="preload" href="assets/css/main.min.css?v=1.0" as="style" onload="this.rel='stylesheet'">
   <link rel="preload" href="styles.min2.css?v=1.0" as="style" onload="this.rel='stylesheet'">
-
-
 
   <script src="translation.js?v=1.0"></script>
 
@@ -266,15 +185,6 @@
 
 
   </header>
-
-
-
-
-
-
-
-
-
 
 
   <header class="bottom-header">

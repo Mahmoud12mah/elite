@@ -7,13 +7,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      if (window.location.pathname.endsWith("index.html") || window.location.hash) {
-        history.replaceState(null, null, window.location.pathname.replace("index.html", "").replace(/#.*$/, ""));
-      }
-    });
-  </script>
+
 
   <link rel="icon" type="image/png" href="assets/img/favicon-96x96.png" sizes="96x96" />
   <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg" />
@@ -439,53 +433,6 @@
   </script>
 
 
-
-
-
-
-
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-16896593172"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
-
-    gtag('config', 'AW-16896593172');
-  </script>
-
-
-
-
-
-
-
-
-
-
-
-  <script>
-    if (window.location.pathname.endsWith("index.html")) {
-      window.history.replaceState(null, null, window.location.pathname.replace("index.html", ""));
-    }
-
-
-
-    // وظيفة لفحص وإزالة الـ hash عند تغييره
-    function removeHash() {
-      if (window.location.hash) {
-        history.replaceState(null, null, window.location.pathname);
-      }
-    }
-
-    // إزالة الـ hash عند تحميل الصفحة
-    removeHash();
-
-    // الاستماع لأي تغيير في الـ hash وإزالته فورًا
-    window.addEventListener("hashchange", removeHash);
-  </script>
-
-
   <style>
     /* الوضع الافتراضي: الصورة بجانب النص في الشاشات الكبيرة */
     .content-wrapper {
@@ -847,8 +794,8 @@
     <nav class="navmenu">
       <label for="menu-toggle" class="close-btn">✖</label> <!-- زر الإغلاق -->
       <ul>
-        <li><a id="Home" href="#Home" data-lang="home1">Home</a></li>
-        <li><a id="About" href="#about" data-lang="about1">About Us</a></li>
+        <li><a href="#Home" data-lang="home1">Home</a></li>
+        <li><a href="#about" data-lang="about1">About Us</a></li>
         <li class="dropdown">
           <a href="#" style="color: black; font-weight: bold;">
             <span data-lang="Pricing1">Pricing</span>
@@ -867,6 +814,31 @@
       </ul>
     </nav>
   </header>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const sections = document.querySelectorAll("section[id]");
+      let currentActiveId = "";
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const id = entry.target.id;
+
+            // حتى لا يحدث تكرار وإجهاد في استبدال الرابط
+            if (currentActiveId !== id) {
+              currentActiveId = id;
+              history.replaceState(null, null, `#${id}`);
+            }
+          }
+        });
+      }, {
+        threshold: 0.6 // القسم يجب أن يكون ظاهرًا بنسبة 60% على الأقل
+      });
+
+      sections.forEach(section => observer.observe(section));
+    });
+  </script>
 
 
   <script>
