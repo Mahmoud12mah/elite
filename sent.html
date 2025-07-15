@@ -222,7 +222,7 @@
 
   <!-- Main CSS File -->
   <link rel="preload" href="assets/css/main.min.css?v=1.0" as="style" onload="this.rel='stylesheet'">
-  <link rel="preload" href="styles.min.css?v=1.0" as="style" onload="this.rel='stylesheet'">
+  <link rel="preload" href="styles.min3.css?v=1.0" as="style" onload="this.rel='stylesheet'">
 
 
 
@@ -267,6 +267,8 @@
     });
   </script>
 
+
+
   <!-- =======================================================
   
   ======================================================== -->
@@ -283,38 +285,30 @@
   </style>
 
 <body class="index-page">
-
-
-
+  <!-- تأكد من إضافة مكتبة Font Awesome في رأس الصفحة -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
 
   <header class="top-header">
-    <a href="mailto:info@elitefinancial-eg.com" class="icon-text">
-      <i class="fa fa-envelope"></i> info@elitefinancial-eg.com
-    </a>
-
-    <!-- تأكد من إضافة مكتبة Font Awesome في رأس الصفحة -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-
-    <a href="tel:+201228310654" class="icon-text1">
-      <i class="fa fa-phone"></i> +201228310654
-    </a>
-
-    <a href="tel:+223504766" class="icon-text2">
-      <i class="fa fa-phone"></i> 00223504766
-    </a>
-
-
-
+    <div class="contact-wrapper">
+      <a href="mailto:info@elitefinancial-eg.com" class="icon-text">
+        <i class="fas fa-envelope"></i> info@elitefinancial-eg.com
+      </a>
+      <a href="tel:+201228310654" class="icon-text1">
+        <i class="fas fa-phone"></i> +201228310654
+      </a>
+      <a href="tel:+223504766" class="icon-text2">
+        <i class="fas fa-phone"></i> 00223504766
+      </a>
+    </div>
 
     <div class="language-switch">
       <button class="lang-btn arabic" onclick="changeLanguage('ar')">العربية</button>
       <button class="lang-btn english" onclick="changeLanguage('en')">English</button>
     </div>
-
-
-
   </header>
+
+
 
 
 
@@ -363,6 +357,17 @@
     </nav>
   </header>
 
+
+  <script>
+    window.addEventListener('scroll', function () {
+      if (window.scrollY > 10) {
+        document.body.classList.add('scrolled');
+      } else {
+        document.body.classList.remove('scrolled');
+      }
+    });
+  </script>
+
   <script>
     document.addEventListener("DOMContentLoaded", function () {
       let menuToggle = document.getElementById("menu-toggle");
@@ -405,7 +410,7 @@
       font-weight: bold;
       font-size: 30px;
       padding: 10px;
-      z-index: 9999;
+      z-index: 1;
     }
 
     /* العنوان الثاني */
@@ -417,7 +422,7 @@
       font-weight: bold;
       font-size: 30px;
       padding: 10px;
-      z-index: 9999;
+      z-index: 1;
     }
 
     /* تحريك النصوص يدويًا عندما تكون اللغة إنجليزية */
@@ -438,7 +443,7 @@
     /* الموبايل */
     @media (max-width: 768px) {
       #custom-heading {
-        top: 370px;
+        top: 250px;
         left: 50%;
         transform: translateX(-50%);
         font-size: 20px;
@@ -447,7 +452,7 @@
       }
 
       #second-heading {
-        top: 400px;
+        top: 290px;
         /* أسفل العنوان الأول على الموبايل */
         left: 50%;
         transform: translateX(-50%);
@@ -487,13 +492,13 @@
   <style>
     /* المسافة على الكمبيوتر */
     .responsive-space {
-      margin: 300px 0;
+      margin: 450px 0;
     }
 
     /* المسافة على الموبايل */
     @media (max-width: 768px) {
       .responsive-space {
-        margin: 340px 0;
+        margin: 600px 0;
         /* غيّر الرقم كما يناسبك للموبايل */
       }
     }
@@ -510,7 +515,7 @@
       width: 400px;
       /* حجم الصورة */
       height: auto;
-      z-index: 1000;
+      z-index: 1;
       /* لضمان ظهورها فوق العناصر الأخرى */
       transition: all 0.3s ease-in-out;
       /* انتقال سلس عند التغيير */
@@ -539,15 +544,14 @@
     /* تعديل مكان الصورة يدويًا على الشاشات الصغيرة (أقل من 768px) */
     @media (max-width: 768px) {
       html[lang="ar"] .floating-image {
-        top: 460px;
+        top: 330px;
         /* المسافة من الأعلى */
-        left: 40px;
-        /* تحكم يدوي من اليسار (يمكنك تغييره) */
-        right: auto;
-        width: 320px;
+
+        width: 80%;
+        margin-right: 10%;
         /* حجم الصورة */
         height: auto;
-        z-index: 10000;
+        z-index: 1;
         transition: all 0.3s ease-in-out;
       }
 
@@ -560,7 +564,7 @@
         width: 320px;
         /* حجم الصورة */
         height: auto;
-        z-index: 10000;
+        z-index: 1;
         transition: all 0.3s ease-in-out;
       }
     }
