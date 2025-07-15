@@ -819,7 +819,7 @@
 
         <script>
             document.addEventListener("DOMContentLoaded", function () {
-                emailjs.init("KSdSGoGza3XVQIuja");
+                emailjs.init("YE7phgS6i3fiqXi09");
 
                 let responseElement = document.getElementById("responseMessage");
                 let requestButton = document.getElementById("requestPrice");
@@ -894,7 +894,7 @@
                     console.log("\ud83d\udce4 البيانات المرسلة:", formData);
                     localStorage.setItem("formData", JSON.stringify(formData));
 
-                    emailjs.send("service_of4e1e9", "template_c3dwche", formData)
+                    emailjs.send("service_0p0gln7", "template_atz2wa9", formData)
                         .then(function (response) {
                             console.log("✅ تم الإرسال بنجاح", response);
                             responseElement.innerHTML = '<div class="alert-success">تم إرسال الطلب بنجاح! ✅</div>';
