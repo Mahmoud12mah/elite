@@ -1,26 +1,18 @@
 <!DOCTYPE html>
-
 <html lang="en">
 
 <head>
     <meta charset="utf-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
-
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="icon" type="image/png" href="assets/img/favicon-96x96.png" sizes="96x96" />
     <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg" />
     <link rel="shortcut icon" href="assets/img/favicon.ico" />
     <link rel="apple-touch-icon" sizes="180x180" href="assets/img/apple-touch-icon.png" />
     <link rel="manifest" href="assets/img/site.webmanifest" />
-
-
     <link rel="icon" href="assets/img/logo.png" type="image/png">
-
-
-
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-
     <meta property="og:image" content="https://elitefinancial-eg.com/assets/img/android-chrome-192x192.png" />
     <meta property="og:image:secure_url"
         content="https://elitefinancial-eg.com/assets/img/android-chrome-192x192.png" />
@@ -28,10 +20,8 @@
     <meta property="og:image:width" content="500">
     <meta property="og:image:height" content="500">
     <title>خدمات مسك الدفاتر والحسابات | إيليت للاستشارات المالية</title>
-
     <meta property="og:site_name" content="محاسبون قانونيون وخبراء ضرائب | إيليت للإستشارات المالية">
     <meta name="application-name" content="محاسبون قانونيون وخبراء ضرائب | إيليت للإستشارات المالية">
-
     <meta name="description"
         content="تبحث عن محاسب قانوني أو خدمات مسك دفاتر ومحاسبة دقيقة لشركتك؟ إيليت للاستشارات المالية تضمن لك الامتثال الضريبي الكامل وتحقيق أعلى درجات التنظيم المالي. نخدم الشركات الصغيرة والمتوسطة والكبيرة في مصر بأعلى مستوى من الدقة والمهنية.">
     <meta name="keywords"
@@ -44,10 +34,30 @@
     <meta name="author" content="خدمات مسك الدفاتر والحسابات | إيليت للاستشارات المالية">
     <meta property="og:type" content="website">
     <meta property="og:locale" content="ar_EG">
-
     <link rel="manifest" href="/site.webmanifest">
 
+    <!-- تحسين تحميل الخطوط -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="preload" as="style" onload="this.rel='stylesheet'">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
 
+    <!-- Vendor CSS Files -->
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+    <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+    <!-- Main CSS File -->
+    <link rel="preload" href="assets/css/main.min.css?v=1.0" as="style" onload="this.rel='stylesheet'">
+    <link rel="preload" href="styles.min.css?v=1.0" as="style" onload="this.rel='stylesheet'">
+    <link rel="preload" href="bookkeeping-side-style.css?v=1.0" as="style" onload="this.rel='stylesheet'">
+    <script src="translation.js?v=1.0"></script>
+    <script src="bookkeeping-side-script.js?v=1.0" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 
     <script type="application/ld+json">
     {
@@ -124,50 +134,11 @@
       }
     }
     </script>
-
-    <!-- تحسين تحميل الخطوط -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-        rel="preload" as="style" onload="this.rel='stylesheet'">
-
-    <!-- Vendor CSS Files -->
-    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-    <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-    <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-
-
-    <!-- Main CSS File -->
-    <link rel="preload" href="assets/css/main.min.css?v=1.0" as="style" onload="this.rel='stylesheet'">
-    <link rel="preload" href="styles.min.css?v=1.0" as="style" onload="this.rel='stylesheet'">
-
-    <script src="translation.js?v=1.0"></script>
-
-
-
-    <!-- =======================================================
-  
-  ======================================================== -->
-    <!-- استيراد خط Cairo -->
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
-
-    <style>
-        /* تطبيق الخط على جميع العناصر مع استثناء الأيقونات */
-        *:not(i):not([class^="fa"]):not([class*=" fa-"]) {
-            font-family: 'Cairo', sans-serif !important;
-            box-sizing: border-box;
-        }
-    </style>
+</head>
 
 <body class="index-page">
-
     <!-- تأكد من إضافة مكتبة Font Awesome في رأس الصفحة -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-
-
     <header class="top-header">
         <div class="contact-wrapper">
             <a href="mailto:info@elitefinancial-eg.com" class="icon-text">
@@ -180,13 +151,11 @@
                 <i class="fas fa-phone"></i> 00223504766
             </a>
         </div>
-
         <div class="language-switch">
             <button class="lang-btn arabic" onclick="changeLanguage('ar')">العربية</button>
             <button class="lang-btn english" onclick="changeLanguage('en')">English</button>
         </div>
     </header>
-
 
     <header class="bottom-header">
         <a href="index.html">
@@ -196,13 +165,9 @@
                     loading="lazy">
             </picture>
         </a>
-
-
-
         <!-- زر القائمة (Checkbox مخفي) -->
         <input type="checkbox" id="menu-toggle" class="menu-checkbox">
         <label for="menu-toggle" class="menu-btn">☰</label>
-
         <!-- القائمة -->
         <nav class="navmenu">
             <label for="menu-toggle" class="close-btn">✖</label> <!-- زر الإغلاق -->
@@ -231,140 +196,46 @@
         </nav>
     </header>
 
-
-    <script>
-        window.addEventListener('scroll', function () {
-            if (window.scrollY > 10) {
-                document.body.classList.add('scrolled');
-            } else {
-                document.body.classList.remove('scrolled');
-            }
-        });
-    </script>
-
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            let menuToggle = document.getElementById("menu-toggle");
-            let navMenu = document.querySelector(".navmenu");
-            let menuLinks = document.querySelectorAll(".navmenu a");
-
-            // ✅ إغلاق القائمة عند النقر خارجها
-            document.addEventListener("click", function (event) {
-                if (!navMenu.contains(event.target) && !menuToggle.contains(event.target)) {
-                    menuToggle.checked = false;
-                }
-            });
-
-            // ✅ إغلاق القائمة عند النقر على أي رابط داخلها
-            menuLinks.forEach(link => {
-                link.addEventListener("click", function () {
-                    menuToggle.checked = false;
-                });
-            });
-        });
-    </script>
-
-    <p>
-
-    </p>
-    <style>
-        @media (min-width: 1200px) {
-            .mobile {
-                margin-top: 180px;
-            }
-        }
-
-        @media (max-width: 1199px) {
-            .mobile {
-                margin-top: 260px;
-            }
-        }
-    </style>
     <div id="content" dir="rtl" class="container d-flex flex-column align-items-center text-center"></div>
     <h2 class="mobile" data-lang="BookkeepingServices"
         style="font-size: 30px; font-weight: bold; text-align: center; background-color: #0A2A5E; color: #ffffff;"
         data-aos="fade-up" data-aos-delay="100">Request a price for Bookkeeping Services</h2>
 
-    <p class="my-4"></p> <!-- لو كنت تستخدم Tailwind CSS -->
-
-
+    <p class="my-4"></p> <!-- <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< -->
 
     <div class="col-lg-8">
         <div class="request-form desktop-move">
             <form id="requestForm">
                 <input type="hidden" name="source_page">
-
-
                 <div class="col-md-6">
                     <input style="font-weight: bold" type="text" name="name" class="form-control" placeholder="Name*"
                         data-lang="name" required="">
                 </div>
-                <p class="my-4"></p> <!-- لو كنت تستخدم Tailwind CSS -->
+
+                <p class="my-4"></p> <!-- <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< -->
 
                 <div class="col-md-6">
                     <input style="font-weight: bold" type="text" name="yourcompany" class="form-control"
                         placeholder="Your Company*" data-lang="company" required="">
                 </div>
-                <p class="my-4"></p> <!-- لو كنت تستخدم Tailwind CSS -->
+
+                <p class="my-4"></p> <!-- <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< -->
+
                 <div class="col-md-6">
                     <input style="font-weight: bold" type="text" name="position" class="form-control"
                         placeholder="Position*" data-lang="position" required="">
                 </div>
-                <p class="my-4"></p> <!-- لو كنت تستخدم Tailwind CSS -->
+
+                <p class="my-4"></p> <!-- <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< -->
 
                 <div class="col-md-6">
                     <input style="font-weight: bold" type="email" id="emailInput" name="email" class="form-control"
                         placeholder="Email*" data-lang="youremail" required="">
                     <small id="emailError" class="text-danger"></small>
-
                 </div>
-                <script>
-                    document.getElementById("emailInput").addEventListener("input", function () {
-                        let email = this.value;
-                        let emailError = document.getElementById("emailError");
-                        let requestPriceButton = document.getElementById("requestPrice"); // الإشارة إلى الزر الصحيح
-
-                        // التحقق من صحة البريد الإلكتروني باستخدام regex
-                        let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-                        if (!emailPattern.test(email)) {
-                            emailError.textContent = "الرجاء إدخال بريد إلكتروني صالح";
-                            requestPriceButton.disabled = true; // تعطيل زر "Request Price"
-                        } else {
-                            emailError.textContent = "";
-                            requestPriceButton.disabled = false; // تمكين الزر
-                        }
-                    });
-                </script>
             </form>
-            <style>
-                /* بشكل عام، بدون تغيير على الجوال */
-                .desktop-move {
-                    margin: 0 auto !important;
-                    /* مركزي */
-                }
 
-                /* على الشاشات الكبيرة فقط (الكمبيوتر) */
-                @media (min-width: 992px) {
-
-                    /* عندما تكون اللغة من اليمين لليسار (العربية) */
-                    :dir(rtl) .desktop-move {
-                        margin-left: 0px !important;
-                        /* تحريك لليسار */
-                        margin-right: 60px !important;
-                    }
-
-                    /* عندما تكون اللغة من اليسار لليمين (الإنجليزية) */
-                    :dir(ltr) .desktop-move {
-                        margin-left: 60px !important;
-                        /* تحريك لليمين */
-                        margin-right: 0px !important;
-                    }
-                }
-            </style>
-
-
-            <p class="my-4"></p> <!-- لو كنت تستخدم Tailwind CSS -->
+            <p class="my-4"></p> <!-- <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< -->
 
             <div class="col-md-6">
                 <div class="phone-input-container">
@@ -395,66 +266,59 @@
                             <div class="dropdown-item" data-code="+81" data-country="Japan" data-flag="jp">
                                 <img src="https://flagcdn.com/w40/jp.png" alt="Japan Flag"> +81 (Japan)
                             </div>
+                            <div class="dropdown-item" data-code="+86" data-country="China" data-flag="cn">
+                                <img src="https://flagcdn.com/w40/cn.png" alt="China Flag"> +86 (China)
+                            </div>
+                            <div class="dropdown-item" data-code="+39" data-country="Italy" data-flag="it">
+                                <img src="https://flagcdn.com/w40/it.png" alt="Italy Flag"> +39 (Italy)
+                            </div>
+                            <div class="dropdown-item" data-code="+7" data-country="Russia" data-flag="ru">
+                                <img src="https://flagcdn.com/w40/ru.png" alt="Russia Flag"> +7 (Russia)
+                            </div>
+                            <div class="dropdown-item" data-code="+966" data-country="Saudi Arabia" data-flag="sa">
+                                <img src="https://flagcdn.com/w40/sa.png" alt="Saudi Arabia Flag"> +966 (Saudi Arabia)
+                            </div>
+                            <div class="dropdown-item" data-code="+971" data-country="UAE" data-flag="ae">
+                                <img src="https://flagcdn.com/w40/ae.png" alt="UAE Flag"> +971 (UAE)
+                            </div>
+                            <div class="dropdown-item" data-code="+974" data-country="Qatar" data-flag="qa">
+                                <img src="https://flagcdn.com/w40/qa.png" alt="Qatar Flag"> +974 (Qatar)
+                            </div>
+                            <div class="dropdown-item" data-code="+962" data-country="Jordan" data-flag="jo">
+                                <img src="https://flagcdn.com/w40/jo.png" alt="Jordan Flag"> +962 (Jordan)
+                            </div>
+                            <div class="dropdown-item" data-code="+961" data-country="Lebanon" data-flag="lb">
+                                <img src="https://flagcdn.com/w40/lb.png" alt="Lebanon Flag"> +961 (Lebanon)
+                            </div>
+                            <div class="dropdown-item" data-code="+964" data-country="Iraq" data-flag="iq">
+                                <img src="https://flagcdn.com/w40/iq.png" alt="Iraq Flag"> +964 (Iraq)
+                            </div>
+                            <div class="dropdown-item" data-code="+963" data-country="Syria" data-flag="sy">
+                                <img src="https://flagcdn.com/w40/sy.png" alt="Syria Flag"> +963 (Syria)
+                            </div>
+                            <div class="dropdown-item" data-code="+90" data-country="Turkey" data-flag="tr">
+                                <img src="https://flagcdn.com/w40/tr.png" alt="Turkey Flag"> +90 (Turkey)
+                            </div>
+                            <div class="dropdown-item" data-code="+212" data-country="Morocco" data-flag="ma">
+                                <img src="https://flagcdn.com/w40/ma.png" alt="Morocco Flag"> +212 (Morocco)
+                            </div>
+                            <div class="dropdown-item" data-code="+216" data-country="Tunisia" data-flag="tn">
+                                <img src="https://flagcdn.com/w40/tn.png" alt="Tunisia Flag"> +216 (Tunisia)
+                            </div>
                         </div>
                     </div>
                     <input data-lang="yourmobile" type="number" class="form-control" id="phoneInput" name="mobile"
                         placeholder="Mobile*" required>
                 </div>
             </div>
-            <p class="my-4"></p> <!-- لو كنت تستخدم Tailwind CSS -->
-            <script>
-                document.addEventListener("DOMContentLoaded", function () {
-                    let dropdownButton = document.getElementById("dropdownButton");
-                    let dropdownList = document.getElementById("dropdownList");
-                    let phoneInput = document.getElementById("phoneInput");
-
-                    // عند الضغط على الزر، تظهر القائمة أو تختفي
-                    dropdownButton.addEventListener("click", function (event) {
-                        event.stopPropagation();
-                        dropdownList.style.display = dropdownList.style.display === "block" ? "none" : "block";
-                    });
-
-                    // عند اختيار دولة، يتم تحديث الرمز بجانب الرقم دون فرضه كقيمة المدخلة
-                    dropdownList.addEventListener("click", function (event) {
-                        let selectedItem = event.target.closest(".dropdown-item");
-                        if (!selectedItem) return;
-
-                        let code = selectedItem.getAttribute("data-code");
-                        let country = selectedItem.getAttribute("data-country");
-                        let flagCode = selectedItem.getAttribute("data-flag");
-
-                        document.getElementById("selectedCountry").innerText = `${code} (${country})`;
-                        document.getElementById("selectedFlag").src = `https://flagcdn.com/w40/${flagCode}.png`;
-
-                        // لا يتم فرض كود الدولة داخل حقل الإدخال، لكنه يبقى مرئيًا بجانب الإدخال
-                        phoneInput.setAttribute("data-code", code);
-
-                        dropdownList.style.display = "none";
-                    });
-
-                    // إغلاق القائمة عند النقر خارجها
-                    document.addEventListener("click", function (event) {
-                        if (!event.target.closest(".custom-dropdown")) {
-                            dropdownList.style.display = "none";
-                        }
-                    });
-                });
-            </script>
-
-
-
-
-
-            <p class="my-4"></p> <!-- لو كنت تستخدم Tailwind CSS -->
-
-
 
             <div dir="rtl" class="container d-flex flex-column align-items-center text-center"></div>
             <h2 data-lang="Theavailablemethodofaccessingcompanyaccountingsystem"
                 style="font-size: 30px; font-weight: bold;" data-aos="fade-up" data-aos-delay="100">The available method
                 of accessing company accounting system
             </h2>
-            <p class="my-4"></p> <!-- لو كنت تستخدم Tailwind CSS -->
+
+            <p class="my-4"></p> <!-- <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< -->
 
             <label class="checkbox" for="checkbox1">
                 <input type="checkbox" name="services[]" value="Remotely" id="checkbox1">
@@ -462,166 +326,36 @@
                 <span class="label" data-lang="Remotely">Remotely</span>
             </label>
 
-            <p class="my-4"></p> <!-- لو كنت تستخدم Tailwind CSS -->
+            <p class="my-4"></p> <!-- <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< -->
 
             <label class="checkbox" for="checkbox2">
                 <input type="checkbox" name="services[]" value="On-Site" id="checkbox2">
                 <span class="checkmark"></span>
                 <span class="label" data-lang="OnSite">On-Site</span>
             </label>
-            <p class="my-4"></p> <!-- لو كنت تستخدم Tailwind CSS -->
 
-
+            <p class="my-4"></p> <!-- <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< -->
 
             <h2 data-lang="E" style="font-size: 30px; font-weight: bold;" data-aos="fade-up" data-aos-delay="100">
                 The required Number of visits per month
             </h2>
-            <p class="my-4"></p> <!-- لو كنت تستخدم Tailwind CSS -->
 
-            <input type="number" name="TherequiredNumberofvisitspermonth" oninput="validateNumber(this)">
-            <p class="my-4"></p> <!-- لو كنت تستخدم Tailwind CSS -->
+            <p class="my-4"></p> <!-- <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< -->
 
-
-
-
-            <script>
-                function toggleDropdown(dropdownId, checkbox) {
-                    let dropdown = document.getElementById(dropdownId);
-
-                    if (dropdown) {
-                        // إظهار أو إخفاء القائمة بناءً على حالة التشيك بوكس
-                        dropdown.style.display = checkbox.checked ? "block" : "none";
-                    }
-                }
-
-                // تشغيل القائمة المنسدلة فقط عند تحديد التشيك بوكس الأول
-                document.getElementById('checkbox1').addEventListener('change', function () {
-                    let dropdown1 = document.getElementById('dropdown1');
-                    let checkboxesGroup1 = document.querySelectorAll('#checkbox8, #checkbox9, #checkbox10, #checkbox11, #checkbox12, #checkbox13');
-
-                    if (this.checked) {
-                        dropdown1.style.display = 'block';
-
-                        // السماح فقط باختيار واحد من المجموعة (8-13)
-                        checkboxesGroup1.forEach(checkbox => {
-                            checkbox.addEventListener('change', function () {
-                                checkboxesGroup1.forEach(cb => {
-                                    if (cb !== this) {
-                                        cb.checked = false;
-                                    }
-                                });
-                            });
-                        });
-
-                    } else {
-                        dropdown1.style.display = 'none';
-
-                        // إلغاء تحديد جميع الخيارات من 8 إلى 13 عند إلغاء checkbox1
-                        checkboxesGroup1.forEach(checkbox => {
-                            checkbox.checked = false;
-                        });
-                    }
-                });
-
-                // السماح فقط باختيار واحد من كل مجموعة بشكل مستقل
-                function allowOnlyOneSelection(groupSelector) {
-                    let checkboxesGroup = document.querySelectorAll(groupSelector);
-
-                    checkboxesGroup.forEach(checkbox => {
-                        checkbox.addEventListener('change', function () {
-                            checkboxesGroup.forEach(cb => {
-                                if (cb !== this) {
-                                    cb.checked = false;
-                                }
-                            });
-                        });
-                    });
-                }
-
-                // تطبيق السماح باختيار واحد فقط لكل مجموعة
-                allowOnlyOneSelection('#checkbox1, #checkbox2');
-                allowOnlyOneSelection('#checkbox3, #checkbox4');
-
-            </script>
-
-
-            <style>
-                /* ضبط الصورة في مكان ثابت */
-                .floating-image {
-                    position: absolute;
-                    top: 300px;
-                    /* المسافة من الأعلى */
-                    width: 400px;
-                    /* حجم الصورة */
-                    height: auto;
-                    z-index: 1000;
-                    /* لضمان ظهورها فوق العناصر الأخرى */
-                    transition: all 0.3s ease-in-out;
-                    /* انتقال سلس عند التغيير */
-                }
-
-                /* عند اللغة العربية: تكون الصورة على اليمين */
-                html[lang="ar"] .floating-image {
-                    left: 70px;
-                    right: auto;
-                }
-
-                /* عند اللغة الإنجليزية: تكون الصورة على اليسار */
-                html[lang="en"] .floating-image {
-                    right: 70px;
-                    left: auto;
-                }
-
-                .floating-image img {
-                    width: 100%;
-                    border-radius: 10px;
-                    /* إضافة حواف دائرية */
-                    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
-                    /* ظل جميل */
-                }
-
-                /* إخفاء الصورة على الشاشات الصغيرة (أقل من 768px) */
-                @media (max-width: 1200px) {
-                    .floating-image {
-                        display: none;
-                    }
-                }
-            </style>
-
-
-
-
-            <div class="floating-image">
-                <img src="assets/img/blog-recent-1.jpg" alt="Hero Image" loading="lazy">
+            <div class="col-md-6">
+                <input style="font-weight: bold" type="number" class="form-control" required="">
             </div>
 
-            <script>
-                function toggleLanguage() {
-                    // الحصول على لغة الصفحة الحالية
-                    let currentLang = document.documentElement.lang;
+            <p class="my-4"></p> <!-- <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< -->
 
-                    // التبديل بين "ar" و "en"
-                    let newLang = (currentLang === "ar") ? "en" : "ar";
-
-                    // تعيين اللغة الجديدة
-                    document.documentElement.lang = newLang;
-
-                    // حفظ اللغة الجديدة في localStorage حتى لا تختفي عند إعادة تحميل الصفحة
-                    localStorage.setItem("siteLang", newLang);
-                }
-
-                // عند تحميل الصفحة، تأكد أن اللغة المحفوظة يتم تطبيقها
-                window.onload = function () {
-                    let savedLang = localStorage.getItem("siteLang");
-                    if (savedLang) {
-                        document.documentElement.lang = savedLang;
-                    }
-                };
-            </script>
-
-
+            <div class="floating-image">
+                <picture>
+                    <source srcset="assets/img/blog-recent-1.webp" type="image/webp">
+                    <img src="assets/img/blog-recent-1.jpg" alt="Hero Image" loading="lazy" width="100%" height="auto"
+                        style="max-width:100%; height:auto;">
+                </picture>
+            </div>
         </div><!-- End Contact Form -->
-        <!-- جميع الحقول والإدخالات هنا -->
 
         <div class="button-container desktop-move">
             <button data-lang="RequestPrice" id="requestPrice" class="request-price-btn" type="button">Request
@@ -630,266 +364,12 @@
             <div id="responseMessage" class="alert-message"></div>
             <input type="hidden" name="source_page" value="Company">
         </div>
-
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            emailjs.init("YE7phgS6i3fiqXi09");
-
-            let form = document.getElementById("requestForm");
-            let responseElement = document.getElementById("responseMessage");
-            let requestButton = document.getElementById("requestPrice");
-            let phoneInput = document.querySelector("input[name='mobile']");
-            let visitsInput = document.querySelector("input[name='TherequiredNumberofvisitspermonth']");
-            let inputs = document.querySelectorAll("input[required], textarea, select");
-
-            function validateForm() {
-                let isValid = true;
-                responseElement.innerHTML = "";
-                responseElement.style.display = "none";
-
-                inputs.forEach(input => {
-                    let errorMessage = input.nextElementSibling;
-                    if (!input.value.trim()) {
-                        input.classList.add("input-error");
-                        if (!errorMessage || !errorMessage.classList.contains("error-message")) {
-                            errorMessage = document.createElement("div");
-                            errorMessage.classList.add("error-message");
-                            errorMessage.textContent = "هذا الحقل مطلوب*";
-                            input.parentNode.insertBefore(errorMessage, input.nextSibling);
-                        }
-                        isValid = false;
-                    }
-                });
-
-                // التحقق من عدد الزيارات المطلوبة شهريًا
-                if (!visitsInput.value.trim()) {
-                    visitsInput.classList.add("input-error");
-                    let errorMessage = visitsInput.nextElementSibling;
-                    if (!errorMessage || !errorMessage.classList.contains("error-message")) {
-                        errorMessage = document.createElement("div");
-                        errorMessage.classList.add("error-message");
-                        errorMessage.textContent = "هذا الحقل مطلوب*";
-                        visitsInput.parentNode.insertBefore(errorMessage, visitsInput.nextSibling);
-                    }
-                    isValid = false;
-                } else {
-                    visitsInput.classList.remove("input-error");
-                    let errorMessage = visitsInput.nextElementSibling;
-                    if (errorMessage && errorMessage.classList.contains("error-message")) {
-                        errorMessage.remove();
-                    }
-                }
-
-                let checkboxes = document.querySelectorAll("input[name='services[]']");
-                let isChecked = Array.from(checkboxes).some(checkbox => checkbox.checked);
-                if (!isChecked) {
-                    checkboxes.forEach(checkbox => checkbox.closest("label").classList.add("checkbox-error"));
-                    isValid = false;
-                } else {
-                    checkboxes.forEach(checkbox => checkbox.closest("label").classList.remove("checkbox-error"));
-                }
-
-                if (!isValid) {
-                    responseElement.innerHTML = '<div class="alert-danger">جميع الحقول مطلوبة! ❌</div>';
-                    responseElement.style.display = "block";
-                }
-
-                return isValid;
-            }
-
-            function sendEmail(event) {
-                event.preventDefault();
-                if (!validateForm()) return;
-
-                let formData = new FormData(form);
-                let data = {};
-                formData.forEach((value, key) => { data[key] = value; });
-
-                let countryCodeElement = document.getElementById("selectedCountry");
-                let countryCode = countryCodeElement ? countryCodeElement.textContent.trim().split(" ")[0].replace(/\D/g, '') : "";
-                let phoneNumber = phoneInput ? phoneInput.value.trim().replace(/\D/g, '') : "";
-
-                if (countryCode) {
-                    data["phonecode"] = parseInt(countryCode, 10);
-                }
-                if (phoneNumber) {
-                    data["mobile"] = phoneNumber;
-                    data["full_phone"] = `+${countryCode} ${phoneNumber}`;
-                }
-
-                if (visitsInput) {
-                    data["TherequiredNumberofvisitspermonth"] = visitsInput.value.trim();
-                }
-
-                let selectedServices = [];
-                document.querySelectorAll("input[name='services[]']:checked").forEach(service => {
-                    selectedServices.push(service.value);
-                });
-                data["services"] = selectedServices.join(", ");
-
-                data["source_page"] = window.location.pathname.split("/").pop() || "Unknown";
-
-                console.log("📤 البيانات المرسلة:", data);
-                localStorage.setItem("formData", JSON.stringify(data));
-
-                emailjs.send("service_0p0gln7", "template_atz2wa9", data)
-                    .then(function (response) {
-                        console.log("✅ تم الإرسال بنجاح", response);
-                        responseElement.innerHTML = '<div class="alert-success">تم إرسال الطلب بنجاح! ✅</div>';
-                        responseElement.style.display = "block";
-                        setTimeout(() => { responseElement.style.display = "none"; }, 5000);
-                        localStorage.setItem("formSubmitted", "true");
-                        setTimeout(() => { window.location.href = "sent.html"; }, 2000);
-                    }, function (error) {
-                        console.error("❌ فشل الإرسال", error);
-                        responseElement.innerHTML = '<div class="alert-danger">فشل إرسال الطلب، حاول مرة اخرى! ❌: ' + error.text + '</div>';
-                        responseElement.style.display = "block";
-                        setTimeout(() => { responseElement.style.display = "none"; }, 5000);
-                    });
-            }
-
-            if (requestButton) {
-                requestButton.addEventListener("click", sendEmail);
-            }
-
-            inputs.forEach(input => {
-                input.addEventListener("input", function () {
-                    let errorMessage = input.nextElementSibling;
-                    if (input.value.trim()) {
-                        input.classList.remove("input-error");
-                        if (errorMessage && errorMessage.classList.contains("error-message")) {
-                            errorMessage.remove();
-                        }
-                    } else {
-                        if (!errorMessage || !errorMessage.classList.contains("error-message")) {
-                            errorMessage = document.createElement("div");
-                            errorMessage.classList.add("error-message");
-                            errorMessage.textContent = "هذا الحقل مطلوب*";
-                            input.parentNode.insertBefore(errorMessage, input.nextSibling);
-                        }
-                        input.classList.add("input-error");
-                    }
-                });
-            });
-
-            let checkboxes = document.querySelectorAll("input[name='services[]']");
-            checkboxes.forEach(checkbox => {
-                checkbox.addEventListener("change", function () {
-                    if (checkbox.checked) {
-                        checkboxes.forEach(box => box.closest("label").classList.remove("checkbox-error"));
-                    }
-                });
-            });
-
-            // إزالة أو عرض رسالة الخطأ عند إدخال عدد الزيارات أو حذفه
-            visitsInput.addEventListener("input", function () {
-                let errorMessage = visitsInput.nextElementSibling;
-                if (visitsInput.value.trim()) {
-                    visitsInput.classList.remove("input-error");
-                    if (errorMessage && errorMessage.classList.contains("error-message")) {
-                        errorMessage.remove();
-                    }
-                } else {
-                    if (!errorMessage || !errorMessage.classList.contains("error-message")) {
-                        errorMessage = document.createElement("div");
-                        errorMessage.classList.add("error-message");
-                        errorMessage.textContent = "هذا الحقل مطلوب*";
-                        visitsInput.parentNode.insertBefore(errorMessage, visitsInput.nextSibling);
-                    }
-                    visitsInput.classList.add("input-error");
-                }
-            });
-        });
-
-
-
-
-    </script>
-    <style>
-        .input-error {
-            border: 2px solid red;
-        }
-
-        .error-message {
-            color: red;
-            font-size: 14px;
-            margin-top: 5px;
-        }
-
-        .alert-message {
-            margin-top: 10px;
-            font-weight: bold;
-            display: none;
-            text-align: center;
-            width: 92vw;
-            /* ✅ جعل الخلفية تمتد بعرض الصفحة بالكامل */
-            padding: 15px;
-            /* ✅ إضافة تباعد داخلي */
-            top: 0;
-            /* ✅ جعله يظهر في أعلى الصفحة */
-            left: 0;
-            /* ✅ ضمان امتداد العنصر من أقصى اليسار */
-            z-index: 1000;
-            /* ✅ التأكد من ظهوره فوق جميع العناصر */
-        }
-
-        .alert-success {
-            background-color: green;
-            /* ✅ تحديد لون الخلفية */
-            color: white;
-            /* ✅ جعل النص أبيض */
-        }
-
-        .alert-danger {
-            background-color: red;
-            /* ✅ تحديد لون الخلفية */
-            color: white;
-            /* ✅ جعل النص أبيض */
-        }
-    </style>
-
-
 
     <footer>
 
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <script src="https://cdn.tailwindcss.com"></script>
-
-        <style>
-            body {
-                overflow: auto !important;
-                height: auto !important;
-                display: block !important;
-            }
-
-            footer {
-                flex-shrink: 0;
-                width: 100%;
-            }
-
-            html,
-            body {
-                min-height: 100vh;
-                display: flex;
-                flex-direction: column;
-            }
-
-            body>footer {
-                margin-top: auto;
-            }
-        </style>
-
-
-        </head>
-
         <body class="h-screen overflow-hidden flex items-center justify-center" style="background: #edf2f7;">
             <footer class="bg-gradient-to-r from-gray-100 via-[#bce1ff] to-gray-100">
-
                 <div class="max-w-screen-xl px-4 py-16 mx-auto sm:px-6 lg:px-8">
                     <div class="grid grid-cols-1 gap-8 lg:grid-cols-3">
                         <div>
@@ -929,7 +409,6 @@
                                             d="M20.447 20.452h-3.555v-5.569c0-1.328-.025-3.037-1.85-3.037-1.85 0-2.132 1.446-2.132 2.94v5.666H9.354V9h3.413v1.561h.049c.476-.899 1.637-1.848 3.368-1.848 3.6 0 4.264 2.368 4.264 5.448v6.291zM5.337 7.433a2.065 2.065 0 11-.002-4.131 2.065 2.065 0 01.002 4.131zm1.779 13.019H3.558V9h3.558v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.228.792 24 1.771 24h20.451C23.207 24 24 23.228 24 22.271V1.729C24 .774 23.207 0 22.225 0z"
                                             clip-rule="evenodd" />
                                     </svg>
-
                                 </a>
                             </div>
                         </div>
@@ -954,7 +433,6 @@
                                     <a id="Services50" href="index.html" data-lang="services3" class="hover:opacity-75">
                                         Audit & Assurance
                                     </a>
-
                                     <a data-lang="services5" class="hover:opacity-75" id="Services51" href="index.html">
                                         Company
                                         Incorporation </a>
@@ -1000,29 +478,12 @@
                     </p>
                 </div>
             </footer>
-            <style>
-                /* الكود الأساسي */
-                html[lang="ar"] #social-icons {
-                    direction: ltr;
-                    transform: translateX(265px);
-                    transition: transform 0.3s ease;
-                }
-
-                /* كود خاص للموبايل */
-                @media (max-width: 768px) {
-                    html[lang="ar"] #social-icons {
-                        transform: translateX(215px) !important;
-                        /* نستخدم !important للإجبار */
-                    }
-                }
-            </style>
 
             <!-- Scroll Top -->
             <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
                     class="bi bi-arrow-up-short"></i></a>
 
             <!-- Preloader -->
-
             <div id="preloader">
                 <section class="dots-container">
                     <h2 class="visually-hidden">Loading Animation</h2> <!-- عنوان مخفي لتحسين إمكانية الوصول -->
@@ -1033,8 +494,6 @@
                     <div class="dot"></div>
                 </section>
             </div>
-
-
 
             <!-- Vendor JS Files -->
             <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -1048,266 +507,6 @@
 
             <!-- Main JS File -->
             <script src="assets/js/main.js?v=1.0"></script>
-
-            <script>
-                document.addEventListener("DOMContentLoaded", function () {
-                    const External = document.getElementById("External");
-                    if (External) {
-                        External.addEventListener("click", function (event) {
-                            event.preventDefault();
-                            setTimeout(function () {
-                                window.location.href = "External Audit.html";
-                            }, 500);
-                        });
-                    }
-                });
-
-                document.addEventListener("DOMContentLoaded", function () {
-                    const Home = document.getElementById("Home");
-                    if (Home) {
-                        Home.addEventListener("click", function (event) {
-                            event.preventDefault();
-                            setTimeout(function () {
-                                window.location.href = "index.html";
-                            }, 500);
-                        });
-                    }
-                });
-
-                document.addEventListener("DOMContentLoaded", function () {
-                    const aboutLink = document.getElementById("About");
-
-                    if (aboutLink) {
-                        aboutLink.addEventListener("click", function (event) {
-                            event.preventDefault(); // منع السلوك الافتراضي
-
-                            // حفظ المعلومة بأن المستخدم يريد الانتقال إلى "about"
-                            sessionStorage.setItem("scrollToSection", "about");
-
-                            // توجيه المستخدم إلى الصفحة الرئيسية
-                            window.location.href = "index.html";
-                        });
-                    }
-                });
-
-                document.addEventListener("DOMContentLoaded", function () {
-                    const aboutLink = document.getElementById("About56");
-
-                    if (aboutLink) {
-                        aboutLink.addEventListener("click", function (event) {
-                            event.preventDefault(); // منع السلوك الافتراضي
-
-                            // حفظ المعلومة بأن المستخدم يريد الانتقال إلى "about"
-                            sessionStorage.setItem("scrollToSection", "about");
-
-                            // توجيه المستخدم إلى الصفحة الرئيسية
-                            window.location.href = "index.html";
-                        });
-                    }
-                });
-
-
-
-                document.addEventListener("DOMContentLoaded", function () {
-                    const servicesLink = document.getElementById("Services");
-
-                    if (servicesLink) {
-                        servicesLink.addEventListener("click", function (event) {
-                            event.preventDefault(); // منع السلوك الافتراضي
-
-                            // حفظ المعلومة بأن المستخدم يريد الانتقال إلى "about"
-                            sessionStorage.setItem("scrollToSection", "services");
-
-                            // توجيه المستخدم إلى الصفحة الرئيسية
-                            window.location.href = "index.html";
-                        });
-                    }
-                });
-
-                document.addEventListener("DOMContentLoaded", function () {
-                    const servicesLink = document.getElementById("Services50");
-
-                    if (servicesLink) {
-                        servicesLink.addEventListener("click", function (event) {
-                            event.preventDefault(); // منع السلوك الافتراضي
-
-                            // حفظ المعلومة بأن المستخدم يريد الانتقال إلى "about"
-                            sessionStorage.setItem("scrollToSection", "services");
-
-                            // توجيه المستخدم إلى الصفحة الرئيسية
-                            window.location.href = "index.html";
-                        });
-                    }
-                });
-
-                document.addEventListener("DOMContentLoaded", function () {
-                    const servicesLink = document.getElementById("Services51");
-
-                    if (servicesLink) {
-                        servicesLink.addEventListener("click", function (event) {
-                            event.preventDefault(); // منع السلوك الافتراضي
-
-                            // حفظ المعلومة بأن المستخدم يريد الانتقال إلى "about"
-                            sessionStorage.setItem("scrollToSection", "services");
-
-                            // توجيه المستخدم إلى الصفحة الرئيسية
-                            window.location.href = "index.html";
-                        });
-                    }
-                });
-
-                document.addEventListener("DOMContentLoaded", function () {
-                    const servicesLink = document.getElementById("Services52");
-
-                    if (servicesLink) {
-                        servicesLink.addEventListener("click", function (event) {
-                            event.preventDefault(); // منع السلوك الافتراضي
-
-                            // حفظ المعلومة بأن المستخدم يريد الانتقال إلى "about"
-                            sessionStorage.setItem("scrollToSection", "services");
-
-                            // توجيه المستخدم إلى الصفحة الرئيسية
-                            window.location.href = "index.html";
-                        });
-                    }
-                });
-
-                document.addEventListener("DOMContentLoaded", function () {
-                    const servicesLink = document.getElementById("Services53");
-
-                    if (servicesLink) {
-                        servicesLink.addEventListener("click", function (event) {
-                            event.preventDefault(); // منع السلوك الافتراضي
-
-                            // حفظ المعلومة بأن المستخدم يريد الانتقال إلى "about"
-                            sessionStorage.setItem("scrollToSection", "services");
-
-                            // توجيه المستخدم إلى الصفحة الرئيسية
-                            window.location.href = "index.html";
-                        });
-                    }
-                });
-
-                document.addEventListener("DOMContentLoaded", function () {
-                    const servicesLink = document.getElementById("Services54");
-
-                    if (servicesLink) {
-                        servicesLink.addEventListener("click", function (event) {
-                            event.preventDefault(); // منع السلوك الافتراضي
-
-                            // حفظ المعلومة بأن المستخدم يريد الانتقال إلى "about"
-                            sessionStorage.setItem("scrollToSection", "services");
-
-                            // توجيه المستخدم إلى الصفحة الرئيسية
-                            window.location.href = "index.html";
-                        });
-                    }
-                });
-
-                document.addEventListener("DOMContentLoaded", function () {
-                    const servicesLink = document.getElementById("Services55");
-
-                    if (servicesLink) {
-                        servicesLink.addEventListener("click", function (event) {
-                            event.preventDefault(); // منع السلوك الافتراضي
-
-                            // حفظ المعلومة بأن المستخدم يريد الانتقال إلى "about"
-                            sessionStorage.setItem("scrollToSection", "services");
-
-                            // توجيه المستخدم إلى الصفحة الرئيسية
-                            window.location.href = "index.html";
-                        });
-                    }
-                });
-
-
-
-
-                document.addEventListener("DOMContentLoaded", function () {
-                    const contactLink = document.getElementById("Contact");
-
-                    if (contactLink) {
-                        contactLink.addEventListener("click", function (event) {
-                            event.preventDefault(); // منع السلوك الافتراضي
-
-                            // حفظ المعلومة بأن المستخدم يريد الانتقال إلى "about"
-                            sessionStorage.setItem("scrollToSection", "contact");
-
-                            // توجيه المستخدم إلى الصفحة الرئيسية
-                            window.location.href = "index.html";
-                        });
-                    }
-                });
-
-                document.addEventListener("DOMContentLoaded", function () {
-                    const contactLink = document.getElementById("Contact57");
-
-                    if (contactLink) {
-                        contactLink.addEventListener("click", function (event) {
-                            event.preventDefault(); // منع السلوك الافتراضي
-
-                            // حفظ المعلومة بأن المستخدم يريد الانتقال إلى "about"
-                            sessionStorage.setItem("scrollToSection", "contact");
-
-                            // توجيه المستخدم إلى الصفحة الرئيسية
-                            window.location.href = "index.html";
-                        });
-                    }
-                });
-
-                document.addEventListener("DOMContentLoaded", function () {
-                    const Book = document.getElementById("Book");
-                    if (Book) {
-                        Book.addEventListener("click", function (event) {
-                            event.preventDefault();
-                            setTimeout(function () {
-                                window.location.href = "BookKeeping.html";
-                            }, 500);
-                        });
-                    }
-                });
-
-                document.addEventListener("DOMContentLoaded", function () {
-                    const CompanyIncorporation = document.getElementById("CompanyIncorporation");
-                    if (CompanyIncorporation) {
-                        CompanyIncorporation.addEventListener("click", function (event) {
-                            event.preventDefault();
-                            setTimeout(function () {
-                                window.location.href = "CompanyIncorporation.html";
-                            }, 500);
-                        });
-                    }
-                });
-
-                document.addEventListener("DOMContentLoaded", function () {
-                    const Taxes = document.getElementById("Taxes");
-                    if (Taxes) {
-                        Taxes.addEventListener("click", function (event) {
-                            event.preventDefault();
-                            setTimeout(function () {
-                                window.location.href = "Taxes.html";
-                            }, 500);
-                        });
-                    }
-                });
-
-
-                document.addEventListener("DOMContentLoaded", function () {
-                    let logoURL = "https://elitefinancial-eg.com/assets/img/logo.png"; // رابط اللوجو
-
-                    document.querySelectorAll("img").forEach(img => {
-                        if (!img.src || img.src.trim() === "") {
-                            img.src = logoURL;
-                            img.alt = "Elite Financial Consultant Logo";
-                        }
-                    });
-                });
-
-            </script>
-
-            </head>
-
-
 
         </body>
 
