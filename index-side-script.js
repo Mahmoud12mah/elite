@@ -411,6 +411,14 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
+// كود منع الاسكرول عند تحميل الصفحة
+window.addEventListener("load", function () {
+    if (window.location.hash) {
+        history.replaceState(null, "", window.location.pathname + window.location.search);
+    }
+});
+
+
 
 
 

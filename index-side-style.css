@@ -366,3 +366,13 @@ html[lang="ar"] #social-icons {
         /* نستخدم !important للإجبار */
     }
 }
+
+/* كود سلاسة للصورة الرئيسية >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
+.fade-in-image {
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.fade-in-image.loaded {
+    opacity: 1;
+}
