@@ -1,0 +1,126 @@
+/* font style >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
+/* تطبيق الخط على جميع العناصر مع استثناء الأيقونات */
+*:not(i):not([class^="fa"]):not([class*=" fa-"]) {
+    font-family: 'Cairo', sans-serif !important;
+    box-sizing: border-box;
+}
+
+/* style for fixed header >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
+@media (max-width: 1199px) {
+    .mobile {
+        margin-top: 20px;
+    }
+}
+
+/* style for image and text >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
+.tax {
+    font-size: 20px;
+    font-weight: 500px;
+}
+
+.content-container {
+    display: flex;
+    flex-direction: row-reverse;
+    /* لعكس الاتجاه: الصورة يمين، النص يسار */
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 10px;
+    gap: 20px;
+    margin-top: 180px;
+}
+
+/* قسم النصوص */
+.text-section {
+    max-width: 900px;
+    text-align: right;
+    direction: rtl;
+}
+
+.text-section h1 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* قسم الصورة */
+.image-section img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+    width: 400px;
+}
+
+/* تنسيق للموبايل */
+@media (max-width: 768px) {
+    .content-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 90px;
+
+    }
+
+    .text-section {
+        text-align: center;
+        direction: rtl;
+    }
+
+    .text-section h1 {
+        font-size: 20px;
+    }
+
+    .image-section img {
+        width: 94%;
+        margin-top: -80px;
+        margin-right: 3%;
+
+    }
+}
+
+/* style for spacing >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
+/* المسافة على الكمبيوتر */
+.responsive-space {
+    margin: -5px 0px 0px 0px;
+}
+
+/* المسافة على الموبايل */
+@media (max-width: 768px) {
+    .responsive-space {
+        margin: -5px 0;
+        /* غيّر الرقم كما يناسبك للموبايل */
+    }
+}
+
+/* style for footer >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
+footer {
+    flex-shrink: 0;
+    width: 100%;
+}
+
+html,
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+body>footer {
+    margin-top: auto;
+}
+
+/* style for social icones >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
+/* الكود الأساسي */
+html[lang="ar"] #social-icons {
+    direction: ltr;
+    transform: translateX(265px);
+    transition: transform 0.3s ease;
+}
+
+/* كود خاص للموبايل */
+@media (max-width: 768px) {
+    html[lang="ar"] #social-icons {
+        transform: translateX(215px) !important;
+        /* نستخدم !important للإجبار */
+    }
+}
