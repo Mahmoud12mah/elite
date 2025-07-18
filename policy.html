@@ -1,25 +1,18 @@
 <!DOCTYPE html>
-
 <html lang="en">
 
 <head>
   <meta charset="utf-8">
-
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <script src="https://cdn.tailwindcss.com"></script>
   <link rel="icon" type="image/png" href="assets/img/favicon-96x96.png" sizes="96x96" />
   <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg" />
   <link rel="shortcut icon" href="assets/img/favicon.ico" />
   <link rel="apple-touch-icon" sizes="180x180" href="assets/img/apple-touch-icon.png" />
   <link rel="manifest" href="assets/img/site.webmanifest" />
-
-
   <link rel="icon" href="assets/img/logo.png" type="image/png">
-
-
-
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-
   <meta property="og:image" content="https://elitefinancial-eg.com/assets/img/android-chrome-192x192.png" />
   <meta property="og:image:secure_url" content="https://elitefinancial-eg.com/assets/img/android-chrome-192x192.png" />
   <meta property="og:image:type" content="image/png">
@@ -28,8 +21,6 @@
   <title>سياسة الخصوصية | إيليت للاستشارات المالية</title>
   <meta property="og:site_name" content="سياسة الخصوصية | إيليت للاستشارات المالية">
   <meta name="application-name" content="سياسة الخصوصية | إيليت للاستشارات المالية">
-
-
   <meta name="description"
     content="هل تبحث عن أفضل خدمات ضريبية في مصر؟ إيليت للاستشارات المالية تقدم خدمات ضريبية متكاملة تشمل تقديم الإقرارات الضريبية، الفحص الضريبي، تأسيس الشركات، تسجيل ضريبة القيمة المضافة، وخدمات محاسبة قانونية معتمدة من خبراء متخصصين في الضرائب. احصل على استشارات ضريبية ومحاسبية دقيقة لمساعدتك في تنظيم أعمالك والتوافق مع القوانين الضريبية المصرية. نحن نوفر الدعم الكامل لأصحاب الشركات، الأفراد، والمستثمرين.">
   <meta name="keywords"
@@ -43,7 +34,28 @@
   <meta property="og:type" content="website">
   <meta property="og:locale" content="ar_EG">
 
+  <!-- تحسين تحميل الخطوط -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="preload" as="style" onload="this.rel='stylesheet'">
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
 
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link rel="preload" href="assets/css/main.min.css?v=2.0" as="style" onload="this.rel='stylesheet'">
+  <link rel="preload" href="styles.min.css?v=2.0" as="style" onload="this.rel='stylesheet'">
+  <link rel="preload" href="policy-side-style.css?v=2.0" as="style" onload="this.rel='stylesheet'">
+  <script src="translation.js?v=2.0"></script>
+  <script src="policy-side-script.js?v=2.0" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 
   <script type="application/ld+json">
     {
@@ -120,54 +132,11 @@
       }
     }
     </script>
-
-
-  <!-- تحسين تحميل الخطوط -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
-  <link
-    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-    rel="preload" as="style" onload="this.rel='stylesheet'">
-
-  <!-- Vendor CSS Files -->
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-
-
-  <!-- Main CSS File -->
-  <link rel="preload" href="assets/css/main.min.css?v=1.0" as="style" onload="this.rel='stylesheet'">
-  <link rel="preload" href="styles.min.css?v=1.0" as="style" onload="this.rel='stylesheet'">
-
-
-
-  <script src="translation.js?v=1.0"></script>
-
-
-
-  <!-- =======================================================
-  
-  ======================================================== -->
-
-  <!-- استيراد خط Cairo -->
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
-
-  <style>
-    /* تطبيق الخط على جميع العناصر مع استثناء الأيقونات */
-    *:not(i):not([class^="fa"]):not([class*=" fa-"]) {
-      font-family: 'Cairo', sans-serif !important;
-      box-sizing: border-box;
-    }
-  </style>
+</head>
 
 <body class="index-page">
-
   <!-- تأكد من إضافة مكتبة Font Awesome في رأس الصفحة -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-
-
   <header class="top-header">
     <div class="contact-wrapper">
       <a href="mailto:info@elitefinancial-eg.com" class="icon-text">
@@ -194,13 +163,9 @@
         <img src="assets/img/logo.png" alt="Elite Financial Consultant Logo" width="115" height="115" loading="lazy">
       </picture>
     </a>
-
-
-
     <!-- زر القائمة (Checkbox مخفي) -->
     <input type="checkbox" id="menu-toggle" class="menu-checkbox">
     <label for="menu-toggle" class="menu-btn">☰</label>
-
     <!-- القائمة -->
     <nav class="navmenu">
       <label for="menu-toggle" class="close-btn">✖</label> <!-- زر الإغلاق -->
@@ -227,225 +192,11 @@
     </nav>
   </header>
 
-
-  <script>
-    window.addEventListener('scroll', function () {
-      if (window.scrollY > 10) {
-        document.body.classList.add('scrolled');
-      } else {
-        document.body.classList.remove('scrolled');
-      }
-    });
-  </script>
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      let menuToggle = document.getElementById("menu-toggle");
-      let navMenu = document.querySelector(".navmenu");
-      let menuLinks = document.querySelectorAll(".navmenu a");
-
-      // ✅ إغلاق القائمة عند النقر خارجها
-      document.addEventListener("click", function (event) {
-        if (!navMenu.contains(event.target) && !menuToggle.contains(event.target)) {
-          menuToggle.checked = false;
-        }
-      });
-
-      // ✅ إغلاق القائمة عند النقر على أي رابط داخلها
-      menuLinks.forEach(link => {
-        link.addEventListener("click", function () {
-          menuToggle.checked = false;
-        });
-      });
-    });
-  </script>
-
-
-
-
-
-  <style>
-    @media (min-width: 1200px) {
-      .mobile {
-        margin-top: 180px;
-      }
-    }
-
-    @media (max-width: 1199px) {
-      .mobile {
-        margin-top: 300px;
-      }
-    }
-  </style>
-
-
-  <title>خلفية سوداء لامعة ثابتة</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-
-
-    .background {
-      width: 98ز9vw;
-      height: 50vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background: linear-gradient(135deg,
-          rgba(0, 0, 0, 0.95) 0%,
-          rgba(0, 0, 0, 0.7) 50%,
-          rgba(0, 0, 0, 0.95) 100%);
-      background-size: cover;
-      margin-top: 180px;
-    }
-
-    .text {
-      color: white;
-      font-size: 70px;
-      text-align: center;
-      transition: all 0.3s ease;
-    }
-
-    /* للهواتف */
-    @media (max-width: 768px) {
-      .text {
-        font-size: 50px;
-      }
-
-      .background {
-        margin-top: 250px;
-      }
-    }
-  </style>
-
-
   <div class="background">
     <div data-lang="policy1" class="text">سياسة الخصوصية</div>
   </div>
 
-
-
-
-
-  <!DOCTYPE html>
-  <html lang="ar" dir="rtl">
-
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>موقعي</title>
-
-    <style>
-      /* الحاوية الرئيسية */
-      .page-container {
-        display: flex;
-        max-width: 1200px;
-        margin: 100 auto;
-        padding: 70px 20px;
-      }
-
-      /* الصندوق الجانبي */
-      .sidebar {
-        width: 260px;
-        position: sticky;
-        top: 100px;
-        align-self: start;
-        background: linear-gradient(135deg, #f0f4f8, #ffffff);
-        border: 1px solid #ddd;
-        border-radius: 12px;
-        padding: 25px 20px;
-        height: fit-content;
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-        transition: all 0.3s ease;
-      }
-
-      /* روابط داخل الصندوق */
-      .sidebar ul {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-      }
-
-      .sidebar ul li {
-        margin-bottom: 9px;
-        border-bottom: 1px solid #ddd;
-        /* إضافة خط فاصلة بين العناصر */
-      }
-
-      .sidebar ul li:last-child {
-        border-bottom: none;
-        /* إزالة الخط الفاصل عن آخر عنصر */
-      }
-
-      .sidebar ul li a {
-        text-decoration: none;
-        color: #333;
-        font-weight: bold;
-        font-size: 16px;
-        display: block;
-        padding: 8px 12px;
-        border-radius: 8px;
-        transition: background 0.3s, color 0.3s;
-      }
-
-      .sidebar ul li a:hover {
-        background: #007bff;
-        color: #fff;
-      }
-
-      /* المحتوى */
-      .content {
-        flex: 1;
-        font-size: 25px;
-      }
-
-      /* دعم اتجاه اللغة */
-      html[dir="rtl"] .page-container {
-        flex-direction: row;
-      }
-
-      html[dir="rtl"] .sidebar {
-        margin-left: 40px;
-        margin-right: 0;
-        right: 0;
-        left: auto;
-      }
-
-      html[dir="ltr"] .page-container {
-        flex-direction: row;
-      }
-
-      html[dir="ltr"] .sidebar {
-        margin-right: 40px;
-        margin-left: 0;
-        left: 0;
-        right: auto;
-      }
-
-      /* استجابة الجوال */
-      @media (max-width: 768px) {
-        .page-container {
-          flex-direction: column !important;
-        }
-
-        .sidebar {
-          width: 100%;
-          position: static;
-          margin: 0 0 20px 0 !important;
-        }
-
-        .content {
-          margin: 0;
-        }
-      }
-    </style>
-  </head>
-
   <body>
-
     <div class="page-container">
       <aside class="sidebar">
         <ul>
@@ -457,7 +208,6 @@
           <li><a data-lang="policy7" href="#section6">كيف نحمي بياناتك؟</a></li>
           <li><a data-lang="policy8" href="#section7">استخدام ملفات تعريف الارتباط (Cookies)</a></li>
           <li><a data-lang="policy9" href="#section8">كيف يمكنك التواصل معنا؟</a></li>
-
         </ul>
       </aside>
 
@@ -469,378 +219,210 @@
           موقعنا). </p>
 
         <h2 data-lang="policy12" id="section2">قيمنا </h2>
+
         <p data-lang="policy13">معلوماتك ملك لك نقوم بجمع المعلومات الضرورية فقط لتقديم خدماتنا المحاسبية والضريبية. عند
           انتهاء الحاجة إلى هذه المعلومات، نقوم بحذفها أو إخفاء هويتها.</p>
+
         <p data-lang="policy14">نحمي معلوماتك لا نشارك بياناتك مع أي طرف ثالث دون إذنك، إلا إذا كنا مطالبين قانونيًا
           بذلك.</p>
+
         <p data-lang="policy15" style="height: 400px;">نساعد عملاءنا في حماية خصوصيتهم نلتزم بتقديم خدمات محاسبية
           واستشارية بطريقة تضمن أعلى درجات الخصوصية، ونتخذ جميع الإجراءات اللازمة لحماية بيانات عملائنا.</p>
 
         <h2 data-lang="policy16" id="section3">لماذا نعالج معلوماتك؟ </h2>
+
         <p data-lang="policy17"><strong>نقوم بمعالجة بياناتك للأسباب التالية:</strong></p>
+
         <p data-lang="policy18">تقديم الخدمات المحاسبية والضريبية والاستشارية التي تطلبها.</p>
+
         <p data-lang="policy19">الرد على استفساراتك وتقديم الدعم اللازم.</p>
+
         <p data-lang="policy20">تحسين خدماتنا بناءً على ملاحظات العملاء.</p>
+
         <p data-lang="policy21">الالتزام بالمتطلبات القانونية والتنظيمية.</p>
+
         <p data-lang="policy22">إدارة ملفات العملاء وإعداد التقارير الدورية.</p>
+
         <p data-lang="policy23" style="height: 400px;">نحن نحرص دائمًا على تحقيق التوازن بين مصالحنا المشروعة وبين حماية
           خصوصيتك وحقوقك.</p>
 
         <h2 data-lang="policy24" id="section4">حقوقك تجاه بياناتك</h2>
+
         <p data-lang="policy25"><strong>بغض النظر عن مكان إقامتك، يحق لك:</strong></p>
+
         <p data-lang="policy26">طلب الاطلاع على بياناتك الشخصية.</p>
+
         <p data-lang="policy27">تصحيح أو تحديث بياناتك.</p>
+
         <p data-lang="policy28">طلب حذف بياناتك، إذا لم تكن هناك حاجة قانونية للاحتفاظ بها.</p>
+
         <p data-lang="policy29">الاعتراض على استخدام بياناتك لأغراض تسويقية أو إحصائية.</p>
+
         <p data-lang="policy30" style="height: 400px;">لممارسة أي من هذه الحقوق، يمكنك التواصل معنا عبر وسائل الاتصال
           الموضحة أدناه.</p>
 
         <h2 data-lang="policy31" id="section5">أين نخزن بياناتك؟</h2>
+
         <p data-lang="policy32">قد تتم معالجة بياناتك داخل أو خارج بلدك. نحن نتخذ جميع التدابير اللازمة لضمان أن بياناتك
           محمية بموجب معايير أمنية مناسبة.</p>
+
         <p data-lang="policy33" style="height: 400px;">فترة الاحتفاظ بالمعلومات نحتفظ ببياناتك فقط للمدة اللازمة لتحقيق
           الأغراض التي جمعت من أجلها، أو كما يتطلبه القانون. بعد ذلك، يتم حذف المعلومات أو إخفاء هويتها بطريقة آمنة.</p>
 
         <h2 data-lang="policy34" id="section6">كيف نحمي بياناتك؟</h2>
+
         <p data-lang="policy35" style="height: 400px;">نستخدم تقنيات وإجراءات أمنية متقدمة لضمان حماية بياناتك من
           الفقدان أو الاستخدام غير المصرح به أو الوصول غير القانوني. ومع ذلك، لا يمكن ضمان أمان تام لأي وسيلة نقل أو
           تخزين عبر الإنترنت.</p>
 
         <h2 data-lang="policy36" id="section7">استخدام ملفات تعريف الارتباط (Cookies)</h2>
+
         <p data-lang="policy37" style="height: 400px;">قد نستخدم ملفات تعريف الارتباط لتحسين تجربة تصفحك لموقعنا
           الإلكتروني. يمكنك تعطيل ملفات تعريف الارتباط من خلال إعدادات المتصفح، ولكن قد يؤثر ذلك على بعض وظائف الموقع.
         </p>
 
         <h2 data-lang="policy38" id="section8">كيف يمكنك التواصل معنا؟</h2>
+
         <p data-lang="policy39"><strong>إذا كانت لديك أي استفسارات أو طلبات متعلقة ببياناتك الشخصية، يمكنك التواصل معنا
             عبر:</strong></p>
-        <p data-lang="policy40"><strong>مكتب إيليت للاستشارات المالية</strong></p>
-        <p data-lang="policy41"><strong>العنوان: ٤٠ شارع ابو داوود الظاهري - مدينة نصر - القاهرة - مصر</strong></p>
-        <p data-lang="policy43"><strong>البريد الإلكتروني: info@elitefinancial-eg.com</strong></p>
-        <p data-lang="policy44"><strong>رقم الهاتف: 1228310654 20+</strong></p>
 
+        <p data-lang="policy40"><strong>مكتب إيليت للاستشارات المالية</strong></p>
+
+        <p data-lang="policy41"><strong>العنوان: ٤٠ شارع ابو داوود الظاهري - مدينة نصر - القاهرة - مصر</strong></p>
+
+        <p data-lang="policy43"><strong>البريد الإلكتروني: info@elitefinancial-eg.com</strong></p>
+
+        <p data-lang="policy44"><strong>رقم الهاتف: 1228310654 20+</strong></p>
 
       </main>
     </div>
 
+    <footer>
 
+      <body class="h-screen overflow-hidden flex items-center justify-center" style="background: #edf2f7;">
+        <footer class="bg-gradient-to-r from-gray-100 via-[#bce1ff] to-gray-100">
+          <div class="max-w-screen-xl px-4 py-16 mx-auto sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 gap-8 lg:grid-cols-3">
+              <div>
+                <img src="assets/img/logo.webp" class="mr-15 h-20 sm:h-25" alt="logo" />
+                <p data-lang="welcome3" class="max-w-xs mt-4 text-sm text-gray-600">
+                  Your Ideal Partner For Success And Sustainable Growth
+                </p>
+                <div id="social-icons" class="flex mt-8 space-x-6 text-gray-600">
+                  <!-- Facebook -->
+                  <a class="hover:opacity-75" href="https://www.facebook.com/elitefinancialconsultanteg" target="_blank"
+                    rel="noreferrer">
+                    <span class="sr-only">Facebook</span>
+                    <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                      <path fill-rule="evenodd"
+                        d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"
+                        clip-rule="evenodd" />
+                    </svg>
+                  </a>
 
-  </body>
+                  <!-- WhatsApp -->
+                  <a class="hover:opacity-75" href="https://wa.me/+201228310654" target="_blank" rel="noreferrer">
+                    <span class="sr-only">WhatsApp</span>
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                      <path
+                        d="M20.52 3.48A11.76 11.76 0 0012.004 0C5.376 0 .001 5.376.001 12.004c0 2.116.553 4.181 1.598 6.008L0 24l6.176-1.623A11.91 11.91 0 0012.004 24c6.627 0 12.004-5.376 12.004-11.996 0-3.203-1.246-6.213-3.488-8.524zM12.004 22.2c-1.793 0-3.558-.48-5.104-1.384l-.365-.216-3.666.96.98-3.568-.238-.377a10.112 10.112 0 01-1.558-5.61c0-5.585 4.55-10.136 10.137-10.136 2.71 0 5.257 1.054 7.172 2.972a10.111 10.111 0 012.964 7.168c0 5.588-4.551 10.137-10.138 10.137zm5.66-7.487c-.3-.15-1.772-.872-2.048-.97-.276-.098-.477-.15-.678.15s-.778.97-.954 1.17c-.175.2-.35.225-.65.075-.3-.15-1.268-.466-2.417-1.486-.893-.796-1.496-1.778-1.67-2.078-.175-.3-.018-.462.132-.612.136-.136.3-.35.45-.525.15-.175.2-.3.3-.5.1-.2.05-.375-.025-.525-.075-.15-.677-1.632-.928-2.235-.244-.586-.492-.506-.678-.516l-.578-.01c-.2 0-.525.075-.8.375-.275.3-1.048 1.022-1.048 2.49 0 1.468 1.073 2.89 1.223 3.09.15.2 2.108 3.213 5.107 4.502.714.307 1.27.49 1.705.63.717.229 1.37.197 1.885.12.575-.085 1.772-.724 2.023-1.423.25-.7.25-1.3.175-1.423-.075-.125-.275-.2-.575-.35z" />
+                    </svg>
+                  </a>
 
-  </html>
-
-
-
-
-  <footer>
-
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script src="https://cdn.tailwindcss.com"></script>
-
-    <style>
-      body {
-        overflow: auto !important;
-        height: auto !important;
-        display: block !important;
-      }
-
-      footer {
-        flex-shrink: 0;
-        width: 100%;
-      }
-
-      html,
-      body {
-        min-height: 100vh;
-        display: flex;
-        flex-direction: column;
-      }
-
-      body>footer {
-        margin-top: auto;
-      }
-    </style>
-
-
-    </head>
-
-    <body class="h-screen overflow-hidden flex items-center justify-center" style="background: #edf2f7;">
-      <footer class="bg-gradient-to-r from-gray-100 via-[#bce1ff] to-gray-100">
-
-        <div class="max-w-screen-xl px-4 py-16 mx-auto sm:px-6 lg:px-8">
-          <div class="grid grid-cols-1 gap-8 lg:grid-cols-3">
-            <div>
-              <img src="assets/img/logo.webp" class="mr-15 h-20 sm:h-25" alt="logo" />
-              <p data-lang="welcome3" class="max-w-xs mt-4 text-sm text-gray-600">
-                Your Ideal Partner For Success And Sustainable Growth
-              </p>
-              <div id="social-icons" class="flex mt-8 space-x-6 text-gray-600">
-                <!-- Facebook -->
-                <a class="hover:opacity-75" href="https://www.facebook.com/elitefinancialconsultanteg" target="_blank"
-                  rel="noreferrer">
-                  <span class="sr-only">Facebook</span>
-                  <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                    <path fill-rule="evenodd"
-                      d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"
-                      clip-rule="evenodd" />
-                  </svg>
-                </a>
-
-                <!-- WhatsApp -->
-                <a class="hover:opacity-75" href="https://wa.me/+201228310654" target="_blank" rel="noreferrer">
-                  <span class="sr-only">WhatsApp</span>
-                  <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                    <path
-                      d="M20.52 3.48A11.76 11.76 0 0012.004 0C5.376 0 .001 5.376.001 12.004c0 2.116.553 4.181 1.598 6.008L0 24l6.176-1.623A11.91 11.91 0 0012.004 24c6.627 0 12.004-5.376 12.004-11.996 0-3.203-1.246-6.213-3.488-8.524zM12.004 22.2c-1.793 0-3.558-.48-5.104-1.384l-.365-.216-3.666.96.98-3.568-.238-.377a10.112 10.112 0 01-1.558-5.61c0-5.585 4.55-10.136 10.137-10.136 2.71 0 5.257 1.054 7.172 2.972a10.111 10.111 0 012.964 7.168c0 5.588-4.551 10.137-10.138 10.137zm5.66-7.487c-.3-.15-1.772-.872-2.048-.97-.276-.098-.477-.15-.678.15s-.778.97-.954 1.17c-.175.2-.35.225-.65.075-.3-.15-1.268-.466-2.417-1.486-.893-.796-1.496-1.778-1.67-2.078-.175-.3-.018-.462.132-.612.136-.136.3-.35.45-.525.15-.175.2-.3.3-.5.1-.2.05-.375-.025-.525-.075-.15-.677-1.632-.928-2.235-.244-.586-.492-.506-.678-.516l-.578-.01c-.2 0-.525.075-.8.375-.275.3-1.048 1.022-1.048 2.49 0 1.468 1.073 2.89 1.223 3.09.15.2 2.108 3.213 5.107 4.502.714.307 1.27.49 1.705.63.717.229 1.37.197 1.885.12.575-.085 1.772-.724 2.023-1.423.25-.7.25-1.3.175-1.423-.075-.125-.275-.2-.575-.35z" />
-                  </svg>
-                </a>
-
-                <!-- LinkedIn -->
-                <a class="hover:opacity-75" href="https://www.linkedin.com/company/elite-financial-consultant/"
-                  target="_blank" rel="noreferrer">
-                  <span class="sr-only">LinkedIn</span>
-                  <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                    <path fill-rule="evenodd"
-                      d="M20.447 20.452h-3.555v-5.569c0-1.328-.025-3.037-1.85-3.037-1.85 0-2.132 1.446-2.132 2.94v5.666H9.354V9h3.413v1.561h.049c.476-.899 1.637-1.848 3.368-1.848 3.6 0 4.264 2.368 4.264 5.448v6.291zM5.337 7.433a2.065 2.065 0 11-.002-4.131 2.065 2.065 0 01.002 4.131zm1.779 13.019H3.558V9h3.558v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.228.792 24 1.771 24h20.451C23.207 24 24 23.228 24 22.271V1.729C24 .774 23.207 0 22.225 0z"
-                      clip-rule="evenodd" />
-                  </svg>
-
-                </a>
+                  <!-- LinkedIn -->
+                  <a class="hover:opacity-75" href="https://www.linkedin.com/company/elite-financial-consultant/"
+                    target="_blank" rel="noreferrer">
+                    <span class="sr-only">LinkedIn</span>
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                      <path fill-rule="evenodd"
+                        d="M20.447 20.452h-3.555v-5.569c0-1.328-.025-3.037-1.85-3.037-1.85 0-2.132 1.446-2.132 2.94v5.666H9.354V9h3.413v1.561h.049c.476-.899 1.637-1.848 3.368-1.848 3.6 0 4.264 2.368 4.264 5.448v6.291zM5.337 7.433a2.065 2.065 0 11-.002-4.131 2.065 2.065 0 01.002 4.131zm1.779 13.019H3.558V9h3.558v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.228.792 24 1.771 24h20.451C23.207 24 24 23.228 24 22.271V1.729C24 .774 23.207 0 22.225 0z"
+                        clip-rule="evenodd" />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+              <div class="grid grid-cols-1 gap-8 lg:col-span-2 sm:grid-cols-2 lg:grid-cols-4">
+                <div>
+                  <p data-lang="company1" class="font-medium">
+                    Company
+                  </p>
+                  <nav class="flex flex-col mt-4 space-y-2 text-sm text-gray-500">
+                    <a class="hover:opacity-75" href="#Home" data-lang="home1"> Home </a>
+                    <a class="hover:opacity-75" href="#about" data-lang="about1"> About Us </a>
+                    <a class="hover:opacity-75" href="#contact" data-lang="contact1"> Contact Us </a>
+                  </nav>
+                </div>
+                <div>
+                  <p data-lang="services" class="font-medium">
+                    Services
+                  </p>
+                  <nav class="flex flex-col mt-4 space-y-2 text-sm text-gray-500">
+                    <a data-lang="services3" class="hover:opacity-75" href="#services"> Audit & Assurance </a>
+                    <a data-lang="services5" class="hover:opacity-75" href="#services"> Company Incorporation </a>
+                    <a data-lang="services7" class="hover:opacity-75" href="#services"> Tax </a>
+                    <a data-lang="services9" class="hover:opacity-75" href="#services"> Feasibility Study </a>
+                    <a data-lang="services11" class="hover:opacity-75" href="#services"> Legal </a>
+                    <a data-lang="services13" class="hover:opacity-75" href="#services"> Financial Advisory </a>
+                  </nav>
+                </div>
+                <div>
+                  <p data-lang="Pricing1" class="font-medium">
+                    Pricing
+                  </p>
+                  <nav class="flex flex-col mt-4 space-y-2 text-sm text-gray-500">
+                    <a class="hover:opacity-75" href="Taxes.html" data-lang="Taxes"> Taxes </a>
+                    <a class="hover:opacity-75" href="BookKeeping.html" data-lang="BookKeeping"> BookKeeping </a>
+                    <a class="hover:opacity-75" href="audit.html" data-lang="ExternalAudit"> External Audit </a>
+                    <a class="hover:opacity-75" href="CompanyIncorporation.html" data-lang="CompanyIncorporation">
+                      Company
+                      Incorporation </a>
+                  </nav>
+                </div>
+                <div>
+                  <p data-lang="legal" class="font-medium">
+                    Legal
+                  </p>
+                  <nav class="flex flex-col mt-4 space-y-2 text-sm text-gray-500">
+                    <a data-lang="PrivacyPolicy" class="hover:opacity-75" href> Privacy Policy </a>
+                  </nav>
+                </div>
               </div>
             </div>
-            <div class="grid grid-cols-1 gap-8 lg:col-span-2 sm:grid-cols-2 lg:grid-cols-4">
-              <div>
-                <p data-lang="company1" class="font-medium">
-                  Company
-                </p>
-                <nav class="flex flex-col mt-4 space-y-2 text-sm text-gray-500">
-                  <a class="hover:opacity-75" href="#Home" data-lang="home1"> Home </a>
-                  <a class="hover:opacity-75" href="#about" data-lang="about1"> About Us </a>
-                  <a class="hover:opacity-75" href="#contact" data-lang="contact1"> Contact Us </a>
-                </nav>
-              </div>
-              <div>
-                <p data-lang="services" class="font-medium">
-                  Services
-                </p>
-                <nav class="flex flex-col mt-4 space-y-2 text-sm text-gray-500">
-                  <a data-lang="services3" class="hover:opacity-75" href="#services"> Audit & Assurance </a>
-                  <a data-lang="services5" class="hover:opacity-75" href="#services"> Company Incorporation </a>
-                  <a data-lang="services7" class="hover:opacity-75" href="#services"> Tax </a>
-                  <a data-lang="services9" class="hover:opacity-75" href="#services"> Feasibility Study </a>
-                  <a data-lang="services11" class="hover:opacity-75" href="#services"> Legal </a>
-                  <a data-lang="services13" class="hover:opacity-75" href="#services"> Financial Advisory </a>
-                </nav>
-              </div>
-              <div>
-                <p data-lang="Pricing1" class="font-medium">
-                  Pricing
-                </p>
-                <nav class="flex flex-col mt-4 space-y-2 text-sm text-gray-500">
-                  <a class="hover:opacity-75" href="Taxes.html" data-lang="Taxes"> Taxes </a>
-                  <a class="hover:opacity-75" href="BookKeeping.html" data-lang="BookKeeping"> BookKeeping </a>
-                  <a class="hover:opacity-75" href="audit.html" data-lang="ExternalAudit"> External Audit </a>
-                  <a class="hover:opacity-75" href="CompanyIncorporation.html" data-lang="CompanyIncorporation"> Company
-                    Incorporation </a>
-                </nav>
-              </div>
-              <div>
-                <p data-lang="legal" class="font-medium">
-                  Legal
-                </p>
-                <nav class="flex flex-col mt-4 space-y-2 text-sm text-gray-500">
-                  <a data-lang="PrivacyPolicy" class="hover:opacity-75" href> Privacy Policy </a>
-                </nav>
-              </div>
-            </div>
+            <p data-lang="EliteFinancialConsultant" class="text-xs text-gray-800 text-center mt-9 mb-0">
+              © 2025 Elite Financial Consultant. All rights reserved.
+            </p>
           </div>
-          <p data-lang="EliteFinancialConsultant" class="text-xs text-gray-800 text-center mt-9 mb-0">
-            © 2025 Elite Financial Consultant. All rights reserved.
-          </p>
+        </footer>
+
+        <!-- Scroll Top -->
+        <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
+            class="bi bi-arrow-up-short"></i></a>
+
+        <!-- Preloader -->
+        <div id="preloader">
+          <section class="dots-container">
+            <h2 class="visually-hidden">Loading Animation</h2> <!-- عنوان مخفي لتحسين إمكانية الوصول -->
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+          </section>
         </div>
-      </footer>
-      <style>
-        /* الكود الأساسي */
-        html[lang="ar"] #social-icons {
-          direction: ltr;
-          transform: translateX(265px);
-          transition: transform 0.3s ease;
-        }
 
-        /* كود خاص للموبايل */
-        @media (max-width: 768px) {
-          html[lang="ar"] #social-icons {
-            transform: translateX(215px) !important;
-            /* نستخدم !important للإجبار */
-          }
-        }
-      </style>
+        <!-- Vendor JS Files -->
+        <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <script src="assets/vendor/php-email-form/validate.js"></script>
+        <script src="assets/vendor/aos/aos.js"></script>
+        <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+        <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+        <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+        <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+        <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
 
+        <!-- Main JS File -->
+        <script src="assets/js/main.js?v=1.0"></script>
 
-
-      <!-- Scroll Top -->
-      <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
-          class="bi bi-arrow-up-short"></i></a>
-
-      <!-- Preloader -->
-
-      <div id="preloader">
-        <section class="dots-container">
-          <h2 class="visually-hidden">Loading Animation</h2> <!-- عنوان مخفي لتحسين إمكانية الوصول -->
-          <div class="dot"></div>
-          <div class="dot"></div>
-          <div class="dot"></div>
-          <div class="dot"></div>
-          <div class="dot"></div>
-        </section>
-      </div>
-
-
-      <!-- Vendor JS Files -->
-      <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-      <script src="assets/vendor/php-email-form/validate.js"></script>
-      <script src="assets/vendor/aos/aos.js"></script>
-      <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-      <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
-      <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
-      <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-      <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-
-      <!-- Main JS File -->
-      <script src="assets/js/main.js?v=1.0"></script>
-
-      <script>
-        document.addEventListener("DOMContentLoaded", function () {
-          const External = document.getElementById("External");
-          if (External) {
-            External.addEventListener("click", function (event) {
-              event.preventDefault();
-              setTimeout(function () {
-                window.location.href = "External Audit.html";
-              }, 500);
-            });
-          }
-        });
-
-        document.addEventListener("DOMContentLoaded", function () {
-          const Home = document.getElementById("Home");
-          if (Home) {
-            Home.addEventListener("click", function (event) {
-              event.preventDefault();
-              setTimeout(function () {
-                window.location.href = "index.html";
-              }, 500);
-            });
-          }
-        });
-
-        document.addEventListener("DOMContentLoaded", function () {
-          const aboutLink = document.getElementById("About");
-
-          if (aboutLink) {
-            aboutLink.addEventListener("click", function (event) {
-              event.preventDefault(); // منع السلوك الافتراضي
-
-              // حفظ المعلومة بأن المستخدم يريد الانتقال إلى "about"
-              sessionStorage.setItem("scrollToSection", "about");
-
-              // توجيه المستخدم إلى الصفحة الرئيسية
-              window.location.href = "index.html";
-            });
-          }
-        });
-
-
-
-        document.addEventListener("DOMContentLoaded", function () {
-          const servicesLink = document.getElementById("Services");
-
-          if (servicesLink) {
-            servicesLink.addEventListener("click", function (event) {
-              event.preventDefault(); // منع السلوك الافتراضي
-
-              // حفظ المعلومة بأن المستخدم يريد الانتقال إلى "about"
-              sessionStorage.setItem("scrollToSection", "services");
-
-              // توجيه المستخدم إلى الصفحة الرئيسية
-              window.location.href = "index.html";
-            });
-          }
-        });
-
-
-
-        document.addEventListener("DOMContentLoaded", function () {
-          const contactLink = document.getElementById("Contact");
-
-          if (contactLink) {
-            contactLink.addEventListener("click", function (event) {
-              event.preventDefault(); // منع السلوك الافتراضي
-
-              // حفظ المعلومة بأن المستخدم يريد الانتقال إلى "about"
-              sessionStorage.setItem("scrollToSection", "contact");
-
-              // توجيه المستخدم إلى الصفحة الرئيسية
-              window.location.href = "index.html";
-            });
-          }
-        });
-
-        document.addEventListener("DOMContentLoaded", function () {
-          const Book = document.getElementById("Book");
-          if (Book) {
-            Book.addEventListener("click", function (event) {
-              event.preventDefault();
-              setTimeout(function () {
-                window.location.href = "BookKeeping.html";
-              }, 500);
-            });
-          }
-        });
-
-        document.addEventListener("DOMContentLoaded", function () {
-          const CompanyIncorporation = document.getElementById("CompanyIncorporation");
-          if (CompanyIncorporation) {
-            CompanyIncorporation.addEventListener("click", function (event) {
-              event.preventDefault();
-              setTimeout(function () {
-                window.location.href = "CompanyIncorporation.html";
-              }, 500);
-            });
-          }
-        });
-
-        document.addEventListener("DOMContentLoaded", function () {
-          const Taxes = document.getElementById("Taxes");
-          if (Taxes) {
-            Taxes.addEventListener("click", function (event) {
-              event.preventDefault();
-              setTimeout(function () {
-                window.location.href = "Taxes.html";
-              }, 500);
-            });
-          }
-        });
-
-
-        document.addEventListener("DOMContentLoaded", function () {
-          let logoURL = "https://elitefinancial-eg.com/assets/img/logo.png"; // رابط اللوجو
-
-          document.querySelectorAll("img").forEach(img => {
-            if (!img.src || img.src.trim() === "") {
-              img.src = logoURL;
-              img.alt = "Elite Financial Consultant Logo";
-            }
-          });
-        });
-
-
-      </script>
-
-      </head>
-
-    </body>
+      </body>
 
 </html>

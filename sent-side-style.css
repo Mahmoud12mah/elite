@@ -1,0 +1,206 @@
+/* style for none page >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
+/* ✅ إخفاء الصفحة بالكامل عند الدخول مباشرة */
+body {
+    display: none;
+}
+
+/* font styles >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
+/* تطبيق الخط على جميع العناصر مع استثناء الأيقونات */
+*:not(i):not([class^="fa"]):not([class*=" fa-"]) {
+    font-family: 'Cairo', sans-serif !important;
+    box-sizing: border-box;
+}
+
+/* style for text >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
+/* العنوان الأول */
+#custom-heading {
+    position: absolute;
+    top: 220px;
+    left: 600px;
+    font-weight: bold;
+    font-size: 30px;
+    padding: 10px;
+    z-index: 1;
+}
+
+/* العنوان الثاني */
+#second-heading {
+    position: absolute;
+    top: 280px;
+    /* أسفل العنوان الأول */
+    left: 480px;
+    font-weight: bold;
+    font-size: 30px;
+    padding: 10px;
+    z-index: 1;
+}
+
+/* تحريك النصوص يدويًا عندما تكون اللغة إنجليزية */
+html[lang="en"] #custom-heading {
+    left: 400px;
+    /* حرك النص لليمين أو اليسار بتغيير الرقم */
+    top: 200px;
+    /* حرك النص للأعلى أو الأسفل بتغيير الرقم */
+}
+
+html[lang="en"] #second-heading {
+    left: 360px;
+    /* حرك النص لليمين أو اليسار بتغيير الرقم */
+    top: 260px;
+    /* حرك النص للأعلى أو الأسفل بتغيير الرقم */
+}
+
+/* الموبايل */
+@media (max-width: 768px) {
+    #custom-heading {
+        top: 250px;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 20px;
+        text-align: center;
+        width: 90%;
+    }
+
+    #second-heading {
+        top: 290px;
+        /* أسفل العنوان الأول على الموبايل */
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 18px;
+        text-align: center;
+        width: 90%;
+    }
+
+    /* تحريك النصوص للموبايل عند الإنجليزية */
+    html[lang="en"] #custom-heading {
+        top: 360px;
+        /* تحكم في مكان العنوان الأول على الموبايل */
+        left: 50%;
+        /* تحريك النص يمينًا أو يسارًا بتغيير النسبة */
+        transform: translateX(-50%);
+    }
+
+    html[lang="en"] #second-heading {
+        top: 390px;
+        /* تحكم في مكان العنوان الثاني على الموبايل */
+        left: 50%;
+        /* تحريك النص يمينًا أو يسارًا بتغيير النسبة */
+        transform: translateX(-50%);
+    }
+}
+
+/* style for spacing >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
+/* المسافة على الكمبيوتر */
+.responsive-space {
+    margin: 450px 0;
+}
+
+/* المسافة على الموبايل */
+@media (max-width: 768px) {
+    .responsive-space {
+        margin: 600px 0;
+        /* غيّر الرقم كما يناسبك للموبايل */
+    }
+}
+
+/* floating image style >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
+/* ضبط الصورة في مكان ثابت */
+.floating-image {
+    position: absolute;
+    top: 180px;
+    /* المسافة من الأعلى */
+    width: 400px;
+    /* حجم الصورة */
+    height: auto;
+    z-index: 1;
+    /* لضمان ظهورها فوق العناصر الأخرى */
+    transition: all 0.3s ease-in-out;
+    /* انتقال سلس عند التغيير */
+}
+
+/* عند اللغة العربية: تكون الصورة على اليمين */
+html[lang="ar"] .floating-image {
+    left: 50px;
+    right: auto;
+}
+
+/* عند اللغة الإنجليزية: تكون الصورة على اليسار */
+html[lang="en"] .floating-image {
+    right: 50px;
+    left: auto;
+}
+
+.floating-image img {
+    width: 100%;
+    border-radius: 10px;
+    /* إضافة حواف دائرية */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+    /* ظل جميل */
+}
+
+/* تعديل مكان الصورة يدويًا على الشاشات الصغيرة (أقل من 768px) */
+@media (max-width: 768px) {
+    html[lang="ar"] .floating-image {
+        top: 330px;
+        /* المسافة من الأعلى */
+
+        width: 80%;
+        margin-right: 10%;
+        /* حجم الصورة */
+        height: auto;
+        z-index: 1;
+        transition: all 0.3s ease-in-out;
+    }
+
+    html[lang="en"] .floating-image {
+        top: 460px;
+        /* المسافة من الأعلى */
+        right: 40px;
+        /* تحكم يدوي من اليمين (يمكنك تغييره) */
+        left: auto;
+        width: 320px;
+        /* حجم الصورة */
+        height: auto;
+        z-index: 1;
+        transition: all 0.3s ease-in-out;
+    }
+}
+
+/* footer style >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
+body {
+    overflow: auto !important;
+    height: auto !important;
+    display: block !important;
+}
+
+footer {
+    flex-shrink: 0;
+    width: 100%;
+}
+
+html,
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+body>footer {
+    margin-top: auto;
+}
+
+/* social icone style >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
+/* الكود الأساسي */
+html[lang="ar"] #social-icons {
+    direction: ltr;
+    transform: translateX(265px);
+    transition: transform 0.3s ease;
+}
+
+/* كود خاص للموبايل */
+@media (max-width: 768px) {
+    html[lang="ar"] #social-icons {
+        transform: translateX(215px) !important;
+        /* نستخدم !important للإجبار */
+    }
+}
