@@ -404,12 +404,13 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 // كود سلاسة للصورة الرئيسية >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-document.addEventListener("DOMContentLoaded", function () {
+window.addEventListener("load", function () {
     const img = document.querySelector('.fade-in-image');
-    img.addEventListener('load', function () {
+    if (img) {
         img.classList.add('loaded');
-    });
+    }
 });
+
 
 // كود منع الاسكرول عند تحميل الصفحة
 window.addEventListener("load", function () {
