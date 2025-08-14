@@ -166,23 +166,28 @@
 
     <!-- تأكد من إضافة مكتبة Font Awesome في رأس الصفحة -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <header class="top-header">
-        <div class="contact-wrapper">
-            <a href="mailto:info@elitefinancial-eg.com" class="icon-text">
-                <i class="fas fa-envelope"></i> info@elitefinancial-eg.com
-            </a>
-            <a href="tel:+201228310654" class="icon-text1">
-                <i class="fas fa-phone"></i> +201228310654
-            </a>
-            <a href="tel:+223504766" class="icon-text2">
-                <i class="fas fa-phone"></i> 00223504766
-            </a>
-        </div>
-        <div class="language-switch">
-            <button class="lang-btn arabic" onclick="changeLanguage('ar')">العربية</button>
-            <button class="lang-btn english" onclick="changeLanguage('en')">English</button>
-        </div>
-    </header>
+    
+  <header class="top-header">
+  <div class="contact-wrapper">
+    <a href="mailto:info@elitefinancial-eg.com" class="icon-text">
+      <i class="fas fa-envelope"></i> info@elitefinancial-eg.com
+    </a>
+    <a href="tel:+201228310654" class="icon-text1">
+      <i class="fas fa-phone"></i> +201228310654
+    </a>
+    <a href="tel:+223504766" class="icon-text2">
+      <i class="fas fa-phone"></i> 00223504766
+    </a>
+  </div>
+
+  <!-- زر لغة واحد -->
+  <div class="language-switch">
+    <button id="lang-toggle" class="lang-btn" aria-label="تغيير اللغة">
+      <!-- المحتوى سيُملأ ديناميكيًا بواسطة السكربت -->
+    </button>
+  </div>
+</header>
+
 
     <header class="bottom-header">
         <a href="index.html">
