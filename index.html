@@ -179,24 +179,30 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
 
-  <header class="top-header">
-    <div class="contact-wrapper">
-      <a href="mailto:info@elitefinancial-eg.com" class="icon-text">
-        <i class="fas fa-envelope"></i> info@elitefinancial-eg.com
-      </a>
-      <a href="tel:+201228310654" class="icon-text1">
-        <i class="fas fa-phone"></i> +201228310654
-      </a>
-      <a href="tel:+223504766" class="icon-text2">
-        <i class="fas fa-phone"></i> 00223504766
-      </a>
-    </div>
+  <!-- -------------------------
+  استبدل بلوك اللغة هذا في الهيدر
+  (ضع <script src="translation.js"></script> قبل هذا السكربت)
+-------------------------- -->
+<header class="top-header">
+  <div class="contact-wrapper">
+    <a href="mailto:info@elitefinancial-eg.com" class="icon-text">
+      <i class="fas fa-envelope"></i> info@elitefinancial-eg.com
+    </a>
+    <a href="tel:+201228310654" class="icon-text1">
+      <i class="fas fa-phone"></i> +201228310654
+    </a>
+    <a href="tel:+223504766" class="icon-text2">
+      <i class="fas fa-phone"></i> 00223504766
+    </a>
+  </div>
 
-    <div class="language-switch">
-      <button class="lang-btn arabic" onclick="changeLanguage('ar')">العربية</button>
-      <button class="lang-btn english" onclick="changeLanguage('en')">English</button>
-    </div>
-  </header>
+  <!-- زر لغة واحد -->
+  <div class="language-switch">
+    <button id="lang-toggle" class="lang-btn" aria-label="تغيير اللغة">
+      <!-- المحتوى سيُملأ ديناميكيًا بواسطة السكربت -->
+    </button>
+  </div>
+</header>
 
   <header class="bottom-header">
     <a href="index.html">
@@ -480,7 +486,7 @@
 
           <div class="col-lg-8">
             <div class="contact-form">
-              <h3 data-lang="contact6" class="text-center mb-4">Contact Us</h3>
+              <h3 data-lang="contact6" style="font-size: 25px; font-weight: 500;" class="text-center mb-4">Contact Us</h3>
               <form id="contactForm">
                 <div class="mb-3 position-relative">
                   <span class="input-group-text"><i class="fas fa-user"></i></span>

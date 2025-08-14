@@ -796,3 +796,80 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 });
+
+
+
+/*
+  هذا السكربت:
+  1) يقرأ اللغة الحالية من sessionStorage أو من document.documentElement.lang
+  2) يعرض على الزر اسم اللغة التي سيتم التحويل إليها + علمها
+  3) عند الضغط يستدعي changeLanguage(newLang) الموجودة في translation.js
+  4) يلفّ دالة changeLanguage ليحدّث شكل الزر تلقائيًا لو تم استدعاؤها من مكان آخر
+*/
+(function () {
+  const FLAG_GB = 'https://flagcdn.com/w20/gb.png'; // علم بريطانيا
+  const FLAG_EG = 'https://flagcdn.com/w20/eg.png'; // علم مصر
+
+  function getActiveLang() {
+    return sessionStorage.getItem('selectedLanguage') || document.documentElement.lang || 'ar';
+  }
+
+  function buildButtonHTMLFor(activeLang) {
+    // نعرض اللغة *التي سيتم التبديل إليها* (target)
+    const showText = (activeLang === 'ar') ? 'English' : 'العربية';
+    const showFlag = (activeLang === 'ar') ? FLAG_GB : FLAG_EG;
+    return `<img class="lang-flag" src="${showFlag}" alt="${showText} flag"> <span class="lang-text">${showText}</span>`;
+  }
+
+  // تحديث واجهة الزر بناء على اللغة الحالية
+  function updateLangButton(btn) {
+    if (!btn) return;
+    const active = getActiveLang();
+    btn.innerHTML = buildButtonHTMLFor(active);
+  }
+
+  // التفاف على changeLanguage الموجود في translation.js ليُحدّث الزر بعد التغيير
+  function wrapChangeLanguage(updateFn) {
+    if (typeof window.changeLanguage === 'function') {
+      const original = window.changeLanguage;
+      window.changeLanguage = function (lang) {
+        // استدعاء الدالة الأصلية
+        original(lang);
+        // تحديث الزر بعد قليل للتأكد من أن التغييرات في DOM انتهت
+        setTimeout(updateFn, 50);
+      };
+    }
+  }
+
+  document.addEventListener('DOMContentLoaded', function () {
+    const btn = document.getElementById('lang-toggle');
+    if (!btn) return;
+
+    // لو لم تكن translation.js قد خزنت اللغة بعد، نضمن أن documentElement.lang يستخدم القيمة الافتراضية
+    if (!document.documentElement.lang) {
+      document.documentElement.lang = sessionStorage.getItem('selectedLanguage') || 'ar';
+    }
+
+    // نغلف changeLanguage إذا كانت موجودة
+    wrapChangeLanguage(function () { updateLangButton(btn); });
+
+    // عند الضغط - نغيّر اللغة (ندعو changeLanguage)
+    btn.addEventListener('click', function () {
+      const active = getActiveLang();
+      const target = (active === 'ar') ? 'en' : 'ar';
+
+      if (typeof window.changeLanguage === 'function') {
+        window.changeLanguage(target);
+      } else {
+        // fallback بسيط لو لم توجد الدالة لسبب ما
+        document.documentElement.lang = target;
+        document.documentElement.dir = (target === 'ar') ? 'rtl' : 'ltr';
+        sessionStorage.setItem('selectedLanguage', target);
+        updateLangButton(btn);
+      }
+    });
+
+    // عرض مبدئي صحيح للزر
+    updateLangButton(btn);
+  });
+})();
