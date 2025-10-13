@@ -364,6 +364,9 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 // كود نموذج الاتصال باستخدام EmailJS>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+
+
 (function () {
     emailjs.init("YE7phgS6i3fiqXi09"); // استبدل بـ Public Key من EmailJS
 })();
@@ -378,30 +381,106 @@ document.addEventListener("DOMContentLoaded", function () {
         // ✅ حفظ الصفحة السابقة قبل الإرسال
         localStorage.setItem("previousPage", window.location.href);
 
-        emailjs.sendForm("service_0p0gln7", "template_vymp718", form)
+        // ✅ جلب القيم
+        const emailInput = form.querySelector('input[name="email"]').value.trim();
+        const nameInput = form.querySelector('input[name="name"]').value.trim();
+
+        // ✅ التحقق من طول الاسم الكلي
+        if (nameInput.length < 2 || nameInput.length > 40) {
+            responseElement.innerHTML = '<div class="alert alert-danger">❌ يرجى إدخال اسم صحيح (بين 2 و 40 حرفًا).</div>';
+            responseElement.style.display = "block";
+            return;
+        }
+
+        // ✅ التحقق من تكرار الحروف داخل كل مقطع (حتى لو كانت غير متتالية)
+        const partsForRepeatCheck = nameInput.split(" ").filter(Boolean);
+        for (const part of partsForRepeatCheck) {
+            const counts = {};
+            for (const char of part) {
+                const lowerChar = char.toLowerCase();
+                if (!/[a-zA-Zأ-ي]/.test(lowerChar)) continue; // تجاهل غير الحروف
+                counts[lowerChar] = (counts[lowerChar] || 0) + 1;
+                if (counts[lowerChar] > 3) {
+                    responseElement.innerHTML = `<div class="alert alert-danger">❌ المقطع "${part}" يحتوي على تكرار مفرط للحرف "${char}".</div>`;
+                    responseElement.style.display = "block";
+                    return;
+                }
+            }
+        }
+
+        // ✅ منع الرموز أو الأرقام
+        const invalidNamePattern = /[^a-zA-Zأ-ي\s]/;
+        if (invalidNamePattern.test(nameInput)) {
+            responseElement.innerHTML = '<div class="alert alert-danger">❌ يرجى إدخال اسم حقيقي بدون رموز أو أرقام.</div>';
+            responseElement.style.display = "block";
+            return;
+        }
+
+        // ✅ يجب أن يحتوي الاسم على أكثر من مقطع (وجود مسافة واحدة على الأقل)
+        if (!nameInput.includes(" ")) {
+            responseElement.innerHTML = '<div class="alert alert-danger">❌ يرجى إدخال الاسم الكامل.</div>';
+            responseElement.style.display = "block";
+            return;
+        }
+
+        // ✅ التأكد أن كل مقطع لا يتجاوز 12 حرفًا
+        const parts = nameInput.split(" ").filter(Boolean); // تقسيم الاسم إلى مقاطع
+        const longPart = parts.find(part => part.length > 12);
+        if (longPart) {
+            responseElement.innerHTML = `<div class="alert alert-danger">❌ المقطع "${longPart}" طويل جدًا، يجب ألا يتجاوز 12 حرفًا.</div>`;
+            responseElement.style.display = "block";
+            return;
+        }
+
+        // ✅ عرض رسالة جاري الإرسال قبل التحقق والإرسال
+        responseElement.innerHTML = '<div class="alert alert-info">⏳ جاري إرسال النموذج...</div>';
+        responseElement.style.display = "block";
+
+        // ✅ التحقق من البريد الإلكتروني الحقيقي باستخدام Abstract API
+        const apiKey = "8f5ad0dca22649f681ca4bbbb7dca4c8"; // مفتاحك الحالي من Abstract API
+
+        fetch(`https://emailreputation.abstractapi.com/v1/?api_key=${apiKey}&email=${emailInput}`)
+            .then(res => res.json())
+            .then(data => {
+                console.log("🔍 نتيجة التحقق من البريد:", data);
+
+                if (data.email_deliverability && data.email_deliverability.status === "deliverable") {
+                    // ✅ البريد حقيقي، نكمل الإرسال عبر EmailJS
+                    return emailjs.sendForm("service_0p0gln7", "template_vymp718", form);
+                } else {
+                    // ❌ البريد غير صالح أو غير موجود فعليًا
+                    responseElement.innerHTML = '<div class="alert alert-danger">❌ يرجى إدخال بريد إلكتروني حقيقي وقابل للاستلام.</div>';
+                    responseElement.style.display = "block";
+                    throw new Error("Invalid email");
+                }
+            })
             .then(function (response) {
                 console.log("✅ تم الإرسال بنجاح", response);
                 responseElement.innerHTML = '<div class="alert alert-success">✅ تم ارسال طلبك بنجاح!</div>';
-                responseElement.style.display = "block"; // إظهار الرسالة
-                form.reset(); // إعادة تعيين النموذج
+                responseElement.style.display = "block";
+                form.reset();
 
-                // ✅ حفظ حالة نجاح الإرسال
                 localStorage.setItem("formSubmitted", "true");
 
-                // ✅ التوجيه إلى sent.html بعد 2 ثانية فقط إذا نجح الإرسال
                 setTimeout(function () {
                     window.location.href = "sent.html";
                 }, 2000);
             })
             .catch(function (error) {
+                if (error.message === "Invalid email") return;
+
                 console.error("❌ فشل الإرسال", error);
-                responseElement.innerHTML = '<div class="alert alert-danger">❌ فشل ارسال الطلب، حاول مرة أخرى: ' + error.text + '</div>';
-                responseElement.style.display = "block"; // إظهار الرسالة
+                responseElement.innerHTML = '<div class="alert alert-danger">❌ فشل ارسال الطلب، حاول مرة أخرى.</div>';
+                responseElement.style.display = "block";
             });
 
-        return false; // منع أي سلوك افتراضي آخر
+        return false;
     });
 });
+
+
+
+
 
 // كود سلاسة للصورة الرئيسية >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 window.addEventListener("load", function () {

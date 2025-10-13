@@ -120,6 +120,7 @@ window.onload = function () {
 };
 
 // script for sending data to emailjs >>>>>>>>>>>>>>>>>>>>>>>>>>>>>// سكربت إرسال البيانات إلى emailjs
+
 document.addEventListener("DOMContentLoaded", function () {
     emailjs.init("YE7phgS6i3fiqXi09");
 
@@ -137,8 +138,7 @@ document.addEventListener("DOMContentLoaded", function () {
         inputs.forEach(input => {
             let errorMessage = input.nextElementSibling;
             if (!input.value.trim()) {
-                input.classList.add("input-error"); // إضافة التلوين من الـ CSS
-
+                input.classList.add("input-error");
                 if (!errorMessage || !errorMessage.classList.contains("error-message")) {
                     errorMessage = document.createElement("div");
                     errorMessage.classList.add("error-message");
@@ -165,15 +165,17 @@ document.addEventListener("DOMContentLoaded", function () {
         return isValid;
     }
 
-    function sendEmail(event) {
+    async function sendEmail(event) {
         event.preventDefault();
         if (!validateForm()) return;
 
+        // إعداد البيانات
         let formData = {};
         inputs.forEach(input => {
             formData[input.name] = input.value.trim();
         });
 
+        // تحديد كود الدولة
         let selectedCountryElement = document.getElementById("selectedCountry");
         if (selectedCountryElement) {
             let countryCode = selectedCountryElement.innerText.split(" ")[0].replace(/\D/g, '');
@@ -186,31 +188,98 @@ document.addEventListener("DOMContentLoaded", function () {
             formData["full_phone"] = `+${formData["phonecode"]} ${phoneNumber}`;
         }
 
+        // الخدمات
         let selectedServices = [];
         checkboxes.forEach(service => {
             if (service.checked) selectedServices.push(service.value);
         });
         formData["services"] = selectedServices.join(", ");
-
         formData["source_page"] = window.location.pathname.split("/").pop() || "Unknown";
 
-        console.log("📤 البيانات المرسلة:", formData);
-        localStorage.setItem("formData", JSON.stringify(formData));
+        // التحقق من الاسم والبريد الإلكتروني
+        const nameInput = formData["name"];
+        const emailInput = formData["email"];
 
-        emailjs.send("service_0p0gln7", "template_atz2wa9", formData)
-            .then(function (response) {
-                console.log("✅ تم الإرسال بنجاح", response);
-                responseElement.innerHTML = '<div class="alert-success">تم إرسال الطلب بنجاح! ✅</div>';
+        // ✅ تحقق طول الاسم الكلي
+        if (nameInput.length < 2 || nameInput.length > 40) {
+            responseElement.innerHTML = '<div class="alert alert-danger">❌ يرجى إدخال اسم صحيح (بين 2 و 40 حرفًا).</div>';
+            responseElement.style.display = "block";
+            return;
+        }
+
+        // ✅ تحقق من تكرار الحروف داخل كل مقطع
+        const partsForRepeatCheck = nameInput.split(" ").filter(Boolean);
+        for (const part of partsForRepeatCheck) {
+            const counts = {};
+            for (const char of part) {
+                const lowerChar = char.toLowerCase();
+                if (!/[a-zA-Zأ-ي]/.test(lowerChar)) continue;
+                counts[lowerChar] = (counts[lowerChar] || 0) + 1;
+                if (counts[lowerChar] > 3) {
+                    responseElement.innerHTML = `<div class="alert alert-danger">❌ المقطع "${part}" يحتوي على تكرار مفرط للحرف "${char}".</div>`;
+                    responseElement.style.display = "block";
+                    return;
+                }
+            }
+        }
+
+        // ✅ منع الرموز أو الأرقام
+        const invalidNamePattern = /[^a-zA-Zأ-ي\s]/;
+        if (invalidNamePattern.test(nameInput)) {
+            responseElement.innerHTML = '<div class="alert alert-danger">❌ يرجى إدخال اسم حقيقي بدون رموز أو أرقام.</div>';
+            responseElement.style.display = "block";
+            return;
+        }
+
+        // ✅ يجب أن يحتوي الاسم على أكثر من مقطع
+        if (!nameInput.includes(" ")) {
+            responseElement.innerHTML = '<div class="alert alert-danger">❌ يرجى إدخال الاسم الكامل (مثلاً: محمد علي).</div>';
+            responseElement.style.display = "block";
+            return;
+        }
+
+        // ✅ كل مقطع ≤ 12 حرف
+        const parts = nameInput.split(" ").filter(Boolean);
+        const longPart = parts.find(part => part.length > 12);
+        if (longPart) {
+            responseElement.innerHTML = `<div class="alert alert-danger">❌ المقطع "${longPart}" طويل جدًا، يجب ألا يتجاوز 12 حرفًا.</div>`;
+            responseElement.style.display = "block";
+            return;
+        }
+
+        // ✅ التحقق من البريد الإلكتروني الحقيقي باستخدام Abstract API
+        const apiKey = "8f5ad0dca22649f681ca4bbbb7dca4c8";
+responseElement.innerHTML = '<div class="alert alert-info">⏳ جاري إرسال النموذج...</div>';
+responseElement.style.display = "block";
+
+        try {
+            const res = await fetch(`https://emailreputation.abstractapi.com/v1/?api_key=${apiKey}&email=${emailInput}`);
+            const data = await res.json();
+
+            if (!data.email_deliverability || data.email_deliverability.status !== "deliverable") {
+                responseElement.innerHTML = '<div class="alert alert-danger">❌ يرجى إدخال بريد إلكتروني حقيقي وقابل للاستلام.</div>';
                 responseElement.style.display = "block";
-                setTimeout(() => { responseElement.style.display = "none"; }, 5000);
-                localStorage.setItem("formSubmitted", "true");
-                setTimeout(() => { window.location.href = "sent.html"; }, 2000);
-            }, function (error) {
-                console.error("❌ فشل الإرسال", error);
-                responseElement.innerHTML = '<div class="alert-danger">فشل إرسال الطلب، حاول مرة اخرى! ❌: ' + error.text + '</div>';
-                responseElement.style.display = "block";
-                setTimeout(() => { responseElement.style.display = "none"; }, 5000);
-            });
+                return;
+            }
+
+            // ✅ البريد صالح، أرسل الآن
+            console.log("📤 البيانات المرسلة:", formData);
+            localStorage.setItem("formData", JSON.stringify(formData));
+
+            const response = await emailjs.send("service_0p0gln7", "template_atz2wa9", formData);
+            console.log("✅ تم الإرسال بنجاح", response);
+            responseElement.innerHTML = '<div class="alert-success">تم إرسال الطلب بنجاح! ✅</div>';
+            responseElement.style.display = "block";
+            localStorage.setItem("formSubmitted", "true");
+
+            setTimeout(() => {
+                window.location.href = "sent.html";
+            }, 2000);
+        } catch (error) {
+            console.error("❌ فشل الإرسال", error);
+            responseElement.innerHTML = '<div class="alert-danger">❌ فشل إرسال الطلب، حاول مرة أخرى.</div>';
+            responseElement.style.display = "block";
+        }
     }
 
     if (requestButton) {
@@ -221,12 +290,12 @@ document.addEventListener("DOMContentLoaded", function () {
         input.addEventListener("input", function () {
             let errorMessage = input.nextElementSibling;
             if (input.value.trim()) {
-                input.classList.remove("input-error"); // إزالة التلوين الأحمر عند إدخال بيانات
+                input.classList.remove("input-error");
                 if (errorMessage && errorMessage.classList.contains("error-message")) {
                     errorMessage.remove();
                 }
             } else {
-                input.classList.add("input-error"); // إعادة التلوين الأحمر عند حذف البيانات
+                input.classList.add("input-error");
                 if (!errorMessage || !errorMessage.classList.contains("error-message")) {
                     errorMessage = document.createElement("div");
                     errorMessage.classList.add("error-message");
@@ -245,6 +314,8 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 });
+
+
 
 // script for movement >>>>>>>>>>>>>>>>>>>>>>>>>>>>>// سكربت الحركة
 document.addEventListener("DOMContentLoaded", function () {

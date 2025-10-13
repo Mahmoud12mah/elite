@@ -242,7 +242,7 @@ document.addEventListener("DOMContentLoaded", function () {
         return isValid;
     }
 
-    function sendEmail(event) {
+    async function sendEmail(event) {
         event.preventDefault();
         if (!validateForm()) return;
 
@@ -253,8 +253,81 @@ document.addEventListener("DOMContentLoaded", function () {
             data[key] = value;
         });
 
+        // ✅ تحقق الاسم
+        const nameInput = data["name"];
+        const emailInput = data["email"];
+
+        if (nameInput.length < 2 || nameInput.length > 40) {
+            responseElement.innerHTML = '<div class="alert alert-danger">❌ يرجى إدخال اسم صحيح (بين 2 و 40 حرفًا).</div>';
+            responseElement.style.display = "block";
+            return;
+        }
+
+        // ✅ لا تكرار الحروف أكثر من 3 مرات في المقطع
+        const partsForRepeatCheck = nameInput.split(" ").filter(Boolean);
+        for (const part of partsForRepeatCheck) {
+            const counts = {};
+            for (const char of part) {
+                const lowerChar = char.toLowerCase();
+                if (!/[a-zA-Zأ-ي]/.test(lowerChar)) continue;
+                counts[lowerChar] = (counts[lowerChar] || 0) + 1;
+                if (counts[lowerChar] > 3) {
+                    responseElement.innerHTML = `<div class="alert alert-danger">❌ المقطع "${part}" يحتوي على تكرار مفرط للحرف "${char}".</div>`;
+                    responseElement.style.display = "block";
+                    return;
+                }
+            }
+        }
+
+        // ✅ منع الرموز أو الأرقام
+        const invalidNamePattern = /[^a-zA-Zأ-ي\s]/;
+        if (invalidNamePattern.test(nameInput)) {
+            responseElement.innerHTML = '<div class="alert alert-danger">❌ يرجى إدخال اسم حقيقي بدون رموز أو أرقام.</div>';
+            responseElement.style.display = "block";
+            return;
+        }
+
+        // ✅ يجب أن يحتوي الاسم على أكثر من مقطع
+        if (!nameInput.includes(" ")) {
+            responseElement.innerHTML = '<div class="alert alert-danger">❌ يرجى إدخال الاسم الكامل (مثلاً: محمد علي).</div>';
+            responseElement.style.display = "block";
+            return;
+        }
+
+        // ✅ كل مقطع ≤ 12 حرف
+        const parts = nameInput.split(" ").filter(Boolean);
+        const longPart = parts.find(part => part.length > 12);
+        if (longPart) {
+            responseElement.innerHTML = `<div class="alert alert-danger">❌ المقطع "${longPart}" طويل جدًا، يجب ألا يتجاوز 12 حرفًا.</div>`;
+            responseElement.style.display = "block";
+            return;
+        }
+
+        // ✅ عرض "جاري إرسال النموذج..."
+        responseElement.innerHTML = '<div class="alert alert-info">⏳ جاري إرسال النموذج...</div>';
+        responseElement.style.display = "block";
+
+        // ✅ التحقق من البريد الإلكتروني الحقيقي باستخدام Abstract API
+        const apiKey = "8f5ad0dca22649f681ca4bbbb7dca4c8";
+
+        try {
+            const res = await fetch(`https://emailreputation.abstractapi.com/v1/?api_key=${apiKey}&email=${emailInput}`);
+            const dataEmail = await res.json();
+
+            if (!dataEmail.email_deliverability || dataEmail.email_deliverability.status !== "deliverable") {
+                responseElement.innerHTML = '<div class="alert alert-danger">❌ يرجى إدخال بريد إلكتروني حقيقي وقابل للاستلام.</div>';
+                responseElement.style.display = "block";
+                return;
+            }
+        } catch (error) {
+            console.error("❌ خطأ أثناء التحقق من البريد:", error);
+            responseElement.innerHTML = '<div class="alert alert-danger">❌ حدث خطأ أثناء التحقق من البريد الإلكتروني.</div>';
+            responseElement.style.display = "block";
+            return;
+        }
+
         // استخراج رقم الهاتف ورمز الدولة
-        let phoneInput = document.querySelector("input[name='mobile']"); // ✅ تعديل الاسم الصحيح
+        let phoneInput = document.querySelector("input[name='mobile']");
         let countryCodeElement = document.getElementById("selectedCountry");
 
         let countryCode = countryCodeElement ? countryCodeElement.textContent.trim().split(" ")[0].replace(/\D/g, '') : "";
@@ -266,7 +339,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         if (phoneNumber) {
             data["mobile"] = phoneNumber;
-            data["full_phone"] = `+${countryCode} ${phoneNumber}`; // ✅ دمج الرقم مع رمز الدولة
+            data["full_phone"] = `+${countryCode} ${phoneNumber}`;
         }
 
         // استخراج بيانات الشركة
@@ -293,10 +366,9 @@ document.addEventListener("DOMContentLoaded", function () {
         data["source_page"] = currentPage;
 
         console.log("📤 البيانات المرسلة:", data);
-
-        // ✅ حفظ البيانات في LocalStorage (احتياطي في حالة إعادة التحميل)
         localStorage.setItem("formData", JSON.stringify(data));
 
+        // ✅ إرسال الإيميل بعد كل التحققات
         emailjs.send("service_0p0gln7", "template_atz2wa9", data)
             .then(function (response) {
                 console.log("✅ تم الإرسال بنجاح", response);
@@ -314,7 +386,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 setTimeout(() => { responseElement.style.display = "none"; }, 5000);
             });
     }
-
 
     if (requestButton) {
         requestButton.addEventListener("click", sendEmail);

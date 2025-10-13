@@ -177,6 +177,7 @@ document.addEventListener("DOMContentLoaded", function () {
         responseElement.innerHTML = "";
         responseElement.style.display = "none";
 
+        // ✅ تحقق من الحقول الفارغة
         inputs.forEach(input => {
             let errorMessage = input.nextElementSibling;
             if (!input.value.trim()) {
@@ -191,6 +192,7 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         });
 
+        // ✅ تحقق من اختيار الخدمات
         let isChecked = Array.from(checkboxes).some(checkbox => checkbox.checked);
         if (!isChecked) {
             checkboxes.forEach(checkbox => checkbox.closest("label").classList.add("checkbox-error"));
@@ -203,52 +205,128 @@ document.addEventListener("DOMContentLoaded", function () {
             responseElement.innerHTML = '<div class="alert-danger">جميع الحقول مطلوبة! ❌</div>';
             responseElement.style.display = "block";
         }
+
         return isValid;
     }
 
-    function sendEmail(event) {
+    async function sendEmail(event) {
         event.preventDefault();
         if (!validateForm()) return;
 
-        let formData = {};
+        let data = {};
         inputs.forEach(input => {
-            formData[input.name] = input.value.trim();
+            data[input.name] = input.value.trim();
         });
 
+        // ✅ تحقق الاسم
+        const nameInput = data["name"];
+        const emailInput = data["email"];
+
+        if (nameInput.length < 2 || nameInput.length > 40) {
+            responseElement.innerHTML = '<div class="alert alert-danger">❌ يرجى إدخال اسم صحيح (بين 2 و 40 حرفًا).</div>';
+            responseElement.style.display = "block";
+            return;
+        }
+
+        // ✅ لا تكرار الحروف أكثر من 3 مرات في المقطع
+        const partsForRepeatCheck = nameInput.split(" ").filter(Boolean);
+        for (const part of partsForRepeatCheck) {
+            const counts = {};
+            for (const char of part) {
+                const lowerChar = char.toLowerCase();
+                if (!/[a-zA-Zأ-ي]/.test(lowerChar)) continue;
+                counts[lowerChar] = (counts[lowerChar] || 0) + 1;
+                if (counts[lowerChar] > 3) {
+                    responseElement.innerHTML = `<div class="alert alert-danger">❌ المقطع "${part}" يحتوي على تكرار مفرط للحرف "${char}".</div>`;
+                    responseElement.style.display = "block";
+                    return;
+                }
+            }
+        }
+
+        // ✅ منع الرموز أو الأرقام
+        const invalidNamePattern = /[^a-zA-Zأ-ي\s]/;
+        if (invalidNamePattern.test(nameInput)) {
+            responseElement.innerHTML = '<div class="alert alert-danger">❌ يرجى إدخال اسم حقيقي بدون رموز أو أرقام.</div>';
+            responseElement.style.display = "block";
+            return;
+        }
+
+        // ✅ يجب أن يحتوي الاسم على أكثر من مقطع
+        if (!nameInput.includes(" ")) {
+            responseElement.innerHTML = '<div class="alert alert-danger">❌ يرجى إدخال الاسم الكامل (مثلاً: محمد علي).</div>';
+            responseElement.style.display = "block";
+            return;
+        }
+
+        // ✅ كل مقطع ≤ 12 حرف
+        const parts = nameInput.split(" ").filter(Boolean);
+        const longPart = parts.find(part => part.length > 12);
+        if (longPart) {
+            responseElement.innerHTML = `<div class="alert alert-danger">❌ المقطع "${longPart}" طويل جدًا، يجب ألا يتجاوز 12 حرفًا.</div>`;
+            responseElement.style.display = "block";
+            return;
+        }
+
+        // ✅ عرض "جاري إرسال النموذج..."
+        responseElement.innerHTML = '<div class="alert alert-info">⏳ جاري إرسال النموذج...</div>';
+        responseElement.style.display = "block";
+
+        // ✅ التحقق من البريد الإلكتروني باستخدام Abstract API
+        const apiKey = "8f5ad0dca22649f681ca4bbbb7dca4c8";
+
+        try {
+            const res = await fetch(`https://emailreputation.abstractapi.com/v1/?api_key=${apiKey}&email=${emailInput}`);
+            const dataEmail = await res.json();
+
+            if (!dataEmail.email_deliverability || dataEmail.email_deliverability.status !== "deliverable") {
+                responseElement.innerHTML = '<div class="alert alert-danger">❌ يرجى إدخال بريد إلكتروني حقيقي وقابل للاستلام.</div>';
+                responseElement.style.display = "block";
+                return;
+            }
+        } catch (error) {
+            console.error("❌ خطأ أثناء التحقق من البريد:", error);
+            responseElement.innerHTML = '<div class="alert alert-danger">❌ حدث خطأ أثناء التحقق من البريد الإلكتروني.</div>';
+            responseElement.style.display = "block";
+            return;
+        }
+
+        // ✅ تجهيز باقي البيانات
         let selectedCountryElement = document.getElementById("selectedCountry");
         if (selectedCountryElement) {
             let countryCode = selectedCountryElement.innerText.split(" ")[0].replace(/\D/g, '');
-            formData["phonecode"] = countryCode ? parseInt(countryCode, 10) : "";
+            data["phonecode"] = countryCode ? parseInt(countryCode, 10) : "";
         }
 
         if (phoneInput) {
             let phoneNumber = phoneInput.value.trim().replace(/\D/g, '');
-            formData["mobile"] = phoneNumber;
-            formData["full_phone"] = `+${formData["phonecode"]} ${phoneNumber}`;
+            data["mobile"] = phoneNumber;
+            data["full_phone"] = `+${data["phonecode"]} ${phoneNumber}`;
         }
 
         let selectedServices = [];
         checkboxes.forEach(service => {
             if (service.checked) selectedServices.push(service.value);
         });
-        formData["services"] = selectedServices.join(", ");
+        data["services"] = selectedServices.join(", ");
 
-        formData["source_page"] = window.location.pathname.split("/").pop() || "Unknown";
+        data["source_page"] = window.location.pathname.split("/").pop() || "Unknown";
 
-        console.log("\ud83d\udce4 البيانات المرسلة:", formData);
-        localStorage.setItem("formData", JSON.stringify(formData));
+        console.log("📤 البيانات المرسلة:", data);
+        localStorage.setItem("formData", JSON.stringify(data));
 
-        emailjs.send("service_0p0gln7", "template_atz2wa9", formData)
+        // ✅ إرسال الإيميل فعليًا
+        emailjs.send("service_0p0gln7", "template_atz2wa9", data)
             .then(function (response) {
                 console.log("✅ تم الإرسال بنجاح", response);
-                responseElement.innerHTML = '<div class="alert-success">تم إرسال الطلب بنجاح! ✅</div>';
+                responseElement.innerHTML = '<div class="alert alert-success">تم إرسال الطلب بنجاح! ✅</div>';
                 responseElement.style.display = "block";
                 setTimeout(() => { responseElement.style.display = "none"; }, 5000);
                 localStorage.setItem("formSubmitted", "true");
                 setTimeout(() => { window.location.href = "sent.html"; }, 2000);
             }, function (error) {
                 console.error("❌ فشل الإرسال", error);
-                responseElement.innerHTML = '<div class="alert-danger">فشل إرسال الطلب، حاول مرة اخرى! ❌: ' + error.text + '</div>';
+                responseElement.innerHTML = '<div class="alert alert-danger">فشل إرسال الطلب، حاول مرة اخرى! ❌: ' + error.text + '</div>';
                 responseElement.style.display = "block";
                 setTimeout(() => { responseElement.style.display = "none"; }, 5000);
             });
@@ -258,6 +336,7 @@ document.addEventListener("DOMContentLoaded", function () {
         requestButton.addEventListener("click", sendEmail);
     }
 
+    // ✅ التفاعلات الفورية
     inputs.forEach(input => {
         input.addEventListener("input", function () {
             let errorMessage = input.nextElementSibling;
@@ -292,6 +371,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 });
+
 
 // script for movement >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 document.addEventListener("DOMContentLoaded", function () {
