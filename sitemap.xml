@@ -40,5 +40,38 @@
   <loc>https://elitefinancial-eg.com/policy.html</loc>
   <priority>0.40</priority>
 </url>
+<url>
+  <loc>https://elitefinancial-eg.com/ar/index.html</loc>
+  <lastmod>2025-03-22T19:40:57+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://elitefinancial-eg.com/ar/Taxes.html</loc>
+  <lastmod>2025-03-22T19:40:57+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://elitefinancial-eg.com/ar/BookKeeping.html</loc>
+  <lastmod>2025-03-22T19:40:57+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://elitefinancial-eg.com/ar/audit.html</loc>
+  <lastmod>2025-03-22T19:40:57+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://elitefinancial-eg.com/ar/CompanyIncorporation.html</loc>
+  <lastmod>2025-03-22T19:40:57+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://elitefinancial-eg.com/ar/sent.html</loc>
+  <priority>0.40</priority>
+</url>
+<url>
+  <loc>https://elitefinancial-eg.com/ar/policy.html</loc>
+  <priority>0.40</priority>
+</url>
 
 </urlset>
