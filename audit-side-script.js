@@ -142,7 +142,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 if (!errorMessage || !errorMessage.classList.contains("error-message")) {
                     errorMessage = document.createElement("div");
                     errorMessage.classList.add("error-message");
-                    errorMessage.textContent = "هذا الحقل مطلوب*";
+                    errorMessage.textContent = "This field is required*";
                     input.parentNode.insertBefore(errorMessage, input.nextSibling);
                 }
                 isValid = false;
@@ -158,7 +158,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         if (!isValid) {
-            responseElement.innerHTML = '<div class="alert-danger">جميع الحقول مطلوبة! ❌</div>';
+            responseElement.innerHTML = '<div class="alert-danger">All fields are required! ❌</div>';
             responseElement.style.display = "block";
         }
 
@@ -249,8 +249,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
         // ✅ التحقق من البريد الإلكتروني الحقيقي باستخدام Abstract API
         const apiKey = "8f5ad0dca22649f681ca4bbbb7dca4c8";
-responseElement.innerHTML = '<div class="alert alert-info">⏳ جاري إرسال النموذج...</div>';
-responseElement.style.display = "block";
+        responseElement.innerHTML = '<div class="alert alert-info">⏳ جاري إرسال النموذج...</div>';
+        responseElement.style.display = "block";
 
         try {
             const res = await fetch(`https://emailreputation.abstractapi.com/v1/?api_key=${apiKey}&email=${emailInput}`);
@@ -299,7 +299,7 @@ responseElement.style.display = "block";
                 if (!errorMessage || !errorMessage.classList.contains("error-message")) {
                     errorMessage = document.createElement("div");
                     errorMessage.classList.add("error-message");
-                    errorMessage.textContent = "هذا الحقل مطلوب*";
+                    errorMessage.textContent = "This field is required*";
                     input.parentNode.insertBefore(errorMessage, input.nextSibling);
                 }
             }

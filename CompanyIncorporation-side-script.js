@@ -185,7 +185,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 if (!errorMessage || !errorMessage.classList.contains("error-message")) {
                     errorMessage = document.createElement("div");
                     errorMessage.classList.add("error-message");
-                    errorMessage.textContent = "هذا الحقل مطلوب*";
+                    errorMessage.textContent = "This field is required*";
                     input.parentNode.insertBefore(errorMessage, input.nextSibling);
                 }
                 isValid = false;
@@ -202,7 +202,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         if (!isValid) {
-            responseElement.innerHTML = '<div class="alert-danger">جميع الحقول مطلوبة! ❌</div>';
+            responseElement.innerHTML = '<div class="alert-danger">All fields are required! ❌</div>';
             responseElement.style.display = "block";
         }
 
@@ -350,7 +350,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 if (!errorMessage || !errorMessage.classList.contains("error-message")) {
                     errorMessage = document.createElement("div");
                     errorMessage.classList.add("error-message");
-                    errorMessage.textContent = "هذا الحقل مطلوب*";
+                    errorMessage.textContent = "This field is required*";
                     input.parentNode.insertBefore(errorMessage, input.nextSibling);
                 }
             }
