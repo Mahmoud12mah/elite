@@ -73,7 +73,7 @@ html[lang="en"] #second-heading {
 
     /* تحريك النصوص للموبايل عند الإنجليزية */
     html[lang="en"] #custom-heading {
-        top: 360px;
+        top: 250px;
         /* تحكم في مكان العنوان الأول على الموبايل */
         left: 50%;
         /* تحريك النص يمينًا أو يسارًا بتغيير النسبة */
@@ -81,7 +81,7 @@ html[lang="en"] #second-heading {
     }
 
     html[lang="en"] #second-heading {
-        top: 390px;
+        top: 290px;
         /* تحكم في مكان العنوان الثاني على الموبايل */
         left: 50%;
         /* تحريك النص يمينًا أو يسارًا بتغيير النسبة */
@@ -153,12 +153,12 @@ html[lang="en"] .floating-image {
     }
 
     html[lang="en"] .floating-image {
-        top: 460px;
+        top: 330px;
         /* المسافة من الأعلى */
-        right: 40px;
+        right: 60px;
         /* تحكم يدوي من اليمين (يمكنك تغييره) */
         left: auto;
-        width: 320px;
+        width: 370px;
         /* حجم الصورة */
         height: auto;
         z-index: 1;
@@ -200,7 +200,13 @@ html[lang="ar"] #social-icons {
 /* كود خاص للموبايل */
 @media (max-width: 768px) {
     html[lang="ar"] #social-icons {
-        transform: translateX(215px) !important;
+        transform: translateX(310px) !important;
         /* نستخدم !important للإجبار */
     }
+}
+/* ================= RTL FIXES ================= */
+
+html[lang="ar"] body {
+    direction: rtl;
+    text-align: right;
 }

@@ -62,9 +62,9 @@
 
 /* الصندوق الجانبي */
 .sidebar {
-    width: 260px;
+    width: 370px;
     position: sticky;
-    top: 120px;
+    top: 170px;
     align-self: start;
     background: linear-gradient(135deg, #f0f4f8, #ffffff);
     border: 1px solid #ddd;

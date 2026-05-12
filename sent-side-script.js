@@ -1,33 +1,58 @@
-// script for none page >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-// ✅ التحقق فورًا قبل تحميل أي محتوى
-let formSubmitted = localStorage.getItem("formSubmitted");
 
-if (!formSubmitted || formSubmitted !== "true") {
-    let previousPage = localStorage.getItem("previousPage") || document.referrer;
-
-    // ✅ منع الدخول في حلقة إعادة تحميل لا نهائية
-    if (!previousPage || previousPage === window.location.href) {
-        previousPage = "index.html"; // إعادة التوجيه إلى الصفحة الرئيسية إذا لم يكن هناك صفحة سابقة
-    }
-
-    // ✅ إعادة التوجيه إلى الصفحة السابقة أو الصفحة الرئيسية
-    window.location.replace(previousPage);
-}
+// =====================================================
+// حماية الصفحة بشكل آمن + منع loops
+// =====================================================
 
 document.addEventListener("DOMContentLoaded", function () {
+
+    let formSubmitted = localStorage.getItem("formSubmitted");
+
+    // =====================================================
+    // 1) منع الدخول لو مش مسموح
+    // =====================================================
     if (!formSubmitted || formSubmitted !== "true") {
-        return; // إذا كان المستخدم غير مسموح له، لن يصل إلى هذا الجزء
+
+        let previousPage = localStorage.getItem("previousPage");
+
+        // لو مفيش صفحة محفوظة → خليه index فقط
+        if (!previousPage) {
+            previousPage = "index.html";
+        }
+
+        // منع إعادة التوجيه لنفس الصفحة
+        if (previousPage !== window.location.pathname) {
+            window.location.replace(previousPage);
+        }
+
+        return;
     }
 
-    // ✅ السماح بعرض الصفحة بعد التحقق
+    // =====================================================
+    // 2) السماح بعرض الصفحة
+    // =====================================================
     document.body.style.display = "block";
 
-    // ✅ تنظيف التخزين بعد السماح بالوصول
+    // تنظيف بسيط (بدون تدمير الحالة فورًا)
     setTimeout(() => {
         localStorage.removeItem("formSubmitted");
         localStorage.removeItem("previousPage");
-    }, 500);
+    }, 1000);
 });
+
+
+// =====================================================
+// 3) تغيير اللغة بشكل آمن (بدون تكسير الصفحة)
+// =====================================================
+function changeLanguage(url) {
+
+    // منع أي سلوك افتراضي
+    if (!url) return;
+
+    // تأخير بسيط لتفادي crash في بعض المتصفحات
+    setTimeout(() => {
+        window.location.href = url;
+    }, 50);
+}
 
 // script for scrolling >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 window.addEventListener('scroll', function () {

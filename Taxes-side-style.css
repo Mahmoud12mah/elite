@@ -186,3 +186,143 @@ html[lang="ar"] #social-icons {
     transform: scale(1.02);
     /* تأثير بسيط عند المرور */
 }
+
+/* ===================================================== */
+/* DESKTOP ONLY */
+/* ===================================================== */
+
+@media (min-width: 1200px) {
+
+    /* ================= RTL FIXES ================= */
+
+    html[lang="ar"] body {
+        direction: rtl;
+        text-align: right;
+    }
+
+    /* الفورم */
+    html[lang="ar"] .form-control {
+        text-align: right;
+        padding-right: 50px;
+        padding-left: 16px;
+    }
+
+    /* الأيقونات داخل الحقول */
+    html[lang="ar"] .input-group-text {
+        right: 12px;
+        left: auto;
+    }
+
+    /* القائمة */
+    html[lang="ar"] .navmenu {
+        text-align: right;
+    }
+
+    html[lang="ar"] .navmenu ul {
+        padding-right: 0;
+    }
+
+    /* الهيدر */
+    html[lang="ar"] .bottom-header {
+        flex-direction: row-reverse;
+    }
+
+    /* الزر */
+    html[lang="ar"] .button-container {
+        text-align: right;
+        transform: translateX(-30px);
+    }
+
+    /* checkbox */
+    html[lang="ar"] .checkbox {
+        margin-right: 25px;
+    }
+
+    html[lang="ar"] .checkbox .label {
+        margin-right: 8px;
+    }
+
+    /* العناوين */
+    html[lang="ar"] h2 {
+        transform: translateX(-25px);
+    }
+
+    /* الفورم */
+    html[lang="ar"] .request-form {
+        transform: translateX(-40px);
+    }
+
+
+
+    /* ================= LTR FIXES ================= */
+
+    html[lang="en"] body {
+        direction: ltr;
+        text-align: left;
+    }
+
+    /* الفورم */
+    html[lang="en"] .form-control {
+        text-align: left;
+        padding-left: 50px;
+        padding-right: 16px;
+    }
+
+    /* الأيقونات داخل الحقول */
+    html[lang="en"] .input-group-text {
+        left: 12px;
+        right: auto;
+    }
+
+    /* القائمة */
+    html[lang="en"] .navmenu {
+        text-align: left;
+    }
+
+    html[lang="en"] .navmenu ul {
+        padding-left: 0;
+    }
+
+
+    /* الزر */
+    html[lang="en"] .button-container {
+        text-align: left;
+        padding-left: 25px;
+    }
+
+    /* checkbox */
+    html[lang="en"] .checkbox {
+        padding-left: 25px;
+    }
+
+}
+
+
+/* ===================================================== */
+/* MOBILE ONLY */
+/* ===================================================== */
+
+@media (max-width: 1199px) {
+
+    /* RTL Mobile */
+
+    html[lang="ar"] body {
+        direction: rtl;
+        text-align: right;
+        overflow-x: hidden;
+    }
+
+   
+    /* إلغاء تحريكات الديسكتوب على الموبايل */
+
+    html[lang="ar"] .request-form,
+    html[lang="ar"] h2,
+    html[lang="ar"] .button-container {
+        transform: none;
+    }
+
+    html[lang="ar"] .checkbox {
+        margin-right: 0;
+    }
+
+}

@@ -585,7 +585,13 @@ html[lang="ar"] .navmenu ul {
   }
 }
 
-body {
+html[lang="ar"] body {
+  font-family: Arial, sans-serif;
+  text-align: right;
+  transition: text-align .3s ease-in-out
+}
+
+html[lang="en"] body {
   font-family: Arial, sans-serif;
   text-align: left;
   transition: text-align .3s ease-in-out
@@ -768,7 +774,7 @@ body {
 .dropdown-list {
   position: absolute;
   top: 100%;
-  left: 0;
+  left: 2;
   z-index: 1000;
   background: #ffffff;
   border: 1px solid #ced4da;
@@ -778,6 +784,8 @@ body {
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
   display: none;
   width: 100%;
+  min-width: 300px;
+
 }
 
 .dropdown-item {
@@ -948,7 +956,7 @@ body {
 }
 
 .lang-btn {
-  padding: 10px 20px;
+  padding: 5px 10px;
   font-size: 16px;
   font-weight: 700;
   border: 2px solid #007bff;

@@ -45,7 +45,20 @@
 
 /* style for floating image >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
 /* ضبط الصورة في مكان ثابت */
-.floating-image {
+html[lang="ar"] .floating-image {
+    position: absolute;
+    top: 50px;
+    /* المسافة من الأعلى */
+    width: 400px;
+    /* حجم الصورة */
+    height: auto;
+    z-index: 1000;
+    /* لضمان ظهورها فوق العناصر الأخرى */
+    transition: all 0.3s ease-in-out;
+    /* انتقال سلس عند التغيير */
+}
+
+html[lang="en"] .floating-image {
     position: absolute;
     top: 300px;
     /* المسافة من الأعلى */
@@ -60,7 +73,7 @@
 
 /* عند اللغة العربية: تكون الصورة على اليمين */
 html[lang="ar"] .floating-image {
-    left: 70px;
+    left: -400px;
     right: auto;
 }
 
@@ -184,4 +197,138 @@ html[lang="ar"] #social-icons {
 .responsive-img:hover {
     transform: scale(1.02);
     /* تأثير خفيف عند المرور */
+}
+
+/* ===================================================== */
+/* DESKTOP ONLY */
+/* ===================================================== */
+
+@media (min-width: 1200px) {
+
+    /* ================= RTL FIXES ================= */
+
+    html[lang="ar"] body {
+        direction: rtl;
+        text-align: right;
+    }
+
+    /* الفورم */
+    html[lang="ar"] .form-control {
+        text-align: right;
+        padding-right: 50px;
+        padding-left: 16px;
+    }
+
+    /* الأيقونات داخل الحقول */
+    html[lang="ar"] .input-group-text {
+        right: 12px;
+        left: auto;
+    }
+
+    /* القائمة */
+    html[lang="ar"] .navmenu {
+        text-align: right;
+    }
+
+    html[lang="ar"] .navmenu ul {
+        padding-right: 0;
+    }
+
+    /* الهيدر */
+    html[lang="ar"] .bottom-header {
+        flex-direction: row-reverse;
+    }
+
+    /* الزر */
+    html[lang="ar"] .button-container {
+        text-align: right;
+        transform: translateX(-60px);
+    }
+
+    /* checkbox */
+    html[lang="ar"] .checkbox {
+        margin-right: 25px;
+    }
+
+    html[lang="ar"] .checkbox .label {
+        margin-right: 8px;
+    }
+
+    /* العناوين */
+    html[lang="ar"] h2 {
+        transform: translateX(-25px);
+    }
+
+    /* الفورم */
+    html[lang="ar"] .request-form {
+        transform: translateX(-40px);
+    }
+
+
+
+    /* ================= LTR FIXES ================= */
+
+    html[lang="en"] body {
+        direction: ltr;
+        text-align: left;
+    }
+
+    /* الفورم */
+    html[lang="en"] .form-control {
+        text-align: left;
+        padding-left: 50px;
+        padding-right: 16px;
+    }
+
+    /* الأيقونات داخل الحقول */
+    html[lang="en"] .input-group-text {
+        left: 12px;
+        right: auto;
+    }
+
+   
+
+
+    /* الزر */
+    html[lang="en"] .button-container {
+        text-align: left;
+        padding-left: 25px;
+    }
+
+    /* checkbox */
+    html[lang="en"] .checkbox {
+        padding-left: 25px;
+    }
+
+}
+
+
+/* ===================================================== */
+/* MOBILE ONLY */
+/* ===================================================== */
+
+@media (max-width: 1199px) {
+
+    /* RTL Mobile */
+
+    html[lang="ar"] body {
+        direction: rtl;
+        text-align: right;
+        overflow-x: hidden;
+    }
+
+   
+
+    /* إلغاء تحريكات الديسكتوب على الموبايل */
+
+    html[lang="ar"] .request-form,
+    html[lang="ar"] h2,
+    html[lang="ar"] .button-container {
+        transform: none;
+    }
+
+    html[lang="ar"] .checkbox {
+        margin-right: 0;
+    }
+
 }

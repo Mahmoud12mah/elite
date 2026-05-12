@@ -13,7 +13,7 @@ function sendQuestion(element) {
     userMessage.textContent = element.textContent;
     chatBody.appendChild(userMessage);
 
-    // التمرير فورًا إلى السؤال
+    // scroll immediately to question
     scrollToElement(userMessage);
 
     askedQuestions.add(element.textContent);
@@ -21,17 +21,17 @@ function sendQuestion(element) {
     setTimeout(() => {
         const botMessage = document.createElement('div');
         botMessage.className = 'chat-message';
-        botMessage.textContent = 'يتم كتابة الإجابة...';
+        botMessage.textContent = 'Typing answer...';
         chatBody.appendChild(botMessage);
 
-        // التمرير فورًا إلى الإجابة الوهمية قبل تحديثها
+        // scroll immediately to fake answer
         scrollToElement(botMessage);
 
         setTimeout(() => {
             botMessage.textContent = getAnswer(element.textContent);
-            scrollToElement(botMessage); // تمرير بعد تحديث الإجابة
+            scrollToElement(botMessage); // scroll after updating answer
 
-            // عرض باقي الأسئلة المتبقية بنفس التصميم كأزرار
+            // show remaining questions as buttons
             showRemainingQuestions();
         }, 1000);
     }, 500);
@@ -39,57 +39,54 @@ function sendQuestion(element) {
 
 function getAnswer(question) {
     const answers = {
-        'ما هي الخدمات التي نقدمها': `نحن في إيليت للأستشارات المالية نلتزم بتقديم خدمات محاسبية ومالية عالية الجودة لدعم نجاح أعمالكم. بخبرة تمتد لسنوات في مجالات المحاسبة، المراجعة، والاستشارات المالية، نعمل على تزويد عملائنا بحلول مبتكرة تلبي احتياجاتهم وتساعدهم على تحقيق أهدافهم المالية بكفاءة وشفافية.
+        'What services do we provide': `At Elite Financial Consulting, we are committed to providing high-quality accounting and financial services to support the success of your business. With years of experience in accounting, auditing, and financial consulting, we work to provide our clients with innovative solutions that meet their needs and help them achieve their financial goals efficiently and transparently.
 
-نقدم مجموعة متكاملة من الخدمات، تشمل إعداد القوائم المالية، التدقيق والمراجعة، تأسيس الشركات بكافة انواعها، الاستشارات الضريبية، والتخطيط المالي، مع التركيز على الامتثال لأحدث المعايير المحاسبية والقوانين المحلية.
+We offer a comprehensive range of services, including preparing financial statements, auditing and review, company formation of all types, tax consulting, and financial planning, with a focus on compliance with the latest accounting standards and local laws.
        `,
 
-        'عناوين المركز الرئيسي والفروع': `المكتب الرئيسي: 40 شارع أبو داوود الظاهري، مدينة نصر، القاهرة، مصر.
-        الفرع: 633 طريق الحرية، جناكليس، مبنى الزراعين، الإسكندرية، مصر.`,
+        'Head office and branch addresses': `Head office: 40 Abu Dawoud Al Zaheri Street, Nasr City, Cairo, Egypt.
+Branch: 633 El Horreya Road, Gianaclis, El Zeraaen Building, Alexandria, Egypt.`,
 
-        'كيف يمكنك التواصل معنا': `يمكنك التواصل معنا عبر
-         الهاتف: 1228310654 20+
-        وعبر نموذج الاتصال على موقعنا الإلكتروني
-        والبريد الإلكترونيinfo@elitefinancial-eg.com`,
+        'How can you contact us': `You can contact us via
+phone: +20 1228310654
+through the contact form on our website
+and email: info@elitefinancial-eg.com`,
 
-        'ما الذي يميز مكتب إيليت للاستشارات المالية عن غيره': `نحن نتميز 
-       بتقديم خدمات مخصصة لكل عميل بناءً على احتياجاته
-        و الالتزام بأعلى معايير الجودة والمهنية
-        و بناء علاقات طويلة الأمد قائمة على الثقة والشفافية`,
+        'What makes Elite Financial Consulting different from others': `We are distinguished by:
+- Providing customized services for each client based on their needs
+- Commitment to the highest standards of quality and professionalism
+- Building long-term relationships based on trust and transparency`,
 
-        'كيف يمكن لمكتب إيليت مساعدتي في تأسيس شركتي الجديدة': `نحن نساعدك عبر
-         تقديم الاستشارات القانونية والإدارية لاختيار الهيكل المناسب
-         وتسهيل الحصول على التراخيص اللازمة
-         ولمزيد من المعلومات التواصل علي رقم 1228310654 20+`,
+        'How can Elite office help me establish my new company': `We help you by:
+- Providing legal and administrative consulting to choose the appropriate structure
+- Facilitating obtaining the required licenses
+- For more information, contact us at +20 1228310654`,
 
-        'كيف يمكنني طلب خدمة التسعير': `لطلب خدمة التسعير، قم بالخطوات التالية:
-        1. زيارة موقعنا: https://elitefinancial-eg.com/
-        2. الانتقال إلى صفحة طلب سعر واختيار الخدمة المطلوبة.
-        3. ملئ النموذج بكافة المعلومات المطلوبة بدقة ثم الضغط علي زر طلب سعر.
-        4. سيقوم فريق إيليت بالاتصال بك لفهم متطلباتك بدقة.​
-        5. سنقوم بتقييم طلبك وتقديم عرض سعر مخصص بناءً على متطلباتك.`,
+        'How can I request a pricing service': `To request a pricing service, follow these steps:
+1. Visit our website: https://elitefinancial-eg.com/
+2. Go to the pricing request page and select the required service.
+3. Fill in the form with all required information accurately, then click Request Price.
+4. The Elite team will contact you to understand your requirements in detail.
+5. We will evaluate your request and provide a customized quotation based on your needs.`,
 
-
-
-        'ما هي خبرة شركة إيليت للاستشارات المالية في مجال المحاسبة والضرائب؟': `إيليت تتمتع بخبرة واسعة في مجال المحاسبة والضرائب:
-        - تمتلك فريقًا من الخبراء المتخصصين في إعداد البيانات المالية وتحليلها.
-        - تقديم استشارات ضريبية دقيقة لضمان الامتثال للقوانين الضريبية.
-        - مساعدة الشركات في تقديم الإقرارات الضريبية وتجنب الأخطاء المحاسبية.
-        - العمل وفقًا لأحدث المعايير المحاسبية المحلية والدولية.`
+        'What is Elite Financial Consulting\'s experience in accounting and taxes?': `Elite has extensive experience in accounting and taxation:
+- A team of experts specialized in preparing and analyzing financial statements.
+- Providing accurate tax consulting to ensure compliance with tax laws.
+- Assisting companies in filing tax returns and avoiding accounting errors.
+- Working according to the latest local and international accounting standards.`
     };
 
-    return answers[question] || 'عذرًا، لم أتمكن من العثور على إجابة لهذا السؤال. يُرجى التواصل معنا لمزيد من التفاصيل.';
+    return answers[question] || 'Sorry, I could not find an answer to this question. Please contact us for more details.';
 }
 
 function showRemainingQuestions() {
     const allQuestions = [
-        'ما هي الخدمات التي نقدمها',
-        'عناوين المركز الرئيسي والفروع',
-        'كيف يمكنك التواصل معنا',
-        'كيف يمكن لمكتب إيليت مساعدتي في تأسيس شركتي الجديدة',
-        'ما الذي يميز مكتب إيليت للاستشارات المالية عن غيره',
-        'كيف يمكنني طلب خدمة التسعير',
-
+        'What services do we provide',
+        'Head office and branch addresses',
+        'How can you contact us',
+        'How can Elite office help me establish my new company',
+        'What makes Elite Financial Consulting different from others',
+        'How can I request a pricing service',
     ];
 
     const chatBody = document.getElementById('chatBody');
@@ -109,21 +106,19 @@ function showRemainingQuestions() {
 
 function showResetButton() {
     const chatBody = document.getElementById('chatBody');
-    const resetButton = createQuestionElement('عرض الأسئلة من جديد');
+    const resetButton = createQuestionElement('Show questions again');
     resetButton.onclick = function () {
-        this.remove(); // حذف الزر عند الضغط عليه
+        this.remove(); // remove button on click
         resetQuestions();
     };
     chatBody.appendChild(resetButton);
     scrollToElement(resetButton);
 }
 
-
-
 function resetQuestions() {
     askedQuestions.clear();
 
-    // إزالة زر "عرض الأسئلة من جديد" إن وجد
+    // remove reset button if exists
     const resetButton = document.querySelector('.reset-button');
     if (resetButton) {
         resetButton.remove();
@@ -131,7 +126,7 @@ function resetQuestions() {
 
     showRemainingQuestions();
 
-    // التمرير إلى آخر عنصر بعد عرض الأسئلة
+    // scroll to last element after showing questions
     setTimeout(() => {
         const chatBody = document.getElementById('chatBody');
         if (chatBody.lastChild) {
@@ -139,8 +134,6 @@ function resetQuestions() {
         }
     }, 100);
 }
-
-
 
 function createQuestionElement(text) {
     const questionElement = document.createElement('div');
@@ -153,7 +146,6 @@ function createQuestionElement(text) {
 function scrollToElement(element) {
     element.scrollIntoView({ behavior: 'smooth', block: 'center' });
 }
-
 // map script >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> //
 document.addEventListener("DOMContentLoaded", function () {
     let menuToggle = document.getElementById("menu-toggle");
@@ -253,7 +245,7 @@ document.addEventListener("visibilitychange", function () {
 
 function checkInternetConnection(event) {
     if (!navigator.onLine) {
-        alert("⚠ لا يوجد اتصال بالإنترنت. تأكد من الاتصال ثم حاول مرة أخرى.");
+        alert("⚠ No internet connection. Please check your connection and try again.");
         event.preventDefault(); // منع فتح الرابط إذا لم يكن هناك إنترنت
         return false;
     }
@@ -291,56 +283,6 @@ window.addEventListener('scroll', function () {
     } else {
         document.body.classList.remove('scrolled');
     }
-});
-
-// news script >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-document.addEventListener("DOMContentLoaded", function () {
-    const newsList = [
-        { text: "لقاءٍ مع العاملين بمأمورية ضرائب بنها وممثلي المجتمع الضريبي بالقليوبية بديوان عام المحافظة", link: "News1.html" },
-        { text: "جميع المأموريات تلتزم بتطبيق التسهيلات وفقًا للقوانين الصادرة", link: "News2.html" },
-        { text: "التسهيلات الضريبية فرصة لن تتكرر ومواعيد التقديم للاستفادة أوشكت على الانتهاء", link: "News3.html" },
-        { text: "لقاء مصلحة الضرائب المصرية مع المحاسبين والمراجعين في إطار التسهيلات الضريبية", link: "News4.html" },
-        { text: "فرق دعم فني ميداني لتسهيل الخدمات الضريبية للممولين وغير الممولين", link: "News5.html" },
-        { text: "آخر موعد لتقديم طلبات إنهاء المنازعات الضريبية ٣٠يونيو", link: "News6.html" },
-        { text: "مصلحة الضرائب تكرم عددًا من الأندية الرياضية", link: "News7.html" },
-        { text: "صدور قرار رقم (225) لسنة 2025 الخاص (بالمرحلة الفرعية الأولى من المرحلة الرئيسية الثامنة) لمنظومة الإيصال الإلكترونى.", link: "News8.html" },
-    ];
-
-    const wrapper = document.getElementById("newsWrapper");
-    let speed = 1;
-    let offset = 0;
-    let isPaused = false;
-
-    // تكرار العناصر لتغطية الشاشة 3 مرات
-    for (let i = 0; i < 3; i++) {
-        newsList.forEach(news => {
-            let item = document.createElement("a");
-            item.classList.add("news-item");
-            item.href = news.link;
-            item.innerText = news.text;
-            item.style.textDecoration = "none";
-            item.style.color = "inherit";
-            wrapper.appendChild(item);
-
-            item.addEventListener("mouseover", () => isPaused = true);
-            item.addEventListener("mouseout", () => isPaused = false);
-            item.addEventListener("touchstart", () => isPaused = true);
-            item.addEventListener("touchend", () => isPaused = false);
-        });
-    }
-
-    function moveNews() {
-        if (!isPaused) {
-            offset -= speed;
-            wrapper.style.left = offset + "px";
-            if (Math.abs(offset) >= wrapper.scrollWidth / 3) {
-                offset = 0;
-            }
-        }
-        requestAnimationFrame(moveNews);
-    }
-
-    moveNews();
 });
 
 //  >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
@@ -387,7 +329,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         // ✅ التحقق من طول الاسم الكلي
         if (nameInput.length < 2 || nameInput.length > 40) {
-            responseElement.innerHTML = '<div class="alert alert-danger">❌ يرجى إدخال اسم صحيح (بين 2 و 40 حرفًا).</div>';
+            responseElement.innerHTML = '<div class="alert alert-danger">❌ Please enter a valid name (between 2 and 40 characters).</div>';
             responseElement.style.display = "block";
             return;
         }
@@ -401,7 +343,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 if (!/[a-zA-Zأ-ي]/.test(lowerChar)) continue; // تجاهل غير الحروف
                 counts[lowerChar] = (counts[lowerChar] || 0) + 1;
                 if (counts[lowerChar] > 3) {
-                    responseElement.innerHTML = `<div class="alert alert-danger">❌ المقطع "${part}" يحتوي على تكرار مفرط للحرف "${char}".</div>`;
+                    responseElement.innerHTML = `<div class="alert alert-danger">❌ The clip"${part}" It contains excessive letter repetition."${char}".</div>`;
                     responseElement.style.display = "block";
                     return;
                 }
@@ -411,14 +353,14 @@ document.addEventListener("DOMContentLoaded", function () {
         // ✅ منع الرموز أو الأرقام
         const invalidNamePattern = /[^a-zA-Zأ-ي\s]/;
         if (invalidNamePattern.test(nameInput)) {
-            responseElement.innerHTML = '<div class="alert alert-danger">❌ يرجى إدخال اسم حقيقي بدون رموز أو أرقام.</div>';
+            responseElement.innerHTML = '<div class="alert alert-danger">❌ Please enter a real name without symbols or numbers.</div>';
             responseElement.style.display = "block";
             return;
         }
 
         // ✅ يجب أن يحتوي الاسم على أكثر من مقطع (وجود مسافة واحدة على الأقل)
         if (!nameInput.includes(" ")) {
-            responseElement.innerHTML = '<div class="alert alert-danger">❌ يرجى إدخال الاسم الكامل.</div>';
+            responseElement.innerHTML = '<div class="alert alert-danger">❌ Please enter your full name, for example (Mohammed Ali).</div>';
             responseElement.style.display = "block";
             return;
         }
@@ -427,13 +369,13 @@ document.addEventListener("DOMContentLoaded", function () {
         const parts = nameInput.split(" ").filter(Boolean); // تقسيم الاسم إلى مقاطع
         const longPart = parts.find(part => part.length > 12);
         if (longPart) {
-            responseElement.innerHTML = `<div class="alert alert-danger">❌ المقطع "${longPart}" طويل جدًا، يجب ألا يتجاوز 12 حرفًا.</div>`;
+            responseElement.innerHTML = `<div class="alert alert-danger">❌ The clip"${longPart}" It's too long; it shouldn't exceed 12 characters.</div>`;
             responseElement.style.display = "block";
             return;
         }
 
         // ✅ عرض رسالة جاري الإرسال قبل التحقق والإرسال
-        responseElement.innerHTML = '<div class="alert alert-info">⏳ جاري إرسال النموذج...</div>';
+        responseElement.innerHTML = '<div class="alert alert-info">⏳ Form being sent...</div>';
         responseElement.style.display = "block";
 
         // ✅ التحقق من البريد الإلكتروني الحقيقي باستخدام Abstract API
@@ -449,14 +391,14 @@ document.addEventListener("DOMContentLoaded", function () {
                     return emailjs.sendForm("service_0p0gln7", "template_vymp718", form);
                 } else {
                     // ❌ البريد غير صالح أو غير موجود فعليًا
-                    responseElement.innerHTML = '<div class="alert alert-danger">❌ يرجى إدخال بريد إلكتروني حقيقي وقابل للاستلام.</div>';
+                    responseElement.innerHTML = '<div class="alert alert-danger">❌ Please enter a real and receiveable email address.</div>';
                     responseElement.style.display = "block";
                     throw new Error("Invalid email");
                 }
             })
             .then(function (response) {
                 console.log("✅ تم الإرسال بنجاح", response);
-                responseElement.innerHTML = '<div class="alert alert-success">✅ تم ارسال طلبك بنجاح!</div>';
+                responseElement.innerHTML = '<div class="alert alert-success">✅ Your request has been successfully sent!</div>';
                 responseElement.style.display = "block";
                 form.reset();
 
@@ -470,7 +412,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 if (error.message === "Invalid email") return;
 
                 console.error("❌ فشل الإرسال", error);
-                responseElement.innerHTML = '<div class="alert alert-danger">❌ فشل ارسال الطلب، حاول مرة أخرى.</div>';
+                responseElement.innerHTML = '<div class="alert alert-danger">❌ Request failed to send, please try again.</div>';
                 responseElement.style.display = "block";
             });
 
