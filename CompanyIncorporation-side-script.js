@@ -223,7 +223,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const emailInput = data["email"];
 
         if (nameInput.length < 2 || nameInput.length > 40) {
-            responseElement.innerHTML = '<div class="alert alert-danger">❌ يرجى إدخال اسم صحيح (بين 2 و 40 حرفًا).</div>';
+            responseElement.innerHTML = '<div class="alert alert-danger">❌ Please enter a valid name (between 2 and 40 characters).</div>';
             responseElement.style.display = "block";
             return;
         }
@@ -237,7 +237,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 if (!/[a-zA-Zأ-ي]/.test(lowerChar)) continue;
                 counts[lowerChar] = (counts[lowerChar] || 0) + 1;
                 if (counts[lowerChar] > 3) {
-                    responseElement.innerHTML = `<div class="alert alert-danger">❌ المقطع "${part}" يحتوي على تكرار مفرط للحرف "${char}".</div>`;
+                    responseElement.innerHTML = `<div class="alert alert-danger">❌ The clip "${part}" It contains excessive letter repetition. "${char}".</div>`;
                     responseElement.style.display = "block";
                     return;
                 }
@@ -247,14 +247,14 @@ document.addEventListener("DOMContentLoaded", function () {
         // ✅ منع الرموز أو الأرقام
         const invalidNamePattern = /[^a-zA-Zأ-ي\s]/;
         if (invalidNamePattern.test(nameInput)) {
-            responseElement.innerHTML = '<div class="alert alert-danger">❌ يرجى إدخال اسم حقيقي بدون رموز أو أرقام.</div>';
+            responseElement.innerHTML = '<div class="alert alert-danger">❌ Please enter a real name without symbols or numbers.</div>';
             responseElement.style.display = "block";
             return;
         }
 
         // ✅ يجب أن يحتوي الاسم على أكثر من مقطع
         if (!nameInput.includes(" ")) {
-            responseElement.innerHTML = '<div class="alert alert-danger">❌ يرجى إدخال الاسم الكامل (مثلاً: محمد علي).</div>';
+            responseElement.innerHTML = '<div class="alert alert-danger">❌ Please enter your full name (e.g., Muhammad Ali).</div>';
             responseElement.style.display = "block";
             return;
         }
@@ -263,13 +263,13 @@ document.addEventListener("DOMContentLoaded", function () {
         const parts = nameInput.split(" ").filter(Boolean);
         const longPart = parts.find(part => part.length > 12);
         if (longPart) {
-            responseElement.innerHTML = `<div class="alert alert-danger">❌ المقطع "${longPart}" طويل جدًا، يجب ألا يتجاوز 12 حرفًا.</div>`;
+            responseElement.innerHTML = `<div class="alert alert-danger">❌ The clip "${longPart}" It's too long; it shouldn't exceed 12 characters.</div>`;
             responseElement.style.display = "block";
             return;
         }
 
         // ✅ عرض "جاري إرسال النموذج..."
-        responseElement.innerHTML = '<div class="alert alert-info">⏳ جاري إرسال النموذج...</div>';
+        responseElement.innerHTML = '<div class="alert alert-info">⏳ Form being sent...</div>';
         responseElement.style.display = "block";
 
         // ✅ التحقق من البريد الإلكتروني باستخدام Abstract API
@@ -280,13 +280,13 @@ document.addEventListener("DOMContentLoaded", function () {
             const dataEmail = await res.json();
 
             if (!dataEmail.email_deliverability || dataEmail.email_deliverability.status !== "deliverable") {
-                responseElement.innerHTML = '<div class="alert alert-danger">❌ يرجى إدخال بريد إلكتروني حقيقي وقابل للاستلام.</div>';
+                responseElement.innerHTML = '<div class="alert alert-danger">❌ Please enter a real and receiveable email address.</div>';
                 responseElement.style.display = "block";
                 return;
             }
         } catch (error) {
             console.error("❌ خطأ أثناء التحقق من البريد:", error);
-            responseElement.innerHTML = '<div class="alert alert-danger">❌ حدث خطأ أثناء التحقق من البريد الإلكتروني.</div>';
+            responseElement.innerHTML = '<div class="alert alert-danger">❌ Request failed to send, please try again.</div>';
             responseElement.style.display = "block";
             return;
         }
@@ -319,7 +319,7 @@ document.addEventListener("DOMContentLoaded", function () {
         emailjs.send("service_0p0gln7", "template_atz2wa9", data)
             .then(function (response) {
                 console.log("✅ تم الإرسال بنجاح", response);
-                responseElement.innerHTML = '<div class="alert alert-success">تم إرسال الطلب بنجاح! ✅</div>';
+                responseElement.innerHTML = '<div class="alert alert-success">Order sent successfully! ✅</div>';
                 responseElement.style.display = "block";
                 setTimeout(() => { responseElement.style.display = "none"; }, 5000);
                 localStorage.setItem("formSubmitted", "true");
