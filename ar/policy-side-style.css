@@ -1,0 +1,195 @@
+/* font style >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
+/* تطبيق الخط على جميع العناصر مع استثناء الأيقونات */
+*:not(i):not([class^="fa"]):not([class*=" fa-"]) {
+    font-family: 'Cairo', sans-serif !important;
+    box-sizing: border-box;
+}
+
+/* style for spacing >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
+@media (min-width: 1200px) {
+    .mobile {
+        margin-top: 180px;
+    }
+}
+
+@media (max-width: 1199px) {
+    .mobile {
+        margin-top: 300px;
+    }
+}
+
+/* policy styles >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
+.background {
+    width: 98.9vw;
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg,
+            rgba(0, 0, 0, 0.95) 0%,
+            rgba(0, 0, 0, 0.7) 50%,
+            rgba(0, 0, 0, 0.95) 100%);
+    background-size: cover;
+    margin-top: 180px;
+}
+
+.text {
+    color: white;
+    font-size: 70px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+/* للهواتف */
+@media (max-width: 768px) {
+    .text {
+        font-size: 50px;
+    }
+
+    .background {
+        margin-top: 250px;
+    }
+}
+
+/* style for sidebar */
+/* الحاوية الرئيسية */
+.page-container {
+    display: flex;
+    max-width: 1200px;
+    margin: 100 auto;
+    padding: 70px 20px;
+}
+
+/* الصندوق الجانبي */
+.sidebar {
+    width: 260px;
+    position: sticky;
+    top: 120px;
+    align-self: start;
+    background: linear-gradient(135deg, #f0f4f8, #ffffff);
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    padding: 25px 20px;
+    height: fit-content;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+/* روابط داخل الصندوق */
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar ul li {
+    margin-bottom: 9px;
+    border-bottom: 1px solid #ddd;
+    /* إضافة خط فاصلة بين العناصر */
+}
+
+.sidebar ul li:last-child {
+    border-bottom: none;
+    /* إزالة الخط الفاصل عن آخر عنصر */
+}
+
+.sidebar ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    font-size: 16px;
+    display: block;
+    padding: 8px 12px;
+    border-radius: 8px;
+    transition: background 0.3s, color 0.3s;
+}
+
+.sidebar ul li a:hover {
+    background: #007bff;
+    color: #fff;
+}
+
+/* المحتوى */
+.content {
+    flex: 1;
+    font-size: 25px;
+}
+
+/* دعم اتجاه اللغة */
+html[dir="rtl"] .page-container {
+    flex-direction: row;
+}
+
+html[dir="rtl"] .sidebar {
+    margin-left: 40px;
+    margin-right: 0;
+    right: 0;
+    left: auto;
+}
+
+html[dir="ltr"] .page-container {
+    flex-direction: row;
+}
+
+html[dir="ltr"] .sidebar {
+    margin-right: 40px;
+    margin-left: 0;
+    left: 0;
+    right: auto;
+}
+
+/* استجابة الجوال */
+@media (max-width: 768px) {
+    .page-container {
+        flex-direction: column !important;
+    }
+
+    .sidebar {
+        width: 100%;
+        position: static;
+        margin: 0 0 20px 0 !important;
+    }
+
+    .content {
+        margin: 0;
+    }
+}
+
+/* footer style >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
+body {
+    overflow: auto !important;
+    height: auto !important;
+    display: block !important;
+}
+
+footer {
+    flex-shrink: 0;
+    width: 100%;
+}
+
+html,
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+body>footer {
+    margin-top: auto;
+}
+
+/* style for social icons >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
+/* الكود الأساسي */
+html[lang="ar"] #social-icons {
+    direction: ltr;
+    transform: translateX(265px);
+    transition: transform 0.3s ease;
+}
+
+/* كود خاص للموبايل */
+@media (max-width: 768px) {
+    html[lang="ar"] #social-icons {
+        transform: translateX(215px) !important;
+        /* نستخدم !important للإجبار */
+    }
+}

@@ -1,0 +1,176 @@
+/* font styles >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
+/* تطبيق الخط على جميع العناصر مع استثناء الأيقونات */
+*:not(i):not([class^="fa"]):not([class*=" fa-"]) {
+    font-family: 'Cairo', sans-serif !important;
+    box-sizing: border-box;
+}
+
+/* style for fixed header >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
+@media (min-width: 1200px) {
+    .mobile {
+        margin-top: 180px;
+    }
+}
+
+@media (max-width: 1199px) {
+    .mobile {
+        margin-top: 260px;
+    }
+}
+
+/* style for form spacing >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
+/* بشكل عام، بدون تغيير على الجوال */
+.desktop-move {
+    margin: 0 auto !important;
+    /* مركزي */
+}
+
+/* على الشاشات الكبيرة فقط (الكمبيوتر) */
+@media (min-width: 992px) {
+
+    /* عندما تكون اللغة من اليمين لليسار (العربية) */
+    :dir(rtl) .desktop-move {
+        margin-left: 0px !important;
+        /* تحريك لليسار */
+        margin-right: 60px !important;
+    }
+
+    /* عندما تكون اللغة من اليسار لليمين (الإنجليزية) */
+    :dir(ltr) .desktop-move {
+        margin-left: 60px !important;
+        /* تحريك لليمين */
+        margin-right: 0px !important;
+    }
+}
+
+/* floating image style >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
+/* ضبط الصورة في مكان ثابت */
+.floating-image {
+    position: absolute;
+    top: 300px;
+    /* المسافة من الأعلى */
+    width: 400px;
+    /* حجم الصورة */
+    height: auto;
+    z-index: 1000;
+    /* لضمان ظهورها فوق العناصر الأخرى */
+    transition: all 0.3s ease-in-out;
+    /* انتقال سلس عند التغيير */
+}
+
+/* عند اللغة العربية: تكون الصورة على اليمين */
+html[lang="ar"] .floating-image {
+    left: 70px;
+    right: auto;
+}
+
+/* عند اللغة الإنجليزية: تكون الصورة على اليسار */
+html[lang="en"] .floating-image {
+    right: 70px;
+    left: auto;
+}
+
+.floating-image img {
+    width: 100%;
+    border-radius: 10px;
+    /* إضافة حواف دائرية */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+    /* ظل جميل */
+}
+
+/* إخفاء الصورة على الشاشات الصغيرة (أقل من 768px) */
+@media (max-width: 1200px) {
+    .floating-image {
+        display: none;
+    }
+}
+
+/* style for error messages >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
+.input-error {
+    border: 2px solid red;
+}
+
+.error-message {
+    color: red;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+.alert-message {
+    margin-top: 10px;
+    font-weight: bold;
+    display: none;
+    text-align: center;
+    width: 92vw;
+    /* ✅ جعل الخلفية تمتد بعرض الصفحة بالكامل */
+    padding: 15px;
+    /* ✅ إضافة تباعد داخلي */
+    top: 0;
+    /* ✅ جعله يظهر في أعلى الصفحة */
+    left: 0;
+    /* ✅ ضمان امتداد العنصر من أقصى اليسار */
+    z-index: 1000;
+    /* ✅ التأكد من ظهوره فوق جميع العناصر */
+}
+
+.alert-success {
+    background-color: green;
+    /* ✅ تحديد لون الخلفية */
+    color: white;
+    /* ✅ جعل النص أبيض */
+}
+
+.alert-danger {
+    background-color: red;
+    /* ✅ تحديد لون الخلفية */
+    color: white;
+    /* ✅ جعل النص أبيض */
+}
+
+/* footer style >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
+footer {
+    flex-shrink: 0;
+    width: 100%;
+}
+
+html,
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+body>footer {
+    margin-top: auto;
+}
+
+/* style social icones  >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
+/* الكود الأساسي */
+html[lang="ar"] #social-icons {
+    direction: ltr;
+    transform: translateX(265px);
+    transition: transform 0.3s ease;
+}
+
+/* كود خاص للموبايل */
+@media (max-width: 768px) {
+    html[lang="ar"] #social-icons {
+        transform: translateX(215px) !important;
+        /* نستخدم !important للإجبار */
+    }
+}
+
+/* floating image style */
+.floating-image img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    /* شكل ناعم */
+    transition: transform 0.3s ease;
+}
+
+.floating-image img:hover {
+    transform: scale(1.02);
+    /* تأثير بسيط عند المرور */
+}
