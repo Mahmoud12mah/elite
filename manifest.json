@@ -1,0 +1,22 @@
+{
+    "short_name": "Elite Financial",
+    "name": "Elite Financial Consultant",
+    "description": "Certified Public Accountant & Tax Services in Egypt",
+    "icons": [
+        {
+            "src": "https://elitefinancial-eg.com/assets/img/logo.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "https://elitefinancial-eg.com/assets/img/logo.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ],
+    "start_url": "/",
+    "display": "standalone",
+    "theme_color": "#003b73",
+    "background_color": "#ffffff",
+    "orientation": "portrait"
+}
